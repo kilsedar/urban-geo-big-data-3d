@@ -1,0 +1,15 @@
+.DS_Store
+
+.idea/shelf
+
+.idea/tasks.xml
+
+.idea/workspace.xml
+
+build/
+
+nasaworldwind-worldwind-*.tgz
+
+node_modules/
+
+npm-debug.log

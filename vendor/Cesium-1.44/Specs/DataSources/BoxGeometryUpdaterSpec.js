@@ -1,0 +1,133 @@
+defineSuite([
+        'DataSources/BoxGeometryUpdater',
+        'Core/Cartesian3',
+        'Core/JulianDate',
+        'Core/TimeIntervalCollection',
+        'DataSources/BoxGraphics',
+        'DataSources/ConstantPositionProperty',
+        'DataSources/ConstantProperty',
+        'DataSources/Entity',
+        'Scene/PrimitiveCollection',
+        'Specs/createDynamicGeometryUpdaterSpecs',
+        'Specs/createDynamicProperty',
+        'Specs/createGeometryUpdaterSpecs',
+        'Specs/createScene'
+    ], function(
+        BoxGeometryUpdater,
+        Cartesian3,
+        JulianDate,
+        TimeIntervalCollection,
+        BoxGraphics,
+        ConstantPositionProperty,
+        ConstantProperty,
+        Entity,
+        PrimitiveCollection,
+        createDynamicGeometryUpdaterSpecs,
+        createDynamicProperty,
+        createGeometryUpdaterSpecs,
+        createScene) {
+    'use strict';
+
+    var scene;
+    var time;
+
+    beforeAll(function() {
+        scene = createScene();
+        time = JulianDate.now();
+    });
+
+    afterAll(function() {
+        scene.destroyForSpecs();
+    });
+
+    function createBasicBox() {
+        var box = new BoxGraphics();
+        box.dimensions = new ConstantProperty(new Cartesian3(1, 2, 3));
+        var entity = new Entity();
+        entity.position = new ConstantPositionProperty(Cartesian3.fromDegrees(0, 0, 0));
+        entity.box = box;
+        return entity;
+    }
+
+    function createDynamicBox() {
+        var entity = createBasicBox();
+        entity.box.dimensions = createDynamicProperty(new Cartesian3(1, 2, 3));
+        return entity;
+    }
+
+    it('A time-varying dimensions causes geometry to be dynamic', function() {
+        var entity = createBasicBox();
+        var updater = new BoxGeometryUpdater(entity, scene);
+        entity.box.dimensions = createDynamicProperty();
+        updater._onEntityPropertyChanged(entity, 'box');
+
+        expect(updater.isDynamic).toBe(true);
+    });
+
+    it('Creates geometry with expected properties', function() {
+        var entity = createBasicBox();
+
+        var dimensions = new Cartesian3(1, 2, 3);
+        var box = entity.box;
+        box.outline = true;
+        box.dimensions = dimensions;
+
+        var updater = new BoxGeometryUpdater(entity, scene);
+
+        var instance;
+        var geometry;
+        instance = updater.createFillGeometryInstance(time);
+        geometry = instance.geometry;
+        expect(geometry._maximum).toEqual(Cartesian3.multiplyByScalar(dimensions, 0.5, new Cartesian3()));
+
+        instance = updater.createOutlineGeometryInstance(time);
+        geometry = instance.geometry;
+        expect(geometry._max).toEqual(Cartesian3.multiplyByScalar(dimensions, 0.5, new Cartesian3()));
+    });
+
+    it('dynamic updater sets properties', function() {
+        var entity = createDynamicBox();
+
+        var updater = new BoxGeometryUpdater(entity, scene);
+        var dynamicUpdater = updater.createDynamicUpdater( new PrimitiveCollection(), new PrimitiveCollection());
+        dynamicUpdater.update(JulianDate.now());
+
+        expect(dynamicUpdater._options.dimensions).toEqual(entity.box.dimensions.getValue());
+    });
+
+    it('geometryChanged event is raised when expected', function() {
+        var entity = createBasicBox();
+        var updater = new BoxGeometryUpdater(entity, scene);
+        var listener = jasmine.createSpy('listener');
+        updater.geometryChanged.addEventListener(listener);
+
+        entity.box.dimensions = new ConstantProperty();
+        updater._onEntityPropertyChanged(entity, 'box');
+        expect(listener.calls.count()).toEqual(1);
+
+        entity.availability = new TimeIntervalCollection();
+        updater._onEntityPropertyChanged(entity, 'availability');
+        expect(listener.calls.count()).toEqual(2);
+
+        entity.box.dimensions = undefined;
+        updater._onEntityPropertyChanged(entity, 'box');
+        expect(listener.calls.count()).toEqual(3);
+
+        //Since there's no valid geometry, changing another property should not raise the event.
+        entity.box.height = undefined;
+        updater._onEntityPropertyChanged(entity, 'box');
+
+        //Modifying an unrelated property should not have any effect.
+        entity.viewFrom = new ConstantProperty(Cartesian3.UNIT_X);
+        updater._onEntityPropertyChanged(entity, 'viewFrom');
+        expect(listener.calls.count()).toEqual(3);
+    });
+
+    function getScene() {
+        return scene;
+    }
+
+    createGeometryUpdaterSpecs(BoxGeometryUpdater, 'box', createBasicBox, getScene);
+
+    createDynamicGeometryUpdaterSpecs(BoxGeometryUpdater, 'box', createDynamicBox, getScene);
+}, 'WebGL');
