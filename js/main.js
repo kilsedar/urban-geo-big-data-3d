@@ -22,7 +22,7 @@ define(["js/TopNavigationBar",
   var center = Cesium.Cartesian3.fromDegrees(12, 41);
   cesiumViewer.camera.lookAt(center, new Cesium.Cartesian3(0.0, 0.0, 18000000.0));
 
-  var worldWindViewer = new WorldWind.WorldWindow("worldwind");
+  var worldWindViewer = new WorldWind.WorldWindow("worldwind-canvas");
 
   worldWindViewer.addLayer(new WorldWind.BMNGOneImageLayer());
   worldWindViewer.addLayer(new WorldWind.BingAerialLayer());
@@ -52,7 +52,7 @@ define(["js/TopNavigationBar",
     $('[data-toggle="tooltip"]').tooltip();
   });
 
-  var locationSwitcher = new LocationSwitcher("container", "location-switcher");
+  var locationSwitcher = new LocationSwitcher("worldwind", "location-switcher");
 
   var configurationMilan = {
     interiorColor: new WorldWind.Color(0.0, 0.0, 0.0, 1.0),

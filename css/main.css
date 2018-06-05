@@ -31,7 +31,7 @@ a:active {
   background-color: orange !important;
 }
 
-html, body, #worldwind, #cesium {
+html, body, #worldwind, #worldwind-canvas, #cesium {
   width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden;
   font-family: 'Do Hyeon', sans-serif !important;
 }
