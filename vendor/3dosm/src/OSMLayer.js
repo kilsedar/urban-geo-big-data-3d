@@ -26,6 +26,7 @@ define(["vendor/3dosm/libraries/osmtogeojson-3.0.0"],
     this._data = {};
     this._dataSize = 0;
     this._boundingBox = null;
+    this._renderableLayer;
   };
 
   Object.defineProperties (OSMLayer.prototype, {
@@ -119,6 +120,19 @@ define(["vendor/3dosm/libraries/osmtogeojson-3.0.0"],
       },
       set: function(boundingBox) {
         this._boundingBox = boundingBox;
+      }
+    },
+    /**
+     * The renderable layer containing the OSMLayer.
+     * @memberof OSMLayer.prototype
+     * @type {RenderableLayer}
+     */
+    renderableLayer: {
+      get: function() {
+        return this._renderableLayer;
+      },
+      set: function(renderableLayer) {
+        this._renderableLayer = renderableLayer;
       }
     }
   });
@@ -324,6 +338,7 @@ define(["vendor/3dosm/libraries/osmtogeojson-3.0.0"],
       var OSMLayer = new WorldWind.RenderableLayer("OSMLayer");
       var OSMLayerGeoJSON = new WorldWind.GeoJSONParser(JSON.stringify(_self._data));
       OSMLayerGeoJSON.load(null, _self.shapeConfigurationCallback.bind(_self), OSMLayer);
+      _self._renderableLayer = OSMLayer;
       _self._worldWindow.addLayer(OSMLayer);
     });
   };

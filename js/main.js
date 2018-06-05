@@ -52,6 +52,8 @@ define(["js/TopNavigationBar",
     $('[data-toggle="tooltip"]').tooltip();
   });
 
+  var locationSwitcher = new LocationSwitcher("container", "location-switcher");
+
   var configurationMilan = {
     interiorColor: new WorldWind.Color(0.0, 0.0, 0.0, 1.0),
     applyLighting: true,
@@ -60,37 +62,12 @@ define(["js/TopNavigationBar",
     altitudeMode: WorldWind.RELATIVE_TO_GROUND,
     heatmap: {enabled: true, thresholds: [0, 10, 20, 40, 60, 900]}
   };
-
   var sourceMilan = {type: "GeoJSONFile", path: "data/milan.geojson"};
-
   var milan = new OSMBuildingLayer(configurationMilan, sourceMilan);
-
-  var locationSwitcher = new LocationSwitcher("container", "location-switcher");
-
   var locationSwitcherMilan = new LocationSwitcherItem("Milan", "milan", worldWindViewer, milan, [9.16479, 45.4553, 9.19573, 45.4802]);
-
   locationSwitcher.add(locationSwitcherMilan);
 
-  /* var source = {type: "GeoJSONFile", path: "data/milan.geojson"};
-
-  var configuration = {
-    interiorColor: new WorldWind.Color(0.0, 0.0, 0.0, 1.0),
-    applyLighting: true,
-    extrude: true,
-    altitude: {type: "property", value: "height_med"},
-    altitudeMode: WorldWind.RELATIVE_TO_GROUND,
-    heatmap: {enabled: true, thresholds: [0, 10, 20, 40, 60, 900]}
-  };
-
-  var test = new OSMBuildingLayer(configuration, source);
-  test.add(worldWindViewer);
-  test.boundingBox = [9.16479, 45.4553, 9.19573, 45.4802];
-  worldWindViewer.navigator.tilt = 50;
-  test.zoom(); */
-
-  /* var source = {type: "GeoJSONFile", path: "data/padua.geojson"};
-
-  var configuration = {
+  var configurationPadua = {
     interiorColor: new WorldWind.Color(0.0, 0.2, 0.7, 1.0),
     applyLighting: true,
     extrude: true,
@@ -98,16 +75,12 @@ define(["js/TopNavigationBar",
     altitudeMode: WorldWind.RELATIVE_TO_GROUND,
     heatmap: {enabled: true, thresholds: [0, 6, 9, 900]}
   };
+  var sourcePadua = {type: "GeoJSONFile", path: "data/padua.geojson"};
+  var padua = new OSMBuildingLayer(configurationPadua, sourcePadua);
+  var locationSwitcherPadua = new LocationSwitcherItem("Padua", "padua", worldWindViewer, padua, [11.8657, 45.3991, 11.888, 45.4179]);
+  locationSwitcher.add(locationSwitcherPadua);
 
-  var test = new OSMBuildingLayer(configuration, source);
-  test.add(worldWindViewer);
-  test.boundingBox = [11.8657, 45.3991, 11.888, 45.4179];
-  worldWindViewer.navigator.tilt = 50;
-  test.zoom(); */
-
-  /* var source = {type: "GeoJSONFile", path: "data/rome.geojson"};
-
-  var configuration = {
+  var configurationRome = {
     interiorColor: new WorldWind.Color(0.0, 1.0, 0.4, 1.0),
     applyLighting: true,
     extrude: true,
@@ -115,16 +88,12 @@ define(["js/TopNavigationBar",
     altitudeMode: WorldWind.RELATIVE_TO_GROUND,
     heatmap: {enabled: true, thresholds: [0, 6, 9, 20, 40, 60]}
   };
+  var sourceRome = {type: "GeoJSONFile", path: "data/rome.geojson"};
+  var rome = new OSMBuildingLayer(configurationRome, sourceRome);
+  var locationSwitcherRome = new LocationSwitcherItem("Rome", "rome", worldWindViewer, rome, [12.4446, 41.8855, 12.4934, 41.9078]);
+  locationSwitcher.add(locationSwitcherRome);
 
-  var test = new OSMBuildingLayer(configuration, source);
-  test.add(worldWindViewer);
-  test.boundingBox = [12.4446, 41.8855, 12.4934, 41.9078];
-  worldWindViewer.navigator.tilt = 50;
-  test.zoom(); */
-
-  /* var source = {type: "GeoJSONFile", path: "data/naples.geojson"};
-
-  var configuration = {
+  var configurationNaples = {
     interiorColor: new WorldWind.Color(0.0, 0.9, 0.8, 1.0),
     applyLighting: true,
     extrude: true,
@@ -132,16 +101,12 @@ define(["js/TopNavigationBar",
     altitudeMode: WorldWind.RELATIVE_TO_GROUND,
     heatmap: {enabled: true, thresholds: [0, 6, 9, 30, 48, 900]}
   };
+  var sourceNaples = {type: "GeoJSONFile", path: "data/naples.geojson"};
+  var naples = new OSMBuildingLayer(configurationNaples, sourceNaples);
+  var locationSwitcherNaples = new LocationSwitcherItem("Naples", "naples", worldWindViewer, naples, [14.231, 40.8263, 14.2645, 40.848]);
+  locationSwitcher.add(locationSwitcherNaples);
 
-  var test = new OSMBuildingLayer(configuration, source);
-  test.add(worldWindViewer);
-  test.boundingBox = [14.231, 40.8263, 14.2645, 40.848];
-  worldWindViewer.navigator.tilt = 50;
-  test.zoom(); */
-
-  /* var source = {type: "GeoJSONFile", path: "data/turin.geojson"};
-
-  var configuration = {
+  var configurationTurin = {
     interiorColor: new WorldWind.Color(0.0, 0.6, 0.9, 1.0),
     applyLighting: true,
     extrude: true,
@@ -149,10 +114,8 @@ define(["js/TopNavigationBar",
     altitudeMode: WorldWind.RELATIVE_TO_GROUND,
     heatmap: {enabled: true, thresholds: [0, 6, 9, 33, 60, 900]}
   };
-
-  var test = new OSMBuildingLayer(configuration, source);
-  test.add(worldWindViewer);
-  test.boundingBox = [7.67087, 45.0589, 7.70694, 45.0846];
-  worldWindViewer.navigator.tilt = 50;
-  test.zoom(); */
+  var sourceTurin = {type: "GeoJSONFile", path: "data/turin.geojson"};
+  var turin = new OSMBuildingLayer(configurationTurin, sourceTurin);
+  var locationSwitcherTurin = new LocationSwitcherItem("Turin", "turin", worldWindViewer, turin, [7.67087, 45.0589, 7.70694, 45.0846]);
+  locationSwitcher.add(locationSwitcherTurin);
 });

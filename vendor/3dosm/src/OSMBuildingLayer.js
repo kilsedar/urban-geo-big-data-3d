@@ -62,6 +62,7 @@ define(["vendor/3dosm/src/OSMLayer",
       var OSMBuildingLayer = new WorldWind.RenderableLayer("OSMBuildingLayer");
       var OSMBuildingLayerGeoJSON = new GeoJSONParserTriangulationOSM(JSON.stringify(_self.data));
       OSMBuildingLayerGeoJSON.load(null, _self.shapeConfigurationCallback.bind(_self), OSMBuildingLayer);
+      _self.renderableLayer = OSMBuildingLayer;
       _self.worldWindow.addLayer(OSMBuildingLayer);
     });
   };
