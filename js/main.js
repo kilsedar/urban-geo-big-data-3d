@@ -7,18 +7,15 @@ define(["js/TopNavigationBar",
   "use strict";
 
   Cesium.BingMapsApi.defaultKey = "AkOk-CSt-kcpa4o6S8qZPtUEfPIRh__FfRTCl9nFu51qAMSJklQe8KiFFFNivIRD";
+  Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJhZTc0MTUyMS03NTBhLTRlYzItYTk0Ni03MjYzNDlkNWU4ODIiLCJpZCI6MTM5MywiaWF0IjoxNTI4MjEzMTM3fQ.PjFkLZuljzHqMy1g8kSiRV4nmU6piS5UgfABBRaVAKM';
 
   var cesiumViewer = new Cesium.Viewer("cesium", {
     timeline: false,
     animation: false,
-    baseLayerPicker: false,
-    geocoder: false,
-    homeButton: false,
-    sceneModePicker: false,
-    navigationHelpButton: false
+    imageryProvider: Cesium.createWorldImagery(),
+    terrainProvider: Cesium.createWorldTerrain()
   });
 
-  cesiumViewer.terrainProvider = Cesium.createWorldTerrain();
   var center = Cesium.Cartesian3.fromDegrees(12, 41);
   cesiumViewer.camera.lookAt(center, new Cesium.Cartesian3(0.0, 0.0, 18000000.0));
 
