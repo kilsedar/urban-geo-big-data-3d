@@ -1,0 +1,777 @@
+<?xml version="1.0"?>
+<testsuite name="PhantomJS 2.1.1 (Linux 0.0.0)" package="" timestamp="2018-04-26T11:30:38" id="0" hostname="geo96" tests="628" errors="0" failures="0" time="0.741">
+  <properties>
+    <property name="browser.fullName" value="Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1"/>
+  </properties>
+  <testcase name="AngleTest Normalizes a value in the range of [-180, 180] degrees Normalizes an angle" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).AngleTest"/>
+  <testcase name="AngleTest Normalizes a value in the range of [-180, 180] degrees Normalizes a full angle" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).AngleTest"/>
+  <testcase name="AngleTest Normalizes a value in the range of [-180, 180] degrees Normalizes an undefined angle" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).AngleTest"/>
+  <testcase name="AngleTest Normalizes a value in the range of [-180, 180] degrees Normalizes a NaN" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).AngleTest"/>
+  <testcase name="AngleTest Normalizes a Latitude value in the range of [-90, 90] degrees Normalizes a positive angle" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).AngleTest"/>
+  <testcase name="AngleTest Normalizes a Latitude value in the range of [-90, 90] degrees Normalizes a negative angle" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).AngleTest"/>
+  <testcase name="AngleTest Normalizes a Latitude value in the range of [-90, 90] degrees Normalizes a full angle" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).AngleTest"/>
+  <testcase name="AngleTest Normalizes a Longitude value in the range of [-180, 180] degrees Normalizes a positive angle" time="0.002" classname="PhantomJS_2_1_1_(Linux_0_0_0).AngleTest"/>
+  <testcase name="AngleTest Normalizes a Longitude value in the range of [-180, 180] degrees Normalizes a negative angle" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).AngleTest"/>
+  <testcase name="AngleTest Normalizes a specified value to be within the range of [-Pi, Pi] radians Normalizes a 45 degree angle" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).AngleTest"/>
+  <testcase name="AngleTest Normalizes a specified value to be within the range of [-Pi, Pi] radians Normalizes a 60 degree angle" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).AngleTest"/>
+  <testcase name="AngleTest Normalizes a specified value to be within the range of [-Pi/2, Pi/2] radians. Normalizes a 60 degree angle" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).AngleTest"/>
+  <testcase name="AngleTest Normalizes a specified value to be within the range of [-Pi/2, Pi/2] radians. Normalizes an 88 degree angle" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).AngleTest"/>
+  <testcase name="AngleTest Normalizes a specified value to be within the range of [-Pi/2, Pi/2] radians Normalizes a 60 degree angle" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).AngleTest"/>
+  <testcase name="AngleTest Normalizes a specified value to be within the range of [-Pi/2, Pi/2] radians Normalizes a 180 degree angle" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).AngleTest"/>
+  <testcase name="AngleTest Indicates whether a specified value is within the normal range of latitude, [-90, 90] Valid latitude" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).AngleTest"/>
+  <testcase name="AngleTest Indicates whether a specified value is within the normal range of latitude, [-90, 90] Not valid latitude" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).AngleTest"/>
+  <testcase name="AngleTest Indicates whether a specified value is within the normal range of longitude, [-180, 180] Valid longitude" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).AngleTest"/>
+  <testcase name="AngleTest Indicates whether a specified value is within the normal range of longitude, [-180, 180] Not valid longitude" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).AngleTest"/>
+  <testcase name="AngleTest Returns a decimal degrees string representation of a specified value in degrees Positive degrees" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).AngleTest"/>
+  <testcase name="AngleTest Returns a decimal degrees string representation of a specified value in degrees Negative degrees" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).AngleTest"/>
+  <testcase name="AngleTest Returns a degrees-minutes-seconds string representation of a specified value in degrees Integer angle" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).AngleTest"/>
+  <testcase name="AngleTest Returns a degrees-minutes-seconds string representation of a specified value in degrees Not integer angle with two decimals expecting minutes" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).AngleTest"/>
+  <testcase name="AngleTest Returns a degrees-minutes-seconds string representation of a specified value in degrees Not integer angle with five decimals expecting seconds" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).AngleTest"/>
+  <testcase name="Color-colorFromHex testValidWhiteHex" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Color-colorFromHex"/>
+  <testcase name="Color-colorFromHex testValidBlackHex" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Color-colorFromHex"/>
+  <testcase name="Converts Color to CSS Compatible Color String should round to the same integer values" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Converts Color to CSS Compatible Color String"/>
+  <testcase name="Converts Color to CSS Compatible Color String should convert from CSS String to the matching byte value" time="0.252" classname="PhantomJS_2_1_1_(Linux_0_0_0).Converts Color to CSS Compatible Color String"/>
+  <testcase name="Converts Color to CSS Compatible Color String should convert from CSS back to the original value within css 8 bit precision" time="0.035" classname="PhantomJS_2_1_1_(Linux_0_0_0).Converts Color to CSS Compatible Color String"/>
+  <testcase name="Vec3Test Should have the correct three components" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec3Test"/>
+  <testcase name="Vec3Test Should have three zero components" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec3Test"/>
+  <testcase name="Vec3Test Should return the average of a vector" time="0.005" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec3Test"/>
+  <testcase name="Vec3Test Should return the average a specified array of points packed into a single array" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec3Test"/>
+  <testcase name="Vec3Test Test the colinearity of three arrays Vectors are colinear" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec3Test"/>
+  <testcase name="Vec3Test Test the colinearity of three arrays Vectors are not colinear" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec3Test"/>
+  <testcase name="Vec3Test Computes triangle normals" time="0.003" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec3Test"/>
+  <testcase name="Vec3Test Finds three non-colinear points in an array of coordinates Finds the three points" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec3Test"/>
+  <testcase name="Vec3Test Finds three non-colinear points in an array of coordinates Does not find three points" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec3Test"/>
+  <testcase name="Vec3Test Finds three non-colinear points in an array of coordinates Return null on empty coordinates" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec3Test"/>
+  <testcase name="Vec3Test Finds three independent vertices" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec3Test"/>
+  <testcase name="Vec3Test #computeBufferNormal Buffer normal with stride of 1" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec3Test"/>
+  <testcase name="Vec3Test #computeBufferNormal Buffer normal with stride of 3" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec3Test"/>
+  <testcase name="Vec3Test #Set components sets vector equal to different vector" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec3Test"/>
+  <testcase name="Vec3Test #Set components sets vector and verify by components" time="0.002" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec3Test"/>
+  <testcase name="Vec3Test Copies the component of a Vec3" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec3Test"/>
+  <testcase name="Vec3Test #Vectors quality Two equal vectors" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec3Test"/>
+  <testcase name="Vec3Test #Vectors quality Two unequal vectors" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec3Test"/>
+  <testcase name="Vec3Test Add a vector to the current one" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec3Test"/>
+  <testcase name="Vec3Test Subtract a vector from the current one" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec3Test"/>
+  <testcase name="Vec3Test Multiplies current vector by a scalar" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec3Test"/>
+  <testcase name="Vec3Test #Scalar division Division with integer output" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec3Test"/>
+  <testcase name="Vec3Test #Scalar division Divides with non integer output" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec3Test"/>
+  <testcase name="Vec3Test Multiplies current vector by 4x4 Matrix" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec3Test"/>
+  <testcase name="Vec3Test #Vector interpolation Interpolates with an integer weight" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec3Test"/>
+  <testcase name="Vec3Test #Vector interpolation Interpolates with a non integer weight" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec3Test"/>
+  <testcase name="Vec3Test Negates the components of the current vector" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec3Test"/>
+  <testcase name="Vec3Test Computes the scalar dot product of the current vector and a specified one" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec3Test"/>
+  <testcase name="Vec3Test Computes the cross product of this vector and a specified vector" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec3Test"/>
+  <testcase name="Vec3Test Computes the squared magnitude of this vector" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec3Test"/>
+  <testcase name="Vec3Test #Magnitude of a vector Computes the magnitude with full positive components" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec3Test"/>
+  <testcase name="Vec3Test #Magnitude of a vector Computes the magnitude with a negative components" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec3Test"/>
+  <testcase name="Vec3Test Normalize this vector to a unit vector" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec3Test"/>
+  <testcase name="Vec3Test #distanceToSquared Squared distance from a vector to another one" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec3Test"/>
+  <testcase name="Vec3Test #distanceToSquared Squared distance from a vector to itself" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec3Test"/>
+  <testcase name="Vec3Test Computes the distance from a vector to a specified vector" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec3Test"/>
+  <testcase name="Vec3Test Swap the components of the current vector with another one" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec3Test"/>
+  <testcase name="Vec3Test Returns a string representation of this vector" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec3Test"/>
+  <testcase name="Vec2Test Should have the correct two components" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec2Test"/>
+  <testcase name="Vec2Test #Set components sets vector equal to different vector" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec2Test"/>
+  <testcase name="Vec2Test #Set components sets vector and verify by components" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec2Test"/>
+  <testcase name="Vec2Test Copies the component of a Vec2" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec2Test"/>
+  <testcase name="Vec2Test #Vectors equality Two equal vectors" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec2Test"/>
+  <testcase name="Vec2Test #Vectors equality Two unequal vectors" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec2Test"/>
+  <testcase name="Vec2Test Should return the average of a vector" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec2Test"/>
+  <testcase name="Vec2Test Add a vector to the current one" time="0.002" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec2Test"/>
+  <testcase name="Vec2Test Subtract a vector from the current one" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec2Test"/>
+  <testcase name="Vec2Test Multiplies current vector by a scalar" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec2Test"/>
+  <testcase name="Vec2Test #Vector division Division by scalar with integer output" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec2Test"/>
+  <testcase name="Vec2Test #Vector division Division by scalar with non integer output" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec2Test"/>
+  <testcase name="Vec2Test #Vector interpolation Interpolates with an integer weight" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec2Test"/>
+  <testcase name="Vec2Test #Vector interpolation Interpolates with a non integer weight" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec2Test"/>
+  <testcase name="Vec2Test Negates the components of the current vector" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec2Test"/>
+  <testcase name="Vec2Test Computes the scalar dot product of the current vector and a specified one" time="0.002" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec2Test"/>
+  <testcase name="Vec2Test Computes the squared magnitude of this vector" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec2Test"/>
+  <testcase name="Vec2Test #Magnitude of a vector Computes the magnitude with full positive components" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec2Test"/>
+  <testcase name="Vec2Test #Magnitude of a vector Computes the magnitude with a negative component" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec2Test"/>
+  <testcase name="Vec2Test Normalize this vector to a unit vector" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec2Test"/>
+  <testcase name="Vec2Test Computes the squared distance from a vector to a specified vector" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec2Test"/>
+  <testcase name="Vec2Test Computes the distance from a vector to a specified vector" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec2Test"/>
+  <testcase name="Vec2Test Creates a Vec3 using this vector's X and Y components and a Z component of 0" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec2Test"/>
+  <testcase name="Vec2Test Swap the components of the current vector with another one" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec2Test"/>
+  <testcase name="Vec2Test Returns a string representation of this vector" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Vec2Test"/>
+  <testcase name="KmlAttributeTest should return value of existing attribute" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlAttributeTest"/>
+  <testcase name="KmlAttributeTest sets value to a nonexistent attribute" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlAttributeTest"/>
+  <testcase name="KmlAttributeTest updates value to existing attribute" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlAttributeTest"/>
+  <testcase name="KmlAttributeTest returns true if attribute exists" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlAttributeTest"/>
+  <testcase name="KmlAttributeTest returns false if attribute doesn't exist" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlAttributeTest"/>
+  <testcase name="XmlDocument testGettingDomOfValidXml" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).XmlDocument"/>
+  <testcase name="Line Tests Line Constructor Should construct a line correctly" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Line Tests"/>
+  <testcase name="Line Tests Line Constructor Incorrect line Should throw an exception on missing origin" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Line Tests"/>
+  <testcase name="Line Tests Line Constructor Incorrect line Should throw an exception on missing direction" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Line Tests"/>
+  <testcase name="Line Tests Line from segment Should construct a line from a segment" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Line Tests"/>
+  <testcase name="Line Tests Line from segment Incorrect line from segment Should throw an exception on missing point A" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Line Tests"/>
+  <testcase name="Line Tests Line from segment Incorrect line from segment Should throw an exception on missing point B" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Line Tests"/>
+  <testcase name="Line Tests Computes a Cartesian point a specified distance along this line Should construct a line from a segment" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Line Tests"/>
+  <testcase name="Line Tests Computes a Cartesian point a specified distance along this line Should throw an exception on missing result vector" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Line Tests"/>
+  <testcase name="Line Tests Indicates whether the components of two lines are equal Equal lines" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Line Tests"/>
+  <testcase name="Line Tests Indicates whether the components of two lines are equal Not equal lines" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Line Tests"/>
+  <testcase name="Line Tests Indicates whether the components of two lines are equal Null comparison" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Line Tests"/>
+  <testcase name="Line Tests Line cloning and copying Correctly copy lines" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Line Tests"/>
+  <testcase name="Line Tests Line cloning and copying Correctly clones lines" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Line Tests"/>
+  <testcase name="Plane Tests Should construct a Plane correctly" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Plane Tests"/>
+  <testcase name="Plane Tests Computes a plane that passes through the specified three points Computes the plane correctly" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Plane Tests"/>
+  <testcase name="Plane Tests Computes a plane that passes through the specified three points Undefined plane on colinear vector" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Plane Tests"/>
+  <testcase name="Plane Tests Computes a plane that passes through the specified three points Exceptions on missing Points Missing Point a" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Plane Tests"/>
+  <testcase name="Plane Tests Computes a plane that passes through the specified three points Exceptions on missing Points Missing Point b" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Plane Tests"/>
+  <testcase name="Plane Tests Computes a plane that passes through the specified three points Exceptions on missing Points Missing Point c" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Plane Tests"/>
+  <testcase name="Plane Tests Computes the dot product of this plane's normal vector with a specified vector Computes the product correctly" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Plane Tests"/>
+  <testcase name="Plane Tests Computes the dot product of this plane's normal vector with a specified vector Exception on missing vector" time="0.002" classname="PhantomJS_2_1_1_(Linux_0_0_0).Plane Tests"/>
+  <testcase name="Plane Tests Computes the distance between this plane and a point Computes the distance correctly" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Plane Tests"/>
+  <testcase name="Plane Tests Computes the distance between this plane and a point Exception on missing point" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Plane Tests"/>
+  <testcase name="Plane Tests Transforms this plane by a specified matrix Transforms the plane correctly" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Plane Tests"/>
+  <testcase name="Plane Tests Transforms this plane by a specified matrix Exception on missing matrix" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Plane Tests"/>
+  <testcase name="Plane Tests Normalizes the components of this plane Return normalized components" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Plane Tests"/>
+  <testcase name="Plane Tests Normalizes the components of this plane Return this without normalization on null magnitude" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Plane Tests"/>
+  <testcase name="Plane Tests Determines whether a specified line segment intersects this plane The line segment intersects the plane" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Plane Tests"/>
+  <testcase name="Plane Tests Determines whether a specified line segment intersects this plane The line segment does not intersects the plane" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Plane Tests"/>
+  <testcase name="Plane Tests Determines whether two points are on the same side of this plane Points on the negative side" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Plane Tests"/>
+  <testcase name="Plane Tests Determines whether two points are on the same side of this plane Points on the positive side" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Plane Tests"/>
+  <testcase name="Plane Tests Determines whether two points are on the same side of this plane Points on the opposite side" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Plane Tests"/>
+  <testcase name="Plane Tests Determines whether two points are on the same side of this plane Exceptions on missing points Missing point a" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Plane Tests"/>
+  <testcase name="Plane Tests Determines whether two points are on the same side of this plane Exceptions on missing points Missing point b" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Plane Tests"/>
+  <testcase name="Plane Tests Clips a line segment to this plane Clips correctly and set the projection of the segment onto the plane" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Plane Tests"/>
+  <testcase name="Plane Tests Clips a line segment to this plane Line is coincident with the plane" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Plane Tests"/>
+  <testcase name="Plane Tests Clips a line segment to this plane Points are equal" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Plane Tests"/>
+  <testcase name="Plane Tests Clips a line segment to this plane line is not coincident with the plane" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Plane Tests"/>
+  <testcase name="Plane Tests Clips a line segment to this plane Points on the opposite side" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Plane Tests"/>
+  <testcase name="Plane Tests Clips a line segment to this plane Exceptions on missing points Missing point a" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Plane Tests"/>
+  <testcase name="Plane Tests Clips a line segment to this plane Exceptions on missing points Missing point b" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Plane Tests"/>
+  <testcase name="WWMath test normalizeAngle360 test Normalize an angle to be between [0, 360)" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WWMath test"/>
+  <testcase name="Position Tests Should construct a Position correctly" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Position Tests"/>
+  <testcase name="Position Tests Should have three zero components" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Position Tests"/>
+  <testcase name="Position Tests Creates a position from angles specified in radians" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Position Tests"/>
+  <testcase name="Position Tests Copies this position to the latitude and longitude of a specified position Copies the position successfully" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Position Tests"/>
+  <testcase name="Position Tests Copies this position to the latitude and longitude of a specified position Should throw an exception on missing position input" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Position Tests"/>
+  <testcase name="Position Tests Checks if two positions are equal Equal positions" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Position Tests"/>
+  <testcase name="Position Tests Checks if two positions are equal Different positions" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Position Tests"/>
+  <testcase name="Position Tests Computes a position along a great circle path Compute with Great Circle" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Position Tests"/>
+  <testcase name="Position Tests Computes a position along a great circle path Equal positions" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Position Tests"/>
+  <testcase name="Position Tests Computes a position along a great circle path Exceptions Position A not provided" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Position Tests"/>
+  <testcase name="Position Tests Computes a position along a great circle path Exceptions Position B not provided" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Position Tests"/>
+  <testcase name="Position Tests Computes a position along a great circle path Exceptions Result storage not provided" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Position Tests"/>
+  <testcase name="Position Tests Computes a position along a rhumb path Compute with rhumb path" time="0.002" classname="PhantomJS_2_1_1_(Linux_0_0_0).Position Tests"/>
+  <testcase name="Position Tests Computes a position along a rhumb path Equal positions" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Position Tests"/>
+  <testcase name="Position Tests Computes a position along a rhumb path Exceptions Position A not provided" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Position Tests"/>
+  <testcase name="Position Tests Computes a position along a rhumb path Exceptions Position B not provided" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Position Tests"/>
+  <testcase name="Position Tests Computes a position along a rhumb path Exceptions Result storage not provided" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Position Tests"/>
+  <testcase name="Position Tests Computes a position along a linear path Compute with linear path" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Position Tests"/>
+  <testcase name="Position Tests Computes a position along a linear path Equal positions" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Position Tests"/>
+  <testcase name="Position Tests Computes a position along a linear path Exceptions Position A not provided" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Position Tests"/>
+  <testcase name="Position Tests Computes a position along a linear path Exceptions Position B not provided" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Position Tests"/>
+  <testcase name="Position Tests Computes a position along a linear path Exceptions Result storage not provided" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Position Tests"/>
+  <testcase name="Position Tests Returns a string representation of this position" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Position Tests"/>
+  <testcase name="Matrix3 Tests Should construct a 3x3 matrix correctly" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix3 Tests"/>
+  <testcase name="Matrix3 Tests Matrix prototype" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix3 Tests"/>
+  <testcase name="Matrix3 Tests Should create an identity Matrix" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix3 Tests"/>
+  <testcase name="Matrix3 Tests Sets this matrix to one that flips and shifts the y-axis" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix3 Tests"/>
+  <testcase name="Matrix3 Tests Multiplies this matrix by a specified matrix Multiplies the matrix" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix3 Tests"/>
+  <testcase name="Matrix3 Tests Multiplies this matrix by a specified matrix Missing multiplier matrix" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix3 Tests"/>
+  <testcase name="Matrix3 Tests Multiplies this matrix by a tile transformation" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix3 Tests"/>
+  <testcase name="Matrix3 Tests Stores this matrix's components in column-major order in a specified array Multiplies the matrix" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix3 Tests"/>
+  <testcase name="Matrix3 Tests Stores this matrix's components in column-major order in a specified array Missing result" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix3 Tests"/>
+  <testcase name="Matrix3 Tests Multiplies this matrix by a specified matrix Multiplies the matrix" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix3 Tests"/>
+  <testcase name="Matrix3 Tests Multiplies this matrix by a specified matrix Missing multiplier matrix" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix3 Tests"/>
+  <testcase name="ElevationImage tests No data value tests Correctly classifies no data pixels" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).ElevationImage tests"/>
+  <testcase name="ElevationImage tests No data value tests Correctly finds min/max elevations respecting NO_DATA values" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).ElevationImage tests"/>
+  <testcase name="SunPosition Test Compute the Sun's geographic location Computes the Sun's geographic location" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).SunPosition Test"/>
+  <testcase name="SunPosition Test Computes the Sun's celestial location Computes the Sun's celestial location" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).SunPosition Test"/>
+  <testcase name="SunPosition Test Convert celestial to geographic coordinates Convert celestial to geographic coordinates" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).SunPosition Test"/>
+  <testcase name="SunPosition Test Compute julian date Compute julian date" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).SunPosition Test"/>
+  <testcase name="spilt polygons split a square like polygon" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).spilt polygons"/>
+  <testcase name="spilt polygons split a spiral like polygon" time="0.009" classname="PhantomJS_2_1_1_(Linux_0_0_0).spilt polygons"/>
+  <testcase name="spilt polygons split a polygon over the globe ending in a concave polygon" time="0.019" classname="PhantomJS_2_1_1_(Linux_0_0_0).spilt polygons"/>
+  <testcase name="spilt polygons splits a polygon that contains the south pole and intersects the anti-meridian" time="0.003" classname="PhantomJS_2_1_1_(Linux_0_0_0).spilt polygons"/>
+  <testcase name="spilt polygons splits a polygon that contains the north pole and intersects the anti-meridian" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).spilt polygons"/>
+  <testcase name="spilt polygons split a polygon with a hole, the hole crosses the anti-meridian" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).spilt polygons"/>
+  <testcase name="spilt polygons split a polygon with a hole, the hole does not cross the anti-meridian" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).spilt polygons"/>
+  <testcase name="spilt polygons doesn't split a full sphere sector" time="0.004" classname="PhantomJS_2_1_1_(Linux_0_0_0).spilt polygons"/>
+  <testcase name="Frustum Tests Frustum constructor Should construct the frustum correctly" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Frustum Tests"/>
+  <testcase name="Frustum Tests Frustum constructor Incorrect frustum Should throw an exception on missing parameters" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Frustum Tests"/>
+  <testcase name="Frustum Tests Frustum constructor Incorrect frustum Should throw an exception on less than 6 arguments" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Frustum Tests"/>
+  <testcase name="Frustum Tests Should return all the properties defined as prototypes" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Frustum Tests"/>
+  <testcase name="Frustum Tests Creates a new frustum with each of its planes 1 meter from the center" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Frustum Tests"/>
+  <testcase name="Frustum Tests Extracts a frustum from a projection matrix Extracts the correct frustum properties" time="0.002" classname="PhantomJS_2_1_1_(Linux_0_0_0).Frustum Tests"/>
+  <testcase name="Frustum Tests Extracts a frustum from a projection matrix Missing matrix" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Frustum Tests"/>
+  <testcase name="Frustum Tests Tests the frustum methods with a predefined input Frustum Transforms this frustum by a specified matrix Frustum components transformed" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Frustum Tests"/>
+  <testcase name="Frustum Tests Tests the frustum methods with a predefined input Frustum Transforms this frustum by a specified matrix Missing matrix" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Frustum Tests"/>
+  <testcase name="Frustum Tests Tests the frustum methods with a predefined input Frustum Normalizes the plane vectors of the planes composing this frustum" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Frustum Tests"/>
+  <testcase name="Frustum Tests Tests the frustum methods with a predefined input Frustum Checks if a frustum contains a point The frustum contains the point" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Frustum Tests"/>
+  <testcase name="Frustum Tests Tests the frustum methods with a predefined input Frustum Checks if a frustum contains a point The frustum does not contain the point" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Frustum Tests"/>
+  <testcase name="Frustum Tests Tests the frustum methods with a predefined input Frustum Checks if a frustum contains a point Should throw an exception on missing point" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Frustum Tests"/>
+  <testcase name="Frustum Tests Tests the frustum methods with a predefined input Frustum Checks if a frustum intersects a segment The frustum intersects the segment" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Frustum Tests"/>
+  <testcase name="Frustum Tests Tests the frustum methods with a predefined input Frustum Checks if a frustum intersects a segment The frustum does not intersect the segment on two different points" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Frustum Tests"/>
+  <testcase name="Frustum Tests Tests the frustum methods with a predefined input Frustum Checks if a frustum intersects a segment The frustum does not intersect the segment because points are equal" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Frustum Tests"/>
+  <testcase name="Frustum Tests Tests the frustum methods with a predefined input Frustum Checks if a frustum intersects a segment Should throw an exception on missing point" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Frustum Tests"/>
+  <testcase name="TextRenderer tests Should throw an exception on missing constructor draw context" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).TextRenderer tests"/>
+  <testcase name="TextRenderer tests Should return null due to empty string input on RenderText" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).TextRenderer tests"/>
+  <testcase name="TextRenderer tests Should throw an exception on missing text input" time="0.002" classname="PhantomJS_2_1_1_(Linux_0_0_0).TextRenderer tests"/>
+  <testcase name="TextRenderer tests Should output '...' due to wrap height being less than textSize height" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).TextRenderer tests"/>
+  <testcase name="TextRenderer tests Should output 'Lorem ipsum...' due to wrap width being less than textSize width" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).TextRenderer tests"/>
+  <testcase name="TextRenderer tests Should output every word on testText in different lines" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).TextRenderer tests"/>
+  <testcase name="WWUtil #endsWith recognizes correctly that string ends with given token" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).WWUtil"/>
+  <testcase name="WWUtil #endsWith recognizes correctly that string minus position ends with given token" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WWUtil"/>
+  <testcase name="WWUtil #endsWith recognizes correctly that string doesnt end with given token" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WWUtil"/>
+  <testcase name="WWUtil #endsWith recognizes correctly that string minus position doesnt end with given token" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).WWUtil"/>
+  <testcase name="WWUtil #startsWith recognizes correctly that string starts with given token" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WWUtil"/>
+  <testcase name="WWUtil #startsWith recognizes correctly that string minus position starts with given token" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WWUtil"/>
+  <testcase name="WWUtil #startsWith recognizes correctly that string doesnt start with given token" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WWUtil"/>
+  <testcase name="WWUtil #startsWith recognizes correctly that string minus position doesnt start with given token" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WWUtil"/>
+  <testcase name="TreKeyValueCacheTest #retrieval retrieves the specific piece of data" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).TreKeyValueCacheTest"/>
+  <testcase name="TreKeyValueCacheTest #retrieval retrieves the data for whole level" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).TreKeyValueCacheTest"/>
+  <testcase name="TreKeyValueCacheTest #retrieval retrieves the unspecified amount of data" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).TreKeyValueCacheTest"/>
+  <testcase name="TreKeyValueCacheTest #removal retrieves null" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).TreKeyValueCacheTest"/>
+  <testcase name="GeoTiffReader RGB Parsing Should retrieve the expected rgb values from the center of the image" time="0.066" classname="PhantomJS_2_1_1_(Linux_0_0_0).GeoTiffReader RGB Parsing"/>
+  <testcase name="GeoTiffReader RGB Parsing Should retrieve the expected rgb values from the 25, 25 position of the image" time="0.023" classname="PhantomJS_2_1_1_(Linux_0_0_0).GeoTiffReader RGB Parsing"/>
+  <testcase name="GeoTiffReader Grayscale Parsing Should retrieve the expected elevation/single-band value from the center" time="0.006" classname="PhantomJS_2_1_1_(Linux_0_0_0).GeoTiffReader Grayscale Parsing"/>
+  <testcase name="GeoTiffReader Grayscale Parsing Should retrieve the expected elevation/single-band value from the 25, 25 position" time="0.007" classname="PhantomJS_2_1_1_(Linux_0_0_0).GeoTiffReader Grayscale Parsing"/>
+  <testcase name="ElevationModel tests Missing parameter tests Correctly rejects calls with missing parameters" time="0.002" classname="PhantomJS_2_1_1_(Linux_0_0_0).ElevationModel tests"/>
+  <testcase name="ElevationModel tests Elevation result tests Returns correct min and max elevations for a sector" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).ElevationModel tests"/>
+  <testcase name="ElevationModel tests Elevation result tests Returns correct min and max elevations for a sector when some coverages are disabled" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).ElevationModel tests"/>
+  <testcase name="ElevationModel tests Elevation result tests Returns correct elevation for a location" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).ElevationModel tests"/>
+  <testcase name="ElevationModel tests Elevation result tests Returns correct elevation for a location when some coverages are disabled" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).ElevationModel tests"/>
+  <testcase name="ElevationModel tests Elevation result tests Returns correct elevations for a grid" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).ElevationModel tests"/>
+  <testcase name="ElevationModel tests Elevation result tests Returns correct elevations for a grid when some coverages are disabled" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).ElevationModel tests"/>
+  <testcase name="ElevationModel tests Coverage list manipulation tests Maintains coverages in the correct order, respecting the sortCoverages flag" time="0.002" classname="PhantomJS_2_1_1_(Linux_0_0_0).ElevationModel tests"/>
+  <testcase name="ElevationModel tests Coverage list manipulation tests Rejects duplicate coverages" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).ElevationModel tests"/>
+  <testcase name="ElevationModel tests Coverage list manipulation tests Clears coverage list" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).ElevationModel tests"/>
+  <testcase name="ElevationModel tests Coverage list manipulation tests Detects coverage containment" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).ElevationModel tests"/>
+  <testcase name="ElevationModel tests Coverage list manipulation tests Removes coverages" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).ElevationModel tests"/>
+  <testcase name="ElevationModel tests Coverage list manipulation tests Clears coverage list" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).ElevationModel tests"/>
+  <testcase name="ElevationModel tests StateKey tests StateKey changes due to list manipulation" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).ElevationModel tests"/>
+  <testcase name="ElevationModel tests Timestamp calculation tests Calculates timestamp correctly" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).ElevationModel tests"/>
+  <testcase name="ElevationModel tests Timestamp calculation tests Returns correct timestamp after coverage removal" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).ElevationModel tests"/>
+  <testcase name="ElevationModel tests Min and max elevation calculation tests Calculates elevations correctly" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).ElevationModel tests"/>
+  <testcase name="ElevationModel tests Min and max elevation calculation tests Disregards elevations for disabled coverages" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).ElevationModel tests"/>
+  <testcase name="ElevationModel tests Min and max elevation calculation tests Returns correct elevations after coverage removal" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).ElevationModel tests"/>
+  <testcase name="WktTokens Point correctly parses 2D point" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WktTokens"/>
+  <testcase name="WktTokens Point correctly parses 3D point" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).WktTokens"/>
+  <testcase name="WktTokens Point correctly ignores the LRS for 2D point" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WktTokens"/>
+  <testcase name="WktTokens Point correctly ignores the LRS for 3D point" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).WktTokens"/>
+  <testcase name="WktTokens Polygon correctly parses 2D polygon" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).WktTokens"/>
+  <testcase name="WktTokens Polygon correctly parses 3D polygon with inner boundaries" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WktTokens"/>
+  <testcase name="WktTokens Polygon correctly ignores LRS for 2D polygon" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).WktTokens"/>
+  <testcase name="WktTokens Polygon correctly parses 3D polygon" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WktTokens"/>
+  <testcase name="WktTokens Polygon correctly ignores LRS for 3D polygon" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WktTokens"/>
+  <testcase name="WktTokens LineString correctly parses EMPTY linestring" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WktTokens"/>
+  <testcase name="WktTokens LineString correctly parses 2D line string" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WktTokens"/>
+  <testcase name="WktTokens LineString correctly ignores LRS for 2D line string" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).WktTokens"/>
+  <testcase name="WktTokens LineString correctly parses 3D line string" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WktTokens"/>
+  <testcase name="WktTokens LineString correctly ignores LRS for 3D line string" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WktTokens"/>
+  <testcase name="WktTokens Triangle correctly parses 2D triangle" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).WktTokens"/>
+  <testcase name="WktTokens Triangle correctly ignores LRS for 2D triangle" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WktTokens"/>
+  <testcase name="WktTokens Triangle correctly parses 3D triangle" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WktTokens"/>
+  <testcase name="WktTokens Triangle correctly ignores LRS for 3D triangle" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WktTokens"/>
+  <testcase name="WktTokens MultiPoint correctly parses 2D point" time="0.002" classname="PhantomJS_2_1_1_(Linux_0_0_0).WktTokens"/>
+  <testcase name="WktTokens MultiPoint correctly parses 3D point" time="0.002" classname="PhantomJS_2_1_1_(Linux_0_0_0).WktTokens"/>
+  <testcase name="WktTokens MultiPoint correctly ignores the LRS for 2D point" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WktTokens"/>
+  <testcase name="WktTokens MultiPoint correctly ignores the LRS for 3D point" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WktTokens"/>
+  <testcase name="WktTokens MultiLineString correctly parses 2D Multi Line String" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WktTokens"/>
+  <testcase name="WktTokens MultiLineString correctly parses 2D Multi Line String with LRS" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).WktTokens"/>
+  <testcase name="WktTokens MultiLineString correctly parses 3D Line String" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WktTokens"/>
+  <testcase name="WktTokens MultiLineString correctly parses 3D Line String with LRS" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).WktTokens"/>
+  <testcase name="WktTokens MultiPolygon correctly parses 2D Multi polygon" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).WktTokens"/>
+  <testcase name="WktTokens MultiPolygon correctly parses 3D Multi polygon with inner boundaries" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).WktTokens"/>
+  <testcase name="WktTokens MultiPolygon correctly parses 2D Multi polygon with LRS" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).WktTokens"/>
+  <testcase name="WktTokens MultiPolygon correctly parses 3D Multi Polygon" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).WktTokens"/>
+  <testcase name="WktTokens MultiPolygon correctly parses 3D Multi Polygon with LRS" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).WktTokens"/>
+  <testcase name="WktTokens GeometryCollection correctly parses geometry collection with multiple objects" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).WktTokens"/>
+  <testcase name="Constructor testing should throw an exception when nothing is provided as an argument" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Constructor testing"/>
+  <testcase name="WSC 1.0.0 Describe Coverage should match the coverage name testing:gebco" time="0.002" classname="PhantomJS_2_1_1_(Linux_0_0_0).WSC 1.0.0 Describe Coverage"/>
+  <testcase name="WSC 1.0.0 Describe Coverage should match the coverage label gebco" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WSC 1.0.0 Describe Coverage"/>
+  <testcase name="WSC 1.0.0 Describe Coverage should match the coverage description Generated from GeoTIFF" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).WSC 1.0.0 Describe Coverage"/>
+  <testcase name="WSC 1.0.0 Describe Coverage should have the keywords gebco, WCS, GeoTIFF" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WSC 1.0.0 Describe Coverage"/>
+  <testcase name="WSC 1.0.0 Describe Coverage should have a lonLatEnvelope srs of CRS84" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WSC 1.0.0 Describe Coverage"/>
+  <testcase name="WSC 1.0.0 Describe Coverage should have lonLatEnvelop positions spanning the globe" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).WSC 1.0.0 Describe Coverage"/>
+  <testcase name="WSC 1.0.0 Describe Coverage should show support for the EPSG:4326 CRS" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WSC 1.0.0 Describe Coverage"/>
+  <testcase name="WSC 1.0.0 Describe Coverage Supported Formats should have 12 supported formats" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WSC 1.0.0 Describe Coverage"/>
+  <testcase name="WSC 1.0.0 Describe Coverage Supported Formats should show a native format of GeoTIFF" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WSC 1.0.0 Describe Coverage"/>
+  <testcase name="WSC 1.0.0 Describe Coverage Supported Formats should have support for GeoPackage (tiles)" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).WSC 1.0.0 Describe Coverage"/>
+  <testcase name="WSC 1.0.0 Describe Coverage Supported Interpolations should have three supported interpolation methods" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WSC 1.0.0 Describe Coverage"/>
+  <testcase name="WSC 1.0.0 Describe Coverage Supported Interpolations should show a default nearest neighbor interpolation method" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WSC 1.0.0 Describe Coverage"/>
+  <testcase name="WSC 1.0.0 Describe Coverage Supported Interpolations should support bilinear interpolation" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).WSC 1.0.0 Describe Coverage"/>
+  <testcase name="WSC 1.0.0 Describe Coverage Spatial Domain Set Should have an envelope with an EPSG:4326 srs name" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WSC 1.0.0 Describe Coverage"/>
+  <testcase name="WSC 1.0.0 Describe Coverage Spatial Domain Set Should have an envelope which spans the entire globe" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).WSC 1.0.0 Describe Coverage"/>
+  <testcase name="WSC 1.0.0 Describe Coverage Spatial Domain Set should have the correct axis names of x and y" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WSC 1.0.0 Describe Coverage"/>
+  <testcase name="WSC 1.0.0 Describe Coverage Spatial Domain Set should have an origin of -179.99583333333334 89.99583333333334" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).WSC 1.0.0 Describe Coverage"/>
+  <testcase name="WSC 1.0.0 Describe Coverage Spatial Domain Set should have a low grid envelope of 0, 0" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).WSC 1.0.0 Describe Coverage"/>
+  <testcase name="WSC 1.0.0 Describe Coverage Spatial Domain Set should have a high grid envelope of 43199, 21599" time="0.006" classname="PhantomJS_2_1_1_(Linux_0_0_0).WSC 1.0.0 Describe Coverage"/>
+  <testcase name="WSC 1.0.0 Describe Coverage Spatial Domain Set should have offset vector values of 0.0 0.008333333333333333 for the first offset" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WSC 1.0.0 Describe Coverage"/>
+  <testcase name="WSC 1.0.0 Describe Coverage Spatial Domain Set should have offset vector values of -0.008333333333333333 0.0 for the second offset" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WSC 1.0.0 Describe Coverage"/>
+  <testcase name="WSC 1.0.0 Describe Coverage Range Set should have a range set name gebco" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).WSC 1.0.0 Describe Coverage"/>
+  <testcase name="WSC 1.0.0 Describe Coverage Range Set should have a range set label gebco" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WSC 1.0.0 Describe Coverage"/>
+  <testcase name="WSC 1.0.0 Describe Coverage Range Set should have a range set axis description name: Band" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WSC 1.0.0 Describe Coverage"/>
+  <testcase name="WSC 1.0.0 Describe Coverage Range Set should have a range set axis description label: Band" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WSC 1.0.0 Describe Coverage"/>
+  <testcase name="WSC 2.0.1 Describe Coverage should match the coverage id testing__gebco" time="0.002" classname="PhantomJS_2_1_1_(Linux_0_0_0).WSC 2.0.1 Describe Coverage"/>
+  <testcase name="WSC 2.0.1 Describe Coverage Domain Set should have the correct gml:id of grid00__testing__gebco" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WSC 2.0.1 Describe Coverage"/>
+  <testcase name="WSC 2.0.1 Describe Coverage Domain Set should have the correct axis labels of i and j" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).WSC 2.0.1 Describe Coverage"/>
+  <testcase name="WSC 2.0.1 Describe Coverage Domain Set should have an origin of 89.99583333333334 -179.99583333333334" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WSC 2.0.1 Describe Coverage"/>
+  <testcase name="WSC 2.0.1 Describe Coverage Domain Set should have a low grid envelope of 0, 0" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).WSC 2.0.1 Describe Coverage"/>
+  <testcase name="WSC 2.0.1 Describe Coverage Domain Set should have a high grid envelope of 43199, 21599" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WSC 2.0.1 Describe Coverage"/>
+  <testcase name="WSC 2.0.1 Describe Coverage Domain Set should have an offset vector srsName of 4326 for the first and second offsets" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WSC 2.0.1 Describe Coverage"/>
+  <testcase name="WSC 2.0.1 Describe Coverage Domain Set should have offset vector values of 0.0 0.008333333333333333 for the first offset" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WSC 2.0.1 Describe Coverage"/>
+  <testcase name="WSC 2.0.1 Describe Coverage Domain Set should have offset vector values of -0.008333333333333333 0.0 for the second offset" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WSC 2.0.1 Describe Coverage"/>
+  <testcase name="WSC 2.0.1 Describe Coverage BoundedBy should have a bounded by envelope srs name of http://www.opengis.net/def/crs/EPSG/0/4326" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).WSC 2.0.1 Describe Coverage"/>
+  <testcase name="WSC 2.0.1 Describe Coverage BoundedBy should have a bounded by envelope axis labels of Lat and Lon" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WSC 2.0.1 Describe Coverage"/>
+  <testcase name="WSC 2.0.1 Describe Coverage BoundedBy should have a bounded by envelope uom labels of Deg and Deg" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).WSC 2.0.1 Describe Coverage"/>
+  <testcase name="WSC 2.0.1 Describe Coverage BoundedBy should have a bounded by envelope srs dimension of 2" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).WSC 2.0.1 Describe Coverage"/>
+  <testcase name="WSC 2.0.1 Describe Coverage BoundedBy should have a bounded by envelope lower corner of -90.0 and -180.0" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WSC 2.0.1 Describe Coverage"/>
+  <testcase name="WSC 2.0.1 Describe Coverage BoundedBy should have a bounded by envelope upper corner of 90.0 and 180.0" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WSC 2.0.1 Describe Coverage"/>
+  <testcase name="WSC 2.0.1 Describe Coverage Service Parameters should have a subtype of RectifiedGridCoverage" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WSC 2.0.1 Describe Coverage"/>
+  <testcase name="WSC 2.0.1 Describe Coverage Service Parameters should have a native format of image/tiff" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WSC 2.0.1 Describe Coverage"/>
+  <testcase name="KmlLatLonBox test should have the North, South, East, West and Rotation properties" time="0.002" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlLatLonBox test"/>
+  <testcase name="KmlLatLonQuadTest should have the Coordinates property" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlLatLonQuadTest"/>
+  <testcase name="KmlLatLonAltBoxTest it should have the North, South, East, West, MinAltitude and MaxAltitude properties" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlLatLonAltBoxTest"/>
+  <testcase name="KmlOrientationTest should have the Heading, Tilt and Roll properties" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlOrientationTest"/>
+  <testcase name="KmlLodTest should have the MinLodPixels, MaxLodPixels,MinFadeExtent and MaxFadeExtent properties" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlLodTest"/>
+  <testcase name="KmlLocationTest should have the Longitude, Latitude and Altitude properties" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlLocationTest"/>
+  <testcase name="KmlImagePyramidTest should have the TileSize, MaxWidth, MaxHeight and GridOrigin properties" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlImagePyramidTest"/>
+  <testcase name="KmlViewVolumeTest should have the LeftFov, RightFov, BottomFov, TopFov and Near properties" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlViewVolumeTest"/>
+  <testcase name="KmlObjectTestCase testUndefinedNode should raise an exception" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlObjectTestCase"/>
+  <testcase name="KmlObjectTestCase testNullNode should raise an Argument Error exception" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlObjectTestCase"/>
+  <testcase name="KmlPointTest should have the longitude, latitude, altitude, Extrude, AltitudeMode and id properties" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlPointTest"/>
+  <testcase name="KmlMultiGeometryTest should include more than one shape" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlMultiGeometryTest"/>
+  <testcase name="ScaleTest should have the X, Y and Z properties" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).ScaleTest"/>
+  <testcase name="BallonStyle should have the BgColor, TextColor, Text and DisplayMode properties" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).BallonStyle"/>
+  <testcase name="KmlPolyStyle should have the Fill and Outline properties" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlPolyStyle"/>
+  <testcase name="KmlLineStyle should have the Width, OuterColor, OuterWidth, PhysicalWidth and LabelVisibility properties" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlLineStyle"/>
+  <testcase name="KmlLabelStyle should have the Scale property" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlLabelStyle"/>
+  <testcase name="KmlCameraTest should have the Longitude, Latitude, Altitude, Heading, Tilt, Roll and AltitudeMode properties" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlCameraTest"/>
+  <testcase name="KmlLookAtTest should have the Longitude, Latitude, Altitude, Heading, Tilt, Range and AltitudeMode properties" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlLookAtTest"/>
+  <testcase name="KmlAbstractViewTest should have the prototype property of KmlTimeSpan" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlAbstractViewTest"/>
+  <testcase name="KmlTimeSpanTest should have the begin and end properties" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlTimeSpanTest"/>
+  <testcase name="KmlTimeStamp should have the time property which specifies when exactly the event happen" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlTimeStamp"/>
+  <testcase name="KmlStyleMapTest should have the prototype properties of Pair" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlStyleMapTest"/>
+  <testcase name="KmlLinkTest should have the Href, RefreshMode,RefreshInterval,ViewRefreshMode,ViewRefreshTime, ViewBoundScale, ViewFormat,HttpQuery properties" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlLinkTest"/>
+  <testcase name="KmlIconTest should have the X, Y, W, H, Href, RefreshMode, RefreshInterval, ViewRefreshMode, ViewRefreshTime, ViewBoundScale,ViewFormat and ViewScale properties" time="0.002" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlIconTest"/>
+  <testcase name="KmlIconStyle should have the Color, ColorMode, Scale, Heading and Href properties" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlIconStyle"/>
+  <testcase name="ItemIconTest should have the State and Href properties" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).ItemIconTest"/>
+  <testcase name="KmlListStyleTest should have the ListItemType, BgColor and ItemIcon properties" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlListStyleTest"/>
+  <testcase name="KmlStyleTest should have the prototype property of KmlIconStyle, KmlLabelStyle, KmlLineStyle, KmlPolyStyle, KmlBalloonStyle KmlBalloonStyle and KmlListStyle" time="0.002" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlStyleTest"/>
+  <testcase name="KmlPairTest should have the Key, StyleUrl properties and the prototype property of KmlStyle" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlPairTest"/>
+  <testcase name="KmlRegionTest should have the prototype property of KmlLatLonAltBox and KmlLod" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlRegionTest"/>
+  <testcase name="KmlElementsFactoryTest should return single primitive" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlElementsFactoryTest"/>
+  <testcase name="KmlElementsFactoryTest should return single non primitive" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlElementsFactoryTest"/>
+  <testcase name="KmlElementsFactoryTest should return any type of element." time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlElementsFactoryTest"/>
+  <testcase name="KmlElementsFactoryTest should return all elements in level" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlElementsFactoryTest"/>
+  <testcase name="KmlElementsFactoryCachedTest should return all cached elements" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlElementsFactoryCachedTest"/>
+  <testcase name="KmlElementsFactoryCachedTest should return any cached element" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlElementsFactoryCachedTest"/>
+  <testcase name="KmlElementsFactoryCachedTest should return specific cached element" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlElementsFactoryCachedTest"/>
+  <testcase name="KmlElementsFactoryCachedTest should return correct cached primitive when the start is the same but longer." time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlElementsFactoryCachedTest"/>
+  <testcase name="NodeTransformersTest should correctly return the value of the node" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).NodeTransformersTest"/>
+  <testcase name="NodeTransformersTest should correctly retrieve the number from the node" time="0.005" classname="PhantomJS_2_1_1_(Linux_0_0_0).NodeTransformersTest"/>
+  <testcase name="NodeTransformersTest should correctly retrieve the boolean from the node" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).NodeTransformersTest"/>
+  <testcase name="NodeTransformersTest should correctly retrieve the associated element" time="0.003" classname="PhantomJS_2_1_1_(Linux_0_0_0).NodeTransformersTest"/>
+  <testcase name="NodeTransformersTest should correctly retrieve the value of the attribute" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).NodeTransformersTest"/>
+  <testcase name="NodeTransformersTest should retrieve the position" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).NodeTransformersTest"/>
+  <testcase name="NodeTransformersTest should retrieve LinearRing" time="0.002" classname="PhantomJS_2_1_1_(Linux_0_0_0).NodeTransformersTest"/>
+  <testcase name="Constructor testing should throw an exception when nothing is provided as an argument" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Constructor testing"/>
+  <testcase name="WCS 2.0.1 Capabilities Parsing should have a 2.0.1 version" time="0.004" classname="PhantomJS_2_1_1_(Linux_0_0_0).WCS 2.0.1 Capabilities Parsing"/>
+  <testcase name="WCS 2.0.1 Capabilities Parsing should have a update sequence of 5" time="0.004" classname="PhantomJS_2_1_1_(Linux_0_0_0).WCS 2.0.1 Capabilities Parsing"/>
+  <testcase name="WCS 2.0.1 Capabilities Parsing Service Identification should have scaling extension detailed in the profile" time="0.003" classname="PhantomJS_2_1_1_(Linux_0_0_0).WCS 2.0.1 Capabilities Parsing"/>
+  <testcase name="WCS 2.0.1 Capabilities Parsing Operations Metadata should have a GET GetCoverage link defined" time="0.002" classname="PhantomJS_2_1_1_(Linux_0_0_0).WCS 2.0.1 Capabilities Parsing"/>
+  <testcase name="WCS 2.0.1 Capabilities Parsing Service Metadata should have seven supported formats" time="0.003" classname="PhantomJS_2_1_1_(Linux_0_0_0).WCS 2.0.1 Capabilities Parsing"/>
+  <testcase name="WCS 2.0.1 Capabilities Parsing Service Metadata should suport image/tiff as the sixth format" time="0.002" classname="PhantomJS_2_1_1_(Linux_0_0_0).WCS 2.0.1 Capabilities Parsing"/>
+  <testcase name="WCS 2.0.1 Capabilities Parsing Service Metadata should include 5841 supported crs" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).WCS 2.0.1 Capabilities Parsing"/>
+  <testcase name="WCS 2.0.1 Capabilities Parsing Service Metadata should include three supported interpolation methods" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).WCS 2.0.1 Capabilities Parsing"/>
+  <testcase name="WCS 2.0.1 Capabilities Parsing Contents should provide a coverageId of test:pacificnw_usgs_ned_10m" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).WCS 2.0.1 Capabilities Parsing"/>
+  <testcase name="WCS 1.0.0 Capabilities Parsing should have a 1.0.0 version" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).WCS 1.0.0 Capabilities Parsing"/>
+  <testcase name="WCS 1.0.0 Capabilities Parsing should have a update sequence of 5" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WCS 1.0.0 Capabilities Parsing"/>
+  <testcase name="WCS 1.0.0 Capabilities Parsing Coverages should provide a name of test:pacificnw_usgs_ned_10m" time="0.002" classname="PhantomJS_2_1_1_(Linux_0_0_0).WCS 1.0.0 Capabilities Parsing"/>
+  <testcase name="WCS 1.0.0 Capabilities Parsing Coverages should have a bounding box with the correct order" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).WCS 1.0.0 Capabilities Parsing"/>
+  <testcase name="WCS 1.0.0 Capabilities Parsing Service should have the wcs name" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WCS 1.0.0 Capabilities Parsing"/>
+  <testcase name="WCS 1.0.0 Capabilities Parsing Service should have NONE fees" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).WCS 1.0.0 Capabilities Parsing"/>
+  <testcase name="WCS 1.0.0 Capabilities Parsing Service should have NONE accessConstraints" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WCS 1.0.0 Capabilities Parsing"/>
+  <testcase name="WCS 1.0.0 Capabilities Parsing Capability should have a get capabilities GET url of http://localhost:8080/geoserver/wcs?" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WCS 1.0.0 Capabilities Parsing"/>
+  <testcase name="WCS 1.0.0 Capabilities Parsing Capability should have a get capabilities POST url of http://localhost:8080/geoserver/wcs?" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WCS 1.0.0 Capabilities Parsing"/>
+  <testcase name="WCS 1.0.0 Capabilities Parsing Capability should have a describe coverage GET url of http://localhost:8080/geoserver/wcs?" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WCS 1.0.0 Capabilities Parsing"/>
+  <testcase name="WCS 1.0.0 Capabilities Parsing Capability should have a describe coverage POST url of http://localhost:8080/geoserver/wcs?" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).WCS 1.0.0 Capabilities Parsing"/>
+  <testcase name="WCS 1.0.0 Capabilities Parsing Capability should have a get coverage GET url of http://localhost:8080/geoserver/wcs?" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WCS 1.0.0 Capabilities Parsing"/>
+  <testcase name="WCS 1.0.0 Capabilities Parsing Capability should have a get coverage POST url of http://localhost:8080/geoserver/wcs?" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WCS 1.0.0 Capabilities Parsing"/>
+  <testcase name="Location Tests Should construct a location" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Should create a location initialized at (0,0)" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Should create a location from radians coordinates" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Copies this location to the latitude and longitude of a specified location Copies the location successfully" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Copies this location to the latitude and longitude of a specified location Should throw an exception on missing location input" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Sets latitude and longitude of a location" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Checks if two locations are equal Equal locations" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Checks if two locations are equal Different locations" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Computes a location along a path Compute with Great Circle" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Computes a location along a path Compute with Rhumb Line" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Computes a location along a path Compute with Linear" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Computes a location along a path Compute with Linear with fraction greater than 1" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Computes a location along a path Compute with Linear with not recognized path" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Computes a location along a path Store result in the provided variable" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Computes a location along a path Exceptions Location A not provided" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Computes a location along a path Exceptions Location B not provided" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Computes a location along a path Exceptions Result storage not provided" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Computes a location along a great circle path Compute with Great Circle" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Computes a location along a great circle path Equal locations" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Computes a location along a great circle path Exceptions Location A not provided" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Computes a location along a great circle path Exceptions Location B not provided" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Computes a location along a great circle path Exceptions Result storage not provided" time="0.002" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Computes a location along a rhumb path Compute with rhumb path" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Computes a location along a rhumb path Equal locations" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Computes a location along a rhumb path Exceptions Location A not provided" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Computes a location along a rhumb path Exceptions Location B not provided" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Computes a location along a rhumb path Exceptions Result storage not provided" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Computes a location along a linear path Compute with linear path" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Computes a location along a linear path Equal locations" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Computes a location along a linear path Exceptions Location A not provided" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Computes a location along a linear path Exceptions Location B not provided" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Computes a location along a linear path Exceptions Result storage not provided" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Computes the great circle angle pointing from the first to the second location Compute the angle" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Computes the great circle angle pointing from the first to the second location Compute the angle with equal locations" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Computes the great circle angle pointing from the first to the second location Exceptions Location A not provided" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Computes the great circle angle pointing from the first to the second location Exceptions Location B not provided" time="0.002" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Computes the rhumb angle pointing from the first to the second location Compute the angle" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Computes the rhumb angle pointing from the first to the second location Compute the angle with equal locations" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Computes the rhumb angle pointing from the first to the second location Exceptions Location A not provided" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Computes the rhumb angle pointing from the first to the second location Exceptions Location B not provided" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Computes the linear angle pointing from the first to the second location Compute the angle" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Computes the linear angle pointing from the first to the second location Compute the angle with equal locations" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Computes the linear angle pointing from the first to the second location Exceptions Location A not provided" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Computes the linear angle pointing from the first to the second location Exceptions Location B not provided" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Computes the rhumb angular distance between two locations Compute the distance" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Computes the rhumb angular distance between two locations Compute the distance with equal locations" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Computes the rhumb angular distance between two locations Exceptions Location A not provided" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Computes the rhumb angular distance between two locations Exceptions Location B not provided" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Computes the linear angular distance between two locations Compute the distance" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Computes the linear angular distance between two locations Compute the distance with equal locations" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Computes the linear angular distance between two locations Exceptions Location A not provided" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Computes the linear angular distance between two locations Exceptions Location B not provided" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Determines whether a list of locations crosses the dateline Locations cross the dateline" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Determines whether a list of locations crosses the dateline Locations do not cross the dateline" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Determines whether a list of locations crosses the dateline Locations not provided" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Great-Circle-Arc-Extreme-Latitude Locations Returns extreme locations" time="0.004" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Great-Circle-Arc-Extreme-Latitude Locations Locations not provided" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Great-Circle-Arc-Extreme-Latitude between two Locations Returns extreme locations" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Great-Circle-Arc-Extreme-Latitude between two Locations Locations not provided" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Great-Circle-Extreme-Locations Using Azimuth Returns extreme locations" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Great-Circle-Extreme-Locations Using Azimuth Locations not provided" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Determines where a line between two positions crosses a given meridian Meridian intersected" time="0.002" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Determines where a line between two positions crosses a given meridian Meridian not intersected" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="Location Tests Checks location Poles" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Location Tests"/>
+  <testcase name="BoundingBox Tests Should have the basic bounding box properties." time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).BoundingBox Tests"/>
+  <testcase name="BoundingBox Tests Set to points method Sets this bounding box such that it minimally encloses a specified collection of points" time="0.002" classname="PhantomJS_2_1_1_(Linux_0_0_0).BoundingBox Tests"/>
+  <testcase name="BoundingBox Tests Set to points method Should throw an exception because only two points provided" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).BoundingBox Tests"/>
+  <testcase name="BoundingBox Tests Set to points method Should throw an exception because of the wrong input" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).BoundingBox Tests"/>
+  <testcase name="BoundingBox Tests Set to points method Sets this bounding box such that it minimally encloses a specified collection of points" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).BoundingBox Tests"/>
+  <testcase name="BoundingBox Tests Set to points method Should throw an exception because of the wrong input" time="0.002" classname="PhantomJS_2_1_1_(Linux_0_0_0).BoundingBox Tests"/>
+  <testcase name="BoundingBox Tests Get corners method Creates a box, verifies correct corners retrieved" time="0.002" classname="PhantomJS_2_1_1_(Linux_0_0_0).BoundingBox Tests"/>
+  <testcase name="BoundingBox Tests Set to sector method Sets this bounding box to contain an entire globe" time="0.002" classname="PhantomJS_2_1_1_(Linux_0_0_0).BoundingBox Tests"/>
+  <testcase name="BoundingBox Tests Set to sector method Should throw an exception because no globe is provided" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).BoundingBox Tests"/>
+  <testcase name="BoundingBox Tests Set to sector method Should throw an exception because no sector is provided" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).BoundingBox Tests"/>
+  <testcase name="BoundingBox Tests Translates this bounding box by a specified translation vector Should return the translated bounding box" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).BoundingBox Tests"/>
+  <testcase name="BoundingBox Tests Translates this bounding box by a specified translation vector Should throw an error on null vector" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).BoundingBox Tests"/>
+  <testcase name="BoundingBox Tests Computes the approximate distance between this bounding box and a specified point Should return the correct distance" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).BoundingBox Tests"/>
+  <testcase name="BoundingBox Tests Computes the approximate distance between this bounding box and a specified point Should throw an error on null point" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).BoundingBox Tests"/>
+  <testcase name="BoundingBox Tests Computes the effective radius of this bounding box relative to a specified plane Should return the correct radius" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).BoundingBox Tests"/>
+  <testcase name="BoundingBox Tests Computes the effective radius of this bounding box relative to a specified plane Should throw an error on null plane" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).BoundingBox Tests"/>
+  <testcase name="BoundingBox Tests Indicates whether this bounding box intersects a specified frustum Indicates where the BoundingBox intersects a point" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).BoundingBox Tests"/>
+  <testcase name="BoundingBox Tests Indicates whether this bounding box intersects a specified frustum Indicates the point intersection with the BoundingBox" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).BoundingBox Tests"/>
+  <testcase name="BoundingBox Tests Indicates whether this bounding box intersects a specified frustum Should return a false intersection" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).BoundingBox Tests"/>
+  <testcase name="BoundingBox Tests Indicates whether this bounding box intersects a specified frustum Should return a positive intersection" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).BoundingBox Tests"/>
+  <testcase name="BoundingBox Tests Indicates whether this bounding box intersects a specified frustum Should throw an error on null frustum" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).BoundingBox Tests"/>
+  <testcase name="Matrix Tests Should construct a matrix correctly" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Matrix prototype" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Should create an identity Matrix" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Computes the principal axes of a point collection expressed in a typed array Computes axes correctly" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Computes the principal axes of a point collection expressed in a typed array Should throw an exception on missing points" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Computes the principal axes of a point collection expressed in a typed array Should throw an exception on missing axis 1" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Computes the principal axes of a point collection expressed in a typed array Should throw an exception on missing axis 2" time="0.002" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Computes the principal axes of a point collection expressed in a typed array Should throw an exception on missing axis 3" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Sets the components of a matrix to specified values" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Sets a matrix to the identity one" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Copies the components of a specified matrix to this matrix Copies successfully" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Copies the components of a specified matrix to this matrix Should throw an exception on missing target matrix" time="0.003" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Indicates whether the components of two matrices are equal Equal matrices" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Indicates whether the components of two matrices are equal Not equal matrices" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Stores this matrix's components in column-major order in a specified array Equal matrices" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Stores this matrix's components in column-major order in a specified array Should throw an exception on missing result" time="0.002" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Sets a matrix to a translation matrix with specified components" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Sets the translation components of a matrix to specified values" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Sets this matrix to a scale matrix with specified scale components" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Sets the scale components of a matrix to specified values" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Sets this matrix to the transpose of a specified matrix Set matrix to the transpose of the matrix" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Sets this matrix to the transpose of a specified matrix Should throw an exception on missing target" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Sets this matrix to the matrix product of two specified matrices Sets the matrix correctly" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Sets this matrix to the matrix product of two specified matrices Exceptions Missing matrix A" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Sets this matrix to the matrix product of two specified matrices Exceptions Missing matrix B" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Sets this matrix to the symmetric covariance Matrix computed from a point array Sets the matrix correctly" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Sets this matrix to the symmetric covariance Matrix computed from a point array Should throw an exception on missing points" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Multiplies this matrix by a translation matrix with specified translation values" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Multiplies this matrix by a rotation matrix about a specified axis and angle" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Multiplies this matrix by a scale matrix with specified values" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Sets this matrix to one that flips and shifts the y-axis" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Multiplies this matrix by a local coordinate system transform Multiplies the matrix correctly" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Multiplies this matrix by a local coordinate system transform Exceptions Missing origin" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Multiplies this matrix by a local coordinate system transform Exceptions Missing globe" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Multiplies this matrix by a texture transform for the specified texture Multiplies the matrix correctly" time="0.003" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Multiplies this matrix by a texture transform for the specified texture Should throw an exception on missing texture" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Returns the rotation angles of this matrix Multiplies the matrix correctly" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Returns the rotation angles of this matrix Should throw an exception on missing result" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Multiplies this matrix by a first person viewing matrix for the specified globe Multiplies the matrix correctly" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Multiplies this matrix by a first person viewing matrix for the specified globe Exceptions Missing eye position" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Multiplies this matrix by a first person viewing matrix for the specified globe Exceptions Missing globe" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Multiplies this matrix by a first person viewing matrix for the specified globe Multiplies this matrix by a look at viewing matrix for the specified globe Multiplies the matrix correctly" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Multiplies this matrix by a first person viewing matrix for the specified globe Multiplies this matrix by a look at viewing matrix for the specified globe Exceptions Missing look-at-position" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Multiplies this matrix by a first person viewing matrix for the specified globe Multiplies this matrix by a look at viewing matrix for the specified globe Exceptions Range less than 0" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Multiplies this matrix by a first person viewing matrix for the specified globe Multiplies this matrix by a look at viewing matrix for the specified globe Exceptions Missing globe" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Multiplies this matrix by a look at viewing matrix for the specified globe Multiplies the matrix correctly" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Multiplies this matrix by a look at viewing matrix for the specified globe Exceptions Missing look-at-position" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Multiplies this matrix by a look at viewing matrix for the specified globe Exceptions Range less than 0" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Multiplies this matrix by a look at viewing matrix for the specified globe Exceptions Missing globe" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Sets this matrix to a perspective projection matrix Sets the matrix correctly" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Sets this matrix to a perspective projection matrix Exceptions Negative viewport width" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Sets this matrix to a perspective projection matrix Exceptions Negative viewport height" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Sets this matrix to a perspective projection matrix Exceptions Near distance equal to far distance" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Sets this matrix to a perspective projection matrix Exceptions Near distance negative" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Sets this matrix to a perspective projection matrix Exceptions Far distance negative" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Sets this matrix to a screen projection matrix Sets the matrix correctly" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Sets this matrix to a screen projection matrix Exceptions Negative viewport width" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Sets this matrix to a screen projection matrix Exceptions Negative viewport height" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Returns this viewing matrix's eye point Returns the eye point correctly" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Returns this viewing matrix's eye point Missing result" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Returns this viewing matrix's forward vector Returns the vector correctly" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Returns this viewing matrix's forward vector Missing result" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Extracts this viewing matrix's parameters given a viewing origin and a globe Extracts the parameters correctly" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Extracts this viewing matrix's parameters given a viewing origin and a globe Exceptions Missing origin" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Extracts this viewing matrix's parameters given a viewing origin and a globe Exceptions Missing globe" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Extracts this viewing matrix's parameters given a viewing origin and a globe Exceptions Missing result" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Applies a specified depth offset to this projection matrix" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Multiplies this matrix by a specified matrix Multiplies the matrix" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Multiplies this matrix by a specified matrix Missing multiplier matrix" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Multiplies this matrix by a matrix specified by individual components" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Inverts the specified matrix and stores the result in this matrix Multiplies the matrix" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Inverts the specified matrix and stores the result in this matrix Should return null on singular matrix" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Inverts the specified matrix and stores the result in this matrix Missing multiplier matrix" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Inverts an orthonormal matrix and stores the result in this matrix Multiplies the matrix" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Inverts an orthonormal matrix and stores the result in this matrix Missing multiplier matrix" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Computes the eigenvectors of this matrix Extracts the parameters correctly" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Computes the eigenvectors of this matrix Exceptions Matrix not symmetric" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Computes the eigenvectors of this matrix Exceptions Missing result1" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Computes the eigenvectors of this matrix Exceptions Missing result2" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Computes the eigenvectors of this matrix Exceptions Missing result3" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Extracts and returns a new upper-3x3 matrix" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests unProject rejects null parameters Should throw an exception on missing input parameter" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests unProject rejects null parameters Should throw an exception on missing input parameter" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests unProject rejects null parameters Should throw an exception on missing output variable" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Correctly converts screen coordinates to model coordinates unProjects correctly" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Matrix Tests Matrix cloning Correctly clones matrices" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Matrix Tests"/>
+  <testcase name="Sector Tests Should construct a Sector" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Sector Tests"/>
+  <testcase name="Sector Tests Should create a sector initialized with all 0" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Sector Tests"/>
+  <testcase name="Sector Tests Should create a sector that encompasses the full range of latitude and longitude" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Sector Tests"/>
+  <testcase name="Sector Tests Copies this sector to the latitude and longitude of a specified sector Copies the sector successfully" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Sector Tests"/>
+  <testcase name="Sector Tests Copies this sector to the latitude and longitude of a specified sector Should throw an exception on missing sector input" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Sector Tests"/>
+  <testcase name="Sector Tests Indicates whether this sector has width or height Sector is not empty" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Sector Tests"/>
+  <testcase name="Sector Tests Indicates whether this sector has width or height Sector is empty" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Sector Tests"/>
+  <testcase name="Sector Tests Returns the angle between this sector's minimum and maximum latitudes, in degrees" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Sector Tests"/>
+  <testcase name="Sector Tests Returns the angle between this sector's minimum and maximum longitude, in degrees" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Sector Tests"/>
+  <testcase name="Sector Tests Returns the angle midway between this sector's minimum and maximum latitudes" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Sector Tests"/>
+  <testcase name="Sector Tests Returns the angle midway between this sector's minimum and maximum longitude" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Sector Tests"/>
+  <testcase name="Sector Tests Computes the location of the angular center of this sector Computes the location correctly" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Sector Tests"/>
+  <testcase name="Sector Tests Computes the location of the angular center of this sector Should throw an exception on missing result" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Sector Tests"/>
+  <testcase name="Sector Tests Returns this sector's minimum latitude in radians" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Sector Tests"/>
+  <testcase name="Sector Tests Returns this sector's maximum latitude in radians" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Sector Tests"/>
+  <testcase name="Sector Tests Returns this sector's minimum longitude in radians" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Sector Tests"/>
+  <testcase name="Sector Tests Returns this sector's minimum longitude in radians" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Sector Tests"/>
+  <testcase name="Sector Tests Modifies this sector to encompass an array of specified locations Set the bounding correctly" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Sector Tests"/>
+  <testcase name="Sector Tests Modifies this sector to encompass an array of specified locations Should throw an exception on missing locations array" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Sector Tests"/>
+  <testcase name="Sector Tests Computes bounding sectors from a list of locations that span the dateline Computes the sectors correctly" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Sector Tests"/>
+  <testcase name="Sector Tests Computes bounding sectors from a list of locations that span the dateline Should throw an exception on missing locations array" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Sector Tests"/>
+  <testcase name="Sector Tests Indicates whether this sector intersects a specified sector The first sector intersects the second one" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Sector Tests"/>
+  <testcase name="Sector Tests Indicates whether this sector intersects a specified sector The first sector does not intersect the second one" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Sector Tests"/>
+  <testcase name="Sector Tests Indicates whether this sector intersects strictly a specified sector The first sector intersects the second one" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Sector Tests"/>
+  <testcase name="Sector Tests Indicates whether this sector intersects strictly a specified sector The first sector does not intersects the second one" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Sector Tests"/>
+  <testcase name="Sector Tests Indicates whether this sector fully contains a specified sector The first sector contains the second one" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Sector Tests"/>
+  <testcase name="Sector Tests Indicates whether this sector fully contains a specified sector The first sector does not contains the second one" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Sector Tests"/>
+  <testcase name="Sector Tests Indicates whether this sector contains a specified geographic location The sector contains the location" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Sector Tests"/>
+  <testcase name="Sector Tests Indicates whether this sector contains a specified geographic location The sector does not contains the location" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Sector Tests"/>
+  <testcase name="Sector Tests Sets this sector to the intersection of itself and a specified sector Returns the intersection" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Sector Tests"/>
+  <testcase name="Sector Tests Sets this sector to the intersection of itself and a specified sector Should throw an exception on missing sector input" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Sector Tests"/>
+  <testcase name="Sector Tests Get corners method Returns corner points in the correct order" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Sector Tests"/>
+  <testcase name="Sector Tests Compute bounding points method Should throw an exception because no globe is provided" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Sector Tests"/>
+  <testcase name="Sector Tests Compute bounding points method Computes the correct bounding points for a given sector" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Sector Tests"/>
+  <testcase name="Sector Tests Compute bounding points method Computes the correct bounding points for a sector crossing the anti-Meridian" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Sector Tests"/>
+  <testcase name="Sector Tests Compute bounding points method Computes the correct bounding points for a sector spanning the globe horizontally" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Sector Tests"/>
+  <testcase name="Sector Tests Compute bounding points method Computes the correct bounding points for a sector in the southern hemisphere" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Sector Tests"/>
+  <testcase name="Sector Tests Compute bounding points method Computes the correct bounding points for a sector crossing the equator" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).Sector Tests"/>
+  <testcase name="Sector Tests Sets this sector to the union of itself and a specified sector Returns the intersection" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Sector Tests"/>
+  <testcase name="Sector Tests Sets this sector to the union of itself and a specified sector Should throw an exception on missing sector input" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).Sector Tests"/>
+  <testcase name="KmlFile testLoadingKmlFromRelativeRemote should be loaded from a remote document" time="0.014" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlFile"/>
+  <testcase name="KmlFeatureTest should have the Name, Visibility, Open, Address, PhoneNumber, Snippet, Description, StyleUrl properties and have the prototype properties of KmlCamera, KmlTimeSpan, KmlStyle and KmlRegion" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlFeatureTest"/>
+  <testcase name="KmlPlacemark should have the prototype properties of KmlPoint" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlPlacemark"/>
+  <testcase name="KmlOverlayTest should have the Color and DrawOrder properties and have the prototype properties of KmlIcon" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlOverlayTest"/>
+  <testcase name="KmlGroundOverlayTest should have the Altitude and  AltitudeMode properties and have the prototype properties of KmlLatLonBoxand KmlLatLonQuad" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlGroundOverlayTest"/>
+  <testcase name="KmlScreenOverlayTest should have the Rotation property" time="0.002" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlScreenOverlayTest"/>
+  <testcase name="KmlPhotoOverlayTest should have the Rotation, Shape properties and have the prototype properties of ViewVolume,ImagePyramid,KmlPoint" time="0.002" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlPhotoOverlayTest"/>
+  <testcase name="KmlDocumentTest should include shapes" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlDocumentTest"/>
+  <testcase name="KmlFolderTest it should contain documents" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlFolderTest"/>
+  <testcase name="KmlNetworkLinkTest should have the RefreshVisibility, FlyToView properties and have the prototype properties of KmlLink" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlNetworkLinkTest"/>
+  <testcase name="BasicWorldWindowController tests Calculate 2D drag Correctly interprets 2D drag gesture" time="0.003" classname="PhantomJS_2_1_1_(Linux_0_0_0).BasicWorldWindowController tests"/>
+  <testcase name="WorldWindow Tests Correctly computes a ray originating at the navigator's eyePoint and extending through the specified point in window coordinates Should throw an exception on missing input parameter" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).WorldWindow Tests"/>
+  <testcase name="WorldWindow Tests Correctly computes a ray originating at the navigator's eyePoint and extending through the specified point in window coordinates Calculates rayThroughScreenPoint correctly" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).WorldWindow Tests"/>
+  <testcase name="WorldWindow Tests Correctly computes the approximate size of a pixel at a specified distance from the navigator's eye point Calculates pixelSizeAtDistance correctly" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).WorldWindow Tests"/>
+  <testcase name="KmlLineString should have the length ans position properties" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlLineString"/>
+  <testcase name="KmlLineString should have the position, AltitudeMode, Extrude and Tessellate properties" time="0.002" classname="PhantomJS_2_1_1_(Linux_0_0_0).KmlLineString"/>
+  <testcase name="DrawContext Tests Calculates correct view transforms Computes the correct transform" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).DrawContext Tests"/>
+  <testcase name="DrawContext Tests Calculates correct projections Should throw an exception on missing input parameter" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).DrawContext Tests"/>
+  <testcase name="DrawContext Tests Calculates correct projections Should throw an exception on missing output variable" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).DrawContext Tests"/>
+  <testcase name="DrawContext Tests Calculates correct projections Computes the correct projection" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).DrawContext Tests"/>
+  <testcase name="DrawContext Tests Calculates correct projections Should throw an exception on missing input parameter" time="0.001" classname="PhantomJS_2_1_1_(Linux_0_0_0).DrawContext Tests"/>
+  <testcase name="DrawContext Tests Calculates correct projections Should throw an exception on missing output variable" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).DrawContext Tests"/>
+  <testcase name="DrawContext Tests Calculates correct projections Computes the correct projection with depth" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).DrawContext Tests"/>
+  <testcase name="DrawContext Tests Calculates correct WebGL screen coordinates Should throw an exception on missing input parameter" time="0.015" classname="PhantomJS_2_1_1_(Linux_0_0_0).DrawContext Tests"/>
+  <testcase name="DrawContext Tests Calculates correct WebGL screen coordinates Should throw an exception on missing output variable" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).DrawContext Tests"/>
+  <testcase name="DrawContext Tests Calculates correct WebGL screen coordinates Correctly converts a window coordinate to WebGL screen coordinate" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).DrawContext Tests"/>
+  <testcase name="DrawContext Tests Correctly computes the approximate size of a pixel at a specified distance from the navigator's eye point Calculates pixelSizeAtDistance correctly" time="0" classname="PhantomJS_2_1_1_(Linux_0_0_0).DrawContext Tests"/>
+  <system-out>
+    <![CDATA[PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Line.constructor: Origin is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Line.constructor: Direction is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Line.fromSegment: The specified point is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Line.fromSegment: The specified point is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Plane.fromPoints: The specified vector is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Plane.fromPoints: The specified vector is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Plane.fromPoints: The specified vector is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Plane.dot: The specified vector is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Plane.dot: The specified vector is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Plane.transformByMatrix: The specified matrix is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Plane.onSameSide: The specified point is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Plane.onSameSide: The specified point is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Plane.clip: The specified point is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Plane.clip: The specified point is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Position.copy: The specified position is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Position.interpolateGreatCircle: The specified position is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Position.interpolateGreatCircle: The specified position is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Position.interpolateGreatCircle: The specified result variable is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Position.interpolateRhumb: The specified position is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Position.interpolateRhumb: The specified position is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Position.interpolateRhumb: The specified result variable is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Position.interpolateLinear: The specified position is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Position.interpolateLinear: The specified position is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Position.interpolateLinear: The specified result variable is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix3.multiplyMatrix: The specified matrix is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix3.columnMajorComponents: The specified result variable is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix3.multiplyMatrix: The specified matrix is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Frustum.constructor: The specified plane is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Frustum.constructor: The specified plane is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Frustum.fromProjectionMatrix: The specified matrix is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Frustum.transformByMatrix: The specified matrix is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Frustum.containsPoint: The specified point is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Frustum.containsPoint: The specified point is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'TextRenderer.constructor: The specified draw context is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'ElevationModel.addCoverage: missingCoverage'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'ElevationModel.containsCoverage: missingCoverage'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'ElevationModel.removeCoverage: missingCoverage'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'ElevationModel.elevationsForGrid: The specified sector is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'ElevationModel.elevationsForGrid: The specified number of latitudinal or longitudinal positions is less than one.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'ElevationModel.elevationsForGrid: The specified number of latitudinal or longitudinal positions is less than one.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'ElevationModel.elevationsForGrid: missingTargetResolution'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'ElevationModel.elevationsForGrid: The specified result variable is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'ElevationModel.minAndMaxElevationsForSector: The specified sector is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) LOG: [{latitude: 50, longitude: -60}, {latitude: 55, longitude: -70}, {latitude: 50, longitude: -80}]
+,PhantomJS 2.1.1 (Linux 0.0.0) LOG: [{latitude: 30, longitude: -60}, {latitude: 35, longitude: -70}, {latitude: 30, longitude: -80}]
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'WcsCoverageDescriptions.constructor: missingDom'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'KmlObject.constructor: Passed node isn't defined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'KmlObject.constructor: Passed node isn't defined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'WcsCapabilities.constructor: missingDom'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Location.copy: The specified location is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Location.interpolateAlongPath: The specified location is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Location.interpolateAlongPath: The specified location is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Location.interpolateAlongPath: The specified result variable is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Location.interpolateGreatCircle: The specified location is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Location.interpolateGreatCircle: The specified location is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Location.interpolateGreatCircle: The specified result variable is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Location.interpolateRhumb: The specified location is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Location.interpolateRhumb: The specified location is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Location.interpolateRhumb: The specified result variable is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Location.interpolateLinear: The specified location is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Location.interpolateLinear: The specified location is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Location.interpolateLinear: The specified result variable is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Location.greatCircleAzimuth: The specified location is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Location.greatCircleAzimuth: The specified location is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Location.rhumbAzimuth: The specified location is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Location.rhumbAzimuth: The specified location is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Location.linearAzimuth: The specified location is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Location.linearAzimuth: The specified location is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Location.rhumbDistance: The specified location is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Location.rhumbDistance: The specified location is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Location.linearDistance: The specified location is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Location.linearDistance: The specified location is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Location.locationsCrossDateline: The specified location is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Location.greatCircleArcExtremeLocations: The specified location is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Location.greatCircleArcExtremeForTwoLocations: The specified location is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Location.greatCircleArcExtremeLocationsUsingAzimuth: The specified location is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'BoundingBox.setToPoints: The specified array is null, undefined or of insufficient length.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'BoundingBox.setToPoints: The specified array is null, undefined or of insufficient length.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'BoundingBox.setToVec3Points: The specified array is null, undefined or of insufficient length.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'BoundingBox.translate: The specified vector is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'BoundingBox.distanceTo: The specified point is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'BoundingBox.effectiveRadius: The specified plane is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'BoundingBox.intersectsFrustum: The specified frustum is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix.principalAxesFromPoints: The specified points array is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix.principalAxesFromPoints: An axis argument is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix.principalAxesFromPoints: An axis argument is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix.principalAxesFromPoints: An axis argument is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix.copy: The specified matrix is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix.columnMajorComponents: The specified result variable is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix.setToTransposeOfMatrix: The specified matrix is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix.setToMultiply: The specified matrix is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix.setToMultiply: The specified matrix is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix.setToCovarianceOfPoints: The specified array is null, undefined or of insufficient length.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix.multiplyByLocalCoordinateTransform: Origin vector is null or undefined'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix.multiplyByLocalCoordinateTransform: The specified globe is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix.multiplyByTextureTransform: The specified texture is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix.extractRotationAngles: The specified result variable is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix.multiplyByFirstPersonModelview: The specified position is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix.multiplyByFirstPersonModelview: The specified globe is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix.multiplyByLookAtModelview: The specified position is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix.multiplyByLookAtModelview: Range is less than zero'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix.multiplyByLookAtModelview: The specified globe is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix.multiplyByLookAtModelview: The specified position is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix.multiplyByLookAtModelview: Range is less than zero'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix.multiplyByLookAtModelview: The specified globe is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix.setToPerspectiveProjection: The specified width is zero or negative.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix.setToPerspectiveProjection: The specified height is zero or negative.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix.setToPerspectiveProjection: Near and far distance are the same.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix.setToPerspectiveProjection: Near or far distance is less than or equal to zero.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix.setToPerspectiveProjection: Near or far distance is less than or equal to zero.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix.setToScreenProjection: The specified width is zero or negative.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix.setToScreenProjection: The specified height is zero or negative.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix.extractEyePoint: The specified result variable is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix.extractForwardVector: The specified result variable is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix.extractViewingParameters: The specified origin is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix.extractViewingParameters: The specified globe is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix.extractViewingParameters: The specified result variable is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix.multiplyMatrix: The specified matrix is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix.invertMatrix: The specified matrix is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix.invertOrthonormalMatrix: The specified matrix is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix.eigensystemFromSymmetricMatrix: Matrix is not symmetric'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix.eigensystemFromSymmetricMatrix: The specified result variable is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix.eigensystemFromSymmetricMatrix: The specified result variable is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix.eigensystemFromSymmetricMatrix: The specified result variable is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix.unProject: The specified point is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix.unProject: The specified viewport is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Matrix.unProject: The specified result variable is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Sector.copy: The specified sector is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Sector.centroid: The specified result variable is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Sector.setToBoundingSector: The specified array is null, undefined or of insufficient length.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Sector.splitBoundingSectors: The specified array is null, undefined or of insufficient length.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'Sector.computeBoundingBox: The specified globe is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'DrawContext.project: The specified point is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'DrawContext.project: The specified result variable is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'DrawContext.projectWithDepth: The specified point is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'DrawContext.projectWithDepth: The specified result variable is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'DrawContext.convertPointToViewport: The specified point is null or undefined.'
+,PhantomJS 2.1.1 (Linux 0.0.0) ERROR: 'DrawContext.convertPointToViewport: The specified result variable is null or undefined.'
+
+]]>
+  </system-out>
+  <system-err/>
+</testsuite>
