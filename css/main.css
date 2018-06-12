@@ -1,8 +1,3 @@
-#dropdownMenuButton {
-  border-bottom: 3px dashed;
-  box-shadow: none;
-}
-
 .cesium-viewer {
   font-family: 'Do Hyeon', sans-serif;
 }
@@ -17,21 +12,28 @@
   font-family: 'Do Hyeon', sans-serif;
 }
 
+.dropdown-toggle {
+  border-radius: 0rem;
+  border-bottom: 3px dashed;
+}
+
+.dropdown-toggle:focus, .dropdown-toggle:active {
+  outline: none !important;
+  box-shadow: none !important;
+  border-bottom: 3px dashed !important;
+}
+
 .dropdown-menu {
   min-width: inherit;
   border-radius: 0rem;
   padding: 0rem;
 }
 
-.btn {
-  border-radius: 0rem;
-}
-
 a:active {
   background-color: orange !important;
 }
 
-html, body, #worldwind, #worldwind-canvas, #cesium {
+html, body, #world-wind-3d-city, #world-wind-3d-city-canvas, #cesium-deformation {
   width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden;
   font-family: 'Do Hyeon', sans-serif !important;
 }
@@ -43,7 +45,7 @@ html, body, #worldwind, #worldwind-canvas, #cesium {
   background-color: rgba(17, 17, 17, 1.0);
 }
 
-#cesium {
+#cesium-deformation {
   display: none;
 }
 
@@ -59,7 +61,7 @@ html, body, #worldwind, #worldwind-canvas, #cesium {
   vertical-align: middle;
 }
 
-#location-switcher {
+.location-switcher {
   position: absolute;
   top: 60px;
   right: 20px;
