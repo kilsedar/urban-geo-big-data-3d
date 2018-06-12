@@ -9,15 +9,15 @@ define(["js/TopNavigationBar",
   Cesium.BingMapsApi.defaultKey = "AkOk-CSt-kcpa4o6S8qZPtUEfPIRh__FfRTCl9nFu51qAMSJklQe8KiFFFNivIRD";
   Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJhZTc0MTUyMS03NTBhLTRlYzItYTk0Ni03MjYzNDlkNWU4ODIiLCJpZCI6MTM5MywiaWF0IjoxNTI4MjEzMTM3fQ.PjFkLZuljzHqMy1g8kSiRV4nmU6piS5UgfABBRaVAKM';
 
+  Cesium.Camera.DEFAULT_VIEW_FACTOR = 2;
+  Cesium.Camera.DEFAULT_VIEW_RECTANGLE = Cesium.Rectangle.fromDegrees(7.0, 35.0, 19.0, 47.0);
+
   var cesiumViewerDeformation = new Cesium.Viewer("cesium-deformation", {
     timeline: false,
     animation: false,
     imageryProvider: Cesium.createWorldImagery(),
     terrainProvider: Cesium.createWorldTerrain()
   });
-
-  var center = Cesium.Cartesian3.fromDegrees(12, 41);
-  cesiumViewerDeformation.camera.lookAt(center, new Cesium.Cartesian3(0.0, 0.0, 18000000.0));
 
   var worldWindViewer3dCity = new WorldWind.WorldWindow("world-wind-3d-city-canvas");
 
