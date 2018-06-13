@@ -19,6 +19,13 @@ define(["js/TopNavigationBar",
     terrainProvider: Cesium.createWorldTerrain()
   });
 
+  var cesiumViewer3dCity = new Cesium.Viewer("cesium-3d-city", {
+    timeline: false,
+    animation: false,
+    imageryProvider: Cesium.createWorldImagery(),
+    terrainProvider: Cesium.createWorldTerrain()
+  });
+
   var worldWindViewer3dCity = new WorldWind.WorldWindow("world-wind-3d-city-canvas");
 
   worldWindViewer3dCity.addLayer(new WorldWind.BMNGOneImageLayer());
@@ -37,12 +44,12 @@ define(["js/TopNavigationBar",
 
   var topSectionWorldWind3dCity = new TopSection("world-wind-3d-city", "world-wind-3d-city-section", "3D City <img id='top-section-nasa-image' src='images/nasa.png'>", "3D OpenStreetMap Buildings on NASA Web WorldWind", true);
   var topSectionDeformation = new TopSection("cesium-deformation", "deformation-section", "Deformation", "Deformation Maps on Cesium", false);
-  // var topSectionCesium3dCity = new TopSection("cesium-3d-city", "cesium-3d-city-section", "3D City <img id='top-section-cesium-image' src='images/cesium_white.png'>", "CityGML on Cesium", false);
+  var topSectionCesium3dCity = new TopSection("cesium-3d-city", "cesium-3d-city-section", "3D City <img id='top-section-cesium-image' src='images/cesium_white.png'>", "CityGML on Cesium", false);
   // var topSectionLulc = new TopSection("cesium-lulc", "lulc-section", "LULC", "Land Cover Land Use (LULC) on Cesium", false);
 
   topNavigationBar.addSection(topSectionWorldWind3dCity);
   topNavigationBar.addSection(topSectionDeformation);
-  // topNavigationBar.addSection(topSectionCesium3dCity);
+  topNavigationBar.addSection(topSectionCesium3dCity);
   // topNavigationBar.addSection(topSectionLulc);
 
   $(document).ready(function(){
@@ -124,6 +131,6 @@ define(["js/TopNavigationBar",
     parameters: {version: "1.3.0", transparent: "TRUE", format: "image/png", srs: "EPSG:4326"},
     rectangle: Cesium.Rectangle.fromDegrees(14.05072, 40.82471, 14.30817, 40.91915)
   });
-  var locationSwitcherDeformationNaples = new LocationSwitcherItem("cesium", cesiumViewerDeformation, "Naples", "deformation-naples", deformationNaples, [14.05072, 40.82471, 14.30817, 40.91915]);
+  var locationSwitcherDeformationNaples = new LocationSwitcherItem("cesium", cesiumViewerDeformation, "Naples", "deformation-naples", deformationNaples, [14.179445, 40.87193]);
   locationSwitcherDeformation.add(locationSwitcherDeformationNaples);
 });

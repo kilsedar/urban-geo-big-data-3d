@@ -28,13 +28,11 @@ define([], function () {
           $("#"+sections[i].id).css("background-color", backgroundColor);
         }
       }
-      if (globeId == "world-wind-3d-city") {
-        $("#world-wind-3d-city").css("display", "block");
-        $("#cesium-deformation").css("display", "none");
-      }
-      else {
-        $("#cesium-deformation").css("display", "block");
-        $("#world-wind-3d-city").css("display", "none");
+      for (var i = 0; i < sections.length; i++) {
+        if (sections[i].globeId != globeId)
+          $("#"+sections[i].globeId).css("display", "none");
+        else
+          $("#"+sections[i].globeId).css("display", "block");
       }
     });
   };

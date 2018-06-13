@@ -53,36 +53,16 @@ define([], function () {
         _self.items.push(locationSwitcherItem);
       }
       else {
+        // Following may not always work, as it assumes base layer will always be in index 0. 
+        for (var i=1; i<locationSwitcherItem.viewer.imageryLayers.length; i++) {
+          locationSwitcherItem.viewer.imageryLayers.remove(locationSwitcherItem.viewer.imageryLayers._layers[i], true);
+        }
         locationSwitcherItem.viewer.imageryLayers.addImageryProvider(locationSwitcherItem.layer);
-        /* var heading = Cesium.Math.toRadians(0.0);
+        var heading = Cesium.Math.toRadians(0.0);
         var pitch = Cesium.Math.toRadians(-50.0);
         var range = 40000.0;
-        locationSwitcherItem.viewer.camera.lookAt(Cesium.Cartesian3.fromDegrees(locationSwitcherItem.boundingBox[0], locationSwitcherItem.boundingBox[1]), new Cesium.HeadingPitchRange(heading, pitch, range)); */
-        /* locationSwitcherItem.viewer.camera.flyTo({
-          destination : Cesium.Cartesian3.fromDegrees(locationSwitcherItem.boundingBox[0], locationSwitcherItem.boundingBox[1], 60000.0),
-          orientation : {
-            heading : 0.0,
-            pitch : Cesium.Math.toRadians(-50.0),
-            roll : 0.0
-          }
-        }); */
-        /* locationSwitcherItem.viewer.camera.setView({
-          destination : Cesium.Rectangle.fromDegrees(locationSwitcherItem.boundingBox[0], locationSwitcherItem.boundingBox[1], locationSwitcherItem.boundingBox[2], locationSwitcherItem.boundingBox[3]),
-          orientation : {
-            heading : Cesium.Math.toRadians(0.0),
-            pitch : Cesium.Math.toRadians(-50.0),
-            roll : 0.0
-          }
-        }); */
-        /* _self.items.push(locationSwitcherItem);
-        setTimeout(function(){
-          locationSwitcherItem.viewer.imageryLayers.remove(_self.items[0].layer);
-          console.log(_self.items[0]);
-          console.log("removed");
-        }, 180000); */
-        /* for (var i=0; i<_self.items.length; i++) {
-          locationSwitcherItem.viewer.imageryLayers.remove(_self.items[i].layer);
-        } */
+        locationSwitcherItem.viewer.camera.lookAt(Cesium.Cartesian3.fromDegrees(locationSwitcherItem.boundingBox[0], locationSwitcherItem.boundingBox[1]), new Cesium.HeadingPitchRange(heading, pitch, range));
+        _self.items.push(locationSwitcherItem);
       }
     });
   }
