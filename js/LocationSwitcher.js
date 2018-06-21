@@ -1,9 +1,9 @@
 define([], function () {
   "use strict";
 
-  var LocationSwitcher = function (parentId, id) {
+  var LocationSwitcher = function (globeId, id) {
     this.items = [];
-    this.parentId = parentId;
+    this.globeId = globeId;
     this.id = id;
     this.dropdownMenuButtonId = this.id + "-menu-button";
     this.dropdownMenuId = this.id + "-menu";
@@ -25,7 +25,7 @@ define([], function () {
 
     locationSwitcher.append(button);
     locationSwitcher.append(dropdownMenu);
-    $("#"+this.parentId).append(locationSwitcher);
+    $("#"+this.globeId).append(locationSwitcher);
   };
 
   LocationSwitcher.prototype.add = function (locationSwitcherItem) {
@@ -38,7 +38,7 @@ define([], function () {
 
     var _self = this;
 
-    $("#"+this.parentId).on("click", "#"+locationSwitcherItem.id, function() {
+    $("#"+this.globeId).on("click", "#"+locationSwitcherItem.id, function() {
       $("#" + _self.dropdownMenuButtonId).html(locationSwitcherItem.text);
 
       if (locationSwitcherItem.viewerType == "world-wind") {
@@ -53,7 +53,7 @@ define([], function () {
         _self.items.push(locationSwitcherItem);
       }
       else {
-        // Following may not always work, as it assumes base layer will always be in index 0. 
+        // Following may not always work, as it assumes base layer will always be in index 0.
         for (var i=1; i<locationSwitcherItem.viewer.imageryLayers.length; i++) {
           locationSwitcherItem.viewer.imageryLayers.remove(locationSwitcherItem.viewer.imageryLayers._layers[i], true);
         }
@@ -61,7 +61,9 @@ define([], function () {
         var heading = Cesium.Math.toRadians(0.0);
         var pitch = Cesium.Math.toRadians(-50.0);
         var range = 40000.0;
-        locationSwitcherItem.viewer.camera.lookAt(Cesium.Cartesian3.fromDegrees(locationSwitcherItem.boundingBox[0], locationSwitcherItem.boundingBox[1]), new Cesium.HeadingPitchRange(heading, pitch, range));
+        locationSwitcherItem.viewer.camera.lookAt(Cesium.Cartesian3.fromDegrees((locationSwitcherItem.boundingBox[0]+locationSwitcherItem.boundingBox[2])/2, (locationSwitcherItem.boundingBox[1]+locationSwitcherItem.boundingBox[3])/2), new Cesium.HeadingPitchRange(heading, pitch, range));
+        locationSwitcherItem.viewer.camera.lookAtTransform(Cesium.Matrix4.IDENTITY);
+
         _self.items.push(locationSwitcherItem);
       }
     });

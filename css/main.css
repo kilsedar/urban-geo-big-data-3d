@@ -8,6 +8,10 @@
   bottom: 4px;
 }
 
+.cesium-infoBox {
+  display: none;
+}
+
 .tooltip-inner {
   font-family: 'Do Hyeon', sans-serif;
 }
@@ -17,7 +21,7 @@
   border-bottom: 3px dashed;
 }
 
-.dropdown-toggle:focus, .dropdown-toggle:active {
+.dropdown-toggle:focus, .dropdown-toggle:active, .dropdown-toggle:hover {
   outline: none !important;
   box-shadow: none !important;
   border-bottom: 3px dashed !important;
@@ -28,6 +32,10 @@
   border-radius: 0rem;
   padding: 0rem;
   transform: translate3d(-3px, 38px, 0px) !important;
+}
+
+.modebar .modebar-group:nth-child(5) a:nth-child(2), .modebar .modebar-group:nth-child(5) a:nth-child(3) {
+  display: none;
 }
 
 a:active {
@@ -60,6 +68,13 @@ html, body, #world-wind-3d-city, #world-wind-3d-city-canvas, #cesium-deformation
   height: 24px;
   width: auto;
   vertical-align: middle;
+}
+
+.js-plotly-plot {
+  position: absolute;
+  bottom: 30px;
+  left: 10px;
+  margin-left: 0% !important;
 }
 
 .location-switcher {

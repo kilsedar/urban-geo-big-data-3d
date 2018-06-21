@@ -1,20 +1,17 @@
 define([], function () {
   "use strict";
 
-  var TopNavigationBar = function (parentId, id, backgroundColor, highlightColor) {
-    this.sectionCount = 0;
+  var TopNavigationBar = function (backgroundColor, highlightColor) {
     this.sections = [];
-    this.parentId = parentId;
-    this.id = id;
     this.backgroundColor = backgroundColor;
     this.highlightColor = highlightColor;
 
     var topNavigationBar = $("<div></div>");
-    topNavigationBar.attr("id", this.id);
-    $("#"+this.parentId).append(topNavigationBar);
+    topNavigationBar.attr("id", "top-navigation-bar");
+    $("body").append(topNavigationBar);
 
     var sections = this.sections, backgroundColor = this.backgroundColor, highlightColor = this.highlightColor;
-    $("#"+parentId).on("click", ".section", function() {
+    $("body").on("click", ".section", function() {
       var clickedSectionId = $(this).attr("id");
       var globeId = "";
       for (var i=0; i<sections.length; i++) {
@@ -37,14 +34,9 @@ define([], function () {
     });
   };
 
-  TopNavigationBar.prototype.incrementSectionCount = function () {
-    this.sectionCount += 1;
-  }
-
   TopNavigationBar.prototype.addSection = function (topSection) {
-    this.incrementSectionCount();
     this.sections.push(topSection);
-    var sectionWidth = 100/this.sectionCount;
+    var sectionWidth = 100/this.sections.length;
 
     var section = $("<div></div>");
     section.attr("id", topSection.id);
@@ -58,10 +50,10 @@ define([], function () {
     section.attr("data-toggle", "tooltip");
     section.attr("title", topSection.tooltip);
 
-    $("#"+this.id).append(section);
+    $("#top-navigation-bar").append(section);
     $(".section").css("width", sectionWidth + "vw");
-    for (var i = 0; i < this.sectionCount; i++) {
-      $(".section").eq(i).css("left", 100-sectionWidth*(this.sectionCount-i) + "vw");
+    for (var i = 0; i < this.sections.length; i++) {
+      $(".section").eq(i).css("left", 100-sectionWidth*(this.sections.length-i) + "vw");
     }
   }
 
