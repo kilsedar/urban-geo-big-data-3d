@@ -57,10 +57,13 @@ define([], function () {
         for (var i=1; i<locationSwitcherItem.viewer.imageryLayers.length; i++) {
           locationSwitcherItem.viewer.imageryLayers.remove(locationSwitcherItem.viewer.imageryLayers._layers[i], true);
         }
-        locationSwitcherItem.viewer.imageryLayers.addImageryProvider(locationSwitcherItem.layer);
+        if (locationSwitcherItem.type == "imagery")
+          locationSwitcherItem.viewer.imageryLayers.addImageryProvider(locationSwitcherItem.layer);
+        else 
+          locationSwitcherItem.layer.add(locationSwitcherItem.viewer);
         var heading = Cesium.Math.toRadians(0.0);
         var pitch = Cesium.Math.toRadians(-50.0);
-        var range = 40000.0;
+        var range = locationSwitcherItem.range;
         locationSwitcherItem.viewer.camera.lookAt(Cesium.Cartesian3.fromDegrees((locationSwitcherItem.boundingBox[0]+locationSwitcherItem.boundingBox[2])/2, (locationSwitcherItem.boundingBox[1]+locationSwitcherItem.boundingBox[3])/2), new Cesium.HeadingPitchRange(heading, pitch, range));
         locationSwitcherItem.viewer.camera.lookAtTransform(Cesium.Matrix4.IDENTITY);
 

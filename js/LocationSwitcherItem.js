@@ -1,13 +1,15 @@
 define([], function () {
   "use strict";
 
-  var LocationSwitcherItem = function (viewerType, viewer, text, id, layer, boundingBox) {
+  var LocationSwitcherItem = function (viewerType, type, viewer, text, id, layer, boundingBox, range) {
     this.viewerType = viewerType;
+    this.type = type;
     this.viewer = viewer;
     this.text = text;
     this.id = id;
     this.layer = layer;
     this.boundingBox = boundingBox;
+    this.range = range;
   };
 
   return LocationSwitcherItem;
