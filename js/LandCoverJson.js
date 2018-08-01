@@ -11,7 +11,7 @@ define([], function () {
     if (comment == "")
       return "";
     else
-      return "<b>Comment:</b> " + comment + "<br>";
+      return "<br><b>Comment:</b> " + comment;
   }
 
   LandCoverJson.prototype.add = function (viewer) {
@@ -47,8 +47,8 @@ define([], function () {
             disableDepthTestDistance: Number.POSITIVE_INFINITY
           },
           name: "VGI Land Cover Point",
-          description: "<b>Class:</b> " + classWords + "<br>" + "<b>Date:</b> " + new Date(json.rows[i].doc.timestamp).toLocaleString() + "<br>" + "<b>Certainty of the classification:</b> " + json.rows[i].doc.certainty + "<br>" + _self.isCommentEmpty(json.rows[i].doc.comment)
-                       // + "<b>Photo of north:</b><br><img src='https://landcover.como.polimi.it/couchdb/lcc_points/" + json.rows[i].doc._id + "/photo-north-thumbnail.jpeg'>"
+          description: "<b>Class:</b> " + classWords + "<br><b>Date:</b> " + new Date(json.rows[i].doc.timestamp).toLocaleString() + "<br><b>Certainty of the classification:</b> " + json.rows[i].doc.certainty + _self.isCommentEmpty(json.rows[i].doc.comment)
+                       // + "<br><b>Photo of north:</b><br><img src='https://landcover.como.polimi.it/couchdb/lcc_points/" + json.rows[i].doc._id + "/photo-north-thumbnail.jpeg'>"
         });
       }
 

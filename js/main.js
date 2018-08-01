@@ -83,7 +83,7 @@ define(["js/TopNavigationBar",
   };
   var worldWind3dCitySourceMilan = {type: "GeoJSONFile", path: "data/milan.geojson"};
   var worldWind3dCityMilan = new OSMBuildingLayer(worldWind3dCityConfigurationMilan, worldWind3dCitySourceMilan);
-  var locationSwitcherWorldWind3dCityMilan = new LocationSwitcherItem("world-wind", "renderable", worldWindViewer3dCity, "Milan", "world-wind-3d-city-milan", worldWind3dCityMilan, [9.16479, 45.4553, 9.19573, 45.4802], undefined);
+  var locationSwitcherWorldWind3dCityMilan = new LocationSwitcherItem("world-wind", "renderable", worldWindViewer3dCity, "Milan", "world-wind-3d-city-milan", worldWind3dCityMilan, [9.15174, 45.4676, 9.21089, 45.4907], undefined);
   locationSwitcherWorldWind3dCity.add(locationSwitcherWorldWind3dCityMilan);
 
   var worldWind3dCityConfigurationPadua = {
@@ -96,7 +96,7 @@ define(["js/TopNavigationBar",
   };
   var worldWind3dCitySourcePadua = {type: "GeoJSONFile", path: "data/padua.geojson"};
   var worldWind3dCityPadua = new OSMBuildingLayer(worldWind3dCityConfigurationPadua, worldWind3dCitySourcePadua);
-  var locationSwitcherWorldWind3dCityPadua = new LocationSwitcherItem("world-wind", "renderable", worldWindViewer3dCity, "Padua", "world-wind-3d-city-padua", worldWind3dCityPadua, [11.8657, 45.3991, 11.888, 45.4179], undefined);
+  var locationSwitcherWorldWind3dCityPadua = new LocationSwitcherItem("world-wind", "renderable", worldWindViewer3dCity, "Padua", "world-wind-3d-city-padua", worldWind3dCityPadua, [11.8657, 45.3996, 11.8882, 45.418], undefined);
   locationSwitcherWorldWind3dCity.add(locationSwitcherWorldWind3dCityPadua);
 
   var worldWind3dCityConfigurationRome = {
@@ -109,7 +109,7 @@ define(["js/TopNavigationBar",
   };
   var worldWind3dCitySourceRome = {type: "GeoJSONFile", path: "data/rome.geojson"};
   var worldWind3dCityRome = new OSMBuildingLayer(worldWind3dCityConfigurationRome, worldWind3dCitySourceRome);
-  var locationSwitcherWorldWind3dCityRome = new LocationSwitcherItem("world-wind", "renderable", worldWindViewer3dCity, "Rome", "world-wind-3d-city-rome", worldWind3dCityRome, [12.4446, 41.8855, 12.4934, 41.9078], undefined);
+  var locationSwitcherWorldWind3dCityRome = new LocationSwitcherItem("world-wind", "renderable", worldWindViewer3dCity, "Rome", "world-wind-3d-city-rome", worldWind3dCityRome, [12.4431, 41.8855, 12.4934, 41.9086], undefined);
   locationSwitcherWorldWind3dCity.add(locationSwitcherWorldWind3dCityRome);
 
   var worldWind3dCityConfigurationNaples = {
@@ -122,7 +122,7 @@ define(["js/TopNavigationBar",
   };
   var worldWind3dCitySourceNaples = {type: "GeoJSONFile", path: "data/naples.geojson"};
   var worldWind3dCityNaples = new OSMBuildingLayer(worldWind3dCityConfigurationNaples, worldWind3dCitySourceNaples);
-  var locationSwitcherWorldWind3dCityNaples = new LocationSwitcherItem("world-wind", "renderable", worldWindViewer3dCity, "Naples", "world-wind-3d-city-naples", worldWind3dCityNaples, [14.231, 40.8263, 14.2645, 40.848], undefined);
+  var locationSwitcherWorldWind3dCityNaples = new LocationSwitcherItem("world-wind", "renderable", worldWindViewer3dCity, "Naples", "world-wind-3d-city-naples", worldWind3dCityNaples, [14.2296, 40.8263, 14.2648, 40.8526], undefined);
   locationSwitcherWorldWind3dCity.add(locationSwitcherWorldWind3dCityNaples);
 
   var worldWind3dCityConfigurationTurin = {
@@ -135,7 +135,7 @@ define(["js/TopNavigationBar",
   };
   var worldWind3dCitySourceTurin = {type: "GeoJSONFile", path: "data/turin.geojson"};
   var worldWind3dCityTurin = new OSMBuildingLayer(worldWind3dCityConfigurationTurin, worldWind3dCitySourceTurin);
-  var locationSwitcherWorldWind3dCityTurin = new LocationSwitcherItem("world-wind", "renderable", worldWindViewer3dCity, "Turin", "world-wind-3d-city-turin", worldWind3dCityTurin, [7.67087, 45.0589, 7.70694, 45.0846], undefined);
+  var locationSwitcherWorldWind3dCityTurin = new LocationSwitcherItem("world-wind", "renderable", worldWindViewer3dCity, "Turin", "world-wind-3d-city-turin", worldWind3dCityTurin, [7.63893, 45.0589, 7.69818, 45.0904], undefined);
   locationSwitcherWorldWind3dCity.add(locationSwitcherWorldWind3dCityTurin);
 
   var locationSwitcherDeformation = new LocationSwitcher("cesium-deformation", "location-switcher-deformation");
