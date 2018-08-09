@@ -83,7 +83,7 @@ define(["js/TopNavigationBar",
   };
   var worldWind3dCitySourceMilan = {type: "GeoJSONFile", path: "data/milan.geojson"};
   var worldWind3dCityMilan = new OSMBuildingLayer(worldWind3dCityConfigurationMilan, worldWind3dCitySourceMilan);
-  var locationSwitcherWorldWind3dCityMilan = new LocationSwitcherItem("world-wind", "renderable", worldWindViewer3dCity, "Milan", "world-wind-3d-city-milan", worldWind3dCityMilan, [9.15174, 45.4676, 9.21089, 45.4907], undefined);
+  var locationSwitcherWorldWind3dCityMilan = new LocationSwitcherItem("world-wind", "renderable", worldWindViewer3dCity, "Milan", "world-wind-3d-city-milan", worldWind3dCityMilan, [9.17356, 45.4561, 9.21089, 45.4907], undefined);
   locationSwitcherWorldWind3dCity.add(locationSwitcherWorldWind3dCityMilan);
 
   var worldWind3dCityConfigurationPadua = {

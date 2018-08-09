@@ -40,9 +40,9 @@ define([], function () {
         window["dataSource"+json.rows[i].doc.classification.charAt(0).toUpperCase()+json.rows[i].doc.classification.substr(1)].entities.add({
           position : Cesium.Cartesian3.fromDegrees(json.rows[i].doc.location[1], json.rows[i].doc.location[0]),
           billboard : {
-            image : "images/lc/"+json.rows[i].doc.classification+"WhiteBackground.png",
-            width : 24,
-            height : 24,
+            image : "images/lc/"+json.rows[i].doc.classification+"WhiteBackgroundPin.png",
+            width : 30,
+            height : 45,
             heightReference: Cesium.HeightReference.RELATIVE_TO_GROUND,
             disableDepthTestDistance: Number.POSITIVE_INFINITY
           },
