@@ -1,0 +1,215 @@
+{
+    "accessors": {
+        "accessor_10": {
+            "bufferView": "bufferView_14",
+            "byteOffset": 0,
+            "byteStride": 0,
+            "componentType": 5123,
+            "count": 216,
+            "type": "SCALAR"
+        },
+        "accessor_12": {
+            "bufferView": "bufferView_15",
+            "byteOffset": 0,
+            "byteStride": 12,
+            "componentType": 5126,
+            "count": 38,
+            "max": [
+                52.3287,
+                21.296,
+                19.986
+            ],
+            "min": [
+                -10.3172,
+                -9.8636,
+                0
+            ],
+            "type": "VEC3"
+        }
+    },
+    "animations": {},
+    "asset": {
+        "generator": "collada2gltf@d78daf1e7950e6c22fe6bec1d07965e8a302e90d",
+        "premultipliedAlpha": true,
+        "profile": {
+            "api": "WebGL",
+            "version": "1.0.2"
+        },
+        "version": 1
+    },
+    "bufferViews": {
+        "bufferView_14": {
+            "buffer": "RLB-3822da4d-96b1-4e16-9619-0b7cc63f31ad",
+            "byteLength": 432,
+            "byteOffset": 0,
+            "target": 34963
+        },
+        "bufferView_15": {
+            "buffer": "RLB-3822da4d-96b1-4e16-9619-0b7cc63f31ad",
+            "byteLength": 456,
+            "byteOffset": 432,
+            "target": 34962
+        }
+    },
+    "buffers": {
+        "RLB-3822da4d-96b1-4e16-9619-0b7cc63f31ad": {
+            "byteLength": 888,
+            "type": "arraybuffer",
+            "uri": "data:application/octet-stream;base64,AAABAAIAAAACAAMAAQAEAAUAAQAFAAIAAwACAAUAAwAFAAYABwAIAAMABwADAAYABwAGAAkACgAHAAkACwAMAAoACwAKAAkADQAOAAsADQALAAkADQAJAA8ADQAPABAAEQANABAAEQAQABIAEwARABIAEwASABQAEwAUABUAFgAXABgAGQAWABgAGgAbABkAHAAaABkAHQAcABkAHQAZABgAHQAYAB4AHwAdAB4AIAAfAB4AIQAgAB4AIgAhAB4AIwAiAB4AJAAjAB4AAAAlACQAAAAkAB4AAAAeAAQAAAAEAAEABAAeAAYABAAGAAUAHgAYAAkAHgAJAAYAGAAXAA8AGAAPAAkAFwAWABAAFwAQAA8AFgAZABIAFgASABAAGQAbABQAGQAUABIAGwAaABUAGwAVABQAGgAcABMAGgATABUAHAAdABEAHAARABMAHQAfAA0AHQANABEAHwAgAA4AHwAOAA0AIAAhAAsAIAALAA4AIQAiAAwAIQAMAAsAIgAjAAoAIgAKAAwAIwAkAAcAIwAHAAoAJAAlAAgAJAAIAAcAJQAAAAMAJQADAAgAJpNIQjVeqkFU459Bl1BRQk7RHcFU459Bl1BRQk7RHcEAAAAAJpNIQjVeqkEAAAAAZsgUQuM2HMFU459BZsgUQuM2HMEAAAAAFQwVQqs+28AAAAAAtaYTQmPuTkEAAAAAufwOQigPjkEAAAAArkeJQHnpzsAAAAAApHC6QaMBHEEAAAAAKVyPQEoMQr8AAAAADAJjQD/GvD8AAAAADAJ7QJZDO8AAAAAAyXZOQI/Cpb8AAAAAC0aJQKW9FcEAAAAAQBMlwfAWFMEAAAAArBzKP7Kdd8AAAAAAs3skwX2upj8AAAAAAAAAAAAAAAAAAAAA4QuTvgwCr0AAAAAAsp3fPyPbOT8AAAAAQBMlwfAWFMFU459BC0aJQKW9FcFU459BrkeJQHnpzsBU459Bs3skwX2upj9U459Bsp3fPyPbOT9U459B4QuTvgwCr0BU459BAAAAAAAAAABU459BrBzKP7Kdd8BU459BFQwVQqs+28BU459BDAJ7QJZDO8BU459ByXZOQI/Cpb9U459BKVyPQEoMQr9U459BDAJjQD/GvD9U459BpHC6QaMBHEFU459BtaYTQmPuTkFU459BufwOQigPjkFU459B"
+        }
+    },
+    "materials": {
+        "default_ai_0.2_sh_0.2_tr_0.0_dc_r_0.8_g_0.8_b_0.8_sc_r_1.0_g_1.0_b_1.0_ec_r_0.0_g_0.0_b_0_eff": {
+            "name": "default_ai_0.2_sh_0.2_tr_0.0_dc_r_0.8_g_0.8_b_0.8_sc_r_1.0_g_1.0_b_1.0_ec_r_0.0_g_0.0_b_0_mat",
+            "technique": "technique0",
+            "values": {
+                "diffuse": [
+                    0.8,
+                    0.8,
+                    0.8,
+                    1
+                ],
+                "emission": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            }
+        }
+    },
+    "meshes": {
+        "geometry0": {
+            "name": "geometry0",
+            "primitives": [
+                {
+                    "attributes": {
+                        "POSITION": "accessor_12"
+                    },
+                    "indices": "accessor_10",
+                    "material": "default_ai_0.2_sh_0.2_tr_0.0_dc_r_0.8_g_0.8_b_0.8_sc_r_1.0_g_1.0_b_1.0_ec_r_0.0_g_0.0_b_0_eff",
+                    "mode": 4
+                }
+            ]
+        }
+    },
+    "nodes": {
+        "node_0": {
+            "children": [],
+            "matrix": [
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1
+            ],
+            "meshes": [
+                "geometry0"
+            ],
+            "name": ""
+        },
+        "node_1": {
+            "children": [
+                "node_0"
+            ],
+            "matrix": [
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                -1,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1
+            ],
+            "name": "Y_UP_Transform"
+        }
+    },
+    "programs": {
+        "program_0": {
+            "attributes": [
+                "a_position"
+            ],
+            "fragmentShader": "RLB-3822da4d-96b1-4e16-9619-0b7cc63f31ad0FS",
+            "vertexShader": "RLB-3822da4d-96b1-4e16-9619-0b7cc63f31ad0VS"
+        }
+    },
+    "scene": "defaultScene",
+    "scenes": {
+        "defaultScene": {
+            "nodes": [
+                "node_1"
+            ]
+        }
+    },
+    "shaders": {
+        "RLB-3822da4d-96b1-4e16-9619-0b7cc63f31ad0FS": {
+            "type": 35632,
+            "uri": "data:text/plain;base64,cHJlY2lzaW9uIGhpZ2hwIGZsb2F0Owp1bmlmb3JtIHZlYzQgdV9kaWZmdXNlOwp1bmlmb3JtIHZlYzQgdV9lbWlzc2lvbjsKdm9pZCBtYWluKHZvaWQpIHsKdmVjNCBjb2xvciA9IHZlYzQoMC4sIDAuLCAwLiwgMC4pOwp2ZWM0IGRpZmZ1c2UgPSB2ZWM0KDAuLCAwLiwgMC4sIDEuKTsKdmVjNCBlbWlzc2lvbjsKZGlmZnVzZSA9IHVfZGlmZnVzZTsKZW1pc3Npb24gPSB1X2VtaXNzaW9uOwpjb2xvci54eXogKz0gZGlmZnVzZS54eXo7CmNvbG9yLnh5eiArPSBlbWlzc2lvbi54eXo7CmNvbG9yID0gdmVjNChjb2xvci5yZ2IgKiBkaWZmdXNlLmEsIGRpZmZ1c2UuYSk7CmdsX0ZyYWdDb2xvciA9IGNvbG9yOwp9Cg=="
+        },
+        "RLB-3822da4d-96b1-4e16-9619-0b7cc63f31ad0VS": {
+            "type": 35633,
+            "uri": "data:text/plain;base64,cHJlY2lzaW9uIGhpZ2hwIGZsb2F0OwphdHRyaWJ1dGUgdmVjMyBhX3Bvc2l0aW9uOwp1bmlmb3JtIG1hdDQgdV9tb2RlbFZpZXdNYXRyaXg7CnVuaWZvcm0gbWF0NCB1X3Byb2plY3Rpb25NYXRyaXg7CnZvaWQgbWFpbih2b2lkKSB7CnZlYzQgcG9zID0gdV9tb2RlbFZpZXdNYXRyaXggKiB2ZWM0KGFfcG9zaXRpb24sMS4wKTsKZ2xfUG9zaXRpb24gPSB1X3Byb2plY3Rpb25NYXRyaXggKiBwb3M7Cn0K"
+        }
+    },
+    "skins": {},
+    "techniques": {
+        "technique0": {
+            "attributes": {
+                "a_position": "position"
+            },
+            "parameters": {
+                "diffuse": {
+                    "type": 35666
+                },
+                "emission": {
+                    "type": 35666
+                },
+                "modelViewMatrix": {
+                    "semantic": "MODELVIEW",
+                    "type": 35676
+                },
+                "position": {
+                    "semantic": "POSITION",
+                    "type": 35665
+                },
+                "projectionMatrix": {
+                    "semantic": "PROJECTION",
+                    "type": 35676
+                }
+            },
+            "program": "program_0",
+            "states": {
+                "enable": [
+                    2929,
+                    2884
+                ]
+            },
+            "uniforms": {
+                "u_diffuse": "diffuse",
+                "u_emission": "emission",
+                "u_modelViewMatrix": "modelViewMatrix",
+                "u_projectionMatrix": "projectionMatrix"
+            }
+        }
+    }
+}

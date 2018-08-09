@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Written by 3D City Database Importer/Exporter, version "3.3.2-build1" -->
+<!-- Chair of Geoinformatics, Technical University of Munich, Germany, https://www.gis.bgu.tum.de/ -->
+<kml xmlns:xal="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0" xmlns="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:gx="http://www.google.com/kml/ext/2.2">
+  <Document>
+    <name>milan_Tile_3_3_collada</name>
+    <open>false</open>
+    <Placemark id="KMLGeomHi_RLB-9b7da6d8-7304-4e20-9152-7ede4992b396">
+      <name>RLB-9b7da6d8-7304-4e20-9152-7ede4992b396</name>
+      <styleUrl>#colladaStyle</styleUrl>
+      <MultiGeometry>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1928128,45.4649815,-0.75 9.1927456,45.4649715,-0.75 9.1927406,45.4649915,-0.75 9.1927984,45.4650032,-0.75 9.1928062,45.4650021,-0.75 9.1928128,45.4649815,-0.75</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1928128,45.4649815,25.886 9.1928062,45.4650021,25.886 9.1927984,45.4650032,25.886 9.1927406,45.4649915,25.886 9.1927456,45.4649715,25.886 9.1928128,45.4649815,25.886</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1928148,45.4649749,25.136 9.1927476,45.4649649,25.136 9.1927476,45.4649649,0.0 9.1928148,45.4649749,0.0 9.1928148,45.4649749,25.136</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1927362,45.4649703,25.136 9.1927311,45.4649903,25.136 9.1927311,45.4649903,0.0 9.1927362,45.4649703,0.0 9.1927362,45.4649703,25.136</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1927379,45.4649979,25.136 9.1927957,45.4650097,25.136 9.1927957,45.4650097,0.0 9.1927379,45.4649979,0.0 9.1927379,45.4649979,25.136</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1928003,45.4650099,25.136 9.1928081,45.4650088,25.136 9.1928081,45.4650088,0.0 9.1928003,45.4650099,0.0 9.1928003,45.4650099,25.136</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1928156,45.4650036,25.136 9.1928221,45.464983,25.136 9.1928221,45.464983,0.0 9.1928156,45.4650036,0.0 9.1928156,45.4650036,25.136</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+      </MultiGeometry>
+    </Placemark>
+    <Placemark id="KMLGeomHi_RLB-a2beeea9-fcbe-4eb8-99d3-2511054736c4">
+      <name>RLB-a2beeea9-fcbe-4eb8-99d3-2511054736c4</name>
+      <styleUrl>#colladaStyle</styleUrl>
+      <MultiGeometry>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1914037,45.4653215,-0.75 9.1913793,45.465324,-0.75 9.1913656,45.4654051,-0.75 9.1913731,45.4654085,-0.75 9.1913919,45.4654099,-0.75 9.1914037,45.4653215,-0.75</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1914037,45.4653215,17.325 9.1913919,45.4654099,17.325 9.1913731,45.4654085,17.325 9.1913656,45.4654051,17.325 9.1913793,45.465324,17.325 9.1914037,45.4653215,17.325</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1914024,45.4653148,16.575 9.191378,45.4653173,16.575 9.191378,45.4653173,0.0 9.1914024,45.4653148,0.0 9.1914024,45.4653148,16.575</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1913698,45.4653232,16.575 9.1913561,45.4654043,16.575 9.1913561,45.4654043,0.0 9.1913698,45.4653232,0.0 9.1913698,45.4653232,16.575</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1913604,45.4654107,16.575 9.1913679,45.4654142,16.575 9.1913679,45.4654142,0.0 9.1913604,45.4654107,0.0 9.1913604,45.4654107,16.575</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1913722,45.4654153,16.575 9.1913909,45.4654166,16.575 9.1913909,45.4654166,0.0 9.1913722,45.4654153,0.0 9.1913722,45.4654153,16.575</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1914014,45.4654105,16.575 9.1914133,45.4653221,16.575 9.1914133,45.4653221,0.0 9.1914014,45.4654105,0.0 9.1914014,45.4654105,16.575</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+      </MultiGeometry>
+    </Placemark>
+    <Placemark id="COLLADA_RLB-9b7da6d8-7304-4e20-9152-7ede4992b396">
+      <name>RLB-9b7da6d8-7304-4e20-9152-7ede4992b396</name>
+      <Model>
+        <altitudeMode>clampToGround</altitudeMode>
+        <Location>
+          <longitude>9.1928128</longitude>
+          <latitude>45.4649815</latitude>
+          <altitude>0.0</altitude>
+        </Location>
+        <Orientation>
+          <heading>0.1416754</heading>
+        </Orientation>
+        <Link>
+          <href>28/RLB-9b7da6d8-7304-4e20-9152-7ede4992b396.dae</href>
+        </Link>
+      </Model>
+    </Placemark>
+    <Placemark id="COLLADA_RLB-a2beeea9-fcbe-4eb8-99d3-2511054736c4">
+      <name>RLB-a2beeea9-fcbe-4eb8-99d3-2511054736c4</name>
+      <Model>
+        <altitudeMode>clampToGround</altitudeMode>
+        <Location>
+          <longitude>9.1913919</longitude>
+          <latitude>45.4654099</latitude>
+          <altitude>0.0</altitude>
+        </Location>
+        <Orientation>
+          <heading>0.1449975</heading>
+        </Orientation>
+        <Link>
+          <href>15/RLB-a2beeea9-fcbe-4eb8-99d3-2511054736c4.dae</href>
+        </Link>
+      </Model>
+    </Placemark>
+    <Placemark id="KMLGeomHi_RLB-6e441a49-8ab1-4f15-944e-e0216296d9db">
+      <name>RLB-6e441a49-8ab1-4f15-944e-e0216296d9db</name>
+      <styleUrl>#colladaStyle</styleUrl>
+      <MultiGeometry>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1922795,45.4652189,-0.75 9.1923344,45.4651468,-0.75 9.1923869,45.4651672,-0.75 9.192445,45.4650901,-0.75 9.1924149,45.4650801,-0.75 9.1925109,45.4649457,-0.75 9.1924929,45.4649395,-0.75 9.1924392,45.4650106,-0.75 9.1923482,45.4649758,-0.75 9.1921668,45.465217,-0.75 9.1922555,45.4652509,-0.75 9.1922795,45.4652189,-0.75</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1922795,45.4652189,29.999 9.1922555,45.4652509,29.999 9.1921668,45.465217,29.999 9.1923482,45.4649758,29.999 9.1924392,45.4650106,29.999 9.1924929,45.4649395,29.999 9.1925109,45.4649457,29.999 9.1924149,45.4650801,29.999 9.192445,45.4650901,29.999 9.1923869,45.4651672,29.999 9.1923344,45.4651468,29.999 9.1922795,45.4652189,29.999</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.192288,45.4652221,29.249 9.1923429,45.46515,29.249 9.1923429,45.46515,0.0 9.192288,45.4652221,0.0 9.192288,45.4652221,29.249</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1923298,45.4651527,29.249 9.1923823,45.4651731,29.249 9.1923823,45.4651731,0.0 9.1923298,45.4651527,0.0 9.1923298,45.4651527,29.249</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1923954,45.4651704,29.249 9.1924534,45.4650933,29.249 9.1924534,45.4650933,0.0 9.1923954,45.4651704,0.0 9.1923954,45.4651704,29.249</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1924491,45.465084,29.249 9.192419,45.465074,29.249 9.192419,45.465074,0.0 9.1924491,45.465084,0.0 9.1924491,45.465084,29.249</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1924235,45.4650832,29.249 9.1925194,45.4649488,29.249 9.1925194,45.4649488,0.0 9.1924235,45.4650832,0.0 9.1924235,45.4650832,29.249</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1925151,45.4649397,29.249 9.1924971,45.4649335,29.249 9.1924971,45.4649335,0.0 9.1925151,45.4649397,0.0 9.1925151,45.4649397,29.249</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1924844,45.4649364,29.249 9.1924307,45.4650074,29.249 9.1924307,45.4650074,0.0 9.1924844,45.4649364,0.0 9.1924844,45.4649364,29.249</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1924437,45.4650047,29.249 9.1923528,45.4649699,29.249 9.1923528,45.4649699,0.0 9.1924437,45.4650047,0.0 9.1924437,45.4650047,29.249</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1923398,45.4649727,29.249 9.1921583,45.4652138,29.249 9.1921583,45.4652138,0.0 9.1923398,45.4649727,0.0 9.1923398,45.4649727,29.249</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1921622,45.4652229,29.249 9.1922509,45.4652568,29.249 9.1922509,45.4652568,0.0 9.1921622,45.4652229,0.0 9.1921622,45.4652229,29.249</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1922639,45.465254,29.249 9.192288,45.4652221,29.249 9.192288,45.4652221,0.0 9.1922639,45.465254,0.0 9.1922639,45.465254,29.249</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+      </MultiGeometry>
+    </Placemark>
+    <Placemark id="COLLADA_RLB-6e441a49-8ab1-4f15-944e-e0216296d9db">
+      <name>RLB-6e441a49-8ab1-4f15-944e-e0216296d9db</name>
+      <Model>
+        <altitudeMode>clampToGround</altitudeMode>
+        <Location>
+          <longitude>9.1922795</longitude>
+          <latitude>45.4652189</latitude>
+          <altitude>0.0</altitude>
+        </Location>
+        <Orientation>
+          <heading>0.1320683</heading>
+        </Orientation>
+        <Link>
+          <href>51/RLB-6e441a49-8ab1-4f15-944e-e0216296d9db.dae</href>
+        </Link>
+      </Model>
+    </Placemark>
+    <Placemark id="KMLGeomHi_RLB-9caad3d3-7058-471b-bf96-d187f9f561be">
+      <name>RLB-9caad3d3-7058-471b-bf96-d187f9f561be</name>
+      <styleUrl>#colladaStyle</styleUrl>
+      <MultiGeometry>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.191914,45.4652418,-0.75 9.1918893,45.465241,-0.75 9.1918897,45.4652188,-0.75 9.1919409,45.4651499,-0.75 9.1919736,45.4651612,-0.75 9.1920282,45.4650873,-0.75 9.1920147,45.4650823,-0.75 9.1920376,45.4650511,-0.75 9.1920088,45.4650404,-0.75 9.192018,45.4650174,-0.75 9.1919754,45.4650115,-0.75 9.1916813,45.4650148,-0.75 9.1916813,45.4650755,-0.75 9.191663,45.4650756,-0.75 9.1916631,45.4651135,-0.75 9.1917242,45.4651138,-0.75 9.191725,45.4652437,-0.75 9.1916412,45.4652443,-0.75 9.1916411,45.4652257,-0.75 9.1916138,45.4652257,-0.75 9.1916163,45.4652706,-0.75 9.1916435,45.4652766,-0.75 9.1916446,45.4652874,-0.75 9.1917464,45.4653096,-0.75 9.1917338,45.4653333,-0.75 9.1918248,45.4653623,-0.75 9.191914,45.4652418,-0.75</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.191914,45.4652418,38.118 9.1918248,45.4653623,38.118 9.1917338,45.4653333,38.118 9.1917464,45.4653096,38.118 9.1916446,45.4652874,38.118 9.1916435,45.4652766,38.118 9.1916163,45.4652706,38.118 9.1916138,45.4652257,38.118 9.1916411,45.4652257,38.118 9.1916412,45.4652443,38.118 9.191725,45.4652437,38.118 9.1917242,45.4651138,38.118 9.1916631,45.4651135,38.118 9.191663,45.4650756,38.118 9.1916813,45.4650755,38.118 9.1916813,45.4650148,38.118 9.1919754,45.4650115,38.118 9.192018,45.4650174,38.118 9.1920088,45.4650404,38.118 9.1920376,45.4650511,38.118 9.1920147,45.4650823,38.118 9.1920282,45.4650873,38.118 9.1919736,45.4651612,38.118 9.1919409,45.4651499,38.118 9.1918897,45.4652188,38.118 9.1918893,45.465241,38.118 9.191914,45.4652418,38.118</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1919144,45.465235,37.368 9.1918898,45.4652342,37.368 9.1918898,45.4652342,0.0 9.1919144,45.465235,0.0 9.1919144,45.465235,37.368</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1918989,45.465241,37.368 9.1918992,45.4652188,37.368 9.1918992,45.4652188,0.0 9.1918989,45.465241,0.0 9.1918989,45.465241,37.368</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1918982,45.4652219,37.368 9.1919494,45.465153,37.368 9.1919494,45.465153,0.0 9.1918982,45.4652219,0.0 9.1918982,45.4652219,37.368</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1919366,45.465156,37.368 9.1919693,45.4651673,37.368 9.1919693,45.4651673,0.0 9.1919366,45.465156,0.0 9.1919366,45.465156,37.368</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1919821,45.4651644,37.368 9.1920368,45.4650904,37.368 9.1920368,45.4650904,0.0 9.1919821,45.4651644,0.0 9.1919821,45.4651644,37.368</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1920328,45.4650814,37.368 9.1920193,45.4650763,37.368 9.1920193,45.4650763,0.0 9.1920328,45.4650814,0.0 9.1920328,45.4650814,37.368</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1920233,45.4650854,37.368 9.1920461,45.4650542,37.368 9.1920461,45.4650542,0.0 9.1920233,45.4650854,0.0 9.1920233,45.4650854,37.368</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1920421,45.4650452,37.368 9.1920133,45.4650344,37.368 9.1920133,45.4650344,0.0 9.1920421,45.4650452,0.0 9.1920421,45.4650452,37.368</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.192018,45.4650422,37.368 9.1920273,45.4650192,37.368 9.1920273,45.4650192,0.0 9.192018,45.4650422,0.0 9.192018,45.4650422,37.368</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1920199,45.4650108,37.368 9.1919772,45.4650049,37.368 9.1919772,45.4650049,0.0 9.1920199,45.4650108,0.0 9.1920199,45.4650108,37.368</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1919752,45.4650048,37.368 9.1916811,45.4650081,37.368 9.1916811,45.4650081,0.0 9.1919752,45.4650048,0.0 9.1919752,45.4650048,37.368</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1916717,45.4650148,37.368 9.1916717,45.4650755,37.368 9.1916717,45.4650755,0.0 9.1916717,45.4650148,0.0 9.1916717,45.4650148,37.368</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1916812,45.4650687,37.368 9.1916629,45.4650689,37.368 9.1916629,45.4650689,0.0 9.1916812,45.4650687,0.0 9.1916812,45.4650687,37.368</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1916534,45.4650756,37.368 9.1916535,45.4651136,37.368 9.1916535,45.4651136,0.0 9.1916534,45.4650756,0.0 9.1916534,45.4650756,37.368</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1916631,45.4651203,37.368 9.1917241,45.4651206,37.368 9.1917241,45.4651206,0.0 9.1916631,45.4651203,0.0 9.1916631,45.4651203,37.368</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1917146,45.4651139,37.368 9.1917154,45.4652437,37.368 9.1917154,45.4652437,0.0 9.1917146,45.4651139,0.0 9.1917146,45.4651139,37.368</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1917249,45.4652369,37.368 9.1916412,45.4652375,37.368 9.1916412,45.4652375,0.0 9.1917249,45.4652369,0.0 9.1917249,45.4652369,37.368</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1916508,45.4652442,37.368 9.1916507,45.4652256,37.368 9.1916507,45.4652256,0.0 9.1916508,45.4652442,0.0 9.1916508,45.4652442,37.368</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1916411,45.4652189,37.368 9.1916138,45.465219,37.368 9.1916138,45.465219,0.0 9.1916411,45.4652189,0.0 9.1916411,45.4652189,37.368</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1916042,45.465226,37.368 9.1916067,45.4652709,37.368 9.1916067,45.4652709,0.0 9.1916042,45.465226,0.0 9.1916042,45.465226,37.368</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1916134,45.465277,37.368 9.1916406,45.465283,37.368 9.1916406,45.465283,0.0 9.1916134,45.465277,0.0 9.1916134,45.465277,37.368</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1916339,45.465277,37.368 9.191635,45.4652879,37.368 9.191635,45.4652879,0.0 9.1916339,45.465277,0.0 9.1916339,45.465277,37.368</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1916417,45.4652939,37.368 9.1917435,45.4653161,37.368 9.1917435,45.4653161,0.0 9.1916417,45.4652939,0.0 9.1916417,45.4652939,37.368</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1917374,45.4653072,37.368 9.1917248,45.4653309,37.368 9.1917248,45.4653309,0.0 9.1917374,45.4653072,0.0 9.1917374,45.4653072,37.368</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1917299,45.4653394,37.368 9.1918208,45.4653684,37.368 9.1918208,45.4653684,0.0 9.1917299,45.4653394,0.0 9.1917299,45.4653394,37.368</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1918333,45.4653654,37.368 9.1919225,45.4652449,37.368 9.1919225,45.4652449,0.0 9.1918333,45.4653654,0.0 9.1918333,45.4653654,37.368</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+      </MultiGeometry>
+    </Placemark>
+    <Placemark id="COLLADA_RLB-9caad3d3-7058-471b-bf96-d187f9f561be">
+      <name>RLB-9caad3d3-7058-471b-bf96-d187f9f561be</name>
+      <Model>
+        <altitudeMode>clampToGround</altitudeMode>
+        <Location>
+          <longitude>9.1920376</longitude>
+          <latitude>45.4650511</latitude>
+          <altitude>0.0</altitude>
+        </Location>
+        <Orientation>
+          <heading>0.1431339</heading>
+        </Orientation>
+        <Link>
+          <href>67/RLB-9caad3d3-7058-471b-bf96-d187f9f561be.dae</href>
+        </Link>
+      </Model>
+    </Placemark>
+    <Style id="colladaStyleInvisible">
+      <LineStyle>
+        <color>0166FFFF</color>
+      </LineStyle>
+      <PolyStyle>
+        <color>0066FF66</color>
+      </PolyStyle>
+      <BalloonStyle>
+        <text>$[description]</text>
+      </BalloonStyle>
+    </Style>
+    <Style id="colladaStyleHighlight">
+      <LineStyle>
+        <color>C866FFFF</color>
+      </LineStyle>
+      <PolyStyle>
+        <color>C866FF66</color>
+      </PolyStyle>
+      <BalloonStyle>
+        <text>$[description]</text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="colladaStyle">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#colladaStyleInvisible</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#colladaStyleHighlight</styleUrl>
+      </Pair>
+    </StyleMap>
+  </Document>
+</kml>

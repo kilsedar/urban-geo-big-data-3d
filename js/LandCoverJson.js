@@ -12,7 +12,7 @@ define([], function () {
       return "";
     else
       return "<br><b>Comment:</b> " + comment;
-  }
+  };
 
   LandCoverJson.prototype.add = function (viewer) {
     for (var i=0; i<this.classes.length; i++) {

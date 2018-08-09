@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Written by 3D City Database Importer/Exporter, version "3.3.2-build1" -->
+<!-- Chair of Geoinformatics, Technical University of Munich, Germany, https://www.gis.bgu.tum.de/ -->
+<kml xmlns:xal="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0" xmlns="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:gx="http://www.google.com/kml/ext/2.2">
+  <Document>
+    <name>milan_Tile_4_4_collada</name>
+    <open>false</open>
+    <Placemark id="KMLGeomHi_RLB-f95d8886-7cd5-425f-8784-5fd892103855">
+      <name>RLB-f95d8886-7cd5-425f-8784-5fd892103855</name>
+      <styleUrl>#colladaStyle</styleUrl>
+      <MultiGeometry>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1932164,45.4652191,-0.75 9.1931895,45.4652053,-0.75 9.1930879,45.4652897,-0.75 9.192604,45.465582,-0.75 9.1926242,45.4655991,-0.75 9.1931127,45.4653048,-0.75 9.1932164,45.4652191,-0.75</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1932164,45.4652191,19.33 9.1931127,45.4653048,19.33 9.1926242,45.4655991,19.33 9.192604,45.465582,19.33 9.1930879,45.4652897,19.33 9.1931895,45.4652053,19.33 9.1932164,45.4652191,19.33</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.193222,45.4652136,18.58 9.1931952,45.4651999,18.58 9.1931952,45.4651999,0.0 9.193222,45.4652136,0.0 9.193222,45.4652136,18.58</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1931822,45.4652009,18.58 9.1930806,45.4652853,18.58 9.1930806,45.4652853,0.0 9.1931822,45.4652009,0.0 9.1931822,45.4652009,18.58</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1930816,45.4652846,18.58 9.1925978,45.4655769,18.58 9.1925978,45.4655769,0.0 9.1930816,45.4652846,0.0 9.1930816,45.4652846,18.58</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1925966,45.4655863,18.58 9.1926168,45.4656034,18.58 9.1926168,45.4656034,0.0 9.1925966,45.4655863,0.0 9.1925966,45.4655863,18.58</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.1926305,45.4656042,18.58 9.1931189,45.4653099,18.58 9.1931189,45.4653099,0.0 9.1926305,45.4656042,0.0 9.1926305,45.4656042,18.58</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>9.19312,45.4653092,18.58 9.1932237,45.4652235,18.58 9.1932237,45.4652235,0.0 9.19312,45.4653092,0.0 9.19312,45.4653092,18.58</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+      </MultiGeometry>
+    </Placemark>
+    <Placemark id="COLLADA_RLB-f95d8886-7cd5-425f-8784-5fd892103855">
+      <name>RLB-f95d8886-7cd5-425f-8784-5fd892103855</name>
+      <Model>
+        <altitudeMode>clampToGround</altitudeMode>
+        <Location>
+          <longitude>9.1931895</longitude>
+          <latitude>45.4652053</latitude>
+          <altitude>0.0</altitude>
+        </Location>
+        <Orientation>
+          <heading>0.13464</heading>
+        </Orientation>
+        <Link>
+          <href>4/RLB-f95d8886-7cd5-425f-8784-5fd892103855.dae</href>
+        </Link>
+      </Model>
+    </Placemark>
+    <Style id="colladaStyleInvisible">
+      <LineStyle>
+        <color>0166FFFF</color>
+      </LineStyle>
+      <PolyStyle>
+        <color>0066FF66</color>
+      </PolyStyle>
+      <BalloonStyle>
+        <text>$[description]</text>
+      </BalloonStyle>
+    </Style>
+    <Style id="colladaStyleHighlight">
+      <LineStyle>
+        <color>C866FFFF</color>
+      </LineStyle>
+      <PolyStyle>
+        <color>C866FF66</color>
+      </PolyStyle>
+      <BalloonStyle>
+        <text>$[description]</text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="colladaStyle">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#colladaStyleInvisible</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#colladaStyleHighlight</styleUrl>
+      </Pair>
+    </StyleMap>
+  </Document>
+</kml>
