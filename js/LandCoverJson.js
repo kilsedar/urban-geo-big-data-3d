@@ -1,4 +1,4 @@
-define([], function () {
+define(["jquery"], function ($) {
   "use strict";
 
   var LandCoverJson = function (classes, colors, url) {
@@ -25,7 +25,7 @@ define([], function () {
 
     var _self = this;
 
-    $.getJSON(this.url, function(json) {
+    $.getJSON(this.url, function (json) {
       for (var i=0; i<json.rows.length-1; i++) {
         var classArray = json.rows[i].doc.classification.split(/(?=[A-Z])/);
         var classWord = "";

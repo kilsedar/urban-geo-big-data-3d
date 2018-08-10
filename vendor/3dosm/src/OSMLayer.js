@@ -1,8 +1,8 @@
 /**
  * @exports OSMLayer
  */
-define(["vendor/3dosm/libraries/osmtogeojson-3.0.0"],
-       function (osmtogeojson) {
+define(["vendor/3dosm/libraries/osmtogeojson-3.0.0", "jquery"],
+       function (osmtogeojson, $) {
   "use strict";
 
   /**

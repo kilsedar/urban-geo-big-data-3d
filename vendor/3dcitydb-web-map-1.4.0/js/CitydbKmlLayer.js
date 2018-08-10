@@ -513,7 +513,7 @@
 				var materials = object.mesh._materials;
 				for (var i = 0; i < materials.length; i++) {
 					// dismiss highlighting
-					console.log(targetEntity.originalMaterial);
+					// console.log(targetEntity.originalMaterial);
 					materials[i].setValue('emission', targetEntity.originalMaterial);
 				}
 			}

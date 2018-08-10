@@ -3,8 +3,9 @@
  */
 define(["vendor/3dosm/src/OSMLayer",
         "vendor/3dosm/src/GeoJSONParserTriangulationOSM",
-        "vendor/3dosm/src/GeoJSONParserOSM"],
-       function (OSMLayer, GeoJSONParserTriangulationOSM, GeoJSONParserOSM) {
+        "vendor/3dosm/src/GeoJSONParserOSM",
+        "jquery"],
+       function (OSMLayer, GeoJSONParserTriangulationOSM, GeoJSONParserOSM, $) {
   "use strict";
 
   /**

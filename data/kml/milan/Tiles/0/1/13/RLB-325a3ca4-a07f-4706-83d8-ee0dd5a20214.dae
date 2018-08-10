@@ -4,8 +4,8 @@
         <contributor>
             <authoring_tool>3D City Database Importer/Exporter, version 3.3.2-build1; Chair of Geoinformatics, Technical University of Munich, Germany, https://www.gis.bgu.tum.de/</authoring_tool>
         </contributor>
-        <created>2018-08-08T14:46:22.499</created>
-        <modified>2018-08-08T14:46:22.499</modified>
+        <created>2018-08-10T14:07:30.604</created>
+        <modified>2018-08-10T14:07:30.604</modified>
         <unit meter="1.0" name="meters"/>
         <up_axis>Z_UP</up_axis>
     </asset>
@@ -51,7 +51,7 @@
         <geometry id="geometry0">
             <mesh>
                 <source id="geometry0-position">
-                    <float_array id="geometry0-position-array" count="30">4.825 5.257 6.99 0.0 0.0 6.99 0.0 0.0 0.0 4.825 5.257 0.0 -17.4038 27.473 6.99 -20.9468 30.855 6.99 -25.4698 26.243 6.99 -17.4038 27.473 0.0 -25.4698 26.243 0.0 -20.9468 30.855 0.0</float_array>
+                    <float_array id="geometry0-position-array" count="30">-3.543 3.382 6.99 0.0 0.0 6.99 0.0 0.0 0.0 -3.543 3.382 0.0 -8.066 -1.23 6.99 -8.066 -1.23 0.0 17.4038 -27.473 6.99 17.4038 -27.473 0.0 22.2288 -22.216 0.0 22.2288 -22.216 6.99</float_array>
                     <technique_common>
                         <accessor count="10" source="#geometry0-position-array" stride="3">
                             <param name="X" type="float"/>
@@ -65,7 +65,7 @@
                 </vertices>
                 <triangles count="16" material="default_ai_0.2_sh_0.2_tr_0.0_dc_r_0.8_g_0.8_b_0.8_sc_r_1.0_g_1.0_b_1.0_ec_r_0.0_g_0.0_b_0_tri">
                     <input offset="0" semantic="VERTEX" source="#geometry0-vertex"/>
-                    <p>8 9 7 8 7 3 8 3 2 1 0 4 1 4 5 1 5 6 4 0 3 4 3 7 0 1 2 0 2 3 1 6 8 1 8 2 6 5 9 6 9 8 5 4 7 5 7 9</p>
+                    <p>5 3 2 5 2 8 5 8 7 6 9 1 6 1 0 6 0 4 1 9 8 1 8 2 9 6 7 9 7 8 6 4 5 6 5 7 4 0 3 4 3 5 0 1 2 0 2 3</p>
                 </triangles>
             </mesh>
         </geometry>

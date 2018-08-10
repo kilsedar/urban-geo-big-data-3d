@@ -15,13 +15,13 @@
             "componentType": 5126,
             "count": 12,
             "max": [
-                8.3039,
-                0,
+                4.6389,
+                5.352,
                 9.893
             ],
             "min": [
-                -2.9448,
-                -21.2298,
+                -6.6098,
+                -15.8778,
                 0
             ],
             "type": "VEC3"
@@ -55,7 +55,7 @@
         "RLB-04c2382a-5c17-4850-a906-5e2c95ef4a88": {
             "byteLength": 264,
             "type": "arraybuffer",
-            "uri": "data:application/octet-stream;base64,AAABAAIAAwAAAAIAAwACAAQAAwAEAAUABgAHAAgABgAIAAkABgAJAAoABgAKAAsACAAHAAUACAAFAAQABwAGAAMABwADAAUABgALAAAABgAAAAMACwAKAAEACwABAAAACgAJAAIACgACAAEACQAIAAQACQAEAAIAmnc8wKwc2r8AAAAAAAAAAAAAAAAAAAAAYOUwQARWxsAAAAAAPQrHQKHWqcEAAAAAXI9qQJZDq8AAAAAAxtwEQT0KY8EAAAAAPQrHQKHWqcG6SR5BxtwEQT0KY8G6SR5BXI9qQJZDq8C6SR5BYOUwQARWxsC6SR5BAAAAAAAAAAC6SR5Bmnc8wKwc2r+6SR5B"
+            "uri": "data:application/octet-stream;base64,AAABAAIAAwAAAAIAAwACAAQAAwAEAAUABgAHAAgABgAIAAkABgAJAAoABgAKAAsACAAHAAUACAAFAAQABwAGAAMABwADAAUABgALAAAABgAAAAMACwAKAAEACwABAAAACgAJAAIACgACAAEACQAIAAQACQAEAAIAe4PTwNV4aUAAAAAAXI9qwJZDq0AAAAAA8Kdmv3WTWL8AAAAAH4UjQHgLfsEAAAAAAAAAAAAAAAAAAAAA3nGUQHNoDcEAAAAAH4UjQHgLfsG6SR5B3nGUQHNoDcG6SR5BAAAAAAAAAAC6SR5B8Kdmv3WTWL+6SR5BXI9qwJZDq0C6SR5Be4PTwNV4aUC6SR5B"
         }
     },
     "materials": {

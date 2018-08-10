@@ -1,4 +1,4 @@
-define(["vendor/plotly-latest.min"], function (Plotly) {
+define(["vendor/plotly-latest.min", "jquery"], function (Plotly, $) {
   "use strict";
 
   var WmsDeformationPlot = function (globeId, viewer) {

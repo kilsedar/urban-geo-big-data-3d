@@ -4,8 +4,8 @@
         <contributor>
             <authoring_tool>3D City Database Importer/Exporter, version 3.3.2-build1; Chair of Geoinformatics, Technical University of Munich, Germany, https://www.gis.bgu.tum.de/</authoring_tool>
         </contributor>
-        <created>2018-08-08T14:46:22.685</created>
-        <modified>2018-08-08T14:46:22.685</modified>
+        <created>2018-08-10T14:07:32.014</created>
+        <modified>2018-08-10T14:07:32.014</modified>
         <unit meter="1.0" name="meters"/>
         <up_axis>Z_UP</up_axis>
     </asset>
@@ -51,7 +51,7 @@
         <geometry id="geometry0">
             <mesh>
                 <source id="geometry0-position">
-                    <float_array id="geometry0-position-array" count="36">-6.009 -5.9488 32.849 0.0 0.0 32.849 0.0 0.0 0.0 -6.009 -5.9488 0.0 4.705 -4.945 32.849 4.705 -4.945 0.0 3.487 -12.328 32.849 1.424 -14.0158 32.849 1.424 -14.0158 0.0 3.487 -12.328 0.0 0.447 -8.922 32.849 0.447 -8.922 0.0</float_array>
+                    <float_array id="geometry0-position-array" count="36">4.258 3.977 32.849 -0.447 8.922 32.849 -6.456 2.9732 32.849 0.977 -5.0938 32.849 3.04 -3.406 32.849 0.0 0.0 32.849 0.0 0.0 0.0 4.258 3.977 0.0 3.04 -3.406 0.0 0.977 -5.0938 0.0 -6.456 2.9732 0.0 -0.447 8.922 0.0</float_array>
                     <technique_common>
                         <accessor count="12" source="#geometry0-position-array" stride="3">
                             <param name="X" type="float"/>
@@ -65,7 +65,7 @@
                 </vertices>
                 <triangles count="20" material="default_ai_0.2_sh_0.2_tr_0.0_dc_r_0.8_g_0.8_b_0.8_sc_r_1.0_g_1.0_b_1.0_ec_r_0.0_g_0.0_b_0_tri">
                     <input offset="0" semantic="VERTEX" source="#geometry0-vertex"/>
-                    <p>6 7 8 6 8 9 7 0 3 7 3 8 0 1 2 0 2 3 1 4 5 1 5 2 3 2 5 3 5 11 3 11 9 3 9 8 7 6 10 0 7 10 0 10 4 0 4 1 4 10 11 4 11 5 10 6 9 10 9 11</p>
+                    <p>4 3 9 4 9 8 3 2 10 3 10 9 2 1 11 2 11 10 1 0 7 1 7 11 10 11 7 10 7 6 10 6 8 10 8 9 3 4 5 2 3 5 2 5 0 2 0 1 0 5 6 0 6 7 5 4 8 5 8 6</p>
                 </triangles>
             </mesh>
         </geometry>

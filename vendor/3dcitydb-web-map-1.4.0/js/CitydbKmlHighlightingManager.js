@@ -1,23 +1,23 @@
 /*
  * 3DCityDB-Web-Map
  * http://www.3dcitydb.org/
- * 
+ *
  * Copyright 2015 - 2017
  * Chair of Geoinformatics
  * Technical University of Munich, Germany
  * https://www.gis.bgu.tum.de/
- * 
+ *
  * The 3DCityDB-Web-Map is jointly developed with the following
  * cooperation partners:
- * 
+ *
  * virtualcitySYSTEMS GmbH, Berlin <http://www.virtualcitysystems.de/>
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *     http://www.apache.org/licenses/LICENSE-2.0
- *     
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -30,28 +30,28 @@
  *
  **/
 (function() {
-	
-	function CitydbKmlHighlightingManager(citydbKmlLayerInstance) {		
+
+	function CitydbKmlHighlightingManager(citydbKmlLayerInstance) {
 		this.oTask = null;
 		this.citydbKmlLayerInstance = citydbKmlLayerInstance;
 		this.dataPool = {};
 		this.cachedObjects = {};
 	}
-	
+
 	CitydbKmlHighlightingManager.prototype.doStart = function() {
     	var scope = this;
-    	
+
     	var workerPath = CitydbUtil.retrieveURL("CitydbKmlHighlightingManager");
     	if (typeof workerPath == 'undefined') {
 			workerPath = CitydbUtil.retrieveURL("3dcitydb-web-map-api");
-		}   	
+		}
     	this.oTask = new CitydbWebworker(workerPath + "Webworkers/CitydbKmlHighlightingManagerWebworker.js");
-    	
+
 		// add Listeners
-		this.oTask.addListener("checkMasterPool", function (objectId, visibility) {	
+		this.oTask.addListener("checkMasterPool", function (objectId, visibility) {
 
 			var obj = scope.cachedObjects[objectId];
-			
+
 			if (obj != null) {
 				// update Hidden/Show
 				if (scope.citydbKmlLayerInstance.isInHiddenList(objectId)) {
@@ -66,14 +66,14 @@
 						scope.oTask.triggerEvent('updateDataPool');
 					}
 				}
-								
-				setTimeout(function(){   	
+
+				setTimeout(function(){
 					// update Highlighting
-					if (scope.citydbKmlLayerInstance.isInHighlightedList(objectId)) {				
+					if (scope.citydbKmlLayerInstance.isInHighlightedList(objectId)) {
 						if (!scope.citydbKmlLayerInstance.isHighlightedObject(obj)) {
 							scope.citydbKmlLayerInstance.highlightObject(obj);
 							scope.oTask.triggerEvent('updateDataPool');
-						}					
+						}
 					}
 					else {
 						if (scope.citydbKmlLayerInstance.isHighlightedObject(obj)) {
@@ -81,43 +81,43 @@
 							scope.oTask.triggerEvent('updateDataPool');
 						}
 					}
-					scope.oTask.triggerEvent('updateTaskStack'); 
+					scope.oTask.triggerEvent('updateTaskStack');
 			    }, 50);
 			}
 			else {
-				setTimeout(function(){   	
-					scope.oTask.triggerEvent('updateTaskStack'); 		    	
-			    }, 50); 
-			}						
+				setTimeout(function(){
+					scope.oTask.triggerEvent('updateTaskStack');
+			    }, 50);
+			}
 		});
 
-		scope.oTask.addListener("refreshView", function (isStillUpdating, dataPool) {				
+		scope.oTask.addListener("refreshView", function (isStillUpdating, dataPool) {
 			var cesiumViewer = scope.citydbKmlLayerInstance._cesiumViewer;
 			if (cesiumViewer.terrainProvider instanceof Cesium.EllipsoidTerrainProvider) {
-				setTimeout(function(){   
+				setTimeout(function(){
 					if (scope.citydbKmlLayerInstance.citydbKmlTilingManager.isDataStreaming()) {
 						scope.oTask.sleep();
 					}
 					else {
-						if (scope.citydbKmlLayerInstance.hasHighlightedObjects() || scope.citydbKmlLayerInstance.hasHiddenObjects()) {	
-							scope.rebuildDataPool(); 		    	  		    	
+						if (scope.citydbKmlLayerInstance.hasHighlightedObjects() || scope.citydbKmlLayerInstance.hasHiddenObjects()) {
+							scope.rebuildDataPool();
 						}
-						else {		
+						else {
 							scope.oTask.sleep();
-						} 
-					}				 					
-			    }, 1000); 	
-			}	
+						}
+					}
+			    }, 1000);
+			}
 			else {
 				scope.oTask.sleep();
-			}				
-		});			
+			}
+		});
 
 		this.dataPool = this.generateDataPool();
 
-		scope.oTask.triggerEvent('initWorker', this.dataPool);		
+		scope.oTask.triggerEvent('initWorker', this.dataPool);
     }
-	
+
 	CitydbKmlHighlightingManager.prototype.generateDataPool = function() {
 		var _dataPool = {};
 		var primitives = this.citydbKmlLayerInstance._cesiumViewer.scene.primitives;
@@ -128,22 +128,22 @@
 					if (primitive._id.layerId === this.citydbKmlLayerInstance._id) {
 						var objectId = primitive._id._name;
 						_dataPool[objectId] = false;
-					}						
-				}	
+					}
+				}
 			}
-			else if (primitive instanceof Cesium.Primitive && Cesium.defined(primitive._instanceIds)) {				
- 				for (j = 0; j < primitive._instanceIds.length; j++){	
+			else if (primitive instanceof Cesium.Primitive && Cesium.defined(primitive._instanceIds)) {
+ 				for (j = 0; j < primitive._instanceIds.length; j++){
  					var targetEntity = primitive._instanceIds[j];
  					if (Cesium.defined(targetEntity.name) && targetEntity.layerId === this.citydbKmlLayerInstance._id) {
  						var objectId = targetEntity.name;
  						_dataPool[objectId] = false;
- 					}					
-				}							
+ 					}
+				}
 			}
 		}
 		return _dataPool;
 	}
-	
+
 	CitydbKmlHighlightingManager.prototype.updateCachedObjects = function() {
 		this.cachedObjects = {}
 		var primitives = this.citydbKmlLayerInstance._cesiumViewer.scene.primitives;
@@ -154,8 +154,8 @@
 					if (primitive.ready) {
 						if (primitive._id.layerId === this.citydbKmlLayerInstance._id) {
 							this.cachedObjects[primitive._id._name] = primitive;
-						}						
-					}									
+						}
+					}
 				}
 			}
 		}
@@ -163,7 +163,7 @@
 			for (var i = 0; i < primitives.length; i++) {
 				var primitive = primitives.get(i);
 				if (primitive instanceof Cesium.Primitive && Cesium.defined(primitive._instanceIds)) {
-					for (var j = 0; j < primitive._instanceIds.length; j++){	
+					for (var j = 0; j < primitive._instanceIds.length; j++){
 	 					var targetEntity = primitive._instanceIds[j];
 	 					if (Cesium.defined(targetEntity.name) && targetEntity.layerId === this.citydbKmlLayerInstance._id) {
 	 						var parentEntity = targetEntity._parent
@@ -175,63 +175,63 @@
 									this.cachedObjects[targetEntity.name] = [targetEntity];
 								}
 							}
-	 					}					
-					}	
-				}				
+	 					}
+					}
+				}
 			}
 		}
 	}
-	
+
 	CitydbKmlHighlightingManager.prototype.doTerminate = function() {
-    	if (this.oTask != null) {       		
+    	if (this.oTask != null) {
     		this.oTask.terminate();
     		this.oTask = null;
-    	}	
+    	}
     }
 
 	CitydbKmlHighlightingManager.prototype.triggerWorker = function() {
     	var scope = this;
-    	if (scope.oTask != null) {   
+    	if (scope.oTask != null) {
     		if (!scope.citydbKmlLayerInstance.hasHighlightedObjects() && !scope.citydbKmlLayerInstance.hasHiddenObjects())
     			return;
     		if (scope.oTask.isSleep()) {
-         		scope.oTask.wake();	
-         		console.log("Wake up Highlighting Manager from sleep");
-         		scope.rebuildDataPool();  
+         		scope.oTask.wake();
+         		// console.log("Wake up Highlighting Manager from sleep");
+         		scope.rebuildDataPool();
  			}
-    	}            	
+    	}
     }
-    
+
     CitydbKmlHighlightingManager.prototype.addData = function(objectId) {
     	if (this.oTask != null) {
     		this.oTask.triggerEvent('addData', objectId);
-		}	
+		}
     }
-    
+
     CitydbKmlHighlightingManager.prototype.removeData = function(objectId) {
     	if (this.oTask != null) {
     		this.oTask.triggerEvent('removeData', objectId);
 		}
     }
-    
+
     CitydbKmlHighlightingManager.prototype.clearDataPool = function() {
     	if (this.oTask != null) {
     		this.oTask.triggerEvent('clearDataPool');
-		}	
+		}
     }
-    
+
     CitydbKmlHighlightingManager.prototype.rebuildDataPool = function() {
     	if (this.oTask != null) {
-			console.log("Tiling Manager is sleeping, update the cached objects of layer: " + this.citydbKmlLayerInstance.name);
+			// console.log("Tiling Manager is sleeping, update the cached objects of layer: " + this.citydbKmlLayerInstance.name);
 			this.updateCachedObjects();
-			this.dataPool = this.generateDataPool();	
+			this.dataPool = this.generateDataPool();
 			this.oTask.triggerEvent('rebuildDataPool', this.dataPool);
 		}
     }
-    
+
     CitydbKmlHighlightingManager.prototype.getWorkerInstance = function() {
     	return this.oTask;
-    }  
-    
+    }
+
     window.CitydbKmlHighlightingManager = CitydbKmlHighlightingManager;
-})();	
+})();

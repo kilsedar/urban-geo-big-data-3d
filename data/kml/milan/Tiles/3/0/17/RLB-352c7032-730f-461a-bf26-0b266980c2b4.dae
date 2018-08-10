@@ -4,8 +4,8 @@
         <contributor>
             <authoring_tool>3D City Database Importer/Exporter, version 3.3.2-build1; Chair of Geoinformatics, Technical University of Munich, Germany, https://www.gis.bgu.tum.de/</authoring_tool>
         </contributor>
-        <created>2018-08-08T14:46:23.166</created>
-        <modified>2018-08-08T14:46:23.166</modified>
+        <created>2018-08-10T14:07:33.469</created>
+        <modified>2018-08-10T14:07:33.469</modified>
         <unit meter="1.0" name="meters"/>
         <up_axis>Z_UP</up_axis>
     </asset>
@@ -51,7 +51,7 @@
         <geometry id="geometry0">
             <mesh>
                 <source id="geometry0-position">
-                    <float_array id="geometry0-position-array" count="54">-41.8905 23.7173 24.503 0.0 0.0 24.503 0.0 0.0 0.0 -41.8905 23.7173 0.0 -51.0636 9.4404 24.503 -51.4776 8.7096 24.503 -7.7929 -16.0177 24.503 1.343 -0.0411 24.503 0.309 0.545 24.503 -41.5356 24.3452 24.503 -42.4215 24.8472 24.503 -7.7929 -16.0177 0.0 1.343 -0.0411 0.0 0.309 0.545 0.0 -41.5356 24.3452 0.0 -42.4215 24.8472 0.0 -51.0636 9.4404 0.0 -51.4776 8.7096 0.0</float_array>
+                    <float_array id="geometry0-position-array" count="54">0.0 0.0 0.0 8.6421 15.4068 0.0 9.528 14.9048 0.0 9.1731 14.2769 0.0 51.0636 -9.4404 0.0 51.3726 -8.8954 0.0 52.4066 -9.4815 0.0 43.2707 -25.4581 0.0 -0.414 -0.7308 0.0 -0.414 -0.7308 24.503 0.0 0.0 24.503 43.2707 -25.4581 24.503 9.528 14.9048 24.503 9.1731 14.2769 24.503 8.6421 15.4068 24.503 51.3726 -8.8954 24.503 52.4066 -9.4815 24.503 51.0636 -9.4404 24.503</float_array>
                     <technique_common>
                         <accessor count="18" source="#geometry0-position-array" stride="3">
                             <param name="X" type="float"/>
@@ -65,7 +65,7 @@
                 </vertices>
                 <triangles count="32" material="default_ai_0.2_sh_0.2_tr_0.0_dc_r_0.8_g_0.8_b_0.8_sc_r_1.0_g_1.0_b_1.0_ec_r_0.0_g_0.0_b_0_tri">
                     <input offset="0" semantic="VERTEX" source="#geometry0-vertex"/>
-                    <p>7 6 11 7 11 12 6 5 17 6 17 11 5 4 16 5 16 17 15 14 16 16 14 17 14 3 17 17 3 11 3 2 11 11 2 12 12 2 13 5 6 4 7 8 6 8 1 6 6 1 4 1 0 4 4 0 10 10 0 9 4 10 15 4 15 16 10 9 14 10 14 15 9 0 3 9 3 14 0 1 2 0 2 3 1 8 13 1 13 2 8 7 12 8 12 13</p>
+                    <p>16 11 7 16 7 6 11 9 8 11 8 7 9 10 0 9 0 8 1 2 0 0 2 8 2 3 8 8 3 7 3 4 7 7 4 6 6 4 5 9 11 10 16 15 11 15 17 11 11 17 10 17 13 10 10 13 14 14 13 12 10 14 1 10 1 0 14 12 2 14 2 1 12 13 3 12 3 2 13 17 4 13 4 3 17 15 5 17 5 4 15 16 6 15 6 5</p>
                 </triangles>
             </mesh>
         </geometry>

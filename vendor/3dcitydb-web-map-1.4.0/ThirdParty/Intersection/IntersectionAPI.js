@@ -24,7 +24,7 @@
 
 	            var polygon2Line = [polygon2[j], polygon2[(j + 1) % polygon2.length]];
 	            var intersectionResult = intersectionLines(polygon1Line, polygon2Line);
-	            
+
 
 	            if (intersectionResult.onLine1 && intersectionResult.onLine2) {
 	                if (pointsEqual(intersectionResult, polygon1[i])) {
@@ -32,7 +32,7 @@
 	                    polygon1ExpandedDict[i][0].isOriginalPoint = true;
 	                    polygon1ExpandedDict[i][0].crossingLine = polygon2Line;
 	                } else if (pointsEqual(intersectionResult, polygon1[(i + 1) % polygon1.length])) {
-	                    
+
 	                } else {
 	                    var newPolygon1Point = cloneObject(intersectionResult);
 	                    newPolygon1Point.isCrossPoint = true;
@@ -66,12 +66,12 @@
 	                    if (!pointsEqual(polygon2ExpandedDict[j][lastIndex], newPolygon2Point) && !pointsEqual(polygon2ExpandedDict[j][lastIndex+1], newPolygon2Point)) {
 	                        polygon2ExpandedDict[j].splice(lastIndex + 1, 0, newPolygon2Point);
 	                    }
-	                    
+
 	                }
 	            }
 	        }
 	    }
-	    
+
 
 	    var polygon1Expanded = [];
 	    for (i = 0; i < polygon1.length; i++) {
@@ -87,14 +87,14 @@
 	    var otherPolygon = null;
 	    var currentIndex = null;
 	    var currentPoint = null;
-	    
+
 	    var polygon2ExpandedIndex = null;
 	    var index = 0;
 	    for (i = 0; i < polygon2.length; i++) {
 	        for (j = 0; j < polygon2ExpandedDict[i].length; j++) {
 	            var polygon2ExpandedPoint = polygon2ExpandedDict[i][j];
 	            polygon2Expanded.push(polygon2ExpandedPoint);
-	            
+
 	            if (startingPoint == null && polygon2ExpandedPoint.isCrossPoint) {
 	                startingPoint = polygon2ExpandedPoint;
 	                polygon2ExpandedIndex = index;
@@ -102,7 +102,7 @@
 	            index++;
 	        }
 	    }
-	    
+
 
 	    if (startingPoint == null) {
 	        // either polygons are separated, or one contains another <==> polygons' lines never intersect one another
@@ -131,7 +131,7 @@
 	    }
 
 	    var intersectingPolygon = [startingPoint];
-	    
+
 	    var switchPolygons = false;
 	    if (startingPoint.isCrossPoint) {
 	        var pointJustAfterStartingPoint = justAfterPointOfACrossPoint(currentIndex, currentPolygon);
@@ -152,12 +152,12 @@
 	        currentIndex = indexElementMatchingFunction(currentPolygon, function (point) {
 	            return pointsEqual(startingPoint, point);
 	        });
-	    } 
-	    
+	    }
+
 	    currentPoint = currentPolygon[(currentIndex + 1) % currentPolygon.length];;
 	    currentIndex = (currentIndex + 1) % currentPolygon.length;
 
-	    
+
 	    while (!pointsEqual(currentPoint, startingPoint)) {
 	        intersectingPolygon.push(currentPoint);
 	        if (currentPoint.isCrossPoint) {
@@ -183,7 +183,7 @@
 	            currentIndex = indexElementMatchingFunction(currentPolygon, function(point) {
 	                return pointsEqual(currentPoint, point);
 	            });
-	        }        
+	        }
 
 	        currentIndex = (currentIndex + 1) % currentPolygon.length;
 	        currentPoint = currentPolygon[currentIndex];
@@ -253,30 +253,32 @@
 	function isPointInsidePolygon(point, polygon, onBorderCountsAsOutside) {
 	    // point is any javascript object that contains both x & y numeric parameters
 	    // polygon is array of points, properly sorted to form a polygon
-	    var pointVerticalLine = [point, { x: point.x, y: point.y + 1 }];
-	    var higherIntersectionsCount = 0;
-	    var lowerIntersectionCount = 0;
-		for (var i = 0; i < polygon.length; i++) {
-		    var polygonLine = [polygon[i], polygon[(i+1) % polygon.length]];
-		    var result = intersectionLines(pointVerticalLine, polygonLine);
+			if (point != undefined) {
+		    var pointVerticalLine = [point, { x: point.x, y: point.y + 1 }];
+		    var higherIntersectionsCount = 0;
+		    var lowerIntersectionCount = 0;
+				for (var i = 0; i < polygon.length; i++) {
+				    var polygonLine = [polygon[i], polygon[(i+1) % polygon.length]];
+				    var result = intersectionLines(pointVerticalLine, polygonLine);
 
-		    if (result.onLine2) {
-		        if (pointsEqual(point, result)) {
-		            return !onBorderCountsAsOutside;
-		        }
+				    if (result.onLine2) {
+				        if (pointsEqual(point, result)) {
+				            return !onBorderCountsAsOutside;
+				        }
 
-		        if (result.y > point.y) {
-		            higherIntersectionsCount++;
-		        } else {
-		            lowerIntersectionCount++;
-		        }
+				        if (result.y > point.y) {
+				            higherIntersectionsCount++;
+				        } else {
+				            lowerIntersectionCount++;
+				        }
+				    }
+				}
+		    if (higherIntersectionsCount % 2 != 0 && lowerIntersectionCount % 2 != 0) {
+		        return true;
+		    } else {
+		        return false;
 		    }
-		}  
-	    if (higherIntersectionsCount % 2 != 0 && lowerIntersectionCount % 2 != 0) {
-	        return true;
-	    } else {
-	        return false;
-	    }
+		  }
 	}
 
 	function intersectionLines(line1, line2, excludeStartingPoints, includeEndingPoints) {
@@ -322,7 +324,7 @@
 	            x = line2StartX + (b * (line2EndX - line2StartX));
 	            y = line2StartX + (b * (line2EndY - line2StartY));
 	            */
-	    
+
 	    // if line1 is a segment and line2 is infinite, they intersect if:
 	    if (!excludeStartingPoints && numbersEqual(a,0)) {
 	        result.onLine1 = true;
@@ -333,7 +335,7 @@
 	    if (firstGreaterThanSecond(a,0) && firstLessThanSecond(a,1)) {
 	        result.onLine1 = true;
 	    }
-	    
+
 	    // if line2 is a segment and line1 is infinite, they intersect if:
 	    if (!excludeStartingPoints && numbersEqual(b, 0)) {
 	        result.onLine2 = true;

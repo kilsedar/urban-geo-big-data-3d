@@ -1,4 +1,4 @@
-define([], function () {
+define(["jquery", "bootstrap"], function ($, bootstrap) {
   "use strict";
 
   var TopNavigationBar = function (backgroundColor, highlightColor) {

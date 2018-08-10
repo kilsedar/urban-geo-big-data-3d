@@ -15,13 +15,13 @@
             "componentType": 5126,
             "count": 8,
             "max": [
-                30.92,
-                33.843,
+                29.702,
+                34.94,
                 3.099
             ],
             "min": [
+                -1.218,
                 0,
-                -1.097,
                 0
             ],
             "type": "VEC3"
@@ -55,7 +55,7 @@
         "RLB-f59d920b-ca6d-40e5-b247-b753c22e1744": {
             "byteLength": 168,
             "type": "arraybuffer",
-            "uri": "data:application/octet-stream;base64,AAABAAIAAAACAAMAAQAEAAUAAQAFAAIABQAGAAMABQADAAIABAABAAAABAAAAAcABAAHAAYABAAGAAUABwAAAAMABwADAAYAAAAAAAAAAAAEVkZAF9nuQTtfB0IEVkZAF9nuQTtfB0IAAAAAAAAAAAAAAAAAAAAAKVz3QfCnA0IEVkZAKVz3QfCnA0IAAAAAbeebP39qjL8AAAAAbeebP39qjL8EVkZA"
+            "uri": "data:application/octet-stream;base64,AAABAAIAAAACAAMAAQAEAAUAAQAFAAIABQAGAAMABQADAAIABAABAAAABAAAAAcABAAHAAYABAAGAAUABwAAAAMABwADAAYAbeebv39qjD8EVkZAoBrlQY/CC0IEVkZAoBrlQY/CC0IAAAAAbeebv39qjD8AAAAAsp3tQUQLCEIEVkZAsp3tQUQLCEIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEVkZA"
         }
     },
     "materials": {

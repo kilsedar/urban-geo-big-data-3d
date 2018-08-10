@@ -1,4 +1,4 @@
-define([], function () {
+define(["jquery"], function ($) {
   "use strict";
 
   var LocationSwitcher = function (globeId, id) {
@@ -53,14 +53,19 @@ define([], function () {
         _self.items.push(locationSwitcherItem);
       }
       else {
-        // Following may not always work, as it assumes base layer will always be in index 0.
-        for (var i=1; i<locationSwitcherItem.viewer.imageryLayers.length; i++) {
-          locationSwitcherItem.viewer.imageryLayers.remove(locationSwitcherItem.viewer.imageryLayers._layers[i], true);
-        }
-        if (locationSwitcherItem.type == "imagery")
+        if (locationSwitcherItem.type == "imagery") {
+          // Following may not always work, as it assumes base layer will always be in index 0.
+          for (var i=1; i<locationSwitcherItem.viewer.imageryLayers.length; i++) {
+            locationSwitcherItem.viewer.imageryLayers.remove(locationSwitcherItem.viewer.imageryLayers._layers[i], true);
+          }
           locationSwitcherItem.viewer.imageryLayers.addImageryProvider(locationSwitcherItem.layer);
-        else 
+        }
+        else if (locationSwitcherItem.type == "entities")
           locationSwitcherItem.layer.add(locationSwitcherItem.viewer);
+        else if (locationSwitcherItem.type == "kml") {
+          locationSwitcherItem.layer.webMap3DCityDBKml.removeAll();
+          locationSwitcherItem.layer.webMap3DCityDBKml.add(locationSwitcherItem.viewer, locationSwitcherItem.layer);
+        }
         var heading = Cesium.Math.toRadians(0.0);
         var pitch = Cesium.Math.toRadians(-50.0);
         var range = locationSwitcherItem.range;

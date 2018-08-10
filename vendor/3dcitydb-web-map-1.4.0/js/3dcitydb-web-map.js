@@ -1,23 +1,23 @@
 /*
  * 3DCityDB-Web-Map
  * http://www.3dcitydb.org/
- * 
+ *
  * Copyright 2015 - 2017
  * Chair of Geoinformatics
  * Technical University of Munich, Germany
  * https://www.gis.bgu.tum.de/
- *  
+ *
  * The 3DCityDB-Web-Map is jointly developed with the following
  * cooperation partners:
- * 
+ *
  * virtualcitySYSTEMS GmbH, Berlin <http://www.virtualcitysystems.de/>
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *     http://www.apache.org/licenses/LICENSE-2.0
- *     
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -148,14 +148,14 @@
 		}
 		return;
 	};
-	
-	WebMap3DCityDB.prototype.clearHighlight = function(object){   		
+
+	WebMap3DCityDB.prototype.clearHighlight = function(object){
   		var layers = this._layers;
   		for (var i = 0; i < layers.length; i++) {
   			if (layers[i].active && layers[i].id != object.id.layerId) {
   				layers[i].unHighlightAllObjects();
-  			} 			
-  		} 
+  			}
+  		}
   	};
 
 	/**
@@ -220,7 +220,7 @@
 			var that = this;
 			this._eventHandler.setInputAction(function(event){
 				var object = that._cesiumViewerInstance.scene.pick(event.position);
-				that.clearHighlight(object);
+				// that.clearHighlight(object);
 				that.passEventToLayer("CLICK", object);
 			}, Cesium.ScreenSpaceEventType.LEFT_CLICK);
 			this._eventHandler.setInputAction(function(event){

@@ -4,9 +4,10 @@ define(["js/TopNavigationBar",
         "js/LocationSwitcherItem",
         "js/WmsDeformationPlot",
         "js/LandCoverJson",
-        "js/CitydbKml",
+        "js/WebMap3DCityDBKml",
+        "js/WebMap3DCityDBKmlLayer",
         "vendor/3dosm/src/OSMBuildingLayer"],
-       function (TopNavigationBar, TopSection, LocationSwitcher, LocationSwitcherItem, WmsDeformationPlot, LandCoverJson, CitydbKml, OSMBuildingLayer) {
+       function (TopNavigationBar, TopSection, LocationSwitcher, LocationSwitcherItem, WmsDeformationPlot, LandCoverJson, WebMap3DCityDBKml, WebMap3DCityDBKmlLayer, OSMBuildingLayer) {
   "use strict";
 
   var worldWindViewer3dCity = new WorldWind.WorldWindow("world-wind-3d-city-canvas");
@@ -33,8 +34,8 @@ define(["js/TopNavigationBar",
     timeline: false,
     animation: false,
     imageryProvider: Cesium.createWorldImagery(),
-    terrainProvider: Cesium.createWorldTerrain(),
-    infoBox: false
+    // terrainProvider: Cesium.createWorldTerrain(),
+    infoBox: true
   });
 
   var cesiumViewerDeformation = new Cesium.Viewer("cesium-deformation", {
@@ -141,8 +142,13 @@ define(["js/TopNavigationBar",
 
   var locationSwitcherCesium3dCity = new LocationSwitcher("cesium-3d-city", "location-switcher-cesium-3d-city");
 
-  var cesium3dCityMilan = new CitydbKml("data/kml/milan/", "https://fusiontables.google.com/data?docid=1Z4Oo4dyNAI9yC5SplkmU1XGIOmE-xZKzVkTtfcz7#rows:id=1");
-  var locationSwitcherCesium3dCityMilan = new LocationSwitcherItem("cesium", "kml", cesiumViewer3dCity, "Milan", "cesium-3d-city-milan", cesium3dCityMilan, [9.18669478811458, 45.46114471445389, 9.19452789799529, 45.46647583746108], 6000.0);
+  var webMap3DCityDB = new WebMap3DCityDB(cesiumViewer3dCity);
+  webMap3DCityDB.activateMouseMoveEvents(true);
+  webMap3DCityDB.activateMouseClickEvents(true);
+  var webMap3DCityDBKml = new WebMap3DCityDBKml(webMap3DCityDB);
+
+  var webMap3DCityDBKmlMilan = new WebMap3DCityDBKmlLayer(webMap3DCityDBKml, "data/kml/milan/", "https://fusiontables.google.com/data?docid=1Z4Oo4dyNAI9yC5SplkmU1XGIOmE-xZKzVkTtfcz7#rows:id=1");
+  var locationSwitcherCesium3dCityMilan = new LocationSwitcherItem("cesium", "kml", cesiumViewer3dCity, "Milan", "cesium-3d-city-milan", webMap3DCityDBKmlMilan, [9.18669478811458, 45.46114471445389, 9.19452789799529, 45.46647583746108], 6000.0);
   locationSwitcherCesium3dCity.add(locationSwitcherCesium3dCityMilan);
 
   var locationSwitcherDeformation = new LocationSwitcher("cesium-deformation", "location-switcher-deformation");
