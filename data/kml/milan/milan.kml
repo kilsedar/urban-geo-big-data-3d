@@ -6,7 +6,7 @@
     <name>milan</name>
     <open>true</open>
     <LookAt>
-      <longitude>9.190611343054934</longitude>
+      <longitude>9.190611343054936</longitude>
       <latitude>45.463810275957485</latitude>
       <altitude>0.0</altitude>
       <heading>0.0</heading>
@@ -19,13 +19,13 @@
         <name>Display as collada</name>
         <Region>
           <LatLonAltBox>
-            <north>45.46221093905533</north>
-            <south>45.461144714453894</south>
+            <north>45.462210939055325</north>
+            <south>45.46114471445389</south>
             <east>9.189828032066865</east>
             <west>9.188261410090723</west>
           </LatLonAltBox>
           <Lod>
-            <minLodPixels>0.0</minLodPixels>
+            <minLodPixels>120.0</minLodPixels>
             <maxLodPixels>-1.0</maxLodPixels>
           </Lod>
         </Region>
@@ -42,13 +42,13 @@
         <name>Display as collada</name>
         <Region>
           <LatLonAltBox>
-            <north>45.46221093905533</north>
-            <south>45.461144714453894</south>
-            <east>9.191394654043005</east>
-            <west>9.189828032066863</west>
+            <north>45.462210939055325</north>
+            <south>45.46114471445389</south>
+            <east>9.191394654043007</east>
+            <west>9.189828032066865</west>
           </LatLonAltBox>
           <Lod>
-            <minLodPixels>0.0</minLodPixels>
+            <minLodPixels>120.0</minLodPixels>
             <maxLodPixels>-1.0</maxLodPixels>
           </Lod>
         </Region>
@@ -65,13 +65,13 @@
         <name>Display as collada</name>
         <Region>
           <LatLonAltBox>
-            <north>45.46221093905533</north>
-            <south>45.461144714453894</south>
+            <north>45.462210939055325</north>
+            <south>45.46114471445389</south>
             <east>9.192961276019147</east>
             <west>9.191394654043005</west>
           </LatLonAltBox>
           <Lod>
-            <minLodPixels>0.0</minLodPixels>
+            <minLodPixels>120.0</minLodPixels>
             <maxLodPixels>-1.0</maxLodPixels>
           </Lod>
         </Region>
@@ -88,13 +88,13 @@
         <name>Display as collada</name>
         <Region>
           <LatLonAltBox>
-            <north>45.46327716365677</north>
-            <south>45.46221093905533</south>
+            <north>45.46327716365676</north>
+            <south>45.462210939055325</south>
             <east>9.188261410090723</east>
             <west>9.18669478811458</west>
           </LatLonAltBox>
           <Lod>
-            <minLodPixels>0.0</minLodPixels>
+            <minLodPixels>120.0</minLodPixels>
             <maxLodPixels>-1.0</maxLodPixels>
           </Lod>
         </Region>
@@ -111,13 +111,13 @@
         <name>Display as collada</name>
         <Region>
           <LatLonAltBox>
-            <north>45.46327716365677</north>
-            <south>45.46221093905533</south>
+            <north>45.46327716365676</north>
+            <south>45.462210939055325</south>
             <east>9.189828032066865</east>
             <west>9.188261410090723</west>
           </LatLonAltBox>
           <Lod>
-            <minLodPixels>0.0</minLodPixels>
+            <minLodPixels>120.0</minLodPixels>
             <maxLodPixels>-1.0</maxLodPixels>
           </Lod>
         </Region>
@@ -134,13 +134,13 @@
         <name>Display as collada</name>
         <Region>
           <LatLonAltBox>
-            <north>45.46327716365677</north>
-            <south>45.46221093905533</south>
-            <east>9.191394654043005</east>
-            <west>9.189828032066863</west>
+            <north>45.46327716365676</north>
+            <south>45.462210939055325</south>
+            <east>9.191394654043007</east>
+            <west>9.189828032066865</west>
           </LatLonAltBox>
           <Lod>
-            <minLodPixels>0.0</minLodPixels>
+            <minLodPixels>120.0</minLodPixels>
             <maxLodPixels>-1.0</maxLodPixels>
           </Lod>
         </Region>
@@ -157,13 +157,13 @@
         <name>Display as collada</name>
         <Region>
           <LatLonAltBox>
-            <north>45.46327716365677</north>
-            <south>45.46221093905533</south>
+            <north>45.46327716365676</north>
+            <south>45.462210939055325</south>
             <east>9.192961276019147</east>
             <west>9.191394654043005</west>
           </LatLonAltBox>
           <Lod>
-            <minLodPixels>0.0</minLodPixels>
+            <minLodPixels>120.0</minLodPixels>
             <maxLodPixels>-1.0</maxLodPixels>
           </Lod>
         </Region>
@@ -180,13 +180,13 @@
         <name>Display as collada</name>
         <Region>
           <LatLonAltBox>
-            <north>45.46327716365677</north>
-            <south>45.46221093905533</south>
-            <east>9.194527897995288</east>
-            <west>9.192961276019146</west>
+            <north>45.46327716365676</north>
+            <south>45.462210939055325</south>
+            <east>9.19452789799529</east>
+            <west>9.192961276019147</west>
           </LatLonAltBox>
           <Lod>
-            <minLodPixels>0.0</minLodPixels>
+            <minLodPixels>120.0</minLodPixels>
             <maxLodPixels>-1.0</maxLodPixels>
           </Lod>
         </Region>
@@ -203,13 +203,13 @@
         <name>Display as collada</name>
         <Region>
           <LatLonAltBox>
-            <north>45.46434338825821</north>
-            <south>45.46327716365677</south>
+            <north>45.4643433882582</north>
+            <south>45.46327716365676</south>
             <east>9.188261410090723</east>
             <west>9.18669478811458</west>
           </LatLonAltBox>
           <Lod>
-            <minLodPixels>0.0</minLodPixels>
+            <minLodPixels>120.0</minLodPixels>
             <maxLodPixels>-1.0</maxLodPixels>
           </Lod>
         </Region>
@@ -226,13 +226,13 @@
         <name>Display as collada</name>
         <Region>
           <LatLonAltBox>
-            <north>45.46434338825821</north>
-            <south>45.46327716365677</south>
+            <north>45.4643433882582</north>
+            <south>45.46327716365676</south>
             <east>9.189828032066865</east>
             <west>9.188261410090723</west>
           </LatLonAltBox>
           <Lod>
-            <minLodPixels>0.0</minLodPixels>
+            <minLodPixels>120.0</minLodPixels>
             <maxLodPixels>-1.0</maxLodPixels>
           </Lod>
         </Region>
@@ -249,13 +249,13 @@
         <name>Display as collada</name>
         <Region>
           <LatLonAltBox>
-            <north>45.46434338825821</north>
-            <south>45.46327716365677</south>
+            <north>45.4643433882582</north>
+            <south>45.46327716365676</south>
             <east>9.192961276019147</east>
             <west>9.191394654043005</west>
           </LatLonAltBox>
           <Lod>
-            <minLodPixels>0.0</minLodPixels>
+            <minLodPixels>120.0</minLodPixels>
             <maxLodPixels>-1.0</maxLodPixels>
           </Lod>
         </Region>
@@ -272,13 +272,13 @@
         <name>Display as collada</name>
         <Region>
           <LatLonAltBox>
-            <north>45.46434338825821</north>
-            <south>45.46327716365677</south>
-            <east>9.194527897995288</east>
-            <west>9.192961276019146</west>
+            <north>45.4643433882582</north>
+            <south>45.46327716365676</south>
+            <east>9.19452789799529</east>
+            <west>9.192961276019147</west>
           </LatLonAltBox>
           <Lod>
-            <minLodPixels>0.0</minLodPixels>
+            <minLodPixels>120.0</minLodPixels>
             <maxLodPixels>-1.0</maxLodPixels>
           </Lod>
         </Region>
@@ -301,7 +301,7 @@
             <west>9.18669478811458</west>
           </LatLonAltBox>
           <Lod>
-            <minLodPixels>0.0</minLodPixels>
+            <minLodPixels>120.0</minLodPixels>
             <maxLodPixels>-1.0</maxLodPixels>
           </Lod>
         </Region>
@@ -324,7 +324,7 @@
             <west>9.188261410090723</west>
           </LatLonAltBox>
           <Lod>
-            <minLodPixels>0.0</minLodPixels>
+            <minLodPixels>120.0</minLodPixels>
             <maxLodPixels>-1.0</maxLodPixels>
           </Lod>
         </Region>
@@ -343,11 +343,11 @@
           <LatLonAltBox>
             <north>45.465409612859645</north>
             <south>45.46434338825821</south>
-            <east>9.191394654043005</east>
-            <west>9.189828032066863</west>
+            <east>9.191394654043007</east>
+            <west>9.189828032066865</west>
           </LatLonAltBox>
           <Lod>
-            <minLodPixels>0.0</minLodPixels>
+            <minLodPixels>120.0</minLodPixels>
             <maxLodPixels>-1.0</maxLodPixels>
           </Lod>
         </Region>
@@ -370,7 +370,7 @@
             <west>9.191394654043005</west>
           </LatLonAltBox>
           <Lod>
-            <minLodPixels>0.0</minLodPixels>
+            <minLodPixels>120.0</minLodPixels>
             <maxLodPixels>-1.0</maxLodPixels>
           </Lod>
         </Region>
@@ -389,11 +389,11 @@
           <LatLonAltBox>
             <north>45.465409612859645</north>
             <south>45.46434338825821</south>
-            <east>9.194527897995288</east>
-            <west>9.192961276019146</west>
+            <east>9.19452789799529</east>
+            <west>9.192961276019147</west>
           </LatLonAltBox>
           <Lod>
-            <minLodPixels>0.0</minLodPixels>
+            <minLodPixels>120.0</minLodPixels>
             <maxLodPixels>-1.0</maxLodPixels>
           </Lod>
         </Region>
@@ -416,7 +416,7 @@
             <west>9.188261410090723</west>
           </LatLonAltBox>
           <Lod>
-            <minLodPixels>0.0</minLodPixels>
+            <minLodPixels>120.0</minLodPixels>
             <maxLodPixels>-1.0</maxLodPixels>
           </Lod>
         </Region>
@@ -435,11 +435,11 @@
           <LatLonAltBox>
             <north>45.46647583746108</north>
             <south>45.465409612859645</south>
-            <east>9.191394654043005</east>
-            <west>9.189828032066863</west>
+            <east>9.191394654043007</east>
+            <west>9.189828032066865</west>
           </LatLonAltBox>
           <Lod>
-            <minLodPixels>0.0</minLodPixels>
+            <minLodPixels>120.0</minLodPixels>
             <maxLodPixels>-1.0</maxLodPixels>
           </Lod>
         </Region>
@@ -462,7 +462,7 @@
             <west>9.191394654043005</west>
           </LatLonAltBox>
           <Lod>
-            <minLodPixels>0.0</minLodPixels>
+            <minLodPixels>120.0</minLodPixels>
             <maxLodPixels>-1.0</maxLodPixels>
           </Lod>
         </Region>
@@ -481,11 +481,11 @@
           <LatLonAltBox>
             <north>45.46647583746108</north>
             <south>45.465409612859645</south>
-            <east>9.194527897995288</east>
-            <west>9.192961276019146</west>
+            <east>9.19452789799529</east>
+            <west>9.192961276019147</west>
           </LatLonAltBox>
           <Lod>
-            <minLodPixels>0.0</minLodPixels>
+            <minLodPixels>120.0</minLodPixels>
             <maxLodPixels>-1.0</maxLodPixels>
           </Lod>
         </Region>

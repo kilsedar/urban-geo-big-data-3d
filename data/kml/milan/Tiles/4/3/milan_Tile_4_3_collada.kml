@@ -5,775 +5,42 @@
   <Document>
     <name>milan_Tile_4_3_collada</name>
     <open>false</open>
-    <Placemark id="KMLGeomHi_RLB-13fd44b6-4b74-46eb-93ea-65f389a7eb82">
-      <name>RLB-13fd44b6-4b74-46eb-93ea-65f389a7eb82</name>
-      <styleUrl>#colladaStyle</styleUrl>
-      <MultiGeometry>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1926498,45.46569,-0.75 9.1926241,45.4656696,-0.75 9.1925611,45.4657087,-0.75 9.1926117,45.465749,-0.75 9.1926435,45.4657292,-0.75 9.1926185,45.4657094,-0.75 9.1926498,45.46569,-0.75</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1926498,45.46569,27.075 9.1926185,45.4657094,27.075 9.1926435,45.4657292,27.075 9.1926117,45.465749,27.075 9.1925611,45.4657087,27.075 9.1926241,45.4656696,27.075 9.1926498,45.46569,27.075</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1926569,45.4656855,26.325 9.1926313,45.4656651,26.325 9.1926313,45.4656651,0.0 9.1926569,45.4656855,0.0 9.1926569,45.4656855,26.325</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1926178,45.4656645,26.325 9.1925548,45.4657037,26.325 9.1925548,45.4657037,0.0 9.1926178,45.4656645,0.0 9.1926178,45.4656645,26.325</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1925539,45.4657132,26.325 9.1926045,45.4657535,26.325 9.1926045,45.4657535,0.0 9.1925539,45.4657132,0.0 9.1925539,45.4657132,26.325</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.192618,45.4657541,26.325 9.1926498,45.4657343,26.325 9.1926498,45.4657343,0.0 9.192618,45.4657541,0.0 9.192618,45.4657541,26.325</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1926506,45.4657248,26.325 9.1926257,45.4657049,26.325 9.1926257,45.4657049,0.0 9.1926506,45.4657248,0.0 9.1926506,45.4657248,26.325</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1926249,45.4657145,26.325 9.1926561,45.465695,26.325 9.1926561,45.465695,0.0 9.1926249,45.4657145,0.0 9.1926249,45.4657145,26.325</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-      </MultiGeometry>
-    </Placemark>
-    <Placemark id="COLLADA_RLB-13fd44b6-4b74-46eb-93ea-65f389a7eb82">
-      <name>RLB-13fd44b6-4b74-46eb-93ea-65f389a7eb82</name>
+    <Placemark id="COLLADA_UUID_cebed5d0-1dd8-4b8d-afe6-fafde25d92f4">
+      <name>UUID_cebed5d0-1dd8-4b8d-afe6-fafde25d92f4</name>
       <Model>
         <altitudeMode>absolute</altitudeMode>
         <Location>
-          <longitude>9.1926498</longitude>
-          <latitude>45.46569</latitude>
+          <longitude>9.1926525</longitude>
+          <latitude>45.465623</latitude>
           <altitude>0.0</altitude>
         </Location>
         <Orientation>
-          <heading>0.1477958</heading>
+          <heading>0.1338402</heading>
         </Orientation>
         <Link>
-          <href>12/RLB-13fd44b6-4b74-46eb-93ea-65f389a7eb82.dae</href>
+          <href>12/UUID_cebed5d0-1dd8-4b8d-afe6-fafde25d92f4.dae</href>
         </Link>
       </Model>
     </Placemark>
-    <Placemark id="KMLGeomHi_RLB-fb60e3bd-83ff-4e16-8e31-b3492a55a070">
-      <name>RLB-fb60e3bd-83ff-4e16-8e31-b3492a55a070</name>
-      <styleUrl>#colladaStyle</styleUrl>
-      <MultiGeometry>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1917244,45.4657497,15.115 9.1916842,45.4657721,15.115 9.1916842,45.4657721,0.0 9.1917244,45.4657497,0.0 9.1917244,45.4657497,15.115</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1917463,45.4658008,-0.75 9.1917708,45.465778,-0.75 9.1917269,45.4657382,-0.75 9.1917963,45.4656993,-0.75 9.1918225,45.4657186,-0.75 9.1918312,45.4657131,-0.75 9.1918658,45.4657292,-0.75 9.191901,45.4657036,-0.75 9.1918452,45.4656627,-0.75 9.1918314,45.465673,-0.75 9.1918094,45.4656561,-0.75 9.1916947,45.4657243,-0.75 9.1917304,45.465755,-0.75 9.1916901,45.4657774,-0.75 9.1917358,45.4658106,-0.75 9.1917463,45.4658008,-0.75</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1917463,45.4658008,15.865 9.1917358,45.4658106,15.865 9.1916901,45.4657774,15.865 9.1917304,45.465755,15.865 9.1916947,45.4657243,15.865 9.1918094,45.4656561,15.865 9.1918314,45.465673,15.865 9.1918452,45.4656627,15.865 9.191901,45.4657036,15.865 9.1918658,45.4657292,15.865 9.1918312,45.4657131,15.865 9.1918225,45.4657186,15.865 9.1917963,45.4656993,15.865 9.1917269,45.4657382,15.865 9.1917708,45.465778,15.865 9.1917463,45.4658008,15.865</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1917539,45.4658049,15.115 9.1917785,45.4657821,15.115 9.1917785,45.4657821,0.0 9.1917539,45.4658049,0.0 9.1917539,45.4658049,15.115</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1917784,45.4657739,15.115 9.1917345,45.4657341,15.115 9.1917345,45.4657341,0.0 9.1917784,45.4657739,0.0 9.1917784,45.4657739,15.115</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1917329,45.4657435,15.115 9.1918023,45.4657046,15.115 9.1918023,45.4657046,0.0 9.1917329,45.4657435,0.0 9.1917329,45.4657435,15.115</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1917894,45.465704,15.115 9.1918156,45.4657233,15.115 9.1918156,45.4657233,0.0 9.1917894,45.465704,0.0 9.1917894,45.465704,15.115</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1918289,45.4657236,15.115 9.1918377,45.4657181,15.115 9.1918377,45.4657181,0.0 9.1918289,45.4657236,0.0 9.1918289,45.4657236,15.115</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1918259,45.4657187,15.115 9.1918605,45.4657349,15.115 9.1918605,45.4657349,0.0 9.1918259,45.4657187,0.0 9.1918259,45.4657187,15.115</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1918727,45.4657339,15.115 9.1919079,45.4657083,15.115 9.1919079,45.4657083,0.0 9.1918727,45.4657339,0.0 9.1918727,45.4657339,15.115</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1919079,45.465699,15.115 9.1918521,45.465658,15.115 9.1918521,45.465658,0.0 9.1919079,45.465699,0.0 9.1919079,45.465699,15.115</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1918382,45.465658,15.115 9.1918244,45.4656683,15.115 9.1918244,45.4656683,0.0 9.1918382,45.465658,0.0 9.1918382,45.465658,15.115</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1918385,45.4656684,15.115 9.1918165,45.4656515,15.115 9.1918165,45.4656515,0.0 9.1918385,45.4656684,0.0 9.1918385,45.4656684,15.115</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1918033,45.465651,15.115 9.1916885,45.4657192,15.115 9.1916885,45.4657192,0.0 9.1918033,45.465651,0.0 9.1918033,45.465651,15.115</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1916873,45.4657286,15.115 9.1917229,45.4657593,15.115 9.1917229,45.4657593,0.0 9.1916873,45.4657286,0.0 9.1916873,45.4657286,15.115</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1916833,45.4657821,15.115 9.1917289,45.4658153,15.115 9.1917289,45.4658153,0.0 9.1916833,45.4657821,0.0 9.1916833,45.4657821,15.115</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1917434,45.4658146,15.115 9.1917539,45.4658049,15.115 9.1917539,45.4658049,0.0 9.1917434,45.4658146,0.0 9.1917434,45.4658146,15.115</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-      </MultiGeometry>
-    </Placemark>
-    <Placemark id="COLLADA_RLB-fb60e3bd-83ff-4e16-8e31-b3492a55a070">
-      <name>RLB-fb60e3bd-83ff-4e16-8e31-b3492a55a070</name>
+    <Placemark id="COLLADA_UUID_89d348ee-1096-45b8-8a71-0492dcb0b6c0">
+      <name>UUID_89d348ee-1096-45b8-8a71-0492dcb0b6c0</name>
       <Model>
         <altitudeMode>absolute</altitudeMode>
         <Location>
-          <longitude>9.1917269</longitude>
-          <latitude>45.4657382</latitude>
+          <longitude>9.1916765</longitude>
+          <latitude>45.4656088</latitude>
           <altitude>0.0</altitude>
         </Location>
         <Orientation>
-          <heading>0.1272398</heading>
+          <heading>0.1334973</heading>
         </Orientation>
         <Link>
-          <href>31/RLB-fb60e3bd-83ff-4e16-8e31-b3492a55a070.dae</href>
+          <href>76/UUID_89d348ee-1096-45b8-8a71-0492dcb0b6c0.dae</href>
         </Link>
       </Model>
     </Placemark>
-    <Placemark id="KMLGeomHi_RLB-9eeafff2-45fe-4b57-84de-da9930bc7814">
-      <name>RLB-9eeafff2-45fe-4b57-84de-da9930bc7814</name>
-      <styleUrl>#colladaStyle</styleUrl>
-      <MultiGeometry>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1921493,45.465722,24.158 9.1923913,45.4655756,24.158 9.1923913,45.4655756,0.0 9.1921493,45.465722,0.0 9.1921493,45.465722,24.158</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.192385,45.4655705,-0.75 9.1923821,45.465563,-0.75 9.1921399,45.4657097,-0.75 9.1921431,45.4657168,-0.75 9.192385,45.4655705,-0.75</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.192385,45.4655705,24.908 9.1921431,45.4657168,24.908 9.1921399,45.4657097,24.908 9.1923821,45.465563,24.908 9.192385,45.4655705,24.908</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1923943,45.4655687,24.158 9.1923914,45.4655612,24.158 9.1923914,45.4655612,0.0 9.1923943,45.4655687,0.0 9.1923943,45.4655687,24.158</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1923759,45.4655578,24.158 9.1921336,45.4657046,24.158 9.1921336,45.4657046,0.0 9.1923759,45.4655578,0.0 9.1923759,45.4655578,24.158</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1921307,45.4657118,24.158 9.1921339,45.4657189,24.158 9.1921339,45.4657189,0.0 9.1921307,45.4657118,0.0 9.1921307,45.4657118,24.158</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-      </MultiGeometry>
-    </Placemark>
-    <Placemark id="KMLGeomHi_RLB-56eea81a-5acd-46c9-9c5c-dd5222872acd">
-      <name>RLB-56eea81a-5acd-46c9-9c5c-dd5222872acd</name>
-      <styleUrl>#colladaStyle</styleUrl>
-      <MultiGeometry>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1922366,45.4660083,-0.75 9.192108,45.4658996,-0.75 9.1922125,45.4658339,-0.75 9.192201,45.465826,-0.75 9.1920866,45.4658939,-0.75 9.1922262,45.4660141,-0.75 9.1922366,45.4660083,-0.75</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1922366,45.4660083,27.594 9.1922262,45.4660141,27.594 9.1920866,45.4658939,27.594 9.192201,45.465826,27.594 9.1922125,45.4658339,27.594 9.192108,45.4658996,27.594 9.1922366,45.4660083,27.594</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.192244,45.466004,26.844 9.1921154,45.4658953,26.844 9.1921154,45.4658953,0.0 9.192244,45.466004,0.0 9.192244,45.466004,26.844</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1921144,45.4659047,26.844 9.1922189,45.4658389,26.844 9.1922189,45.4658389,0.0 9.1921144,45.4659047,0.0 9.1921144,45.4659047,26.844</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1922192,45.4658291,26.844 9.1922077,45.4658212,26.844 9.1922077,45.4658212,0.0 9.1922192,45.4658291,0.0 9.1922192,45.4658291,26.844</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1921948,45.4658208,26.844 9.1920804,45.4658888,26.844 9.1920804,45.4658888,0.0 9.1921948,45.4658208,0.0 9.1921948,45.4658208,26.844</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1920792,45.4658982,26.844 9.1922187,45.4660183,26.844 9.1922187,45.4660183,0.0 9.1920792,45.4658982,0.0 9.1920792,45.4658982,26.844</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1922321,45.4660194,26.844 9.1922425,45.4660136,26.844 9.1922425,45.4660136,0.0 9.1922321,45.4660194,0.0 9.1922321,45.4660194,26.844</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-      </MultiGeometry>
-    </Placemark>
-    <Placemark id="COLLADA_RLB-9eeafff2-45fe-4b57-84de-da9930bc7814">
-      <name>RLB-9eeafff2-45fe-4b57-84de-da9930bc7814</name>
-      <Model>
-        <altitudeMode>absolute</altitudeMode>
-        <Location>
-          <longitude>9.1921399</longitude>
-          <latitude>45.4657097</latitude>
-          <altitude>0.0</altitude>
-        </Location>
-        <Orientation>
-          <heading>0.1380936</heading>
-        </Orientation>
-        <Link>
-          <href>103/RLB-9eeafff2-45fe-4b57-84de-da9930bc7814.dae</href>
-        </Link>
-      </Model>
-    </Placemark>
-    <Placemark id="COLLADA_RLB-56eea81a-5acd-46c9-9c5c-dd5222872acd">
-      <name>RLB-56eea81a-5acd-46c9-9c5c-dd5222872acd</name>
-      <Model>
-        <altitudeMode>absolute</altitudeMode>
-        <Location>
-          <longitude>9.1922125</longitude>
-          <latitude>45.4658339</latitude>
-          <altitude>0.0</altitude>
-        </Location>
-        <Orientation>
-          <heading>0.1411454</heading>
-        </Orientation>
-        <Link>
-          <href>84/RLB-56eea81a-5acd-46c9-9c5c-dd5222872acd.dae</href>
-        </Link>
-      </Model>
-    </Placemark>
-    <Placemark id="KMLGeomHi_RLB-7dd6fc23-df63-4410-ba5d-c9936db8553d">
-      <name>RLB-7dd6fc23-df63-4410-ba5d-c9936db8553d</name>
-      <styleUrl>#colladaStyle</styleUrl>
-      <MultiGeometry>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1918258,45.4661813,-0.75 9.1918031,45.4661629,-0.75 9.1918911,45.4661091,-0.75 9.1919588,45.4661639,-0.75 9.1920202,45.466129,-0.75 9.1919014,45.4660295,-0.75 9.1916654,45.4661723,-0.75 9.1917387,45.4662329,-0.75 9.1918258,45.4661813,-0.75</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1918258,45.4661813,31.363 9.1917387,45.4662329,31.363 9.1916654,45.4661723,31.363 9.1919014,45.4660295,31.363 9.1920202,45.466129,31.363 9.1919588,45.4661639,31.363 9.1918911,45.4661091,31.363 9.1918031,45.4661629,31.363 9.1918258,45.4661813,31.363</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.191833,45.4661768,30.613 9.1918104,45.4661585,30.613 9.1918104,45.4661585,0.0 9.191833,45.4661768,0.0 9.191833,45.4661768,30.613</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1918094,45.466168,30.613 9.1918974,45.4661142,30.613 9.1918974,45.4661142,0.0 9.1918094,45.466168,0.0 9.1918094,45.466168,30.613</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1918839,45.4661136,30.613 9.1919515,45.4661683,30.613 9.1919515,45.4661683,0.0 9.1918839,45.4661136,0.0 9.1918839,45.4661136,30.613</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1919648,45.4661691,30.613 9.1920262,45.4661343,30.613 9.1920262,45.4661343,0.0 9.1919648,45.4661691,0.0 9.1919648,45.4661691,30.613</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1920275,45.4661247,30.613 9.1919087,45.4660252,30.613 9.1919087,45.4660252,0.0 9.1920275,45.4661247,0.0 9.1920275,45.4661247,30.613</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1918951,45.4660244,30.613 9.1916591,45.4661672,30.613 9.1916591,45.4661672,0.0 9.1918951,45.4660244,0.0 9.1918951,45.4660244,30.613</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1916581,45.4661767,30.613 9.1917314,45.4662373,30.613 9.1917314,45.4662373,0.0 9.1916581,45.4661767,0.0 9.1916581,45.4661767,30.613</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1917449,45.4662381,30.613 9.191832,45.4661864,30.613 9.191832,45.4661864,0.0 9.1917449,45.4662381,0.0 9.1917449,45.4662381,30.613</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-      </MultiGeometry>
-    </Placemark>
-    <Placemark id="KMLGeomHi_RLB-acd1f60c-3e23-4c1a-ae4f-d8c9c8e52d47">
-      <name>RLB-acd1f60c-3e23-4c1a-ae4f-d8c9c8e52d47</name>
-      <styleUrl>#colladaStyle</styleUrl>
-      <MultiGeometry>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1917021,45.4659787,-0.75 9.1916515,45.4659423,-0.75 9.1916134,45.4659561,-0.75 9.191575,45.4659289,-0.75 9.1915141,45.4659667,-0.75 9.1916185,45.466044,-0.75 9.1917068,45.4659827,-0.75 9.1917021,45.4659787,-0.75</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1917021,45.4659787,17.407 9.1917068,45.4659827,17.407 9.1916185,45.466044,17.407 9.1915141,45.4659667,17.407 9.191575,45.4659289,17.407 9.1916134,45.4659561,17.407 9.1916515,45.4659423,17.407 9.1917021,45.4659787,17.407</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.191709,45.465974,16.657 9.1916583,45.4659376,16.657 9.1916583,45.4659376,0.0 9.191709,45.465974,0.0 9.191709,45.465974,16.657</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1916471,45.4659363,16.657 9.191609,45.4659501,16.657 9.191609,45.4659501,0.0 9.1916471,45.4659363,0.0 9.1916471,45.4659363,16.657</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1916202,45.4659514,16.657 9.1915818,45.4659242,16.657 9.1915818,45.4659242,0.0 9.1916202,45.4659514,0.0 9.1916202,45.4659514,16.657</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1915687,45.4659239,16.657 9.1915077,45.4659617,16.657 9.1915077,45.4659617,0.0 9.1915687,45.4659239,0.0 9.1915687,45.4659239,16.657</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1915071,45.4659714,16.657 9.1916115,45.4660487,16.657 9.1916115,45.4660487,0.0 9.1915071,45.4659714,0.0 9.1915071,45.4659714,16.657</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1916252,45.4660488,16.657 9.1917136,45.4659875,16.657 9.1917136,45.4659875,0.0 9.1916252,45.4660488,0.0 9.1916252,45.4660488,16.657</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1917142,45.4659783,16.657 9.1917095,45.4659744,16.657 9.1917095,45.4659744,0.0 9.1917142,45.4659783,0.0 9.1917142,45.4659783,16.657</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-      </MultiGeometry>
-    </Placemark>
-    <Placemark id="COLLADA_RLB-acd1f60c-3e23-4c1a-ae4f-d8c9c8e52d47">
-      <name>RLB-acd1f60c-3e23-4c1a-ae4f-d8c9c8e52d47</name>
-      <Model>
-        <altitudeMode>absolute</altitudeMode>
-        <Location>
-          <longitude>9.1916134</longitude>
-          <latitude>45.4659561</latitude>
-          <altitude>0.0</altitude>
-        </Location>
-        <Orientation>
-          <heading>0.1332197</heading>
-        </Orientation>
-        <Link>
-          <href>119/RLB-acd1f60c-3e23-4c1a-ae4f-d8c9c8e52d47.dae</href>
-        </Link>
-      </Model>
-    </Placemark>
-    <Placemark id="COLLADA_RLB-7dd6fc23-df63-4410-ba5d-c9936db8553d">
-      <name>RLB-7dd6fc23-df63-4410-ba5d-c9936db8553d</name>
-      <Model>
-        <altitudeMode>absolute</altitudeMode>
-        <Location>
-          <longitude>9.1918258</longitude>
-          <latitude>45.4661813</latitude>
-          <altitude>0.0</altitude>
-        </Location>
-        <Orientation>
-          <heading>0.1374227</heading>
-        </Orientation>
-        <Link>
-          <href>121/RLB-7dd6fc23-df63-4410-ba5d-c9936db8553d.dae</href>
-        </Link>
-      </Model>
-    </Placemark>
-    <Placemark id="KMLGeomHi_RLB-9b2924f4-72d9-4b66-9301-6a0e9d8967c3">
-      <name>RLB-9b2924f4-72d9-4b66-9301-6a0e9d8967c3</name>
-      <styleUrl>#colladaStyle</styleUrl>
-      <MultiGeometry>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1918064,45.4654566,-0.75 9.191725,45.465424,-0.75 9.1916439,45.4654182,-0.75 9.1916315,45.4654793,-0.75 9.1917609,45.4655166,-0.75 9.1918064,45.4654566,-0.75</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1918064,45.4654566,22.775 9.1917609,45.4655166,22.775 9.1916315,45.4654793,22.775 9.1916439,45.4654182,22.775 9.191725,45.465424,22.775 9.1918064,45.4654566,22.775</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1918112,45.4654508,22.025 9.1917298,45.4654182,22.025 9.1917298,45.4654182,0.0 9.1918112,45.4654508,0.0 9.1918112,45.4654508,22.025</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.191726,45.4654173,22.025 9.1916449,45.4654114,22.025 9.1916449,45.4654114,0.0 9.191726,45.4654173,0.0 9.191726,45.4654173,22.025</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1916344,45.4654172,22.025 9.191622,45.4654784,22.025 9.191622,45.4654784,0.0 9.1916344,45.4654172,0.0 9.1916344,45.4654172,22.025</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1916279,45.4654856,22.025 9.1917572,45.4655228,22.025 9.1917572,45.4655228,0.0 9.1916279,45.4654856,0.0 9.1916279,45.4654856,22.025</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1917693,45.4655198,22.025 9.1918149,45.4654598,22.025 9.1918149,45.4654598,0.0 9.1917693,45.4655198,0.0 9.1917693,45.4655198,22.025</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-      </MultiGeometry>
-    </Placemark>
-    <Placemark id="KMLGeomHi_RLB-fadc99d0-375f-4f02-ad36-2cde7a8ac221">
-      <name>RLB-fadc99d0-375f-4f02-ad36-2cde7a8ac221</name>
-      <styleUrl>#colladaStyle</styleUrl>
-      <MultiGeometry>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1918749,45.4658524,-0.75 9.1918667,45.4658456,-0.75 9.1919589,45.4657876,-0.75 9.1918312,45.4657131,-0.75 9.1917593,45.4657678,-0.75 9.1917708,45.465778,-0.75 9.1917463,45.4658008,-0.75 9.1918427,45.465869,-0.75 9.1918749,45.4658524,-0.75</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1918749,45.4658524,15.061 9.1918427,45.465869,15.061 9.1917463,45.4658008,15.061 9.1917708,45.465778,15.061 9.1917593,45.4657678,15.061 9.1918312,45.4657131,15.061 9.1919589,45.4657876,15.061 9.1918667,45.4658456,15.061 9.1918749,45.4658524,15.061</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1918822,45.465848,14.311 9.191874,45.4658412,14.311 9.191874,45.4658412,0.0 9.1918822,45.465848,0.0 9.1918822,45.465848,14.311</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1918731,45.4658506,14.311 9.1919652,45.4657927,14.311 9.1919652,45.4657927,0.0 9.1918731,45.4658506,0.0 9.1918731,45.4658506,14.311</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.191965,45.4657824,14.311 9.1918374,45.4657079,14.311 9.1918374,45.4657079,0.0 9.191965,45.4657824,0.0 9.191965,45.4657824,14.311</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1918242,45.4657085,14.311 9.1917523,45.4657632,14.311 9.1917523,45.4657632,0.0 9.1918242,45.4657085,0.0 9.1918242,45.4657085,14.311</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1917518,45.465772,14.311 9.1917633,45.4657822,14.311 9.1917633,45.4657822,0.0 9.1917518,45.465772,0.0 9.1917518,45.465772,14.311</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1917632,45.4657739,14.311 9.1917386,45.4657967,14.311 9.1917386,45.4657967,0.0 9.1917632,45.4657739,0.0 9.1917632,45.4657739,14.311</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1917395,45.4658056,14.311 9.1918359,45.4658737,14.311 9.1918359,45.4658737,0.0 9.1917395,45.4658056,0.0 9.1917395,45.4658056,14.311</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1918484,45.4658744,14.311 9.1918805,45.4658578,14.311 9.1918805,45.4658578,0.0 9.1918484,45.4658744,0.0 9.1918484,45.4658744,14.311</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-      </MultiGeometry>
-    </Placemark>
-    <Placemark id="COLLADA_RLB-9b2924f4-72d9-4b66-9301-6a0e9d8967c3">
-      <name>RLB-9b2924f4-72d9-4b66-9301-6a0e9d8967c3</name>
-      <Model>
-        <altitudeMode>absolute</altitudeMode>
-        <Location>
-          <longitude>9.1916315</longitude>
-          <latitude>45.4654793</latitude>
-          <altitude>0.0</altitude>
-        </Location>
-        <Orientation>
-          <heading>0.1350499</heading>
-        </Orientation>
-        <Link>
-          <href>85/RLB-9b2924f4-72d9-4b66-9301-6a0e9d8967c3.dae</href>
-        </Link>
-      </Model>
-    </Placemark>
-    <Placemark id="COLLADA_RLB-fadc99d0-375f-4f02-ad36-2cde7a8ac221">
-      <name>RLB-fadc99d0-375f-4f02-ad36-2cde7a8ac221</name>
+    <Placemark id="COLLADA_UUID_08b8207c-3612-4b2c-bfd6-87273b038127">
+      <name>UUID_08b8207c-3612-4b2c-bfd6-87273b038127</name>
       <Model>
         <altitudeMode>absolute</altitudeMode>
         <Location>
@@ -785,222 +52,183 @@
           <heading>0.1395931</heading>
         </Orientation>
         <Link>
-          <href>71/RLB-fadc99d0-375f-4f02-ad36-2cde7a8ac221.dae</href>
+          <href>73/UUID_08b8207c-3612-4b2c-bfd6-87273b038127.dae</href>
         </Link>
       </Model>
     </Placemark>
-    <Placemark id="KMLGeomHi_RLB-587fed1d-13a5-4cf9-85da-788fdbb76775">
-      <name>RLB-587fed1d-13a5-4cf9-85da-788fdbb76775</name>
-      <styleUrl>#colladaStyle</styleUrl>
-      <MultiGeometry>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1915166,45.4659141,-0.75 9.191414,45.465832,-0.75 9.1913662,45.4658592,-0.75 9.1914762,45.4659392,-0.75 9.1915166,45.4659141,-0.75</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1915166,45.4659141,19.154 9.1914762,45.4659392,19.154 9.1913662,45.4658592,19.154 9.191414,45.465832,19.154 9.1915166,45.4659141,19.154</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1915238,45.4659097,18.404 9.1914212,45.4658276,18.404 9.1914212,45.4658276,0.0 9.1915238,45.4659097,0.0 9.1915238,45.4659097,18.404</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.191408,45.4658268,18.404 9.1913602,45.465854,18.404 9.1913602,45.465854,0.0 9.191408,45.4658268,0.0 9.191408,45.4658268,18.404</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1913593,45.4658639,18.404 9.1914693,45.4659439,18.404 9.1914693,45.4659439,0.0 9.1913593,45.4658639,0.0 9.1913593,45.4658639,18.404</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1914825,45.4659443,18.404 9.191523,45.4659192,18.404 9.191523,45.4659192,0.0 9.1914825,45.4659443,0.0 9.1914825,45.4659443,18.404</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-      </MultiGeometry>
-    </Placemark>
-    <Placemark id="COLLADA_RLB-587fed1d-13a5-4cf9-85da-788fdbb76775">
-      <name>RLB-587fed1d-13a5-4cf9-85da-788fdbb76775</name>
+    <Placemark id="COLLADA_UUID_fb8ff085-dc8f-401e-8203-f2d9ea9e2a64">
+      <name>UUID_fb8ff085-dc8f-401e-8203-f2d9ea9e2a64</name>
       <Model>
         <altitudeMode>absolute</altitudeMode>
         <Location>
-          <longitude>9.1915166</longitude>
-          <latitude>45.4659141</latitude>
+          <longitude>9.1915625</longitude>
+          <latitude>45.4658857</latitude>
           <altitude>0.0</altitude>
         </Location>
         <Orientation>
-          <heading>0.1305465</heading>
+          <heading>0.138296</heading>
         </Orientation>
         <Link>
-          <href>93/RLB-587fed1d-13a5-4cf9-85da-788fdbb76775.dae</href>
+          <href>89/UUID_fb8ff085-dc8f-401e-8203-f2d9ea9e2a64.dae</href>
         </Link>
       </Model>
     </Placemark>
-    <Placemark id="KMLGeomHi_RLB-cc483c2d-12a5-435b-971b-f41fec9be9aa">
-      <name>RLB-cc483c2d-12a5-435b-971b-f41fec9be9aa</name>
-      <styleUrl>#colladaStyle</styleUrl>
-      <MultiGeometry>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1914703,45.4656937,-0.75 9.1914863,45.4655737,-0.75 9.1915237,45.4655734,-0.75 9.1915339,45.465511,-0.75 9.1914627,45.4655056,-0.75 9.1914513,45.4655695,-0.75 9.1914231,45.4655696,-0.75 9.1913896,45.4657115,-0.75 9.1914666,45.4657165,-0.75 9.1914703,45.4656937,-0.75</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1914703,45.4656937,28.302 9.1914666,45.4657165,28.302 9.1913896,45.4657115,28.302 9.1914231,45.4655696,28.302 9.1914513,45.4655695,28.302 9.1914627,45.4655056,28.302 9.1915339,45.465511,28.302 9.1915237,45.4655734,28.302 9.1914863,45.4655737,28.302 9.1914703,45.4656937,28.302</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1914799,45.4656943,27.552 9.1914958,45.4655743,27.552 9.1914958,45.4655743,0.0 9.1914799,45.4656943,0.0 9.1914799,45.4656943,27.552</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1914864,45.4655804,27.552 9.1915238,45.4655801,27.552 9.1915238,45.4655801,0.0 9.1914864,45.4655804,0.0 9.1914864,45.4655804,27.552</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1915333,45.4655742,27.552 9.1915434,45.4655118,27.552 9.1915434,45.4655118,0.0 9.1915333,45.4655742,0.0 9.1915333,45.4655742,27.552</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1915349,45.4655043,27.552 9.1914637,45.4654989,27.552 9.1914637,45.4654989,0.0 9.1915349,45.4655043,0.0 9.1915349,45.4655043,27.552</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1914532,45.4655047,27.552 9.1914417,45.4655687,27.552 9.1914417,45.4655687,0.0 9.1914532,45.4655047,0.0 9.1914532,45.4655047,27.552</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1914512,45.4655628,27.552 9.1914231,45.4655629,27.552 9.1914231,45.4655629,0.0 9.1914512,45.4655628,0.0 9.1914512,45.4655628,27.552</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1914137,45.4655685,27.552 9.1913801,45.4657104,27.552 9.1913801,45.4657104,0.0 9.1914137,45.4655685,0.0 9.1914137,45.4655685,27.552</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1913887,45.4657182,27.552 9.1914658,45.4657232,27.552 9.1914658,45.4657232,0.0 9.1913887,45.4657182,0.0 9.1913887,45.4657182,27.552</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-        <Polygon>
-          <altitudeMode>absolute</altitudeMode>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>9.1914762,45.4657172,27.552 9.1914799,45.4656945,27.552 9.1914799,45.4656945,0.0 9.1914762,45.4657172,0.0 9.1914762,45.4657172,27.552</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-      </MultiGeometry>
-    </Placemark>
-    <Placemark id="COLLADA_RLB-cc483c2d-12a5-435b-971b-f41fec9be9aa">
-      <name>RLB-cc483c2d-12a5-435b-971b-f41fec9be9aa</name>
+    <Placemark id="COLLADA_UUID_e6a7339a-7722-4419-99e3-c3511a1c42f1">
+      <name>UUID_e6a7339a-7722-4419-99e3-c3511a1c42f1</name>
       <Model>
         <altitudeMode>absolute</altitudeMode>
         <Location>
-          <longitude>9.1914703</longitude>
-          <latitude>45.4656937</latitude>
+          <longitude>9.1918549</longitude>
+          <latitude>45.4659465</latitude>
           <altitude>0.0</altitude>
         </Location>
         <Orientation>
-          <heading>0.1267318</heading>
+          <heading>0.1352008</heading>
         </Orientation>
         <Link>
-          <href>73/RLB-cc483c2d-12a5-435b-971b-f41fec9be9aa.dae</href>
+          <href>120/UUID_e6a7339a-7722-4419-99e3-c3511a1c42f1.dae</href>
         </Link>
       </Model>
     </Placemark>
-    <Style id="colladaStyleInvisible">
-      <LineStyle>
-        <color>0166FFFF</color>
-      </LineStyle>
-      <PolyStyle>
-        <color>0066FF66</color>
-      </PolyStyle>
-      <BalloonStyle>
-        <text>$[description]</text>
-      </BalloonStyle>
-    </Style>
-    <Style id="colladaStyleHighlight">
+    <Placemark id="COLLADA_UUID_a3ee2f7f-ddbd-4c81-aa2c-b9c7b61fe1bb">
+      <name>UUID_a3ee2f7f-ddbd-4c81-aa2c-b9c7b61fe1bb</name>
+      <Model>
+        <altitudeMode>absolute</altitudeMode>
+        <Location>
+          <longitude>9.1922366</longitude>
+          <latitude>45.4660083</latitude>
+          <altitude>0.0</altitude>
+        </Location>
+        <Orientation>
+          <heading>0.1373217</heading>
+        </Orientation>
+        <Link>
+          <href>78/UUID_a3ee2f7f-ddbd-4c81-aa2c-b9c7b61fe1bb.dae</href>
+        </Link>
+      </Model>
+    </Placemark>
+    <Placemark id="COLLADA_UUID_bb8fcd1a-c8ed-4517-9b38-56afec58a094">
+      <name>UUID_bb8fcd1a-c8ed-4517-9b38-56afec58a094</name>
+      <Model>
+        <altitudeMode>absolute</altitudeMode>
+        <Location>
+          <longitude>9.1919862</longitude>
+          <latitude>45.4661012</latitude>
+          <altitude>0.0</altitude>
+        </Location>
+        <Orientation>
+          <heading>0.1269507</heading>
+        </Orientation>
+        <Link>
+          <href>114/UUID_bb8fcd1a-c8ed-4517-9b38-56afec58a094.dae</href>
+        </Link>
+      </Model>
+    </Placemark>
+    <Placemark id="COLLADA_UUID_2a375612-63a0-4e8b-8737-20b8a85ced84">
+      <name>UUID_2a375612-63a0-4e8b-8737-20b8a85ced84</name>
+      <Model>
+        <altitudeMode>absolute</altitudeMode>
+        <Location>
+          <longitude>9.1921399</longitude>
+          <latitude>45.4657097</latitude>
+          <altitude>0.0</altitude>
+        </Location>
+        <Orientation>
+          <heading>0.1380936</heading>
+        </Orientation>
+        <Link>
+          <href>97/UUID_2a375612-63a0-4e8b-8737-20b8a85ced84.dae</href>
+        </Link>
+      </Model>
+    </Placemark>
+    <Placemark id="COLLADA_UUID_c8aade38-1b04-48a1-844b-3bb4095c7726">
+      <name>UUID_c8aade38-1b04-48a1-844b-3bb4095c7726</name>
+      <Model>
+        <altitudeMode>absolute</altitudeMode>
+        <Location>
+          <longitude>9.1918064</longitude>
+          <latitude>45.4654566</latitude>
+          <altitude>0.0</altitude>
+        </Location>
+        <Orientation>
+          <heading>0.1318663</heading>
+        </Orientation>
+        <Link>
+          <href>79/UUID_c8aade38-1b04-48a1-844b-3bb4095c7726.dae</href>
+        </Link>
+      </Model>
+    </Placemark>
+    <Placemark id="COLLADA_UUID_0a902d44-ab3b-48c2-9d28-54ba289a3dd9">
+      <name>UUID_0a902d44-ab3b-48c2-9d28-54ba289a3dd9</name>
+      <Model>
+        <altitudeMode>absolute</altitudeMode>
+        <Location>
+          <longitude>9.1918049</longitude>
+          <latitude>45.4656364</latitude>
+          <altitude>0.0</altitude>
+        </Location>
+        <Orientation>
+          <heading>0.1260765</heading>
+        </Orientation>
+        <Link>
+          <href>19/UUID_0a902d44-ab3b-48c2-9d28-54ba289a3dd9.dae</href>
+        </Link>
+      </Model>
+    </Placemark>
+    <Style id="GenericPointNormal">
       <LineStyle>
         <color>C866FFFF</color>
+        <width>3.0</width>
       </LineStyle>
-      <PolyStyle>
-        <color>C866FF66</color>
-      </PolyStyle>
       <BalloonStyle>
         <text>$[description]</text>
       </BalloonStyle>
     </Style>
-    <StyleMap id="colladaStyle">
+    <Style id="GenericPointHighlight">
+      <LineStyle>
+        <color>C8FFFFFF</color>
+        <width>6.0</width>
+      </LineStyle>
+      <BalloonStyle>
+        <text>$[description]</text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="GenericPointStyle">
       <Pair>
         <key>normal</key>
-        <styleUrl>#colladaStyleInvisible</styleUrl>
+        <styleUrl>#GenericPointNormal</styleUrl>
       </Pair>
       <Pair>
         <key>highlight</key>
-        <styleUrl>#colladaStyleHighlight</styleUrl>
+        <styleUrl>#GenericPointHighlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="GenericCurveNormal">
+      <LineStyle>
+        <color>C866FFFF</color>
+        <width>3.0</width>
+      </LineStyle>
+      <BalloonStyle>
+        <text>$[description]</text>
+      </BalloonStyle>
+    </Style>
+    <Style id="GenericCurveHighlight">
+      <LineStyle>
+        <color>C8FFFFFF</color>
+        <width>6.0</width>
+      </LineStyle>
+      <BalloonStyle>
+        <text>$[description]</text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="GenericCurveStyle">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#GenericCurveNormal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#GenericCurveHighlight</styleUrl>
       </Pair>
     </StyleMap>
   </Document>

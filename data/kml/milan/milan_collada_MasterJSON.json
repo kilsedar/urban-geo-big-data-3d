@@ -3,14 +3,14 @@
 	"layername": "milan",
 	"fileextension": ".kml",
 	"displayform": "collada",
-	"minLodPixels": 0,
+	"minLodPixels": 120,
 	"maxLodPixels": -1,
 	"colnum": 5,
 	"rownum": 5,
 	"bbox":{ 
 		"xmin": 9.18669478811458,
-		"xmax": 9.194527897995288,
-		"ymin": 45.461144714453894,
+		"xmax": 9.19452789799529,
+		"ymin": 45.46114471445389,
 		"ymax": 45.46647583746108
 	}
 }

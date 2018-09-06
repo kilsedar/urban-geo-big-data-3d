@@ -5,9 +5,7 @@ define([], function () {
     this.webMap3DCityDB = webMap3DCityDB;
   };
 
-  WebMap3DCityDBKml.prototype.add = function (viewer, webMap3DCityDBKmlLayer) {
-    var _self = this;
-
+  WebMap3DCityDBKml.prototype.subscribeUnhighlight = function (_self, viewer) {
     var observable = Cesium.knockout.getObservable(viewer, '_selectedEntity');
     observable.subscribe(function(entity) {
       if (!Cesium.defined(entity)) {
@@ -18,6 +16,12 @@ define([], function () {
         }
       }
     });
+  };
+
+  WebMap3DCityDBKml.prototype.add = function (viewer, webMap3DCityDBKmlLayer) {
+    var _self = this;
+
+    this.subscribeUnhighlight(_self, viewer);
 
     var dataLayer = new CitydbKmlLayer({
       url: webMap3DCityDBKmlLayer.url + "milan_collada_MasterJSON.json",

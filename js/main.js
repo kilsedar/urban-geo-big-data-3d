@@ -57,22 +57,6 @@ define(["js/TopNavigationBar",
     infoBox: true
   });
 
-  var topNavigationBar = new TopNavigationBar("rgba(67, 173, 97, 1.0)", "rgba(51, 132, 74, 1.0)");
-
-  var topSectionWorldWind3dCity = new TopSection("world-wind-3d-city", "world-wind-3d-city-section", "3D City <img id='top-section-nasa-image' src='images/nasa.png'>", "3D OpenStreetMap Buildings on NASA Web WorldWind", true);
-  var topSectionCesium3dCity = new TopSection("cesium-3d-city", "cesium-3d-city-section", "3D City <img id='top-section-cesium-image' src='images/cesium_white.png'>", "CityGML on Cesium", false);
-  var topSectionDeformation = new TopSection("cesium-deformation", "deformation-section", "Deformation", "Deformation Maps on Cesium", false);
-  var topSectionLulc = new TopSection("cesium-lulc", "lulc-section", "LULC", "Land Cover Land Use (LULC) on Cesium", false);
-
-  topNavigationBar.addSection(topSectionWorldWind3dCity);
-  topNavigationBar.addSection(topSectionCesium3dCity);
-  topNavigationBar.addSection(topSectionDeformation);
-  topNavigationBar.addSection(topSectionLulc);
-
-  $(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip();
-  });
-
   var locationSwitcherWorldWind3dCity = new LocationSwitcher("world-wind-3d-city", "location-switcher-world-wind-3d-city");
 
   var worldWind3dCityConfigurationMilan = {
@@ -147,8 +131,8 @@ define(["js/TopNavigationBar",
   webMap3DCityDB.activateMouseClickEvents(true);
   var webMap3DCityDBKml = new WebMap3DCityDBKml(webMap3DCityDB);
 
-  var webMap3DCityDBKmlMilan = new WebMap3DCityDBKmlLayer(webMap3DCityDBKml, "data/kml/milan/", "https://fusiontables.google.com/data?docid=1Z4Oo4dyNAI9yC5SplkmU1XGIOmE-xZKzVkTtfcz7#rows:id=1");
-  var locationSwitcherCesium3dCityMilan = new LocationSwitcherItem("cesium", "kml", cesiumViewer3dCity, "Milan", "cesium-3d-city-milan", webMap3DCityDBKmlMilan, [9.18669478811458, 45.46114471445389, 9.19452789799529, 45.46647583746108], 6000.0);
+  var webMap3DCityDBKmlMilan = new WebMap3DCityDBKmlLayer(webMap3DCityDBKml, "data/kml/milan/", "https://fusiontables.google.com/data?docid=15_uD5QU7KZjQk_q78R85Gf9OU5dNVpVMq6KQJqDB#rows:id=1");
+  var locationSwitcherCesium3dCityMilan = new LocationSwitcherItem("cesium", "kml", cesiumViewer3dCity, "Milan", "cesium-3d-city-milan", webMap3DCityDBKmlMilan, [9.18669478811458, 45.46114471445389, 9.19452789799529, 45.46647583746108], 1000.0);
   locationSwitcherCesium3dCity.add(locationSwitcherCesium3dCityMilan);
 
   var locationSwitcherDeformation = new LocationSwitcher("cesium-deformation", "location-switcher-deformation");
@@ -182,4 +166,20 @@ define(["js/TopNavigationBar",
   var glc30Couchdb = new LandCoverJson(glc30Classes, glc30Colors, urlCouchdb);
   var locationSwitcherLulcVgi = new LocationSwitcherItem("cesium", "entities", cesiumViewerLulc, "Italy - VGI", "lulc-vgi", glc30Couchdb, [7.0, 35.0, 19.0, 47.0], 1100000.0);
   locationSwitcherLulc.add(locationSwitcherLulcVgi);
+
+  var topNavigationBar = new TopNavigationBar("rgba(67, 173, 97, 1.0)", "rgba(51, 132, 74, 1.0)");
+
+  var topSectionWorldWind3dCity = new TopSection("world-wind-3d-city", "world-wind-3d-city-section", "3D City <img id='top-section-nasa-image' src='images/nasa.png'>", "3D OpenStreetMap Buildings on NASA Web WorldWind", true);
+  var topSectionCesium3dCity = new TopSection("cesium-3d-city", "cesium-3d-city-section", "3D City <img id='top-section-cesium-image' src='images/cesium_white.png'>", "CityGML on Cesium", false);
+  var topSectionDeformation = new TopSection("cesium-deformation", "deformation-section", "Deformation", "Deformation Maps on Cesium", false);
+  var topSectionLulc = new TopSection("cesium-lulc", "lulc-section", "LULC", "Land Cover Land Use (LULC) on Cesium", false);
+
+  topNavigationBar.addSection(topSectionWorldWind3dCity);
+  topNavigationBar.addSection(topSectionCesium3dCity);
+  topNavigationBar.addSection(topSectionDeformation);
+  topNavigationBar.addSection(topSectionLulc);
+
+  $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+  });
 });
