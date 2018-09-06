@@ -24,8 +24,8 @@ define([], function () {
     this.subscribeUnhighlight(_self, viewer);
 
     var dataLayer = new CitydbKmlLayer({
-      url: webMap3DCityDBKmlLayer.url + "milan_collada_MasterJSON.json",
-      cityobjectsJsonUrl: webMap3DCityDBKmlLayer.url + "milan.json",
+      url: webMap3DCityDBKmlLayer.url + webMap3DCityDBKmlLayer.layerName + "_collada_MasterJSON.json",
+      cityobjectsJsonUrl: webMap3DCityDBKmlLayer.url + webMap3DCityDBKmlLayer.layerName + ".json",
       thematicDataUrl: webMap3DCityDBKmlLayer.thematicDataUrl,
       minLodPixels: "",
       maxLodPixels: "",
