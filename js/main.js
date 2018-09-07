@@ -131,7 +131,7 @@ define(["js/TopNavigationBar",
   webMap3DCityDB.activateMouseClickEvents(true);
   var webMap3DCityDBKml = new WebMap3DCityDBKml(webMap3DCityDB);
 
-  var webMap3DCityDBKmlMilan = new WebMap3DCityDBKmlLayer(webMap3DCityDBKml, "data/kml/milan/", "milan", "https://fusiontables.google.com/data?docid=1vcAD11MEoN-JJGjPHkm96BL1QgelSqqs2b8A4RDm#rows:id=1");
+  var webMap3DCityDBKmlMilan = new WebMap3DCityDBKmlLayer(webMap3DCityDBKml, "data/kml/milan/", "milan", "https://fusiontables.google.com/data?docid=1qsPpWWImxP2v9KT0w6VdxPRjbREsvtZtbaRm233g#rows:id=1");
   var locationSwitcherCesium3dCityMilan = new LocationSwitcherItem("cesium", "kml", cesiumViewer3dCity, "Milan", "cesium-3d-city-milan", webMap3DCityDBKmlMilan, [9.18669478811458, 45.46114471445389, 9.19452789799529, 45.46647583746108], 1000.0);
   locationSwitcherCesium3dCity.add(locationSwitcherCesium3dCityMilan);
 
