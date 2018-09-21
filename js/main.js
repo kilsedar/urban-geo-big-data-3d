@@ -25,7 +25,7 @@ define(["js/TopNavigationBar",
   worldWindViewer3dCity.navigator.range = 22e6;
 
   Cesium.BingMapsApi.defaultKey = "AkOk-CSt-kcpa4o6S8qZPtUEfPIRh__FfRTCl9nFu51qAMSJklQe8KiFFFNivIRD";
-  Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJhZTc0MTUyMS03NTBhLTRlYzItYTk0Ni03MjYzNDlkNWU4ODIiLCJpZCI6MTM5MywiaWF0IjoxNTI4MjEzMTM3fQ.PjFkLZuljzHqMy1g8kSiRV4nmU6piS5UgfABBRaVAKM';
+  Cesium.Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJhZTc0MTUyMS03NTBhLTRlYzItYTk0Ni03MjYzNDlkNWU4ODIiLCJpZCI6MTM5MywiaWF0IjoxNTI4MjEzMTM3fQ.PjFkLZuljzHqMy1g8kSiRV4nmU6piS5UgfABBRaVAKM";
 
   Cesium.Camera.DEFAULT_VIEW_FACTOR = 2;
   Cesium.Camera.DEFAULT_VIEW_RECTANGLE = Cesium.Rectangle.fromDegrees(7.0, 35.0, 19.0, 47.0);
@@ -33,28 +33,28 @@ define(["js/TopNavigationBar",
   var cesiumViewer3dCity = new Cesium.Viewer("cesium-3d-city", {
     timeline: false,
     animation: false,
-    imageryProvider: Cesium.createWorldImagery(),
     // terrainProvider: Cesium.createWorldTerrain(),
-    infoBox: true
+    infoBox: true,
+    navigationHelpButton: false
   });
 
   var cesiumViewerDeformation = new Cesium.Viewer("cesium-deformation", {
     timeline: false,
     animation: false,
-    imageryProvider: Cesium.createWorldImagery(),
     terrainProvider: Cesium.createWorldTerrain(),
-    infoBox: false
+    infoBox: false,
+    navigationHelpButton: false
   });
 
-  var naplesWmsDeformationPlot = new WmsDeformationPlot("cesium-deformation", cesiumViewerDeformation)
+  var naplesWmsDeformationPlot = new WmsDeformationPlot("cesium-deformation", cesiumViewerDeformation);
   naplesWmsDeformationPlot.addListener("wfs_ts");
 
   var cesiumViewerLulc = new Cesium.Viewer("cesium-lulc", {
     timeline: false,
     animation: false,
-    imageryProvider: Cesium.createWorldImagery(),
     terrainProvider: Cesium.createWorldTerrain(),
-    infoBox: true
+    infoBox: true,
+    navigationHelpButton: false
   });
 
   var locationSwitcherWorldWind3dCity = new LocationSwitcher("world-wind-3d-city", "location-switcher-world-wind-3d-city");
@@ -169,17 +169,91 @@ define(["js/TopNavigationBar",
 
   var topNavigationBar = new TopNavigationBar("rgba(67, 173, 97, 1.0)", "rgba(51, 132, 74, 1.0)");
 
-  var topSectionWorldWind3dCity = new TopSection("world-wind-3d-city", "world-wind-3d-city-section", "3D City <img id='top-section-nasa-image' src='images/nasa.png'>", "3D OpenStreetMap Buildings on NASA Web WorldWind", true);
-  var topSectionCesium3dCity = new TopSection("cesium-3d-city", "cesium-3d-city-section", "3D City <img id='top-section-cesium-image' src='images/cesium_white.png'>", "CityGML on Cesium", false);
-  var topSectionDeformation = new TopSection("cesium-deformation", "deformation-section", "Deformation", "Deformation Maps on Cesium", false);
-  var topSectionLulc = new TopSection("cesium-lulc", "lulc-section", "LULC", "Land Cover Land Use (LULC) on Cesium", false);
+  var topSectionWorldWind3dCity = new TopSection("world-wind-3d-city", worldWindViewer3dCity, "world-wind-3d-city-section", "3D City <img id='top-section-nasa-image' src='images/nasa.png'>", "3D OpenStreetMap Buildings on NASA Web WorldWind", true);
+  var topSectionCesium3dCity = new TopSection("cesium-3d-city", cesiumViewer3dCity, "cesium-3d-city-section", "3D City <img id='top-section-cesium-image' src='images/cesium_white.png'>", "CityGML on Cesium", false);
+  var topSectionDeformation = new TopSection("cesium-deformation", cesiumViewerDeformation, "deformation-section", "Deformation", "Deformation Maps on Cesium", false);
+  var topSectionLulc = new TopSection("cesium-lulc", cesiumViewerLulc, "lulc-section", "LULC", "Land Cover Land Use (LULC) on Cesium", false);
 
   topNavigationBar.addSection(topSectionWorldWind3dCity);
   topNavigationBar.addSection(topSectionCesium3dCity);
   topNavigationBar.addSection(topSectionDeformation);
   topNavigationBar.addSection(topSectionLulc);
 
+  var projectAttributionLink = $("<a></a>");
+  projectAttributionLink.addClass("cesium-credit-expand-link project-attribution-link");
+  projectAttributionLink.text("Project attribution");
+  $(".cesium-widget-credits").append(projectAttributionLink);
+
+  var projectAttributionLightboxOverlay = $("<div></div>");
+  projectAttributionLightboxOverlay.addClass("cesium-credit-lightbox-overlay project-attribution-lightbox-overlay");
+
+  var projectAttributionLightbox = $("<div></div>");
+  projectAttributionLightbox.addClass("cesium-credit-lightbox");
+
+  var projectTitle = $("<div></div>");
+  projectTitle.addClass("cesium-credit-lightbox-title");
+  projectTitle.text("URBAN GEO BIG DATA");
+
+  var projectAttributionLightboxClose = $("<a></a>");
+  projectAttributionLightboxClose.addClass("cesium-credit-lightbox-close");
+  projectAttributionLightboxClose.html("&times;");
+
+  var projectAttributionText = $("<div></div>");
+  projectAttributionText.addClass("project-attribution-text");
+  projectAttributionText.html("<a href='http://www.urbangeobigdata.it/' target='_blank'>URBAN GEOmatics for Bulk Information Generation, Data Assessment and Technology Awareness (URBAN GEO BIG DATA)</a> is a <a href='http://prin.miur.it/' target='_blank'>Project of National Interest (PRIN)</a> funded by the <a href='http://www.miur.gov.it/web/guest/home' target='_blank'>Italian Ministry of Education, University and Research (MIUR)</a> – id. 20159CNLW8. The project contributes to improving the exploitation of new data from EO and mobile sensors, for a better understanding of a number of urban dynamics. It extracts information from data and represents it for better comprehension, aiming an improved public engagement.");
+
+  var projectLogo = $("<img>");
+  projectLogo.addClass("project-logo");
+  projectLogo.attr("src", "images/urban_geo_big_data.png");
+
+  var projectLogoLink = $("<a></a>");
+  projectLogoLink.attr("href", "http://www.urbangeobigdata.it/");
+  projectLogoLink.attr("target", "_blank");
+  projectLogoLink.append(projectLogo);
+
+  projectAttributionLightbox.append(projectTitle);
+  projectAttributionLightbox.append(projectAttributionLightboxClose);
+  projectAttributionLightbox.append(projectAttributionText);
+  projectAttributionLightbox.append(projectLogoLink);
+  projectAttributionLightboxOverlay.append(projectAttributionLightbox);
+  $(".cesium-widget").append(projectAttributionLightboxOverlay);
+
+  $(".cesium-widget-credits").on("click", ".project-attribution-link", function() {
+    styleLightbox();
+    $(".project-attribution-lightbox-overlay").css("visibility", "visible");
+  });
+
+  $(".cesium-widget").on("click", ".cesium-credit-lightbox-close", function() {
+    $(".project-attribution-lightbox-overlay").css("visibility", "hidden");
+  });
+
+  function styleLightbox() {
+    var mobileWidth = 576;
+
+    var width = $(window).width();
+    var height = $(window).height();
+
+    var activeSectionGlobeId;
+    topNavigationBar.sections.forEach(function(section) {
+      if (section.active)
+        activeSectionGlobeId = section.globeId;
+    });
+
+    if (width < mobileWidth) {
+      $(".project-attribution-lightbox-overlay > .cesium-credit-lightbox").attr("class", "cesium-credit-lightbox cesium-credit-lightbox-mobile");
+      $(".project-attribution-lightbox-overlay > .cesium-credit-lightbox.cesium-credit-lightbox-mobile").css("margin-top", "0px");
+    }
+    else {
+      $(".project-attribution-lightbox-overlay > .cesium-credit-lightbox").attr("class", "cesium-credit-lightbox cesium-credit-lightbox-expanded");
+      $(".project-attribution-lightbox-overlay > .cesium-credit-lightbox.cesium-credit-lightbox-expanded").css("margin-top", Math.floor((height - $("#" + activeSectionGlobeId + " .project-attribution-lightbox-overlay > .cesium-credit-lightbox.cesium-credit-lightbox-expanded").height()) * 0.5) + "px");
+    }
+  }
+
+  $(window).resize(function() {
+    styleLightbox();
+  });
+
   $(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip();
+    $("[data-toggle='tooltip']").tooltip();
   });
 });

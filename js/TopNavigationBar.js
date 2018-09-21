@@ -25,11 +25,15 @@ define(["jquery", "bootstrap"], function ($, bootstrap) {
           $("#"+sections[i].id).css("background-color", backgroundColor);
         }
       }
+      var credit = Cesium.CreditDisplay.cesiumCredit;
       for (var i = 0; i < sections.length; i++) {
         if (sections[i].globeId != globeId)
           $("#"+sections[i].globeId).css("display", "none");
-        else
+        else {
           $("#"+sections[i].globeId).css("display", "block");
+          if (sections[i].globeId.includes("cesium"))
+            sections[i].viewer.scene.frameState.creditDisplay.addDefaultCredit(credit);
+        }
       }
     });
   };

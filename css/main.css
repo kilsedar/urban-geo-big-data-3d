@@ -6,6 +6,7 @@
   position: absolute;
   width: auto;
   bottom: 4px;
+  margin-left: 8px;
 }
 
 .cesium-infoBox {
@@ -18,6 +19,14 @@
 
 .cesium-infoBox-visible {
   transform: translate(0px, 0px);
+}
+
+.cesium-viewer-toolbar {
+  top: 50px;
+}
+
+.cesium-credit-lightbox-overlay {
+  z-index: 200 !important;
 }
 
 .tooltip-inner {
@@ -78,6 +87,29 @@ html, body, #world-wind-3d-city, #world-wind-3d-city-canvas, #cesium-3d-city, #c
   vertical-align: middle;
 }
 
+.project-attribution-link {
+  left: 212px;
+}
+
+.project-attribution-lightbox-overlay {
+  display: block;
+  visibility: hidden;
+}
+
+.project-attribution-text {
+  text-align: justify;
+  font-size: 13px;
+  padding: 20px 20px 0px 20px;
+}
+
+.project-logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  padding-bottom: 20px;
+}
+
 .js-plotly-plot {
   position: absolute;
   bottom: 30px;
@@ -87,8 +119,8 @@ html, body, #world-wind-3d-city, #world-wind-3d-city-canvas, #cesium-3d-city, #c
 
 .location-switcher {
   position: absolute;
-  top: 60px;
-  right: 20px;
+  top: 50px;
+  left: 7px;
 }
 
 .section {
