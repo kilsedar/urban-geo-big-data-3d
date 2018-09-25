@@ -64,7 +64,7 @@ html, body, #world-wind-3d-city, #world-wind-3d-city-canvas, #cesium-3d-city, #c
   font-family: 'Do Hyeon', sans-serif !important;
 }
 
-#container {
+#window {
   width: 100%;
   height: 100%;
   position: absolute;

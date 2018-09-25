@@ -13,12 +13,12 @@ define(["jquery", "bootstrap"], function ($, bootstrap) {
     var sections = this.sections, backgroundColor = this.backgroundColor, highlightColor = this.highlightColor;
     $("body").on("click", ".section", function() {
       var clickedSectionId = $(this).attr("id");
-      var globeId = "";
+      var activeViewerContainerId = "";
       for (var i=0; i<sections.length; i++) {
         if (sections[i].id == clickedSectionId) {
           sections[i].active = true;
           $("#"+sections[i].id).css("background-color", highlightColor);
-          globeId = sections[i].globeId;
+          activeViewerContainerId = sections[i].viewerContainerId;
         }
         else {
           sections[i].active = false;
@@ -27,11 +27,11 @@ define(["jquery", "bootstrap"], function ($, bootstrap) {
       }
       var credit = Cesium.CreditDisplay.cesiumCredit;
       for (var i = 0; i < sections.length; i++) {
-        if (sections[i].globeId != globeId)
-          $("#"+sections[i].globeId).css("display", "none");
+        if (sections[i].viewerContainerId != activeViewerContainerId)
+          $("#"+sections[i].viewerContainerId).css("display", "none");
         else {
-          $("#"+sections[i].globeId).css("display", "block");
-          if (sections[i].globeId.includes("cesium"))
+          $("#"+sections[i].viewerContainerId).css("display", "block");
+          if (sections[i].viewerContainerId.includes("cesium"))
             sections[i].viewer.scene.frameState.creditDisplay.addDefaultCredit(credit);
         }
       }

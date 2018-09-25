@@ -1,14 +1,14 @@
 define(["vendor/plotly-latest.min", "jquery"], function (Plotly, $) {
   "use strict";
 
-  var WmsDeformationPlot = function (globeId, viewer) {
-    this.globeId = globeId;
+  var WmsDeformationPlot = function (viewer) {
     this.viewer = viewer;
     this.listener;
   };
 
   WmsDeformationPlot.prototype.addListener = function (property) {
     var _self = this;
+    var viewerContainerId = $(_self.viewer.container).attr("id");
 
     function listener (e) {
       var mousePosition = new Cesium.Cartesian2(e.clientX, e.clientY);
@@ -55,7 +55,7 @@ define(["vendor/plotly-latest.min", "jquery"], function (Plotly, $) {
 
               var widthPercentage = 60;
 
-              var gd3 = d3.select("#" + _self.globeId)
+              var gd3 = d3.select("#" + viewerContainerId)
                   .append("div")
                   .style({
                       width: widthPercentage + "%",
@@ -88,15 +88,15 @@ define(["vendor/plotly-latest.min", "jquery"], function (Plotly, $) {
               modebarGroup.append(modebarButton);
               $(".modebar").prepend(modebarGroup);
 
-              $("#" + _self.globeId).on("click", ".modebar .modebar-group:nth-child(1)", function() {
+              $("#" + viewerContainerId).on("click", ".modebar .modebar-group:nth-child(1)", function() {
                 $(".js-plotly-plot").remove();
               });
 
-              $("#" + _self.globeId).on("mouseenter", ".modebar .modebar-group:nth-child(1)", function() {
+              $("#" + viewerContainerId).on("mouseenter", ".modebar .modebar-group:nth-child(1)", function() {
                 modebarButtonImage.attr("src", "images/close_hover_small.png");
               });
 
-              $("#" + _self.globeId).on("mouseleave", ".modebar .modebar-group:nth-child(1)", function() {
+              $("#" + viewerContainerId).on("mouseleave", ".modebar .modebar-group:nth-child(1)", function() {
                 modebarButtonImage.attr("src", "images/close_small.png");
               });
 

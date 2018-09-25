@@ -46,7 +46,7 @@ define(["js/TopNavigationBar",
     navigationHelpButton: false
   });
 
-  var naplesWmsDeformationPlot = new WmsDeformationPlot("cesium-deformation", cesiumViewerDeformation);
+  var naplesWmsDeformationPlot = new WmsDeformationPlot(cesiumViewerDeformation);
   naplesWmsDeformationPlot.addListener("wfs_ts");
 
   var cesiumViewerLulc = new Cesium.Viewer("cesium-lulc", {
@@ -233,10 +233,10 @@ define(["js/TopNavigationBar",
     var width = $(window).width();
     var height = $(window).height();
 
-    var activeSectionGlobeId;
+    var activeSectionViewerContainerId;
     topNavigationBar.sections.forEach(function(section) {
       if (section.active)
-        activeSectionGlobeId = section.globeId;
+        activeSectionViewerContainerId = section.viewerContainerId;
     });
 
     if (width < mobileWidth) {
@@ -245,7 +245,7 @@ define(["js/TopNavigationBar",
     }
     else {
       $(".project-attribution-lightbox-overlay > .cesium-credit-lightbox").attr("class", "cesium-credit-lightbox cesium-credit-lightbox-expanded");
-      $(".project-attribution-lightbox-overlay > .cesium-credit-lightbox.cesium-credit-lightbox-expanded").css("margin-top", Math.floor((height - $("#" + activeSectionGlobeId + " .project-attribution-lightbox-overlay > .cesium-credit-lightbox.cesium-credit-lightbox-expanded").height()) * 0.5) + "px");
+      $(".project-attribution-lightbox-overlay > .cesium-credit-lightbox.cesium-credit-lightbox-expanded").css("margin-top", Math.floor((height - $("#" + activeSectionViewerContainerId + " .project-attribution-lightbox-overlay > .cesium-credit-lightbox.cesium-credit-lightbox-expanded").height()) * 0.5) + "px");
     }
   }
 

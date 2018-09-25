@@ -1,8 +1,8 @@
 define([], function () {
   "use strict";
 
-  var TopSection = function (globeId, viewer, id, text, tooltip, active) {
-    this.globeId = globeId;
+  var TopSection = function (viewerContainerId, viewer, id, text, tooltip, active) {
+    this.viewerContainerId = viewerContainerId;
     this.viewer = viewer;
     this.id = id;
     this.text = text;

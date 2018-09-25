@@ -1,9 +1,9 @@
 define(["jquery"], function ($) {
   "use strict";
 
-  var LocationSwitcher = function (globeId, id) {
+  var LocationSwitcher = function (viewerContainerId, id) {
     this.items = [];
-    this.globeId = globeId;
+    this.viewerContainerId = viewerContainerId;
     this.id = id;
     this.dropdownMenuButtonId = this.id + "-menu-button";
     this.dropdownMenuId = this.id + "-menu";
@@ -25,7 +25,7 @@ define(["jquery"], function ($) {
 
     locationSwitcher.append(button);
     locationSwitcher.append(dropdownMenu);
-    $("#"+this.globeId).append(locationSwitcher);
+    $("#"+this.viewerContainerId).append(locationSwitcher);
   };
 
   LocationSwitcher.prototype.add = function (locationSwitcherItem) {
@@ -38,8 +38,8 @@ define(["jquery"], function ($) {
 
     var _self = this;
 
-    $("#"+this.globeId).on("click", "#"+locationSwitcherItem.id, function() {
-      $("#" + _self.dropdownMenuButtonId).html(locationSwitcherItem.text);
+    $("#"+this.viewerContainerId).on("click", "#"+locationSwitcherItem.id, function() {
+      $("#"+_self.dropdownMenuButtonId).html(locationSwitcherItem.text);
 
       if (locationSwitcherItem.viewerType == "world-wind") {
         for (var i=0; i<_self.items.length; i++) {
