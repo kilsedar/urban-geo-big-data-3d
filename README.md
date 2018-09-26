@@ -38,7 +38,7 @@ The deformation map of Naples has been produced using multi-temporal differentia
 
 <p align="center"><img src="images/screenshots/deformation-naples-1.png" width="600"></p>
 
-## Volunteered Geographic data (VGI) land cover visualization and query
+## Volunteered geographic information (VGI) land cover visualization and query
 
 The VGI land cover data is collected using <a href="https://github.com/kilsedar/land-cover-collector">Land Cover Collector</a> application and visualized on Cesium virtual globe. Each land cover point can be queried. The points of same class are aggregated after a certain zoom level.
 
