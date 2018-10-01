@@ -5,27 +5,10 @@
   <Document>
     <name>milan_Tile_2_0_collada</name>
     <open>false</open>
-    <Placemark id="COLLADA_UUID_291b66cd-278d-4658-aac8-6a8ea5158dd7">
-      <name>UUID_291b66cd-278d-4658-aac8-6a8ea5158dd7</name>
-      <Model>
-        <altitudeMode>absolute</altitudeMode>
-        <Location>
-          <longitude>9.1878306</longitude>
-          <latitude>45.4641952</latitude>
-          <altitude>0.0</altitude>
-        </Location>
-        <Orientation>
-          <heading>0.1444191</heading>
-        </Orientation>
-        <Link>
-          <href>18/UUID_291b66cd-278d-4658-aac8-6a8ea5158dd7.dae</href>
-        </Link>
-      </Model>
-    </Placemark>
     <Placemark id="COLLADA_UUID_45b37e98-113f-4181-ad57-d315e2ab7cbd">
       <name>UUID_45b37e98-113f-4181-ad57-d315e2ab7cbd</name>
       <Model>
-        <altitudeMode>absolute</altitudeMode>
+        <altitudeMode>relativeToGround</altitudeMode>
         <Location>
           <longitude>9.1882969</longitude>
           <latitude>45.4631828</latitude>
@@ -42,7 +25,7 @@
     <Placemark id="COLLADA_UUID_103e5cb9-064a-43e7-9da8-f8f544ced9b5">
       <name>UUID_103e5cb9-064a-43e7-9da8-f8f544ced9b5</name>
       <Model>
-        <altitudeMode>absolute</altitudeMode>
+        <altitudeMode>relativeToGround</altitudeMode>
         <Location>
           <longitude>9.1882455</longitude>
           <latitude>45.4640259</latitude>
@@ -56,10 +39,27 @@
         </Link>
       </Model>
     </Placemark>
+    <Placemark id="COLLADA_UUID_291b66cd-278d-4658-aac8-6a8ea5158dd7">
+      <name>UUID_291b66cd-278d-4658-aac8-6a8ea5158dd7</name>
+      <Model>
+        <altitudeMode>relativeToGround</altitudeMode>
+        <Location>
+          <longitude>9.1878306</longitude>
+          <latitude>45.4641952</latitude>
+          <altitude>0.0</altitude>
+        </Location>
+        <Orientation>
+          <heading>0.1444191</heading>
+        </Orientation>
+        <Link>
+          <href>18/UUID_291b66cd-278d-4658-aac8-6a8ea5158dd7.dae</href>
+        </Link>
+      </Model>
+    </Placemark>
     <Placemark id="COLLADA_UUID_a7876e67-611d-4d33-bca4-a3ff83aa1a05">
       <name>UUID_a7876e67-611d-4d33-bca4-a3ff83aa1a05</name>
       <Model>
-        <altitudeMode>absolute</altitudeMode>
+        <altitudeMode>relativeToGround</altitudeMode>
         <Location>
           <longitude>9.1876719</longitude>
           <latitude>45.4635706</latitude>
@@ -73,27 +73,10 @@
         </Link>
       </Model>
     </Placemark>
-    <Placemark id="COLLADA_UUID_acb8d56c-b7cc-4d35-a894-c5d2417364d9">
-      <name>UUID_acb8d56c-b7cc-4d35-a894-c5d2417364d9</name>
-      <Model>
-        <altitudeMode>absolute</altitudeMode>
-        <Location>
-          <longitude>9.1873393</longitude>
-          <latitude>45.4640488</latitude>
-          <altitude>0.0</altitude>
-        </Location>
-        <Orientation>
-          <heading>0.1232016</heading>
-        </Orientation>
-        <Link>
-          <href>80/UUID_acb8d56c-b7cc-4d35-a894-c5d2417364d9.dae</href>
-        </Link>
-      </Model>
-    </Placemark>
     <Placemark id="COLLADA_UUID_2cf18af8-42bb-45bc-b741-577f9a041829">
       <name>UUID_2cf18af8-42bb-45bc-b741-577f9a041829</name>
       <Model>
-        <altitudeMode>absolute</altitudeMode>
+        <altitudeMode>relativeToGround</altitudeMode>
         <Location>
           <longitude>9.1878782</longitude>
           <latitude>45.4638285</latitude>
@@ -107,27 +90,27 @@
         </Link>
       </Model>
     </Placemark>
-    <Placemark id="COLLADA_UUID_7b6eb656-010a-4bbf-9e5a-f190f4c42b12">
-      <name>UUID_7b6eb656-010a-4bbf-9e5a-f190f4c42b12</name>
+    <Placemark id="COLLADA_UUID_acb8d56c-b7cc-4d35-a894-c5d2417364d9">
+      <name>UUID_acb8d56c-b7cc-4d35-a894-c5d2417364d9</name>
       <Model>
-        <altitudeMode>absolute</altitudeMode>
+        <altitudeMode>relativeToGround</altitudeMode>
         <Location>
-          <longitude>9.1880173</longitude>
-          <latitude>45.4632575</latitude>
+          <longitude>9.1873393</longitude>
+          <latitude>45.4640488</latitude>
           <altitude>0.0</altitude>
         </Location>
         <Orientation>
-          <heading>0.1325276</heading>
+          <heading>0.1232016</heading>
         </Orientation>
         <Link>
-          <href>51/UUID_7b6eb656-010a-4bbf-9e5a-f190f4c42b12.dae</href>
+          <href>80/UUID_acb8d56c-b7cc-4d35-a894-c5d2417364d9.dae</href>
         </Link>
       </Model>
     </Placemark>
     <Placemark id="COLLADA_UUID_59aa3919-941c-48af-b92a-942840799b71">
       <name>UUID_59aa3919-941c-48af-b92a-942840799b71</name>
       <Model>
-        <altitudeMode>absolute</altitudeMode>
+        <altitudeMode>relativeToGround</altitudeMode>
         <Location>
           <longitude>9.1880038</longitude>
           <latitude>45.4637332</latitude>
@@ -141,27 +124,27 @@
         </Link>
       </Model>
     </Placemark>
-    <Placemark id="COLLADA_UUID_22ccdcc5-29ed-4db6-b5c9-d04a478ccbb0">
-      <name>UUID_22ccdcc5-29ed-4db6-b5c9-d04a478ccbb0</name>
+    <Placemark id="COLLADA_UUID_7b6eb656-010a-4bbf-9e5a-f190f4c42b12">
+      <name>UUID_7b6eb656-010a-4bbf-9e5a-f190f4c42b12</name>
       <Model>
-        <altitudeMode>absolute</altitudeMode>
+        <altitudeMode>relativeToGround</altitudeMode>
         <Location>
-          <longitude>9.1877308</longitude>
-          <latitude>45.4643839</latitude>
+          <longitude>9.1880173</longitude>
+          <latitude>45.4632575</latitude>
           <altitude>0.0</altitude>
         </Location>
         <Orientation>
-          <heading>0.1438999</heading>
+          <heading>0.1325276</heading>
         </Orientation>
         <Link>
-          <href>13/UUID_22ccdcc5-29ed-4db6-b5c9-d04a478ccbb0.dae</href>
+          <href>51/UUID_7b6eb656-010a-4bbf-9e5a-f190f4c42b12.dae</href>
         </Link>
       </Model>
     </Placemark>
     <Placemark id="COLLADA_UUID_367a50e2-a897-4cf6-a5db-8604e756fd2a">
       <name>UUID_367a50e2-a897-4cf6-a5db-8604e756fd2a</name>
       <Model>
-        <altitudeMode>absolute</altitudeMode>
+        <altitudeMode>relativeToGround</altitudeMode>
         <Location>
           <longitude>9.1875417</longitude>
           <latitude>45.4636223</latitude>
@@ -175,10 +158,27 @@
         </Link>
       </Model>
     </Placemark>
+    <Placemark id="COLLADA_UUID_22ccdcc5-29ed-4db6-b5c9-d04a478ccbb0">
+      <name>UUID_22ccdcc5-29ed-4db6-b5c9-d04a478ccbb0</name>
+      <Model>
+        <altitudeMode>relativeToGround</altitudeMode>
+        <Location>
+          <longitude>9.1877308</longitude>
+          <latitude>45.4643839</latitude>
+          <altitude>0.0</altitude>
+        </Location>
+        <Orientation>
+          <heading>0.1438999</heading>
+        </Orientation>
+        <Link>
+          <href>13/UUID_22ccdcc5-29ed-4db6-b5c9-d04a478ccbb0.dae</href>
+        </Link>
+      </Model>
+    </Placemark>
     <Placemark id="COLLADA_UUID_0f7135bd-edf3-44b4-92f9-60a03bf4acec">
       <name>UUID_0f7135bd-edf3-44b4-92f9-60a03bf4acec</name>
       <Model>
-        <altitudeMode>absolute</altitudeMode>
+        <altitudeMode>relativeToGround</altitudeMode>
         <Location>
           <longitude>9.1873256</longitude>
           <latitude>45.4634922</latitude>
@@ -195,7 +195,7 @@
     <Placemark id="COLLADA_UUID_1aa7067f-f040-4192-9623-897bd25a2a9c">
       <name>UUID_1aa7067f-f040-4192-9623-897bd25a2a9c</name>
       <Model>
-        <altitudeMode>absolute</altitudeMode>
+        <altitudeMode>relativeToGround</altitudeMode>
         <Location>
           <longitude>9.188266</longitude>
           <latitude>45.4634089</latitude>

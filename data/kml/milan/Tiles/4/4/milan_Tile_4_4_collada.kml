@@ -8,7 +8,7 @@
     <Placemark id="COLLADA_UUID_646ebff3-ade2-47f9-bde8-f1e541aeb303">
       <name>UUID_646ebff3-ade2-47f9-bde8-f1e541aeb303</name>
       <Model>
-        <altitudeMode>absolute</altitudeMode>
+        <altitudeMode>relativeToGround</altitudeMode>
         <Location>
           <longitude>9.1935105</longitude>
           <latitude>45.4654599</latitude>

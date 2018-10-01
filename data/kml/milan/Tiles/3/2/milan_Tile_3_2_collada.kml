@@ -8,7 +8,7 @@
     <Placemark id="COLLADA_UUID_cb2f3654-fa80-4b93-babf-6215d9cab40b">
       <name>UUID_cb2f3654-fa80-4b93-babf-6215d9cab40b</name>
       <Model>
-        <altitudeMode>absolute</altitudeMode>
+        <altitudeMode>relativeToGround</altitudeMode>
         <Location>
           <longitude>9.1899179</longitude>
           <latitude>45.4648573</latitude>
@@ -25,7 +25,7 @@
     <Placemark id="COLLADA_UUID_bbf42fab-f7c4-4ee6-8c8e-a4cecc1fc7f4">
       <name>UUID_bbf42fab-f7c4-4ee6-8c8e-a4cecc1fc7f4</name>
       <Model>
-        <altitudeMode>absolute</altitudeMode>
+        <altitudeMode>relativeToGround</altitudeMode>
         <Location>
           <longitude>9.1910184</longitude>
           <latitude>45.465251</latitude>
@@ -42,7 +42,7 @@
     <Placemark id="COLLADA_UUID_2ed6a5de-5b2d-4051-9c19-33f4b1dba758">
       <name>UUID_2ed6a5de-5b2d-4051-9c19-33f4b1dba758</name>
       <Model>
-        <altitudeMode>absolute</altitudeMode>
+        <altitudeMode>relativeToGround</altitudeMode>
         <Location>
           <longitude>9.1901996</longitude>
           <latitude>45.4648564</latitude>
@@ -59,7 +59,7 @@
     <Placemark id="COLLADA_UUID_00553a89-738c-4dba-970b-1fb2214697eb">
       <name>UUID_00553a89-738c-4dba-970b-1fb2214697eb</name>
       <Model>
-        <altitudeMode>absolute</altitudeMode>
+        <altitudeMode>relativeToGround</altitudeMode>
         <Location>
           <longitude>9.1912819</longitude>
           <latitude>45.4649617</latitude>
@@ -76,7 +76,7 @@
     <Placemark id="COLLADA_UUID_223e6072-1d8f-4e38-aa72-1afe15e79b7c">
       <name>UUID_223e6072-1d8f-4e38-aa72-1afe15e79b7c</name>
       <Model>
-        <altitudeMode>absolute</altitudeMode>
+        <altitudeMode>relativeToGround</altitudeMode>
         <Location>
           <longitude>9.1905384</longitude>
           <latitude>45.4650967</latitude>
@@ -93,7 +93,7 @@
     <Placemark id="COLLADA_UUID_383d33ae-1ba8-4647-b08e-4a0e52e7d7a1">
       <name>UUID_383d33ae-1ba8-4647-b08e-4a0e52e7d7a1</name>
       <Model>
-        <altitudeMode>absolute</altitudeMode>
+        <altitudeMode>relativeToGround</altitudeMode>
         <Location>
           <longitude>9.1911582</longitude>
           <latitude>45.4650457</latitude>

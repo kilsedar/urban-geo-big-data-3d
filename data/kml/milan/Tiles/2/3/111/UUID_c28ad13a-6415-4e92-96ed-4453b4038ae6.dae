@@ -4,8 +4,8 @@
         <contributor>
             <authoring_tool>3D City Database Importer/Exporter, version 3.3.2-build1; Chair of Geoinformatics, Technical University of Munich, Germany, https://www.gis.bgu.tum.de/</authoring_tool>
         </contributor>
-        <created>2018-09-06T12:22:01.872</created>
-        <modified>2018-09-06T12:22:01.872</modified>
+        <created>2018-09-27T18:59:28.139</created>
+        <modified>2018-09-27T18:59:28.139</modified>
         <unit meter="1.0" name="meters"/>
         <up_axis>Z_UP</up_axis>
     </asset>

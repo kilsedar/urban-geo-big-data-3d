@@ -5,27 +5,10 @@
   <Document>
     <name>milan_Tile_3_1_collada</name>
     <open>false</open>
-    <Placemark id="COLLADA_UUID_e9339143-40ea-4bc8-8d0a-5091cca058c2">
-      <name>UUID_e9339143-40ea-4bc8-8d0a-5091cca058c2</name>
-      <Model>
-        <altitudeMode>absolute</altitudeMode>
-        <Location>
-          <longitude>9.1884369</longitude>
-          <latitude>45.4653206</latitude>
-          <altitude>0.0</altitude>
-        </Location>
-        <Orientation>
-          <heading>0.1353663</heading>
-        </Orientation>
-        <Link>
-          <href>65/UUID_e9339143-40ea-4bc8-8d0a-5091cca058c2.dae</href>
-        </Link>
-      </Model>
-    </Placemark>
     <Placemark id="COLLADA_UUID_2a614111-5068-4803-a6cd-518f6cd5ac4a">
       <name>UUID_2a614111-5068-4803-a6cd-518f6cd5ac4a</name>
       <Model>
-        <altitudeMode>absolute</altitudeMode>
+        <altitudeMode>relativeToGround</altitudeMode>
         <Location>
           <longitude>9.1890514</longitude>
           <latitude>45.4653214</latitude>
@@ -39,10 +22,27 @@
         </Link>
       </Model>
     </Placemark>
+    <Placemark id="COLLADA_UUID_e9339143-40ea-4bc8-8d0a-5091cca058c2">
+      <name>UUID_e9339143-40ea-4bc8-8d0a-5091cca058c2</name>
+      <Model>
+        <altitudeMode>relativeToGround</altitudeMode>
+        <Location>
+          <longitude>9.1884369</longitude>
+          <latitude>45.4653206</latitude>
+          <altitude>0.0</altitude>
+        </Location>
+        <Orientation>
+          <heading>0.1353663</heading>
+        </Orientation>
+        <Link>
+          <href>65/UUID_e9339143-40ea-4bc8-8d0a-5091cca058c2.dae</href>
+        </Link>
+      </Model>
+    </Placemark>
     <Placemark id="COLLADA_UUID_d749144d-266d-4ca6-88dc-ded99a8e4d80">
       <name>UUID_d749144d-266d-4ca6-88dc-ded99a8e4d80</name>
       <Model>
-        <altitudeMode>absolute</altitudeMode>
+        <altitudeMode>relativeToGround</altitudeMode>
         <Location>
           <longitude>9.188892</longitude>
           <latitude>45.4654344</latitude>
@@ -59,7 +59,7 @@
     <Placemark id="COLLADA_UUID_d9c3be7d-d46a-459f-bd47-a4daabda885c">
       <name>UUID_d9c3be7d-d46a-459f-bd47-a4daabda885c</name>
       <Model>
-        <altitudeMode>absolute</altitudeMode>
+        <altitudeMode>relativeToGround</altitudeMode>
         <Location>
           <longitude>9.1899159</longitude>
           <latitude>45.4648573</latitude>

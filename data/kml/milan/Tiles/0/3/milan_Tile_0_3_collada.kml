@@ -8,7 +8,7 @@
     <Placemark id="COLLADA_UUID_5bbb5b66-6d4f-4485-b0b0-03038aed133f">
       <name>UUID_5bbb5b66-6d4f-4485-b0b0-03038aed133f</name>
       <Model>
-        <altitudeMode>absolute</altitudeMode>
+        <altitudeMode>relativeToGround</altitudeMode>
         <Location>
           <longitude>9.1915293</longitude>
           <latitude>45.461406</latitude>
@@ -25,7 +25,7 @@
     <Placemark id="COLLADA_UUID_a8a099bc-2f83-4464-8e4c-2f5c7e84d7e3">
       <name>UUID_a8a099bc-2f83-4464-8e4c-2f5c7e84d7e3</name>
       <Model>
-        <altitudeMode>absolute</altitudeMode>
+        <altitudeMode>relativeToGround</altitudeMode>
         <Location>
           <longitude>9.1925466</longitude>
           <latitude>45.4619719</latitude>
@@ -42,7 +42,7 @@
     <Placemark id="COLLADA_UUID_22fcff86-a8eb-450a-a055-da60ebb44fcc">
       <name>UUID_22fcff86-a8eb-450a-a055-da60ebb44fcc</name>
       <Model>
-        <altitudeMode>absolute</altitudeMode>
+        <altitudeMode>relativeToGround</altitudeMode>
         <Location>
           <longitude>9.1917236</longitude>
           <latitude>45.4613732</latitude>
