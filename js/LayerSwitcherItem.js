@@ -1,12 +1,12 @@
 define([], function () {
   "use strict";
 
-  var LayerSwitcherItem = function (viewerType, type, viewer, text, id, layer, boundingBox, range) {
+  var LayerSwitcherItem = function (viewerType, viewer, id, text, type, layer, boundingBox, range) {
     this.viewerType = viewerType;
-    this.type = type;
     this.viewer = viewer;
-    this.text = text;
     this.id = id;
+    this.text = text;
+    this.type = type;
     this.layer = layer;
     this.boundingBox = boundingBox;
     this.range = range;

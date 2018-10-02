@@ -1,10 +1,11 @@
 define(["jquery"], function ($) {
   "use strict";
 
-  var LayerSwitcher = function (viewerContainerId, id) {
+  var LayerSwitcher = function (viewerContainerId, id, text) {
     this.items = [];
     this.viewerContainerId = viewerContainerId;
     this.id = id;
+    this.text = text;
     this.dropdownMenuButtonId = this.id + "-menu-button";
     this.dropdownMenuId = this.id + "-menu";
 
@@ -15,7 +16,7 @@ define(["jquery"], function ($) {
     var button = $("<button></button>");
     button.attr("id", this.dropdownMenuButtonId);
     button.addClass("btn btn-secondary dropdown-toggle");
-    button.html("location");
+    button.html(this.text);
     button.attr("type", "button");
     button.attr("data-toggle", "dropdown");
 
