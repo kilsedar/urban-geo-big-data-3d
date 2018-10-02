@@ -1,14 +1,14 @@
 define(["js/TopNavigationBar",
         "js/TopSection",
-        "js/LocationSwitcher",
-        "js/LocationSwitcherItem",
+        "js/LayerSwitcher",
+        "js/LayerSwitcherItem",
         "js/WmsDeformationPlot",
         "js/LandCoverJson",
         "js/WebMap3DCityDBKml",
         "js/WebMap3DCityDBKmlLayer",
         "vendor/3dosm/src/OSMBuildingLayer",
         "jquery"],
-       function (TopNavigationBar, TopSection, LocationSwitcher, LocationSwitcherItem, WmsDeformationPlot, LandCoverJson, WebMap3DCityDBKml, WebMap3DCityDBKmlLayer, OSMBuildingLayer, $) {
+       function (TopNavigationBar, TopSection, LayerSwitcher, LayerSwitcherItem, WmsDeformationPlot, LandCoverJson, WebMap3DCityDBKml, WebMap3DCityDBKmlLayer, OSMBuildingLayer, $) {
   "use strict";
 
   var worldWindViewer3dCity = new WorldWind.WorldWindow("world-wind-3d-city-canvas");
@@ -139,7 +139,7 @@ define(["js/TopNavigationBar",
     navigationHelpButton: false
   });
 
-  var locationSwitcherWorldWind3dCity = new LocationSwitcher("world-wind-3d-city", "location-switcher-world-wind-3d-city");
+  var layerSwitcherWorldWind3dCity = new LayerSwitcher("world-wind-3d-city", "location-switcher-world-wind-3d-city");
 
   var worldWind3dCityConfigurationMilan = {
     interiorColor: new WorldWind.Color(0.0, 0.0, 0.0, 1.0),
@@ -151,8 +151,8 @@ define(["js/TopNavigationBar",
   };
   var worldWind3dCitySourceMilan = {type: "GeoJSONFile", path: "data/geojson/milan.geojson"};
   var worldWind3dCityMilan = new OSMBuildingLayer(worldWind3dCityConfigurationMilan, worldWind3dCitySourceMilan);
-  var locationSwitcherWorldWind3dCityMilan = new LocationSwitcherItem("world-wind", "renderable", worldWindViewer3dCity, "Milan", "world-wind-3d-city-milan", worldWind3dCityMilan, [9.17356, 45.4561, 9.21089, 45.4907], undefined);
-  locationSwitcherWorldWind3dCity.add(locationSwitcherWorldWind3dCityMilan);
+  var layerSwitcherWorldWind3dCityMilan = new LayerSwitcherItem("world-wind", "renderable", worldWindViewer3dCity, "Milan", "world-wind-3d-city-milan", worldWind3dCityMilan, [9.17356, 45.4561, 9.21089, 45.4907], undefined);
+  layerSwitcherWorldWind3dCity.add(layerSwitcherWorldWind3dCityMilan);
 
   var worldWind3dCityConfigurationPadua = {
     interiorColor: new WorldWind.Color(0.0, 0.2, 0.7, 1.0),
@@ -164,8 +164,8 @@ define(["js/TopNavigationBar",
   };
   var worldWind3dCitySourcePadua = {type: "GeoJSONFile", path: "data/geojson/padua.geojson"};
   var worldWind3dCityPadua = new OSMBuildingLayer(worldWind3dCityConfigurationPadua, worldWind3dCitySourcePadua);
-  var locationSwitcherWorldWind3dCityPadua = new LocationSwitcherItem("world-wind", "renderable", worldWindViewer3dCity, "Padua", "world-wind-3d-city-padua", worldWind3dCityPadua, [11.8641, 45.3994, 11.8935, 45.414], undefined);
-  locationSwitcherWorldWind3dCity.add(locationSwitcherWorldWind3dCityPadua);
+  var layerSwitcherWorldWind3dCityPadua = new LayerSwitcherItem("world-wind", "renderable", worldWindViewer3dCity, "Padua", "world-wind-3d-city-padua", worldWind3dCityPadua, [11.8641, 45.3994, 11.8935, 45.414], undefined);
+  layerSwitcherWorldWind3dCity.add(layerSwitcherWorldWind3dCityPadua);
 
   var worldWind3dCityConfigurationRome = {
     interiorColor: new WorldWind.Color(0.0, 1.0, 0.4, 1.0),
@@ -177,8 +177,8 @@ define(["js/TopNavigationBar",
   };
   var worldWind3dCitySourceRome = {type: "GeoJSONFile", path: "data/geojson/rome.geojson"};
   var worldWind3dCityRome = new OSMBuildingLayer(worldWind3dCityConfigurationRome, worldWind3dCitySourceRome);
-  var locationSwitcherWorldWind3dCityRome = new LocationSwitcherItem("world-wind", "renderable", worldWindViewer3dCity, "Rome", "world-wind-3d-city-rome", worldWind3dCityRome, [12.4431, 41.8855, 12.4934, 41.9086], undefined);
-  locationSwitcherWorldWind3dCity.add(locationSwitcherWorldWind3dCityRome);
+  var layerSwitcherWorldWind3dCityRome = new LayerSwitcherItem("world-wind", "renderable", worldWindViewer3dCity, "Rome", "world-wind-3d-city-rome", worldWind3dCityRome, [12.4431, 41.8855, 12.4934, 41.9086], undefined);
+  layerSwitcherWorldWind3dCity.add(layerSwitcherWorldWind3dCityRome);
 
   var worldWind3dCityConfigurationNaples = {
     interiorColor: new WorldWind.Color(0.0, 0.9, 0.8, 1.0),
@@ -190,8 +190,8 @@ define(["js/TopNavigationBar",
   };
   var worldWind3dCitySourceNaples = {type: "GeoJSONFile", path: "data/geojson/naples.geojson"};
   var worldWind3dCityNaples = new OSMBuildingLayer(worldWind3dCityConfigurationNaples, worldWind3dCitySourceNaples);
-  var locationSwitcherWorldWind3dCityNaples = new LocationSwitcherItem("world-wind", "renderable", worldWindViewer3dCity, "Naples", "world-wind-3d-city-naples", worldWind3dCityNaples, [14.2296, 40.8263, 14.2645, 40.85], undefined);
-  locationSwitcherWorldWind3dCity.add(locationSwitcherWorldWind3dCityNaples);
+  var layerSwitcherWorldWind3dCityNaples = new LayerSwitcherItem("world-wind", "renderable", worldWindViewer3dCity, "Naples", "world-wind-3d-city-naples", worldWind3dCityNaples, [14.2296, 40.8263, 14.2645, 40.85], undefined);
+  layerSwitcherWorldWind3dCity.add(layerSwitcherWorldWind3dCityNaples);
 
   var worldWind3dCityConfigurationTurin = {
     interiorColor: new WorldWind.Color(0.0, 0.6, 0.9, 1.0),
@@ -203,10 +203,10 @@ define(["js/TopNavigationBar",
   };
   var worldWind3dCitySourceTurin = {type: "GeoJSONFile", path: "data/geojson/turin.geojson"};
   var worldWind3dCityTurin = new OSMBuildingLayer(worldWind3dCityConfigurationTurin, worldWind3dCitySourceTurin);
-  var locationSwitcherWorldWind3dCityTurin = new LocationSwitcherItem("world-wind", "renderable", worldWindViewer3dCity, "Turin", "world-wind-3d-city-turin", worldWind3dCityTurin, [7.66429, 45.0589, 7.70738, 45.0898], undefined);
-  locationSwitcherWorldWind3dCity.add(locationSwitcherWorldWind3dCityTurin);
+  var layerSwitcherWorldWind3dCityTurin = new LayerSwitcherItem("world-wind", "renderable", worldWindViewer3dCity, "Turin", "world-wind-3d-city-turin", worldWind3dCityTurin, [7.66429, 45.0589, 7.70738, 45.0898], undefined);
+  layerSwitcherWorldWind3dCity.add(layerSwitcherWorldWind3dCityTurin);
 
-  var locationSwitcherCesium3dCity = new LocationSwitcher("cesium-3d-city", "location-switcher-cesium-3d-city");
+  var layerSwitcherCesium3dCity = new LayerSwitcher("cesium-3d-city", "location-switcher-cesium-3d-city");
 
   var webMap3DCityDB = new WebMap3DCityDB(cesiumViewer3dCity);
   webMap3DCityDB.activateMouseMoveEvents(true);
@@ -214,16 +214,16 @@ define(["js/TopNavigationBar",
   var webMap3DCityDBKml = new WebMap3DCityDBKml(webMap3DCityDB);
 
   /* var webMap3DCityDBKmlMilan = new WebMap3DCityDBKmlLayer(webMap3DCityDBKml, "data/kml/milan/", "milan", "https://fusiontables.google.com/data?docid=1qsPpWWImxP2v9KT0w6VdxPRjbREsvtZtbaRm233g#rows:id=1");
-  var locationSwitcherCesium3dCityMilan = new LocationSwitcherItem("cesium", "kml", cesiumViewer3dCity, "Milan", "cesium-3d-city-milan", webMap3DCityDBKmlMilan, [9.18669478811458, 45.46114471445389, 9.19452789799529, 45.46647583746108], 1000.0); */
+  var layerSwitcherCesium3dCityMilan = new LayerSwitcherItem("cesium", "kml", cesiumViewer3dCity, "Milan", "cesium-3d-city-milan", webMap3DCityDBKmlMilan, [9.18669478811458, 45.46114471445389, 9.19452789799529, 45.46647583746108], 1000.0); */
   var webMap3DCityDBKmlMilan = new WebMap3DCityDBKmlLayer(webMap3DCityDBKml, "data/kml/milan-big/", "milan", "https://fusiontables.google.com/data?docid=10HLrEbV5xt2dPwcdc9Q613ect-y_k-0yOuTCQe-z#rows:id=1");
-  var locationSwitcherCesium3dCityMilan = new LocationSwitcherItem("cesium", "kml", cesiumViewer3dCity, "Milan", "cesium-3d-city-milan", webMap3DCityDBKmlMilan, [9.10295703422859, 45.3997645330947, 9.3158554307893, 45.54952166494336], 1000.0);
-  locationSwitcherCesium3dCity.add(locationSwitcherCesium3dCityMilan);
+  var layerSwitcherCesium3dCityMilan = new LayerSwitcherItem("cesium", "kml", cesiumViewer3dCity, "Milan", "cesium-3d-city-milan", webMap3DCityDBKmlMilan, [9.10295703422859, 45.3997645330947, 9.3158554307893, 45.54952166494336], 1000.0);
+  layerSwitcherCesium3dCity.add(layerSwitcherCesium3dCityMilan);
 
   var webMap3DCityDBKmlPadua = new WebMap3DCityDBKmlLayer(webMap3DCityDBKml, "data/kml/padua/", "padua", "https://fusiontables.google.com/data?docid=1GM70wAFjKpNU45XXlCUTmDmpVIHKeM_3TAgOroPQ#rows:id=1");
-  var locationSwitcherCesium3dCityPadua = new LocationSwitcherItem("cesium", "kml", cesiumViewer3dCity, "Padua", "cesium-3d-city-padua", webMap3DCityDBKmlPadua, [11.80612772728434, 45.34376992018347, 11.978210343773, 45.45392090970208], 1000.0);
-  locationSwitcherCesium3dCity.add(locationSwitcherCesium3dCityPadua);
+  var layerSwitcherCesium3dCityPadua = new LayerSwitcherItem("cesium", "kml", cesiumViewer3dCity, "Padua", "cesium-3d-city-padua", webMap3DCityDBKmlPadua, [11.80612772728434, 45.34376992018347, 11.978210343773, 45.45392090970208], 1000.0);
+  layerSwitcherCesium3dCity.add(layerSwitcherCesium3dCityPadua);
 
-  var locationSwitcherDeformation = new LocationSwitcher("cesium-deformation", "location-switcher-deformation");
+  var layerSwitcherDeformation = new LayerSwitcher("cesium-deformation", "location-switcher-deformation");
 
   var deformationNaples = new Cesium.WebMapServiceImageryProvider({
     url: "http://localhost:8080/geoserver/ugbd/wms",
@@ -231,10 +231,10 @@ define(["js/TopNavigationBar",
     parameters: {version: "1.3.0", transparent: "TRUE", format: "image/png", srs: "EPSG:4326"},
     rectangle: Cesium.Rectangle.fromDegrees(14.05072, 40.82471, 14.30817, 40.91915)
   });
-  var locationSwitcherDeformationNaples = new LocationSwitcherItem("cesium", "imagery", cesiumViewerDeformation, "Naples", "deformation-naples", deformationNaples, [14.05072, 40.82471, 14.30817, 40.91915], 40000.0);
-  locationSwitcherDeformation.add(locationSwitcherDeformationNaples);
+  var layerSwitcherDeformationNaples = new LayerSwitcherItem("cesium", "imagery", cesiumViewerDeformation, "Naples", "deformation-naples", deformationNaples, [14.05072, 40.82471, 14.30817, 40.91915], 40000.0);
+  layerSwitcherDeformation.add(layerSwitcherDeformationNaples);
 
-  var locationSwitcherLulc = new LocationSwitcher("cesium-lulc", "location-switcher-lulc");
+  var layerSwitcherLulc = new LayerSwitcher("cesium-lulc", "location-switcher-lulc");
 
   /*
   artificial surface: rgba(147, 47, 20, 1.0) -> Cesium.Color(0.576470588, 0.184313725, 0.078431373, 1.0)
@@ -252,8 +252,8 @@ define(["js/TopNavigationBar",
   var glc30Colors = [new Cesium.Color(0.576470588, 0.184313725, 0.078431373, 1.0), new Cesium.Color(0.792156863, 0.792156863, 0.792156863, 1.0), new Cesium.Color(0.976470588, 0.952941176, 0.756862745, 1.0), new Cesium.Color(0.078431373, 0.466666667, 0.28627451, 1.0), new Cesium.Color(0.662745098, 0.815686275, 0.37254902, 1.0), new Cesium.Color(0.82745098, 0.929411765, 0.984313725, 1.0), new Cesium.Color(0.243137255, 0.701960784, 0.439215686, 1.0), new Cesium.Color(0.392156863, 0.392156863, 0.196078431, 1.0), new Cesium.Color(0.0, 0.266666667, 0.603921569, 1.0), new Cesium.Color(0.494117647, 0.807843137, 0.956862745, 1.0)];
   var urlCouchdb = "https://landcover.como.polimi.it/couchdb/lcc_points/_all_docs?include_docs=true";
   var glc30Couchdb = new LandCoverJson(glc30Classes, glc30Colors, urlCouchdb);
-  var locationSwitcherLulcVgi = new LocationSwitcherItem("cesium", "entities", cesiumViewerLulc, "Italy - VGI", "lulc-vgi", glc30Couchdb, [7.0, 35.0, 19.0, 47.0], 1100000.0);
-  locationSwitcherLulc.add(locationSwitcherLulcVgi);
+  var layerSwitcherLulcVgi = new LayerSwitcherItem("cesium", "entities", cesiumViewerLulc, "Italy - VGI", "lulc-vgi", glc30Couchdb, [7.0, 35.0, 19.0, 47.0], 1100000.0);
+  layerSwitcherLulc.add(layerSwitcherLulcVgi);
 
   var topNavigationBar = new TopNavigationBar("rgba(67, 173, 97, 1.0)", "rgba(51, 132, 74, 1.0)");
 
