@@ -61,8 +61,6 @@ define(["jquery"], function ($) {
           }
           layerSwitcherItem.viewer.imageryLayers.addImageryProvider(layerSwitcherItem.layer);
         }
-        else if (layerSwitcherItem.type == "entities")
-          layerSwitcherItem.layer.add(layerSwitcherItem.viewer);
         else if (layerSwitcherItem.type == "kml") {
           layerSwitcherItem.layer.webMap3DCityDBKml.removeAll();
           layerSwitcherItem.layer.webMap3DCityDBKml.add(layerSwitcherItem.viewer, layerSwitcherItem.layer);

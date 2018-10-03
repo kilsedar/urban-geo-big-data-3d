@@ -33,6 +33,10 @@
   font-family: 'Do Hyeon', sans-serif;
 }
 
+.btn {
+  border: none;
+}
+
 .dropdown-toggle {
   border-radius: 0rem;
   border-bottom: 3px dashed;
@@ -85,6 +89,20 @@ html, body, #world-wind-3d-city, #world-wind-3d-city-canvas, #cesium-3d-city, #c
   height: 24px;
   width: auto;
   vertical-align: middle;
+}
+
+#lulc-vgi {
+  position: absolute;
+  top: 50px;
+  left: 110px;
+  z-index: 100;
+  border-radius: 0rem;
+  border-bottom: 3px dashed;
+}
+
+#lulc-vgi:focus, #lulc-vgi:active, #lulc-vgi:hover {
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 .project-attribution-link {

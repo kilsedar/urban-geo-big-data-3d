@@ -139,6 +139,18 @@ define(["js/TopNavigationBar",
     navigationHelpButton: false
   });
 
+  var topNavigationBar = new TopNavigationBar("rgba(67, 173, 97, 1.0)", "rgba(51, 132, 74, 1.0)");
+
+  var topSectionWorldWind3dCity = new TopSection("world-wind-3d-city", worldWindViewer3dCity, "world-wind-3d-city-section", "3D City <img id='top-section-nasa-image' src='images/nasa.png'>", "3D OpenStreetMap Buildings on NASA Web WorldWind", true);
+  var topSectionCesium3dCity = new TopSection("cesium-3d-city", cesiumViewer3dCity, "cesium-3d-city-section", "3D City <img id='top-section-cesium-image' src='images/cesium_white.png'>", "CityGML on Cesium", false);
+  var topSectionDeformation = new TopSection("cesium-deformation", cesiumViewerDeformation, "deformation-section", "Deformation", "Deformation Maps on Cesium", false);
+  var topSectionLulc = new TopSection("cesium-lulc", cesiumViewerLulc, "lulc-section", "LULC", "Land Cover Land Use (LULC) on Cesium", false);
+
+  topNavigationBar.addSection(topSectionWorldWind3dCity);
+  topNavigationBar.addSection(topSectionCesium3dCity);
+  topNavigationBar.addSection(topSectionDeformation);
+  topNavigationBar.addSection(topSectionLulc);
+
   var layerSwitcherWorldWind3dCity = new LayerSwitcher("world-wind-3d-city", "location-switcher-world-wind-3d-city", "location");
 
   var worldWind3dCityConfigurationMilan = {
@@ -213,14 +225,14 @@ define(["js/TopNavigationBar",
   webMap3DCityDB.activateMouseClickEvents(true);
   var webMap3DCityDBKml = new WebMap3DCityDBKml(webMap3DCityDB);
 
-  /* var webMap3DCityDBKmlMilan = new WebMap3DCityDBKmlLayer(webMap3DCityDBKml, "data/kml/milan/", "milan", "https://fusiontables.google.com/data?docid=1qsPpWWImxP2v9KT0w6VdxPRjbREsvtZtbaRm233g#rows:id=1");
-  var layerSwitcherCesium3dCityMilan = new LayerSwitcherItem("cesium", cesiumViewer3dCity, "cesium-3d-city-milan", "Milan", "kml", webMap3DCityDBKmlMilan, [9.18669478811458, 45.46114471445389, 9.19452789799529, 45.46647583746108], 1000.0); */
-  var webMap3DCityDBKmlMilan = new WebMap3DCityDBKmlLayer(webMap3DCityDBKml, "data/kml/milan-big/", "milan", "https://fusiontables.google.com/data?docid=10HLrEbV5xt2dPwcdc9Q613ect-y_k-0yOuTCQe-z#rows:id=1");
-  var layerSwitcherCesium3dCityMilan = new LayerSwitcherItem("cesium", cesiumViewer3dCity, "cesium-3d-city-milan", "Milan", "kml", webMap3DCityDBKmlMilan, [9.10295703422859, 45.3997645330947, 9.3158554307893, 45.54952166494336], 1000.0);
+  /* var cesium3dCityMilan = new WebMap3DCityDBKmlLayer(webMap3DCityDBKml, "data/kml/milan/", "milan", "https://fusiontables.google.com/data?docid=1qsPpWWImxP2v9KT0w6VdxPRjbREsvtZtbaRm233g#rows:id=1");
+  var layerSwitcherCesium3dCityMilan = new LayerSwitcherItem("cesium", cesiumViewer3dCity, "cesium-3d-city-milan", "Milan", "kml", cesium3dCityMilan, [9.18669478811458, 45.46114471445389, 9.19452789799529, 45.46647583746108], 1000.0); */
+  var cesium3dCityMilan = new WebMap3DCityDBKmlLayer(webMap3DCityDBKml, "data/kml/milan-big/", "milan", "https://fusiontables.google.com/data?docid=10HLrEbV5xt2dPwcdc9Q613ect-y_k-0yOuTCQe-z#rows:id=1");
+  var layerSwitcherCesium3dCityMilan = new LayerSwitcherItem("cesium", cesiumViewer3dCity, "cesium-3d-city-milan", "Milan", "kml", cesium3dCityMilan, [9.10295703422859, 45.3997645330947, 9.3158554307893, 45.54952166494336], 1000.0);
   layerSwitcherCesium3dCity.add(layerSwitcherCesium3dCityMilan);
 
-  var webMap3DCityDBKmlPadua = new WebMap3DCityDBKmlLayer(webMap3DCityDBKml, "data/kml/padua/", "padua", "https://fusiontables.google.com/data?docid=1GM70wAFjKpNU45XXlCUTmDmpVIHKeM_3TAgOroPQ#rows:id=1");
-  var layerSwitcherCesium3dCityPadua = new LayerSwitcherItem("cesium", cesiumViewer3dCity, "cesium-3d-city-padua", "Padua", "kml", webMap3DCityDBKmlPadua, [11.80612772728434, 45.34376992018347, 11.978210343773, 45.45392090970208], 1000.0);
+  var cesium3dCityPadua = new WebMap3DCityDBKmlLayer(webMap3DCityDBKml, "data/kml/padua/", "padua", "https://fusiontables.google.com/data?docid=1GM70wAFjKpNU45XXlCUTmDmpVIHKeM_3TAgOroPQ#rows:id=1");
+  var layerSwitcherCesium3dCityPadua = new LayerSwitcherItem("cesium", cesiumViewer3dCity, "cesium-3d-city-padua", "Padua", "kml", cesium3dCityPadua, [11.80612772728434, 45.34376992018347, 11.978210343773, 45.45392090970208], 1000.0);
   layerSwitcherCesium3dCity.add(layerSwitcherCesium3dCityPadua);
 
   var layerSwitcherDeformation = new LayerSwitcher("cesium-deformation", "location-switcher-deformation", "location");
@@ -236,36 +248,57 @@ define(["js/TopNavigationBar",
 
   var layerSwitcherLulc = new LayerSwitcher("cesium-lulc", "location-switcher-lulc", "dataset");
 
+  var lulcGlc30 = new Cesium.WebMapTileServiceImageryProvider({
+      url: "http://localhost:8080/geoserver/gwc/service/wmts",
+      layer: "ugbd:glc30",
+      style: "ugbd:glc30",
+      format: "image/png",
+      tileMatrixSetID: "EPSG:900913",
+      tileMatrixLabels: ["EPSG:900913:0", "EPSG:900913:1", "EPSG:900913:2", "EPSG:900913:3", "EPSG:900913:4", "EPSG:900913:5", "EPSG:900913:6", "EPSG:900913:7", "EPSG:900913:8", "EPSG:900913:9", "EPSG:900913:10", "EPSG:900913:11", "EPSG:900913:12", "EPSG:900913:13", "EPSG:900913:14", "EPSG:900913:15", "EPSG:900913:16", "EPSG:900913:17", "EPSG:900913:18", "EPSG:900913:19", "EPSG:900913:20", "EPSG:900913:21", "EPSG:900913:22", "EPSG:900913:23", "EPSG:900913:24", "EPSG:900913:25", "EPSG:900913:26", "EPSG:900913:27", "EPSG:900913:28", "EPSG:900913:29", "EPSG:900913:30"],
+      rectangle: Cesium.Rectangle.fromDegrees(6.6270874466178977, 35.4921528520647342, 18.5207271989720503, 47.0917262219610677)
+  });
+  var layerSwitcherLulcGlc30 = new LayerSwitcherItem("cesium", cesiumViewerLulc, "glc30", "GlobeLand30", "imagery", lulcGlc30, [6.6270874466178977, 35.4921528520647342, 18.5207271989720503, 47.0917262219610677], 1100000.0);
+  layerSwitcherLulc.add(layerSwitcherLulcGlc30);
+
   /*
-  artificial surface: rgba(147, 47, 20, 1.0) -> Cesium.Color(0.576470588, 0.184313725, 0.078431373, 1.0)
-  bare land: rgba(202, 202, 202, 1.0) -> Cesium.Color(0.792156863, 0.792156863, 0.792156863, 1.0)
-  cultivated land: rgba(249, 243, 193, 1.0) -> Cesium.Color(0.976470588, 0.952941176, 0.756862745, 1.0)
-  forest: rgba(20, 119, 73, 1.0) -> Cesium.Color(0.078431373, 0.466666667, 0.28627451, 1.0)
-  grassland: rgba(169, 208, 95, 1.0) -> Cesium.Color(0.662745098, 0.815686275, 0.37254902, 1.0)
-  permanent snow and ice: rgba(211, 237, 251, 1.0) -> Cesium.Color(0.82745098, 0.929411765, 0.984313725, 1.0)
-  shrubland: rgba(62, 179, 112, 1.0) -> Cesium.Color(0.243137255, 0.701960784, 0.439215686, 1.0)
-  tundra: rgba(100, 100, 50, 1.0) -> Cesium.Color(0.392156863, 0.392156863, 0.196078431, 1.0)
-  water body: rgba(0, 68, 154, 1.0) -> Cesium.Color(0.0, 0.266666667, 0.603921569, 1.0)
-  wetland: rgba(126, 206, 244, 1.0) -> Cesium.Color(0.494117647, 0.807843137, 0.956862745, 1.0)
+  artificial surface: rgba(147, 47, 20, 1.0) or #932f14 -> Cesium.Color(0.576470588, 0.184313725, 0.078431373, 1.0)
+  bare land: rgba(202, 202, 202, 1.0) or #cacaca -> Cesium.Color(0.792156863, 0.792156863, 0.792156863, 1.0)
+  cultivated land: rgba(249, 243, 193, 1.0) or #f9f3c1 -> Cesium.Color(0.976470588, 0.952941176, 0.756862745, 1.0)
+  forest: rgba(20, 119, 73, 1.0) or #147749 -> Cesium.Color(0.078431373, 0.466666667, 0.28627451, 1.0)
+  grassland: rgba(169, 208, 95, 1.0) or #a9d05f -> Cesium.Color(0.662745098, 0.815686275, 0.37254902, 1.0)
+  permanent snow and ice: rgba(211, 237, 251, 1.0) or #d3edfb -> Cesium.Color(0.82745098, 0.929411765, 0.984313725, 1.0)
+  shrubland: rgba(62, 179, 112, 1.0) or #3eb370 -> Cesium.Color(0.243137255, 0.701960784, 0.439215686, 1.0)
+  tundra: rgba(100, 100, 50, 1.0) or #646432 -> Cesium.Color(0.392156863, 0.392156863, 0.196078431, 1.0)
+  water body: rgba(0, 68, 154, 1.0) or #00449a -> Cesium.Color(0.0, 0.266666667, 0.603921569, 1.0)
+  wetland: rgba(126, 206, 244, 1.0) or #7ecef4 -> Cesium.Color(0.494117647, 0.807843137, 0.956862745, 1.0)
   */
   var glc30Classes = ["artificialSurface", "bareLand", "cultivatedLand", "forest", "grassland", "permanentSnowAndIce", "shrubland", "tundra", "waterBody", "wetland"];
   var glc30Colors = [new Cesium.Color(0.576470588, 0.184313725, 0.078431373, 1.0), new Cesium.Color(0.792156863, 0.792156863, 0.792156863, 1.0), new Cesium.Color(0.976470588, 0.952941176, 0.756862745, 1.0), new Cesium.Color(0.078431373, 0.466666667, 0.28627451, 1.0), new Cesium.Color(0.662745098, 0.815686275, 0.37254902, 1.0), new Cesium.Color(0.82745098, 0.929411765, 0.984313725, 1.0), new Cesium.Color(0.243137255, 0.701960784, 0.439215686, 1.0), new Cesium.Color(0.392156863, 0.392156863, 0.196078431, 1.0), new Cesium.Color(0.0, 0.266666667, 0.603921569, 1.0), new Cesium.Color(0.494117647, 0.807843137, 0.956862745, 1.0)];
   var urlCouchdb = "https://landcover.como.polimi.it/couchdb/lcc_points/_all_docs?include_docs=true";
   var glc30Couchdb = new LandCoverJson(glc30Classes, glc30Colors, urlCouchdb);
-  var layerSwitcherLulcVgi = new LayerSwitcherItem("cesium", cesiumViewerLulc, "lulc-vgi", "Italy - VGI", "entities", glc30Couchdb, [7.0, 35.0, 19.0, 47.0], 1100000.0);
-  layerSwitcherLulc.add(layerSwitcherLulcVgi);
 
-  var topNavigationBar = new TopNavigationBar("rgba(67, 173, 97, 1.0)", "rgba(51, 132, 74, 1.0)");
+  $("#lulc-section").click(function() {
+    glc30Couchdb.add(cesiumViewerLulc);
+  });
 
-  var topSectionWorldWind3dCity = new TopSection("world-wind-3d-city", worldWindViewer3dCity, "world-wind-3d-city-section", "3D City <img id='top-section-nasa-image' src='images/nasa.png'>", "3D OpenStreetMap Buildings on NASA Web WorldWind", true);
-  var topSectionCesium3dCity = new TopSection("cesium-3d-city", cesiumViewer3dCity, "cesium-3d-city-section", "3D City <img id='top-section-cesium-image' src='images/cesium_white.png'>", "CityGML on Cesium", false);
-  var topSectionDeformation = new TopSection("cesium-deformation", cesiumViewerDeformation, "deformation-section", "Deformation", "Deformation Maps on Cesium", false);
-  var topSectionLulc = new TopSection("cesium-lulc", cesiumViewerLulc, "lulc-section", "LULC", "Land Cover Land Use (LULC) on Cesium", false);
+  $("#location-switcher-lulc-menu .dropdown-item").click(function() {
+    setTimeout(function() {
+      $("#lulc-vgi").css("left", $("#location-switcher-lulc-menu-button").width()+40 + "px");
+    }, 100);
+  });
 
-  topNavigationBar.addSection(topSectionWorldWind3dCity);
-  topNavigationBar.addSection(topSectionCesium3dCity);
-  topNavigationBar.addSection(topSectionDeformation);
-  topNavigationBar.addSection(topSectionLulc);
+  $("#lulc-vgi").click(function() {
+    if (cesiumViewerLulc.dataSources.length > 0) {
+      cesiumViewerLulc.dataSources.removeAll();
+      $("#lulc-vgi").css("background-color", "rgba(108, 117, 125, 0.6)");
+      $("#lulc-vgi").css("color", "rgba(255, 255, 255, 0.6)");
+    }
+    else {
+      glc30Couchdb.add(cesiumViewerLulc);
+      $("#lulc-vgi").css("background-color", "rgba(108, 117, 125, 1.0)");
+      $("#lulc-vgi").css("color", "rgba(255, 255, 255, 1.0)");
+    }
+  });
 
   var projectAttributionLink = $("<a></a>");
   projectAttributionLink.addClass("cesium-credit-expand-link project-attribution-link");
