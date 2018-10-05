@@ -45,17 +45,17 @@ define(["js/TopNavigationBar",
       credit: "Imagery courtesy Natural Earth"
     }), */
     imageryProvider: Cesium.createTileMapServiceImageryProvider({
-      url: Cesium.buildModuleUrl("http://localhost/urban-geo-big-data-3d/vendor/Cesium-1.49/Source/Assets/Textures/NaturalEarthII-GitHub/"),
+      url: Cesium.buildModuleUrl("http://localhost/urban-geo-big-data-3d/vendor/Cesium-1.50/Source/Assets/Textures/NaturalEarthII-GitHub/"),
       credit: "Imagery courtesy Natural Earth"
     }),
     skyBox: new Cesium.SkyBox({
       sources: {
-        positiveX: "vendor/Cesium-1.49/Source/Assets/Textures/SkyBox/tycho2t3_80_px.jpg",
-        negativeX: "vendor/Cesium-1.49/Source/Assets/Textures/SkyBox/tycho2t3_80_mx.jpg",
-        positiveY: "vendor/Cesium-1.49/Source/Assets/Textures/SkyBox/tycho2t3_80_py.jpg",
-        negativeY: "vendor/Cesium-1.49/Source/Assets/Textures/SkyBox/tycho2t3_80_my.jpg",
-        positiveZ: "vendor/Cesium-1.49/Source/Assets/Textures/SkyBox/tycho2t3_80_pz.jpg",
-        negativeZ: "vendor/Cesium-1.49/Source/Assets/Textures/SkyBox/tycho2t3_80_mz.jpg"
+        positiveX: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_px.jpg",
+        negativeX: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_mx.jpg",
+        positiveY: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_py.jpg",
+        negativeY: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_my.jpg",
+        positiveZ: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_pz.jpg",
+        negativeZ: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_mz.jpg"
       }
     }),
     baseLayerPicker: false,
@@ -80,17 +80,17 @@ define(["js/TopNavigationBar",
       credit: "Imagery courtesy Natural Earth"
     }), */
     imageryProvider: Cesium.createTileMapServiceImageryProvider({
-      url: Cesium.buildModuleUrl("http://localhost/urban-geo-big-data-3d/vendor/Cesium-1.49/Source/Assets/Textures/NaturalEarthII-GitHub/"),
+      url: Cesium.buildModuleUrl("http://localhost/urban-geo-big-data-3d/vendor/Cesium-1.50/Source/Assets/Textures/NaturalEarthII-GitHub/"),
       credit: "Imagery courtesy Natural Earth"
     }),
     skyBox: new Cesium.SkyBox({
       sources: {
-        positiveX: "vendor/Cesium-1.49/Source/Assets/Textures/SkyBox/tycho2t3_80_px.jpg",
-        negativeX: "vendor/Cesium-1.49/Source/Assets/Textures/SkyBox/tycho2t3_80_mx.jpg",
-        positiveY: "vendor/Cesium-1.49/Source/Assets/Textures/SkyBox/tycho2t3_80_py.jpg",
-        negativeY: "vendor/Cesium-1.49/Source/Assets/Textures/SkyBox/tycho2t3_80_my.jpg",
-        positiveZ: "vendor/Cesium-1.49/Source/Assets/Textures/SkyBox/tycho2t3_80_pz.jpg",
-        negativeZ: "vendor/Cesium-1.49/Source/Assets/Textures/SkyBox/tycho2t3_80_mz.jpg"
+        positiveX: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_px.jpg",
+        negativeX: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_mx.jpg",
+        positiveY: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_py.jpg",
+        negativeY: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_my.jpg",
+        positiveZ: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_pz.jpg",
+        negativeZ: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_mz.jpg"
       }
     }),
     baseLayerPicker: false,
@@ -118,17 +118,17 @@ define(["js/TopNavigationBar",
       credit: "Imagery courtesy Natural Earth"
     }), */
     imageryProvider: Cesium.createTileMapServiceImageryProvider({
-      url: Cesium.buildModuleUrl("http://localhost/urban-geo-big-data-3d/vendor/Cesium-1.49/Source/Assets/Textures/NaturalEarthII-GitHub/"),
+      url: Cesium.buildModuleUrl("http://localhost/urban-geo-big-data-3d/vendor/Cesium-1.50/Source/Assets/Textures/NaturalEarthII-GitHub/"),
       credit: "Imagery courtesy Natural Earth"
     }),
     skyBox: new Cesium.SkyBox({
       sources: {
-        positiveX: "vendor/Cesium-1.49/Source/Assets/Textures/SkyBox/tycho2t3_80_px.jpg",
-        negativeX: "vendor/Cesium-1.49/Source/Assets/Textures/SkyBox/tycho2t3_80_mx.jpg",
-        positiveY: "vendor/Cesium-1.49/Source/Assets/Textures/SkyBox/tycho2t3_80_py.jpg",
-        negativeY: "vendor/Cesium-1.49/Source/Assets/Textures/SkyBox/tycho2t3_80_my.jpg",
-        positiveZ: "vendor/Cesium-1.49/Source/Assets/Textures/SkyBox/tycho2t3_80_pz.jpg",
-        negativeZ: "vendor/Cesium-1.49/Source/Assets/Textures/SkyBox/tycho2t3_80_mz.jpg"
+        positiveX: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_px.jpg",
+        negativeX: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_mx.jpg",
+        positiveY: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_py.jpg",
+        negativeY: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_my.jpg",
+        positiveZ: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_pz.jpg",
+        negativeZ: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_mz.jpg"
       }
     }),
     baseLayerPicker: false,

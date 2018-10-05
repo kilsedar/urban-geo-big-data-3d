@@ -25,15 +25,11 @@ define(["jquery", "bootstrap"], function ($, bootstrap) {
           $("#"+sections[i].id).css("background-color", backgroundColor);
         }
       }
-      var credit = Cesium.CreditDisplay.cesiumCredit;
       for (var i = 0; i < sections.length; i++) {
         if (sections[i].viewerContainerId != activeViewerContainerId)
           $("#"+sections[i].viewerContainerId).css("display", "none");
-        else {
+        else
           $("#"+sections[i].viewerContainerId).css("display", "block");
-          if (sections[i].viewerContainerId.includes("cesium"))
-            sections[i].viewer.scene.frameState.creditDisplay.addDefaultCredit(credit);
-        }
       }
     });
   };
