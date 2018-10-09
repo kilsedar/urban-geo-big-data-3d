@@ -153,13 +153,28 @@ html, body, #world-wind-3d-city, #world-wind-3d-city-canvas, #cesium-3d-city, #c
 }
 
 #lulc-vgi:hover {
-  background-color: #48b;
+  background-color: #48b !important;
 }
 
 /* #lulc-vgi:active {
   background-color: #aef;
   color: #000000;
 } */
+
+#vgi-attribution-link {
+  left: 296px;
+}
+
+#vgi-attribution-lightbox-overlay {
+  display: block;
+  visibility: hidden;
+}
+
+#vgi-attribution-text {
+  text-align: justify;
+  font-size: 13px;
+  padding: 20px;
+}
 
 .project-attribution-link {
   left: 212px;

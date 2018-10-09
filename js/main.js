@@ -321,7 +321,7 @@ define(["js/TopNavigationBar",
 
   var projectAttributionText = $("<div></div>");
   projectAttributionText.addClass("project-attribution-text");
-  projectAttributionText.html("<a href='http://www.urbangeobigdata.it/' target='_blank'>URBAN GEOmatics for Bulk Information Generation, Data Assessment and Technology Awareness (URBAN GEO BIG DATA)</a> is a <a href='http://prin.miur.it/' target='_blank'>Project of National Interest (PRIN)</a> funded by the <a href='http://www.miur.gov.it/web/guest/home' target='_blank'>Italian Ministry of Education, University and Research (MIUR)</a> – id. 20159CNLW8. The project contributes to improving the exploitation of new data from EO and mobile sensors, for a better understanding of a number of urban dynamics. It extracts information from data and represents it for better comprehension, aiming an improved public engagement.");
+  projectAttributionText.html("<a href='http://www.urbangeobigdata.it/' target='_blank'>URBAN GEOmatics for Bulk Information Generation, Data Assessment and Technology Awareness (URBAN GEO BIG DATA)</a> is a <a href='http://prin.miur.it/' target='_blank'>Project of National Interest (PRIN)</a> funded by the <a href='http://www.miur.gov.it/web/guest/home' target='_blank'>Italian Ministry of Education, University and Research (MIUR)</a>–id. 20159CNLW8. The project contributes to improving the exploitation of new data from EO and mobile sensors, for a better understanding of a number of urban dynamics. It extracts information from data and represents it for better comprehension, aiming an improved public engagement.");
 
   var projectLogo = $("<img>");
   projectLogo.addClass("project-logo");
@@ -340,7 +340,7 @@ define(["js/TopNavigationBar",
   $(".cesium-widget").append(projectAttributionLightboxOverlay);
 
   $(".cesium-widget-credits").on("click", ".project-attribution-link", function() {
-    styleLightbox();
+    styleLightbox(".project-attribution-lightbox-overlay");
     $(".project-attribution-lightbox-overlay").css("visibility", "visible");
   });
 
@@ -348,7 +348,48 @@ define(["js/TopNavigationBar",
     $(".project-attribution-lightbox-overlay").css("visibility", "hidden");
   });
 
-  function styleLightbox() {
+  var vgiAttributionLink = $("<a></a>");
+  vgiAttributionLink.addClass("cesium-credit-expand-link");
+  vgiAttributionLink.attr("id", "vgi-attribution-link");
+  vgiAttributionLink.text("VGI data attribution");
+  $("#cesium-lulc .cesium-widget-credits").append(vgiAttributionLink);
+
+  var vgiAttributionLightboxOverlay = $("<div></div>");
+  vgiAttributionLightboxOverlay.addClass("cesium-credit-lightbox-overlay");
+  vgiAttributionLightboxOverlay.attr("id", "vgi-attribution-lightbox-overlay");
+
+  var vgiAttributionLightbox = $("<div></div>");
+  vgiAttributionLightbox.addClass("cesium-credit-lightbox");
+
+  var vgiTitle = $("<div></div>");
+  vgiTitle.addClass("cesium-credit-lightbox-title");
+  vgiTitle.text("Land Cover Collector");
+
+  var vgiAttributionLightboxClose = $("<a></a>");
+  vgiAttributionLightboxClose.addClass("cesium-credit-lightbox-close");
+  vgiAttributionLightboxClose.html("&times;");
+
+  var vgiAttributionText = $("<div></div>");
+  vgiAttributionText.attr("id", "vgi-attribution-text");
+  vgiAttributionText.html("Volunteered Geographic Information (VGI) is collected using Land Cover Collector application. It is published as <a href='https://play.google.com/store/apps/details?id=polimi.geolab.lcc' target='_blank'>Android</a> and <a href='https://itunes.apple.com/it/app/land-cover-collector/id1423068308#?platform=iphone' target='_blank'>iOS</a> mobile applications and also available on <a href='https://landcover.como.polimi.it/collector/' target='_blank'>Web</a>. The data collected can be downloaded within the Web application and the license of the data is <a href='https://opendatacommons.org/licenses/odbl/1.0/' target='_blank'>Open Database License (ODbL) v1.0</a>. The source code of the application can be found <a href='https://github.com/kilsedar/land-cover-collector' target='_blank'>here</a>.<br>" +
+                          "This work is supported by <a href='http://www.urbangeobigdata.it/' target='_blank'>URBAN GEOmatics for Bulk Information Generation, Data Assessment and Technology Awareness (URBAN GEO BIG DATA)</a>, a <a href='http://prin.miur.it/' target='_blank'>Project of National Interest (PRIN)</a>, funded by the <a href='http://www.miur.gov.it/web/guest/home' target='_blank'>Italian Ministry of Education, University and Research (MIUR)</a>–id. 20159CNLW8.");
+
+  vgiAttributionLightbox.append(vgiTitle);
+  vgiAttributionLightbox.append(vgiAttributionLightboxClose);
+  vgiAttributionLightbox.append(vgiAttributionText);
+  vgiAttributionLightboxOverlay.append(vgiAttributionLightbox);
+  $(".cesium-widget").append(vgiAttributionLightboxOverlay);
+
+  $(".cesium-widget-credits").on("click", "#vgi-attribution-link", function() {
+    styleLightbox("#vgi-attribution-lightbox-overlay");
+    $("#cesium-lulc #vgi-attribution-lightbox-overlay").css("visibility", "visible");
+  });
+
+  $(".cesium-widget").on("click", ".cesium-credit-lightbox-close", function() {
+    $("#cesium-lulc #vgi-attribution-lightbox-overlay").css("visibility", "hidden");
+  });
+
+  function styleLightbox(selector) {
     var mobileWidth = 576;
 
     var width = $(window).width();
@@ -361,17 +402,18 @@ define(["js/TopNavigationBar",
     });
 
     if (width < mobileWidth) {
-      $(".project-attribution-lightbox-overlay > .cesium-credit-lightbox").attr("class", "cesium-credit-lightbox cesium-credit-lightbox-mobile");
-      $(".project-attribution-lightbox-overlay > .cesium-credit-lightbox.cesium-credit-lightbox-mobile").css("margin-top", "0px");
+      $(selector + " > .cesium-credit-lightbox").attr("class", "cesium-credit-lightbox cesium-credit-lightbox-mobile");
+      $(selector + " > .cesium-credit-lightbox.cesium-credit-lightbox-mobile").css("margin-top", "0px");
     }
     else {
-      $(".project-attribution-lightbox-overlay > .cesium-credit-lightbox").attr("class", "cesium-credit-lightbox cesium-credit-lightbox-expanded");
-      $(".project-attribution-lightbox-overlay > .cesium-credit-lightbox.cesium-credit-lightbox-expanded").css("margin-top", Math.floor((height - $("#" + activeSectionViewerContainerId + " .project-attribution-lightbox-overlay > .cesium-credit-lightbox.cesium-credit-lightbox-expanded").height()) * 0.5) + "px");
+      $(selector + " > .cesium-credit-lightbox").attr("class", "cesium-credit-lightbox cesium-credit-lightbox-expanded");
+      $(selector + " > .cesium-credit-lightbox.cesium-credit-lightbox-expanded").css("margin-top", Math.floor((height - $("#" + activeSectionViewerContainerId + " " + selector + " > .cesium-credit-lightbox.cesium-credit-lightbox-expanded").height()) * 0.5) + "px");
     }
   }
 
   $(window).resize(function() {
-    styleLightbox();
+    styleLightbox(".project-attribution-lightbox-overlay");
+    styleLightbox("#vgi-attribution-lightbox-overlay");
     layerSwitcherDeformation.styleLegend();
     layerSwitcherLulc.styleLegend();
   });
