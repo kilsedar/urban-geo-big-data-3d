@@ -1,5 +1,5 @@
 .cesium-viewer {
-  font-family: 'Do Hyeon', sans-serif;
+  font-family: "Do Hyeon", sans-serif;
 }
 
 .cesium-credit-expand-link {
@@ -23,18 +23,47 @@
 
 .cesium-viewer-toolbar {
   top: 50px;
+  z-index: 100;
 }
 
 .cesium-credit-lightbox-overlay {
-  z-index: 200 !important;
+  z-index: 200;
+}
+
+.cesium-infoBox-close:hover, .cesium-credit-lightbox-close:hover {
+  background-color: #48b !important;
+  color: #ffffff !important;
+}
+
+/* .cesium-infoBox-close:active {
+  background-color: #aef !important;
+  color: #000000 !important;
+} */
+
+.cesium-credit-lightbox-close {
+  padding: 2px 5px 0px 5px;
+  font-size: 18px;
+  line-height: 18px;
+  border-radius: 2px;
+  top: 5px;
+  right: 5px;
 }
 
 .tooltip-inner {
-  font-family: 'Do Hyeon', sans-serif;
+  font-family: "Do Hyeon", sans-serif;
 }
 
 .btn {
   border: none;
+}
+
+.btn-secondary {
+  background-color: #303336;
+}
+
+.btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle {
+  background-color: #303336;
+  border-color: #ffffff;
 }
 
 .dropdown-toggle {
@@ -42,11 +71,19 @@
   border-bottom: 3px dashed;
 }
 
-.dropdown-toggle:focus, .dropdown-toggle:active, .dropdown-toggle:hover {
-  outline: none !important;
+.dropdown-toggle:hover, .dropdown-toggle:active, .dropdown-toggle:focus {
   box-shadow: none !important;
-  border-bottom: 3px dashed !important;
+  border-bottom: 3px dashed;
 }
+
+.dropdown-toggle:hover {
+  background-color: #48b;
+}
+
+/* .dropdown-toggle:active {
+  background-color: #aef !important;
+  color: #000000 !important;
+} */
 
 .dropdown-menu {
   min-width: inherit;
@@ -55,17 +92,28 @@
   transform: translate3d(-3px, 38px, 0px) !important;
 }
 
+.dropdown-item:active {
+  background-color: #48b;
+}
+
+.js-plotly-plot {
+  position: absolute;
+  bottom: 30px;
+  left: 10px;
+  margin-left: 0% !important;
+}
+
 .modebar .modebar-group:nth-child(5) a:nth-child(2), .modebar .modebar-group:nth-child(5) a:nth-child(3) {
   display: none;
 }
 
-a:active {
-  background-color: orange !important;
+.modebar-btn:hover {
+  font-family: "Do Hyeon", sans-serif;
 }
 
 html, body, #world-wind-3d-city, #world-wind-3d-city-canvas, #cesium-3d-city, #cesium-deformation, #cesium-lulc {
   width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden;
-  font-family: 'Do Hyeon', sans-serif !important;
+  font-family: "Do Hyeon", sans-serif;
 }
 
 #window {
@@ -100,10 +148,18 @@ html, body, #world-wind-3d-city, #world-wind-3d-city-canvas, #cesium-3d-city, #c
   border-bottom: 3px dashed;
 }
 
-#lulc-vgi:focus, #lulc-vgi:active, #lulc-vgi:hover {
-  outline: none !important;
-  box-shadow: none !important;
+#lulc-vgi:hover, #lulc-vgi:active, #lulc-vgi:focus {
+  box-shadow: none;
 }
+
+#lulc-vgi:hover {
+  background-color: #48b;
+}
+
+/* #lulc-vgi:active {
+  background-color: #aef;
+  color: #000000;
+} */
 
 .project-attribution-link {
   left: 212px;
@@ -128,14 +184,7 @@ html, body, #world-wind-3d-city, #world-wind-3d-city-canvas, #cesium-3d-city, #c
   padding-bottom: 20px;
 }
 
-.js-plotly-plot {
-  position: absolute;
-  bottom: 30px;
-  left: 10px;
-  margin-left: 0% !important;
-}
-
-.location-switcher {
+.layer-switcher {
   position: absolute;
   top: 50px;
   left: 7px;
@@ -152,4 +201,13 @@ html, body, #world-wind-3d-city, #world-wind-3d-city-canvas, #cesium-3d-city, #c
   font-size: 18px;
   border-style: dashed;
   padding: 5px 0px 5px 0px;
+  box-sizing: content-box;
+}
+
+.legend {
+  position: absolute;
+  top: 90px;
+  right: 7px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }

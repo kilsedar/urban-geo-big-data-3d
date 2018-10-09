@@ -48,7 +48,15 @@ define(["vendor/plotly-latest.min", "jquery"], function (Plotly, $) {
                   t: 30,
                   pad: 4
                 },
-                plot_bgcolor: "#fff9ef"
+                plot_bgcolor: "#fff9ef",
+                font: {
+                  family: "Do Hyeon"
+                },
+                hoverlabel: {
+                  font: {
+                    family: "Do Hyeon",
+                  }
+                }
               };
 
               var d3 = Plotly.d3;

@@ -11,7 +11,7 @@ define(["jquery"], function ($) {
 
     var layerSwitcher = $("<div></div>");
     layerSwitcher.attr("id", this.id);
-    layerSwitcher.addClass("location-switcher");
+    layerSwitcher.addClass("layer-switcher");
 
     var button = $("<button></button>");
     button.attr("id", this.dropdownMenuButtonId);
@@ -29,6 +29,19 @@ define(["jquery"], function ($) {
     $("#"+this.viewerContainerId).append(layerSwitcher);
   };
 
+  LayerSwitcher.prototype.styleLegend = function () {
+    if ($("#"+this.viewerContainerId+" .legend").is(":visible")) {
+      if ($("#"+this.viewerContainerId+" .legend").prop("scrollHeight")+126 > $(window).height()) {
+        $("#"+this.viewerContainerId+" .legend").css("height", $(window).height()-126 + "px");
+        $("#"+this.viewerContainerId+" .legend").css("width", $("#"+this.viewerContainerId+" .legend img").width()+10 + "px");
+      }
+      else {
+        $("#"+this.viewerContainerId+" .legend").css("height", "auto");
+        $("#"+this.viewerContainerId+" .legend").css("width", "auto");
+      }
+    }
+  }
+
   LayerSwitcher.prototype.add = function (layerSwitcherItem) {
     var item = $("<a></a>");
     item.attr("id", layerSwitcherItem.id);
@@ -41,6 +54,21 @@ define(["jquery"], function ($) {
 
     $("#"+this.viewerContainerId).on("click", "#"+layerSwitcherItem.id, function() {
       $("#"+_self.dropdownMenuButtonId).html(layerSwitcherItem.text);
+
+      $("#"+_self.viewerContainerId+" .legend").remove();
+      if (layerSwitcherItem.legendURL != undefined) {
+        var legend = $("<div></div>");
+        legend.addClass("legend");
+
+        var legendImage = $("<img>");
+        legendImage.attr("src", layerSwitcherItem.legendURL);
+
+        legend.append(legendImage);
+        $("#"+_self.viewerContainerId).append(legend);
+        setTimeout(function() {
+          _self.styleLegend();
+        }, 100);
+      }
 
       if (layerSwitcherItem.viewerType == "world-wind") {
         for (var i=0; i<_self.items.length; i++) {
