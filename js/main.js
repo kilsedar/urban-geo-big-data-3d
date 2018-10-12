@@ -257,9 +257,22 @@ define(["js/TopNavigationBar",
       tileMatrixLabels: ["EPSG:900913:0", "EPSG:900913:1", "EPSG:900913:2", "EPSG:900913:3", "EPSG:900913:4", "EPSG:900913:5", "EPSG:900913:6", "EPSG:900913:7", "EPSG:900913:8", "EPSG:900913:9", "EPSG:900913:10", "EPSG:900913:11", "EPSG:900913:12", "EPSG:900913:13", "EPSG:900913:14", "EPSG:900913:15", "EPSG:900913:16", "EPSG:900913:17", "EPSG:900913:18", "EPSG:900913:19", "EPSG:900913:20", "EPSG:900913:21", "EPSG:900913:22", "EPSG:900913:23", "EPSG:900913:24", "EPSG:900913:25", "EPSG:900913:26", "EPSG:900913:27", "EPSG:900913:28", "EPSG:900913:29", "EPSG:900913:30"],
       rectangle: Cesium.Rectangle.fromDegrees(6.6270874466178977, 35.4921528520647342, 18.5207271989720503, 47.0917262219610677)
   });
-  var layerSwitcherlulcGlc302010 = new LayerSwitcherItem("cesium", cesiumViewerLulc, "glc30-2010", "GlobeLand30", "imagery", lulcGlc302010, [6.6270874466178977, 35.4921528520647342, 18.5207271989720503, 47.0917262219610677], 1100000.0, "images/legends/glc30.png");
-  layerSwitcherLulc.add(layerSwitcherlulcGlc302010);
-  layerSwitcherlulcGlc302010.add([{text: "Milan", boundingBox: [9.04284, 45.3871, 9.27791, 45.536]}, {text: "Padua", boundingBox: [11.8054, 45.34, 11.976, 45.4575]}, {text: "Rome", boundingBox: [12.2342, 41.6555, 12.8558, 42.141]}, {text: "Naples", boundingBox: [14.1367, 40.7912, 14.3537, 40.915]}, {text: "Turin", boundingBox: [7.57783, 45.008, 7.77271, 45.1402]}]);
+  var layerSwitcherlulcGlc30 = new LayerSwitcherItem("cesium", cesiumViewerLulc, "glc30", "GlobeLand30", "imagery", lulcGlc302010, [6.6270874466178977, 35.4921528520647342, 18.5207271989720503, 47.0917262219610677], 1100000.0, "images/legends/glc30.png");
+  layerSwitcherLulc.add(layerSwitcherlulcGlc30);
+  layerSwitcherlulcGlc30.add([{text: "Milan", boundingBox: [9.04284, 45.3871, 9.27791, 45.536]}, {text: "Padua", boundingBox: [11.8054, 45.34, 11.976, 45.4575]}, {text: "Rome", boundingBox: [12.2342, 41.6555, 12.8558, 42.141]}, {text: "Naples", boundingBox: [14.1367, 40.7912, 14.3537, 40.915]}, {text: "Turin", boundingBox: [7.57783, 45.008, 7.77271, 45.1402]}]);
+
+  var lulcIspraLandCover2012 = new Cesium.WebMapTileServiceImageryProvider({
+      url: "http://localhost:8080/geoserver/gwc/service/wmts",
+      layer: "ugbd:ispra_land_cover_2012",
+      style: "ugbd:ispra_land_cover_2012",
+      format: "image/png",
+      tileMatrixSetID: "EPSG:900913",
+      tileMatrixLabels: ["EPSG:900913:0", "EPSG:900913:1", "EPSG:900913:2", "EPSG:900913:3", "EPSG:900913:4", "EPSG:900913:5", "EPSG:900913:6", "EPSG:900913:7", "EPSG:900913:8", "EPSG:900913:9", "EPSG:900913:10", "EPSG:900913:11", "EPSG:900913:12", "EPSG:900913:13", "EPSG:900913:14", "EPSG:900913:15", "EPSG:900913:16", "EPSG:900913:17", "EPSG:900913:18", "EPSG:900913:19", "EPSG:900913:20", "EPSG:900913:21", "EPSG:900913:22", "EPSG:900913:23", "EPSG:900913:24", "EPSG:900913:25", "EPSG:900913:26", "EPSG:900913:27", "EPSG:900913:28", "EPSG:900913:29", "EPSG:900913:30"],
+      rectangle: Cesium.Rectangle.fromDegrees(6.5022543122834735, 35.18884195920269, 19.544459557604412, 47.11391665478447)
+  });
+  var layerSwitcherlulcIspraLandCover = new LayerSwitcherItem("cesium", cesiumViewerLulc, "ispra-land-cover", "ISPRA Land Cover", "imagery", lulcIspraLandCover2012, [6.5022543122834735, 35.18884195920269, 19.544459557604412, 47.11391665478447], 1100000.0, undefined);
+  layerSwitcherLulc.add(layerSwitcherlulcIspraLandCover);
+  layerSwitcherlulcIspraLandCover.add([{text: "Milan", boundingBox: [9.04284, 45.3871, 9.27791, 45.536]}, {text: "Padua", boundingBox: [11.8054, 45.34, 11.976, 45.4575]}, {text: "Rome", boundingBox: [12.2342, 41.6555, 12.8558, 42.141]}, {text: "Naples", boundingBox: [14.1367, 40.7912, 14.3537, 40.915]}, {text: "Turin", boundingBox: [7.57783, 45.008, 7.77271, 45.1402]}]);
 
   /*
   artificial surface: rgba(147, 47, 20, 1.0) or #932f14 -> Cesium.Color(0.576470588, 0.184313725, 0.078431373, 1.0)
