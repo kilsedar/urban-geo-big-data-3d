@@ -1,4 +1,4 @@
-define(["js/LayerSwitcher"], function (LayerSwitcher) {
+define([], function () {
   "use strict";
 
   /* This class is written for Cesium and imagery only, as a result it will work only for LULC use case. */
