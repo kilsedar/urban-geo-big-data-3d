@@ -89,11 +89,29 @@
   min-width: inherit;
   border-radius: 0rem;
   padding: 0rem;
-  transform: translate3d(-3px, 38px, 0px) !important;
 }
 
 .dropdown-item:active {
   background-color: #48b;
+}
+
+.dropdown-item.dropdown-toggle {
+  border-bottom: none;
+  position: relative;
+}
+
+.dropdown-item.dropdown-toggle:hover {
+  background-color: #f8f9fa;
+}
+
+.dropdown-item.dropdown-toggle:active {
+  background-color: #48b;
+}
+
+.dropdown-item.dropdown-toggle .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
 }
 
 .js-plotly-plot {
@@ -142,7 +160,7 @@ html, body, #world-wind-3d-city, #world-wind-3d-city-canvas, #cesium-3d-city, #c
 #lulc-vgi {
   position: absolute;
   top: 50px;
-  left: 110px;
+  left: 104px;
   z-index: 100;
   border-radius: 0rem;
   border-bottom: 3px dashed;

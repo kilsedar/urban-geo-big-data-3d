@@ -13,5 +13,48 @@ define([], function () {
     this.legendURL = legendURL;
   };
 
+  LayerSwitcherItem.prototype.add = function (items) {
+    $("#"+this.id).addClass("dropdown-toggle");
+    var dropdownMenu = $("<div></div>");
+    dropdownMenu.addClass("dropdown-menu");
+
+    for (var i=0; i<items.length; i++) {
+      var item = $("<a></a>");
+      item.attr("id", this.id+"-"+items[i].text);
+      item.addClass("dropdown-item");
+      item.attr("href", "#");
+      item.html(items[i].text);
+      dropdownMenu.append(item);
+    }
+    
+    $("#"+this.id).append(dropdownMenu);
+
+    $("#"+this.id).hover(
+      function() {
+        dropdownMenu.addClass("show");
+      }, function() {
+        dropdownMenu.removeClass("show");
+      }
+    );
+
+    var _self = this;
+    $("#"+this.id+" .dropdown-item").click(function(event) {
+       for (var i=0; i<items.length; i++) {
+         if (items[i].text == $(this).attr("id").split(_self.id+"-")[1]) {
+           var heading = Cesium.Math.toRadians(0.0);
+           var pitch = Cesium.Math.toRadians(-50.0);
+
+           _self.viewer.camera.lookAt(Cesium.Cartesian3.fromDegrees((items[i].boundingBox[0]+items[i].boundingBox[2])/2, (items[i].boundingBox[1]+items[i].boundingBox[3])/2), new Cesium.HeadingPitchRange(heading, pitch, 90000.0));
+           _self.viewer.camera.lookAtTransform(Cesium.Matrix4.IDENTITY);
+
+           $(".dropdown-menu").removeClass("show");
+
+           event.stopPropagation();
+           event.preventDefault();
+         }
+       }
+    });
+  }
+
   return LayerSwitcherItem;
 });

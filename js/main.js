@@ -259,6 +259,7 @@ define(["js/TopNavigationBar",
   });
   var layerSwitcherLulcGlc30 = new LayerSwitcherItem("cesium", cesiumViewerLulc, "glc30", "GlobeLand30", "imagery", lulcGlc30, [6.6270874466178977, 35.4921528520647342, 18.5207271989720503, 47.0917262219610677], 1100000.0, "images/legends/glc30.png");
   layerSwitcherLulc.add(layerSwitcherLulcGlc30);
+  layerSwitcherLulcGlc30.add([{text: "Milan", boundingBox: [9.04284, 45.3871, 9.27791, 45.536]}, {text: "Padua", boundingBox: [11.8054, 45.34, 11.976, 45.4575]}, {text: "Rome", boundingBox: [12.2342, 41.6555, 12.8558, 42.141]}, {text: "Naples", boundingBox: [14.1367, 40.7912, 14.3537, 40.915]}, {text: "Turin", boundingBox: [7.57783, 45.008, 7.77271, 45.1402]}]);
 
   /*
   artificial surface: rgba(147, 47, 20, 1.0) or #932f14 -> Cesium.Color(0.576470588, 0.184313725, 0.078431373, 1.0)
