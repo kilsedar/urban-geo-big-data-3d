@@ -1,4 +1,4 @@
-define([], function () {
+define(["js/LayerSwitcher"], function (LayerSwitcher) {
   "use strict";
 
   /* This class is written for Cesium and imagery only, as a result it will work only for LULC use case. */
@@ -38,10 +38,33 @@ define([], function () {
       }
     );
 
+    var viewerContainerId = $(this.viewer.container).attr("id");
     var _self = this;
     $("#"+this.id+" .dropdown-item").click(function(event) {
       if (_self.viewer.imageryLayers.length == 1)
         _self.viewer.imageryLayers.addImageryProvider(_self.layer);
+      if ($("#"+viewerContainerId+" .legend").length == 0 && _self.legendURL != undefined) {
+        var legend = $("<div></div>");
+        legend.addClass("legend");
+
+        var legendImage = $("<img>");
+        legendImage.attr("src", _self.legendURL);
+
+        legend.append(legendImage);
+        $("#"+viewerContainerId).append(legend);
+        
+        setTimeout(function() {
+          if ($("#"+viewerContainerId+" .legend").prop("scrollHeight")+126 > $(window).height()) {
+            $("#"+viewerContainerId+" .legend").css("height", $(window).height()-126 + "px");
+            $("#"+viewerContainerId+" .legend").css("width", $("#"+viewerContainerId+" .legend img").width()+10 + "px");
+          }
+          else {
+            $("#"+viewerContainerId+" .legend").css("height", "auto");
+            $("#"+viewerContainerId+" .legend").css("width", "auto");
+          }
+        }, 100);
+      }
+
 
        for (var i=0; i<items.length; i++) {
          if (items[i].text == $(this).attr("id").split(_self.id+"-")[1]) {
