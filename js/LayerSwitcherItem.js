@@ -1,6 +1,7 @@
 define([], function () {
   "use strict";
 
+  /* This class is written for Cesium and imagery only, as a result it will work only for LULC use case. */
   var LayerSwitcherItem = function (viewerType, viewer, id, text, type, layer, boundingBox, range, legendURL) {
     this.viewerType = viewerType;
     this.viewer = viewer;
@@ -26,7 +27,7 @@ define([], function () {
       item.html(items[i].text);
       dropdownMenu.append(item);
     }
-    
+
     $("#"+this.id).append(dropdownMenu);
 
     $("#"+this.id).hover(
@@ -39,6 +40,9 @@ define([], function () {
 
     var _self = this;
     $("#"+this.id+" .dropdown-item").click(function(event) {
+      if (_self.viewer.imageryLayers.length == 1)
+        _self.viewer.imageryLayers.addImageryProvider(_self.layer);
+
        for (var i=0; i<items.length; i++) {
          if (items[i].text == $(this).attr("id").split(_self.id+"-")[1]) {
            var heading = Cesium.Math.toRadians(0.0);
