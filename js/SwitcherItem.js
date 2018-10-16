@@ -1,4 +1,4 @@
-define(["js/Switcher"], function (Switcher) {
+define([], function () {
   "use strict";
 
   var SwitcherItem = function (viewerType, viewer, id, text, type, layer, boundingBox, range, legendURL) {

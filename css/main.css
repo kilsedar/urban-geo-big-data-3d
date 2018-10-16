@@ -225,3 +225,20 @@ html, body, #world-wind-3d-city, #world-wind-3d-city-canvas, #cesium-3d-city, #c
   overflow-y: auto;
   overflow-x: hidden;
 }
+
+.layer-list {
+  position: absolute;
+  top: 100px;
+  left: 7px;
+  padding: 6px 12px;
+  background-color: #212529;
+}
+
+.layer-list label {
+  margin: 0px;
+  padding: 3px 0px 3px 3px;
+}
+
+.layer-list-item {
+  color: #ffffff;
+}

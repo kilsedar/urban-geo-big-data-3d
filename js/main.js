@@ -6,9 +6,11 @@ define(["js/TopNavigationBar",
         "js/LandCoverJson",
         "js/WebMap3DCityDBKml",
         "js/WebMap3DCityDBKmlLayer",
+        "js/LayerList",
+        "js/LayerListItem",
         "vendor/3dosm/src/OSMBuildingLayer",
         "jquery"],
-       function (TopNavigationBar, TopSection, Switcher, SwitcherItem, WmsDeformationPlot, LandCoverJson, WebMap3DCityDBKml, WebMap3DCityDBKmlLayer, OSMBuildingLayer, $) {
+       function (TopNavigationBar, TopSection, Switcher, SwitcherItem, WmsDeformationPlot, LandCoverJson, WebMap3DCityDBKml, WebMap3DCityDBKmlLayer, LayerList, LayerListItem, OSMBuildingLayer, $) {
   "use strict";
 
   var worldWindViewer3dCity = new WorldWind.WorldWindow("world-wind-3d-city-canvas");
@@ -263,6 +265,32 @@ define(["js/TopNavigationBar",
   var switcherLulcTurin = new SwitcherItem("cesium", cesiumViewerLulc, "lulc-turin", "Turin", undefined, undefined, [7.57783, 45.008, 7.77271, 45.1402], 40000.0, undefined);
   switcherLulc.add(switcherLulcTurin);
 
+  var layerListLulc = new LayerList("cesium-lulc", "layer-list-lulc");
+
+  var lulcGlc302010 = new Cesium.WebMapTileServiceImageryProvider({
+    url: "http://localhost:8080/geoserver/gwc/service/wmts",
+    layer: "ugbd:glc30_2010",
+    style: "ugbd:glc30",
+    format: "image/png",
+    tileMatrixSetID: "EPSG:900913",
+    tileMatrixLabels: ["EPSG:900913:0", "EPSG:900913:1", "EPSG:900913:2", "EPSG:900913:3", "EPSG:900913:4", "EPSG:900913:5", "EPSG:900913:6", "EPSG:900913:7", "EPSG:900913:8", "EPSG:900913:9", "EPSG:900913:10", "EPSG:900913:11", "EPSG:900913:12", "EPSG:900913:13", "EPSG:900913:14", "EPSG:900913:15", "EPSG:900913:16", "EPSG:900913:17", "EPSG:900913:18", "EPSG:900913:19", "EPSG:900913:20", "EPSG:900913:21", "EPSG:900913:22", "EPSG:900913:23", "EPSG:900913:24", "EPSG:900913:25", "EPSG:900913:26", "EPSG:900913:27", "EPSG:900913:28", "EPSG:900913:29", "EPSG:900913:30"],
+    rectangle: Cesium.Rectangle.fromDegrees(6.6270874466178977, 35.4921528520647342, 18.5207271989720503, 47.0917262219610677)
+  });
+  var layerListLulcGlc30 = new LayerListItem(cesiumViewerLulc, "lulc-glc30", "GlobeLand30", lulcGlc302010, "images/legends/glc30.png");
+  layerListLulc.add(layerListLulcGlc30);
+
+  var lulcIspraLandCover2012 = new Cesium.WebMapTileServiceImageryProvider({
+    url: "http://localhost:8080/geoserver/gwc/service/wmts",
+    layer: "ugbd:ispra_land_cover_2012",
+    style: "ugbd:ispra_land_cover_2012",
+    format: "image/png",
+    tileMatrixSetID: "EPSG:900913",
+    tileMatrixLabels: ["EPSG:900913:0", "EPSG:900913:1", "EPSG:900913:2", "EPSG:900913:3", "EPSG:900913:4", "EPSG:900913:5", "EPSG:900913:6", "EPSG:900913:7", "EPSG:900913:8", "EPSG:900913:9", "EPSG:900913:10", "EPSG:900913:11", "EPSG:900913:12", "EPSG:900913:13", "EPSG:900913:14", "EPSG:900913:15", "EPSG:900913:16", "EPSG:900913:17", "EPSG:900913:18", "EPSG:900913:19", "EPSG:900913:20", "EPSG:900913:21", "EPSG:900913:22", "EPSG:900913:23", "EPSG:900913:24", "EPSG:900913:25", "EPSG:900913:26", "EPSG:900913:27", "EPSG:900913:28", "EPSG:900913:29", "EPSG:900913:30"],
+    rectangle: Cesium.Rectangle.fromDegrees(6.5022543122834735, 35.18884195920269, 19.544459557604412, 47.11391665478447)
+  });
+  var layerListLulcIspraLandCover = new LayerListItem(cesiumViewerLulc, "lulc-ispra-land-cover", "ISPRA Land Cover", lulcIspraLandCover2012, undefined);
+  layerListLulc.add(layerListLulcIspraLandCover);
+
   /*
   artificial surface: rgba(147, 47, 20, 1.0) or #932f14 -> Cesium.Color(0.576470588, 0.184313725, 0.078431373, 1.0)
   bare land: rgba(202, 202, 202, 1.0) or #cacaca -> Cesium.Color(0.792156863, 0.792156863, 0.792156863, 1.0)
@@ -418,7 +446,7 @@ define(["js/TopNavigationBar",
     styleLightbox(".project-attribution-lightbox-overlay");
     styleLightbox("#vgi-attribution-lightbox-overlay");
     switcherDeformation.styleLegend();
-    switcherLulc.styleLegend();
+    layerListLulc.styleLegend();
   });
 
   $(".cesium-viewer-toolbar button").attr("data-toggle", "tooltip");

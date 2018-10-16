@@ -1,4 +1,4 @@
-define(["jquery"], function ($) {
+define([], function () {
   "use strict";
 
   var Switcher = function (viewerContainerId, id) {
@@ -64,6 +64,7 @@ define(["jquery"], function ($) {
 
         legend.append(legendImage);
         $("#"+_self.viewerContainerId).append(legend);
+        
         setTimeout(function() {
           _self.styleLegend();
         }, 100);
