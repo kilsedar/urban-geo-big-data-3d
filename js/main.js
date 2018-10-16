@@ -145,8 +145,8 @@ define(["js/TopNavigationBar",
 
   var topSectionWorldWind3dCity = new TopSection("world-wind-3d-city", worldWindViewer3dCity, "world-wind-3d-city-section", "3D City <img id='top-section-nasa-image' src='images/nasa.png'>", "3D OpenStreetMap Buildings on NASA Web WorldWind", true);
   var topSectionCesium3dCity = new TopSection("cesium-3d-city", cesiumViewer3dCity, "cesium-3d-city-section", "3D City <img id='top-section-cesium-image' src='images/cesium_white.png'>", "CityGML on Cesium", false);
-  var topSectionDeformation = new TopSection("cesium-deformation", cesiumViewerDeformation, "deformation-section", "Deformation", "Deformation Maps on Cesium", false);
-  var topSectionLulc = new TopSection("cesium-lulc", cesiumViewerLulc, "lulc-section", "LULC", "Land Cover Land Use (LULC) on Cesium", false);
+  var topSectionDeformation = new TopSection("cesium-deformation", cesiumViewerDeformation, "cesium-deformation-section", "Deformation", "Deformation Maps on Cesium", false);
+  var topSectionLulc = new TopSection("cesium-lulc", cesiumViewerLulc, "cesium-lulc-section", "LULC", "Land Cover Land Use (LULC) on Cesium", false);
 
   topNavigationBar.addSection(topSectionWorldWind3dCity);
   topNavigationBar.addSection(topSectionCesium3dCity);
@@ -308,7 +308,7 @@ define(["js/TopNavigationBar",
   var urlCouchdb = "https://landcover.como.polimi.it/couchdb/lcc_points/_all_docs?include_docs=true";
   var glc30Couchdb = new LandCoverJson(glc30Classes, glc30Colors, urlCouchdb);
 
-  $("#lulc-section").click(function() {
+  $("#cesium-lulc-section").click(function() {
     glc30Couchdb.add(cesiumViewerLulc);
   });
 
@@ -447,6 +447,7 @@ define(["js/TopNavigationBar",
     styleLightbox("#vgi-attribution-lightbox-overlay");
     switcherDeformation.styleLegend();
     layerListLulc.styleLegend();
+    layerListLulc.styleLayerList();
   });
 
   $(".cesium-viewer-toolbar button").attr("data-toggle", "tooltip");

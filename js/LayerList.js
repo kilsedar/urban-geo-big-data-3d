@@ -6,12 +6,22 @@ define([], function () {
     this.items = [];
     this.viewerContainerId = viewerContainerId;
     this.id = id;
+    this.width;
 
     var layerList = $("<div></div>");
     layerList.attr("id", this.id);
     layerList.addClass("layer-list");
 
     $("#"+this.viewerContainerId).append(layerList);
+
+    var _self = this;
+
+    $("#"+this.viewerContainerId+"-section").click(function() {
+      setTimeout(function() {
+        _self.width = $("#"+_self.id).width()+24;
+        _self.styleLayerList();
+      }, 100);
+    });
   };
 
   LayerList.prototype.styleLegend = function () {
@@ -23,6 +33,19 @@ define([], function () {
       else {
         $("#"+this.viewerContainerId+" .legend").css("height", "auto");
         $("#"+this.viewerContainerId+" .legend").css("width", "auto");
+      }
+    }
+  }
+
+  LayerList.prototype.styleLayerList = function () {
+    if ($("#"+this.viewerContainerId+" .layer-list").is(":visible")) {
+      if ($("#"+this.viewerContainerId+" .layer-list").prop("scrollHeight")+126 > $(window).height()) {
+        $("#"+this.viewerContainerId+" .layer-list").css("height", $(window).height()-126+"px");
+        $("#"+this.viewerContainerId+" .layer-list").css("width", this.width+15+"px");
+      }
+      else {
+        $("#"+this.viewerContainerId+" .layer-list").css("height", "auto");
+        $("#"+this.viewerContainerId+" .layer-list").css("width", "auto");
       }
     }
   }
@@ -43,7 +66,7 @@ define([], function () {
 
     item.append(input);
     item.append(label);
-    $("#" + this.id).append(item);
+    $("#"+this.id).append(item);
 
     var _self = this;
 

@@ -230,6 +230,8 @@ html, body, #world-wind-3d-city, #world-wind-3d-city-canvas, #cesium-3d-city, #c
   position: absolute;
   top: 100px;
   left: 7px;
+  overflow-y: auto;
+  overflow-x: hidden;
   padding: 6px 12px;
   background-color: #212529;
 }
