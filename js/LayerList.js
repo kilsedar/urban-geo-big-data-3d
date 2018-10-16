@@ -35,7 +35,7 @@ define([], function () {
     var input = $("<input></input>");
     input.attr("id", layerListItem.id+"-input");
     input.attr("type", "radio");
-    input.attr("name", "layer-list-item");
+    input.attr("name", "layer-list-item-input");
 
     var label = $("<label></label>");
     label.attr("for", layerListItem.id+"-input");
@@ -59,7 +59,7 @@ define([], function () {
 
         legend.append(legendImage);
         $("#"+_self.viewerContainerId).append(legend);
-        
+
         setTimeout(function() {
           _self.styleLegend();
         }, 100);

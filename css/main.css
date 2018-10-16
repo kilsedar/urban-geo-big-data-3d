@@ -234,9 +234,14 @@ html, body, #world-wind-3d-city, #world-wind-3d-city-canvas, #cesium-3d-city, #c
   background-color: #212529;
 }
 
+.layer-list input {
+  cursor: pointer;
+}
+
 .layer-list label {
   margin: 0px;
   padding: 3px 0px 3px 3px;
+  cursor: pointer;
 }
 
 .layer-list-item {
