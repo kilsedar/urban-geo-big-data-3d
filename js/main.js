@@ -246,7 +246,22 @@ define(["js/TopNavigationBar",
   var switcherDeformationNaples = new SwitcherItem("cesium", cesiumViewerDeformation, "deformation-naples", "Naples", "imagery", deformationNaples, [14.05072, 40.82471, 14.30817, 40.91915], 40000.0, "images/legends/deformation_naples.png");
   switcherDeformation.add(switcherDeformationNaples);
 
-  var switcherLulc = new Switcher("cesium-lulc", "switcher-lulc", "dataset");
+  var switcherLulc = new Switcher("cesium-lulc", "switcher-lulc");
+
+  var switcherLulcMilan = new SwitcherItem("cesium", cesiumViewerLulc, "lulc-milan", "Milan", undefined, undefined, [9.04284, 45.3871, 9.27791, 45.536], 40000.0, undefined);
+  switcherLulc.add(switcherLulcMilan);
+
+  var switcherLulcPadua = new SwitcherItem("cesium", cesiumViewerLulc, "lulc-padua", "Padua", undefined, undefined, [11.8054, 45.34, 11.976, 45.4575], 40000.0, undefined);
+  switcherLulc.add(switcherLulcPadua);
+
+  var switcherLulcRome = new SwitcherItem("cesium", cesiumViewerLulc, "lulc-rome", "Rome", undefined, undefined, [12.2342, 41.6555, 12.8558, 42.141], 40000.0, undefined);
+  switcherLulc.add(switcherLulcRome);
+
+  var switcherLulcNaples = new SwitcherItem("cesium", cesiumViewerLulc, "lulc-naples", "Naples", undefined, undefined, [14.1367, 40.7912, 14.3537, 40.915], 40000.0, undefined);
+  switcherLulc.add(switcherLulcNaples);
+
+  var switcherLulcTurin = new SwitcherItem("cesium", cesiumViewerLulc, "lulc-turin", "Turin", undefined, undefined, [7.57783, 45.008, 7.77271, 45.1402], 40000.0, undefined);
+  switcherLulc.add(switcherLulcTurin);
 
   /*
   artificial surface: rgba(147, 47, 20, 1.0) or #932f14 -> Cesium.Color(0.576470588, 0.184313725, 0.078431373, 1.0)

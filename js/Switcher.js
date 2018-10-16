@@ -1,11 +1,10 @@
 define(["jquery"], function ($) {
   "use strict";
 
-  var Switcher = function (viewerContainerId, id, text) {
+  var Switcher = function (viewerContainerId, id) {
     this.items = [];
     this.viewerContainerId = viewerContainerId;
     this.id = id;
-    this.text = text;
     this.dropdownMenuButtonId = this.id + "-menu-button";
     this.dropdownMenuId = this.id + "-menu";
 
@@ -16,7 +15,7 @@ define(["jquery"], function ($) {
     var button = $("<button></button>");
     button.attr("id", this.dropdownMenuButtonId);
     button.addClass("btn btn-secondary dropdown-toggle");
-    button.html(this.text);
+    button.html("location");
     button.attr("type", "button");
     button.attr("data-toggle", "dropdown");
 
@@ -71,27 +70,30 @@ define(["jquery"], function ($) {
       }
 
       if (switcherItem.viewerType == "world-wind") {
-        for (var i=0; i<_self.items.length; i++) {
-          switcherItem.viewer.removeLayer(_self.items[i].layer.renderableLayer);
+        if (switcherItem.layer != undefined) {
+          for (var i=0; i<_self.items.length; i++) {
+            switcherItem.viewer.removeLayer(_self.items[i].layer.renderableLayer);
+          }
+          switcherItem.layer.add(switcherItem.viewer);
         }
-
-        switcherItem.layer.add(switcherItem.viewer);
         switcherItem.layer.boundingBox = switcherItem.boundingBox;
         switcherItem.viewer.navigator.tilt = 50;
         switcherItem.layer.zoom();
         _self.items.push(switcherItem);
       }
       else {
-        if (switcherItem.type == "imagery") {
-          // Following may not always work, as it assumes base layer will always be in index 0.
-          for (var i=1; i<switcherItem.viewer.imageryLayers.length; i++) {
-            switcherItem.viewer.imageryLayers.remove(switcherItem.viewer.imageryLayers._layers[i], true);
+        if (switcherItem.layer != undefined) {
+          if (switcherItem.type == "imagery") {
+            // Following may not always work, as it assumes base layer will always be in index 0.
+            for (var i=1; i<switcherItem.viewer.imageryLayers.length; i++) {
+              switcherItem.viewer.imageryLayers.remove(switcherItem.viewer.imageryLayers._layers[i], true);
+            }
+            switcherItem.viewer.imageryLayers.addImageryProvider(switcherItem.layer);
           }
-          switcherItem.viewer.imageryLayers.addImageryProvider(switcherItem.layer);
-        }
-        else if (switcherItem.type == "kml") {
-          switcherItem.layer.webMap3DCityDBKml.removeAll();
-          switcherItem.layer.webMap3DCityDBKml.add(switcherItem.viewer, switcherItem.layer);
+          else if (switcherItem.type == "kml") {
+            switcherItem.layer.webMap3DCityDBKml.removeAll();
+            switcherItem.layer.webMap3DCityDBKml.add(switcherItem.viewer, switcherItem.layer);
+          }
         }
         var heading = Cesium.Math.toRadians(0.0);
         var pitch = Cesium.Math.toRadians(-50.0);
