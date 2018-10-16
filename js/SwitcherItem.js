@@ -1,8 +1,8 @@
-define(["js/LayerSwitcher"], function (LayerSwitcher) {
+define(["js/Switcher"], function (Switcher) {
   "use strict";
 
   /* This class is written for Cesium and imagery only, as a result it will work only for LULC use case. */
-  var LayerSwitcherItem = function (viewerType, viewer, id, text, type, layer, boundingBox, range, legendURL) {
+  var SwitcherItem = function (viewerType, viewer, id, text, type, layer, boundingBox, range, legendURL) {
     this.viewerType = viewerType;
     this.viewer = viewer;
     this.id = id;
@@ -14,7 +14,7 @@ define(["js/LayerSwitcher"], function (LayerSwitcher) {
     this.legendURL = legendURL;
   };
 
-  LayerSwitcherItem.prototype.add = function (items) {
+  SwitcherItem.prototype.add = function (items) {
     $("#"+this.id).addClass("dropdown-toggle");
     var dropdownMenu = $("<div></div>");
     dropdownMenu.addClass("dropdown-menu");
@@ -83,5 +83,5 @@ define(["js/LayerSwitcher"], function (LayerSwitcher) {
     });
   }
 
-  return LayerSwitcherItem;
+  return SwitcherItem;
 });

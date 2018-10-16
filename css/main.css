@@ -217,7 +217,7 @@ html, body, #world-wind-3d-city, #world-wind-3d-city-canvas, #cesium-3d-city, #c
   padding-bottom: 20px;
 }
 
-.layer-switcher {
+.switcher {
   position: absolute;
   top: 50px;
   left: 7px;
