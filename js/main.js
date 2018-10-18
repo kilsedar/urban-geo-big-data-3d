@@ -57,7 +57,7 @@ define(["js/TopNavigationBar",
 
   /* The free service allows maximum 75000 map views per month. (https://carto.com/location-data-services/basemaps/) */
   var cartoDark = new Cesium.createOpenStreetMapImageryProvider({
-    url: "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
+    url: "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png",
     credit: "Map tiles by Carto, under CC BY 3.0. Data by OpenStreetMap, under ODbL."
   });
 
