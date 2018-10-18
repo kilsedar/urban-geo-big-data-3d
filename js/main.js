@@ -27,39 +27,66 @@ define(["js/TopNavigationBar",
   worldWindViewer3dCity.navigator.lookAtLocation = new WorldWind.Location(41, 12);
   worldWindViewer3dCity.navigator.range = 22e6;
 
-  /* Cesium.BingMapsApi.defaultKey = "AkOk-CSt-kcpa4o6S8qZPtUEfPIRh__FfRTCl9nFu51qAMSJklQe8KiFFFNivIRD";
-  Cesium.Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJhZTc0MTUyMS03NTBhLTRlYzItYTk0Ni03MjYzNDlkNWU4ODIiLCJpZCI6MTM5MywiaWF0IjoxNTI4MjEzMTM3fQ.PjFkLZuljzHqMy1g8kSiRV4nmU6piS5UgfABBRaVAKM"; */
-
   Cesium.Camera.DEFAULT_VIEW_FACTOR = 2;
   Cesium.Camera.DEFAULT_VIEW_RECTANGLE = Cesium.Rectangle.fromDegrees(7.0, 35.0, 19.0, 47.0);
 
-  /* var cesiumViewer3dCity = new Cesium.Viewer("cesium-3d-city", {
-    timeline: false,
-    animation: false,
-    // terrainProvider: Cesium.createWorldTerrain(),
-    infoBox: true,
-    navigationHelpButton: false
-  }); */
+  /* Public website for education or non-profit organization use anticipates less than 50000 cumulative transitions within any 24-hour period. (https://www.microsoft.com/en-us/maps/licensing/options) */
+  var bingAerial = new Cesium.BingMapsImageryProvider({
+    url : "https://dev.virtualearth.net",
+    key : "AtxWisu4pq4vFC9LnKyJa2DL0Yb2JjS0Hy9Q2Yi8o8WQpHmgYbWKxaATiFY56S_G",
+    mapStyle : Cesium.BingMapsStyle.AERIAL
+  });
+
+  /* Allows up to 50000 views per month. (https://www.mapbox.com/pricing/) */
+  var mapboxSatelliteStreets = new Cesium.MapboxImageryProvider({
+    mapId: "mapbox.streets-satellite",
+    accessToken: "pk.eyJ1IjoidWdiZCIsImEiOiJjam5lZW5xbmMwNzF6M3dwZDFzZ2ZmMTM5In0.vDfccM2WaIyP4vnBN3iB9g"
+  });
+
+  /* A Planet basic Web service subscription entitles the subscriber to 500000 map views per month. (https://support.planet.com/hc/en-us/articles/115005684567-What-is-a-map-view) */
+  var planet = new Cesium.UrlTemplateImageryProvider({
+    url: "https://tiles1.planet.com/basemaps/v1/planet-tiles/global_quarterly_2018q3_mosaic/gmap/{z}/{x}/{y}.png?api_key=8fa5cef043064eafa378ce313e69f8fc",
+    credit: "Planet Team (2017). Planet Application Program Interface: In Space for Life on Earth. San Francisco, CA. <a href='https://api.planet.com'>https://api.planet.com</a>"
+  });
+
+  /* OSM tile servers are not free of charge, however access to them is permitted as long as minimum requirements are met: https://operations.osmfoundation.org/policies/tiles/. */
+  var osm = new Cesium.createOpenStreetMapImageryProvider({
+    url: "https://a.tile.openstreetmap.org/",
+    credit: "© <a href='https://www.openstreetmap.org/copyright' target='_blank'>OpenStreetMap</a> contributors."
+  });
+
+  /* The free service allows maximum 75000 map views per month. (https://carto.com/location-data-services/basemaps/) */
+  var cartoDark = new Cesium.createOpenStreetMapImageryProvider({
+    url: "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
+    credit: "Map tiles by Carto, under CC BY 3.0. Data by OpenStreetMap, under ODbL."
+  });
+
+  /* Stamen maps are free of charge. (http://maps.stamen.com/#toner/12/37.7706/-122.3782) */
+  var stamenTerrain = new Cesium.createOpenStreetMapImageryProvider({
+    url: "http://d.tile.stamen.com/terrain/",
+    credit: "Map tiles by <a href='http://stamen.com'>Stamen Design</a>, under <a href='http://creativecommons.org/licenses/by/3.0'>CC BY 3.0</a>. Data by <a href='http://openstreetmap.org'>OpenStreetMap</a>, under <a href='http://www.openstreetmap.org/copyright'>ODbL</a>."
+  });
+
+  /* Stamen maps are free of charge. (http://maps.stamen.com/#toner/12/37.7706/-122.3782) */
+  var stamenWatercolor = new Cesium.createOpenStreetMapImageryProvider({
+    url: "http://d.tile.stamen.com/watercolor/",
+    credit: "Map tiles by <a href='http://stamen.com'>Stamen Design</a>, under <a href='http://creativecommons.org/licenses/by/3.0'>CC BY 3.0</a>. Data by <a href='http://openstreetmap.org'>OpenStreetMap</a>, under <a href='http://creativecommons.org/licenses/by-sa/3.0'>CC BY SA</a>."
+  });
+
+  var skyBox = new Cesium.SkyBox({
+    sources: {
+      positiveX: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_px.jpg",
+      negativeX: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_mx.jpg",
+      positiveY: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_py.jpg",
+      negativeY: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_my.jpg",
+      positiveZ: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_pz.jpg",
+      negativeZ: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_mz.jpg"
+    }
+  });
 
   var cesiumViewer3dCity = new Cesium.Viewer("cesium-3d-city", {
-    /* imageryProvider: Cesium.createTileMapServiceImageryProvider({
-      url: Cesium.buildModuleUrl("Assets/Textures/NaturalEarthII/"),
-      credit: "Imagery courtesy Natural Earth"
-    }), */
-    imageryProvider: Cesium.createTileMapServiceImageryProvider({
-      url: Cesium.buildModuleUrl("http://localhost/urban-geo-big-data-3d/vendor/Cesium-1.50/Source/Assets/Textures/NaturalEarthII-GitHub/"),
-      credit: "Imagery courtesy Natural Earth"
-    }),
-    skyBox: new Cesium.SkyBox({
-      sources: {
-        positiveX: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_px.jpg",
-        negativeX: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_mx.jpg",
-        positiveY: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_py.jpg",
-        negativeY: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_my.jpg",
-        positiveZ: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_pz.jpg",
-        negativeZ: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_mz.jpg"
-      }
-    }),
+    imageryProvider: bingAerial,
+    skyBox: skyBox,
     baseLayerPicker: false,
     geocoder: false,
     timeline: false,
@@ -68,33 +95,9 @@ define(["js/TopNavigationBar",
     navigationHelpButton: false
   });
 
-  /* var cesiumViewerDeformation = new Cesium.Viewer("cesium-deformation", {
-    timeline: false,
-    animation: false,
-    terrainProvider: Cesium.createWorldTerrain(),
-    infoBox: false,
-    navigationHelpButton: false
-  }); */
-
   var cesiumViewerDeformation = new Cesium.Viewer("cesium-deformation", {
-    /* imageryProvider: Cesium.createTileMapServiceImageryProvider({
-      url: Cesium.buildModuleUrl("Assets/Textures/NaturalEarthII/"),
-      credit: "Imagery courtesy Natural Earth"
-    }), */
-    imageryProvider: Cesium.createTileMapServiceImageryProvider({
-      url: Cesium.buildModuleUrl("http://localhost/urban-geo-big-data-3d/vendor/Cesium-1.50/Source/Assets/Textures/NaturalEarthII-GitHub/"),
-      credit: "Imagery courtesy Natural Earth"
-    }),
-    skyBox: new Cesium.SkyBox({
-      sources: {
-        positiveX: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_px.jpg",
-        negativeX: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_mx.jpg",
-        positiveY: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_py.jpg",
-        negativeY: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_my.jpg",
-        positiveZ: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_pz.jpg",
-        negativeZ: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_mz.jpg"
-      }
-    }),
+    imageryProvider: bingAerial,
+    skyBox: skyBox,
     baseLayerPicker: false,
     geocoder: false,
     timeline: false,
@@ -106,33 +109,9 @@ define(["js/TopNavigationBar",
   var naplesWmsDeformationPlot = new WmsDeformationPlot(cesiumViewerDeformation);
   naplesWmsDeformationPlot.addListener("wfs_ts");
 
-  /* var cesiumViewerLulc = new Cesium.Viewer("cesium-lulc", {
-    timeline: false,
-    animation: false,
-    terrainProvider: Cesium.createWorldTerrain(),
-    infoBox: true,
-    navigationHelpButton: false
-  }); */
-
   var cesiumViewerLulc = new Cesium.Viewer("cesium-lulc", {
-    /* imageryProvider: Cesium.createTileMapServiceImageryProvider({
-      url: Cesium.buildModuleUrl("Assets/Textures/NaturalEarthII/"),
-      credit: "Imagery courtesy Natural Earth"
-    }), */
-    imageryProvider: Cesium.createTileMapServiceImageryProvider({
-      url: Cesium.buildModuleUrl("http://localhost/urban-geo-big-data-3d/vendor/Cesium-1.50/Source/Assets/Textures/NaturalEarthII-GitHub/"),
-      credit: "Imagery courtesy Natural Earth"
-    }),
-    skyBox: new Cesium.SkyBox({
-      sources: {
-        positiveX: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_px.jpg",
-        negativeX: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_mx.jpg",
-        positiveY: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_py.jpg",
-        negativeY: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_my.jpg",
-        positiveZ: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_pz.jpg",
-        negativeZ: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_mz.jpg"
-      }
-    }),
+    imageryProvider: bingAerial,
+    skyBox: skyBox,
     baseLayerPicker: false,
     geocoder: false,
     timeline: false,
@@ -237,6 +216,29 @@ define(["js/TopNavigationBar",
   var switcherCesium3dCityPadua = new SwitcherItem("cesium", cesiumViewer3dCity, "cesium-3d-city-padua", "Padua", "kml", cesium3dCityPadua, [11.80612772728434, 45.34376992018347, 11.978210343773, 45.45392090970208], 1000.0, undefined);
   switcherCesium3dCity.add(switcherCesium3dCityPadua);
 
+  var layerListCesium3dCity = new LayerList("cesium-3d-city", "layer-list-cesium-3d-city");
+
+  var layerListCesium3dCityBing = new LayerListItem(cesiumViewer3dCity, "cesium-3d-city-bing", "Bing Maps Aerial", true, "basemap", bingAerial, undefined);
+  layerListCesium3dCity.add(layerListCesium3dCityBing);
+
+  var layerListCesium3dCityMapboxSatelliteStreets = new LayerListItem(cesiumViewer3dCity, "cesium-3d-city-mapbox-satellite-streets", "Mapbox Satellite Streets", false, "basemap", mapboxSatelliteStreets, undefined);
+  layerListCesium3dCity.add(layerListCesium3dCityMapboxSatelliteStreets);
+
+  var layerListCesium3dCityPlanet = new LayerListItem(cesiumViewer3dCity, "cesium-3d-city-planet", "Planet", false, "basemap", planet, undefined);
+  layerListCesium3dCity.add(layerListCesium3dCityPlanet);
+
+  var layerListCesium3dCityOsm = new LayerListItem(cesiumViewer3dCity, "cesium-3d-city-osm", "OpenStreetMap", false, "basemap", osm, undefined);
+  layerListCesium3dCity.add(layerListCesium3dCityOsm);
+
+  var layerListCesium3dCityCartoDark = new LayerListItem(cesiumViewer3dCity, "cesium-3d-city-carto-dark", "CARTO dark", false, "basemap", cartoDark, undefined);
+  layerListCesium3dCity.add(layerListCesium3dCityCartoDark);
+
+  var layerListCesium3dCityStamenTerrain = new LayerListItem(cesiumViewer3dCity, "cesium-3d-city-stamen-terrain", "Stamen Terrain", false, "basemap", stamenTerrain, undefined);
+  layerListCesium3dCity.add(layerListCesium3dCityStamenTerrain);
+
+  var layerListCesium3dCityStamenWatercolor = new LayerListItem(cesiumViewer3dCity, "cesium-3d-city-stamen-watercolor", "Stamen Watercolor", false, "basemap", stamenWatercolor, undefined);
+  layerListCesium3dCity.add(layerListCesium3dCityStamenWatercolor);
+
   var switcherDeformation = new Switcher("cesium-deformation", "switcher-deformation", "location");
 
   var deformationNaples = new Cesium.WebMapServiceImageryProvider({
@@ -247,6 +249,29 @@ define(["js/TopNavigationBar",
   });
   var switcherDeformationNaples = new SwitcherItem("cesium", cesiumViewerDeformation, "deformation-naples", "Naples", "imagery", deformationNaples, [14.05072, 40.82471, 14.30817, 40.91915], 40000.0, "images/legends/deformation_naples.png");
   switcherDeformation.add(switcherDeformationNaples);
+
+  var layerListDeformation = new LayerList("cesium-deformation", "layer-list-deformation");
+
+  var layerListDeformationBing = new LayerListItem(cesiumViewerDeformation, "deformation-bing", "Bing Maps Aerial", true, "basemap", bingAerial, undefined);
+  layerListDeformation.add(layerListDeformationBing);
+
+  var layerListDeformationMapboxSatelliteStreets = new LayerListItem(cesiumViewerDeformation, "deformation-mapbox-satellite-streets", "Mapbox Satellite Streets", false, "basemap", mapboxSatelliteStreets, undefined);
+  layerListDeformation.add(layerListDeformationMapboxSatelliteStreets);
+
+  var layerListDeformationPlanet = new LayerListItem(cesiumViewerDeformation, "deformation-planet", "Planet", false, "basemap", planet, undefined);
+  layerListDeformation.add(layerListDeformationPlanet);
+
+  var layerListDeformationOsm = new LayerListItem(cesiumViewerDeformation, "deformation-osm", "OpenStreetMap", false, "basemap", osm, undefined);
+  layerListDeformation.add(layerListDeformationOsm);
+
+  var layerListDeformationCartoDark = new LayerListItem(cesiumViewerDeformation, "deformation-carto-dark", "CARTO dark", false, "basemap", cartoDark, undefined);
+  layerListDeformation.add(layerListDeformationCartoDark);
+
+  var layerListDeformationStamenTerrain = new LayerListItem(cesiumViewerDeformation, "deformation-stamen-terrain", "Stamen Terrain", false, "basemap", stamenTerrain, undefined);
+  layerListDeformation.add(layerListDeformationStamenTerrain);
+
+  var layerListDeformationStamenWatercolor = new LayerListItem(cesiumViewerDeformation, "deformation-stamen-watercolor", "Stamen Watercolor", false, "basemap", stamenWatercolor, undefined);
+  layerListDeformation.add(layerListDeformationStamenWatercolor);
 
   var switcherLulc = new Switcher("cesium-lulc", "switcher-lulc");
 
@@ -276,7 +301,7 @@ define(["js/TopNavigationBar",
     tileMatrixLabels: ["EPSG:900913:0", "EPSG:900913:1", "EPSG:900913:2", "EPSG:900913:3", "EPSG:900913:4", "EPSG:900913:5", "EPSG:900913:6", "EPSG:900913:7", "EPSG:900913:8", "EPSG:900913:9", "EPSG:900913:10", "EPSG:900913:11", "EPSG:900913:12", "EPSG:900913:13", "EPSG:900913:14", "EPSG:900913:15", "EPSG:900913:16", "EPSG:900913:17", "EPSG:900913:18", "EPSG:900913:19", "EPSG:900913:20", "EPSG:900913:21", "EPSG:900913:22", "EPSG:900913:23", "EPSG:900913:24", "EPSG:900913:25", "EPSG:900913:26", "EPSG:900913:27", "EPSG:900913:28", "EPSG:900913:29", "EPSG:900913:30"],
     rectangle: Cesium.Rectangle.fromDegrees(6.6270874466178977, 35.4921528520647342, 18.5207271989720503, 47.0917262219610677)
   });
-  var layerListLulcGlc30 = new LayerListItem(cesiumViewerLulc, "lulc-glc30", "GlobeLand30", lulcGlc302010, "images/legends/glc30.png");
+  var layerListLulcGlc30 = new LayerListItem(cesiumViewerLulc, "lulc-glc30", "GlobeLand30", false, "overlay", lulcGlc302010, "images/legends/glc30.png");
   layerListLulc.add(layerListLulcGlc30);
 
   var lulcIspraLandCover2012 = new Cesium.WebMapTileServiceImageryProvider({
@@ -288,8 +313,29 @@ define(["js/TopNavigationBar",
     tileMatrixLabels: ["EPSG:900913:0", "EPSG:900913:1", "EPSG:900913:2", "EPSG:900913:3", "EPSG:900913:4", "EPSG:900913:5", "EPSG:900913:6", "EPSG:900913:7", "EPSG:900913:8", "EPSG:900913:9", "EPSG:900913:10", "EPSG:900913:11", "EPSG:900913:12", "EPSG:900913:13", "EPSG:900913:14", "EPSG:900913:15", "EPSG:900913:16", "EPSG:900913:17", "EPSG:900913:18", "EPSG:900913:19", "EPSG:900913:20", "EPSG:900913:21", "EPSG:900913:22", "EPSG:900913:23", "EPSG:900913:24", "EPSG:900913:25", "EPSG:900913:26", "EPSG:900913:27", "EPSG:900913:28", "EPSG:900913:29", "EPSG:900913:30"],
     rectangle: Cesium.Rectangle.fromDegrees(6.5022543122834735, 35.18884195920269, 19.544459557604412, 47.11391665478447)
   });
-  var layerListLulcIspraLandCover = new LayerListItem(cesiumViewerLulc, "lulc-ispra-land-cover", "ISPRA Land Cover", lulcIspraLandCover2012, undefined);
+  var layerListLulcIspraLandCover = new LayerListItem(cesiumViewerLulc, "lulc-ispra-land-cover", "ISPRA Land Cover", false, "overlay", lulcIspraLandCover2012, undefined);
   layerListLulc.add(layerListLulcIspraLandCover);
+
+  var layerListLulcBing = new LayerListItem(cesiumViewerLulc, "lulc-bing", "Bing Maps Aerial", true, "basemap", bingAerial, undefined);
+  layerListLulc.add(layerListLulcBing);
+
+  var layerListLulcMapboxSatelliteStreets = new LayerListItem(cesiumViewerLulc, "lulc-mapbox-satellite-streets", "Mapbox Satellite Streets", false, "basemap", mapboxSatelliteStreets, undefined);
+  layerListLulc.add(layerListLulcMapboxSatelliteStreets);
+
+  var layerListLulcPlanet = new LayerListItem(cesiumViewerLulc, "lulc-planet", "Planet", false, "basemap", planet, undefined);
+  layerListLulc.add(layerListLulcPlanet);
+
+  var layerListLulcOsm = new LayerListItem(cesiumViewerLulc, "lulc-osm", "OpenStreetMap", false, "basemap", osm, undefined);
+  layerListLulc.add(layerListLulcOsm);
+
+  var layerListLulcCartoDark = new LayerListItem(cesiumViewerLulc, "lulc-carto-dark", "CARTO dark", false, "basemap", cartoDark, undefined);
+  layerListLulc.add(layerListLulcCartoDark);
+
+  var layerListLulcStamenTerrain = new LayerListItem(cesiumViewerLulc, "lulc-stamen-terrain", "Stamen Terrain", false, "basemap", stamenTerrain, undefined);
+  layerListLulc.add(layerListLulcStamenTerrain);
+
+  var layerListLulcStamenWatercolor = new LayerListItem(cesiumViewerLulc, "lulc-stamen-watercolor", "Stamen Watercolor", false, "basemap", stamenWatercolor, undefined);
+  layerListLulc.add(layerListLulcStamenWatercolor);
 
   /*
   artificial surface: rgba(147, 47, 20, 1.0) or #932f14 -> Cesium.Color(0.576470588, 0.184313725, 0.078431373, 1.0)
@@ -362,11 +408,11 @@ define(["js/TopNavigationBar",
   projectLogoLink.attr("href", "http://www.urbangeobigdata.it/");
   projectLogoLink.attr("target", "_blank");
   projectLogoLink.append(projectLogo);
+  projectAttributionText.append(projectLogoLink);
 
   projectAttributionLightbox.append(projectTitle);
   projectAttributionLightbox.append(projectAttributionLightboxClose);
   projectAttributionLightbox.append(projectAttributionText);
-  projectAttributionLightbox.append(projectLogoLink);
   projectAttributionLightboxOverlay.append(projectAttributionLightbox);
   $(".cesium-widget").append(projectAttributionLightboxOverlay);
 
@@ -418,6 +464,15 @@ define(["js/TopNavigationBar",
 
   $(".cesium-widget").on("click", ".cesium-credit-lightbox-close", function() {
     $("#cesium-lulc #vgi-attribution-lightbox-overlay").css("visibility", "hidden");
+  });
+
+  $(document).click(function(event) {
+    if(!$(event.target).closest(".cesium-credit-expand-link, cesium-credit-lightbox-title, .project-attribution-text, #vgi-attribution-text").length) {
+      if($("#cesium-lulc #vgi-attribution-lightbox-overlay").css("visibility") == "visible")
+        $("#cesium-lulc #vgi-attribution-lightbox-overlay").css("visibility", "hidden");
+      if($(".project-attribution-lightbox-overlay").css("visibility") == "visible")
+        $(".project-attribution-lightbox-overlay").css("visibility", "hidden");
+    }
   });
 
   function styleLightbox(selector) {

@@ -49,6 +49,15 @@
   right: 5px;
 }
 
+.cesium-credit-lightbox div > a {
+  color: #cecece !important;
+}
+
+.cesium-credit-lightbox div > a:hover {
+  color: #48b !important;
+  text-decoration: none;
+}
+
 .tooltip-inner {
   font-family: "Do Hyeon", sans-serif;
 }
@@ -113,6 +122,11 @@
 html, body, #world-wind-3d-city, #world-wind-3d-city-canvas, #cesium-3d-city, #cesium-deformation, #cesium-lulc {
   width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden;
   font-family: "Do Hyeon", sans-serif;
+}
+
+hr {
+  border-top: 3px dashed #ffffff;
+  margin: 8px 0px;
 }
 
 #window {
@@ -234,6 +248,7 @@ html, body, #world-wind-3d-city, #world-wind-3d-city-canvas, #cesium-3d-city, #c
   overflow-x: hidden;
   padding: 6px 12px;
   background-color: #212529;
+  color: #ffffff;
 }
 
 .layer-list input {
@@ -244,8 +259,4 @@ html, body, #world-wind-3d-city, #world-wind-3d-city-canvas, #cesium-3d-city, #c
   margin: 0px;
   padding: 3px 0px 3px 3px;
   cursor: pointer;
-}
-
-.layer-list-item {
-  color: #ffffff;
 }

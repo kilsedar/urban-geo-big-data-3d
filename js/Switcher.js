@@ -1,4 +1,4 @@
-define([], function () {
+define(["jquery"], function ($) {
   "use strict";
 
   var Switcher = function (viewerContainerId, id) {
@@ -42,6 +42,8 @@ define([], function () {
   }
 
   Switcher.prototype.add = function (switcherItem) {
+    this.items.push(switcherItem);
+
     var item = $("<a></a>");
     item.attr("id", switcherItem.id);
     item.addClass("dropdown-item");
@@ -64,7 +66,7 @@ define([], function () {
 
         legend.append(legendImage);
         $("#"+_self.viewerContainerId).append(legend);
-        
+
         setTimeout(function() {
           _self.styleLegend();
         }, 100);
@@ -80,14 +82,13 @@ define([], function () {
         switcherItem.layer.boundingBox = switcherItem.boundingBox;
         switcherItem.viewer.navigator.tilt = 50;
         switcherItem.layer.zoom();
-        _self.items.push(switcherItem);
       }
       else {
         if (switcherItem.layer != undefined) {
           if (switcherItem.type == "imagery") {
             // Following may not always work, as it assumes base layer will always be in index 0.
             for (var i=1; i<switcherItem.viewer.imageryLayers.length; i++) {
-              switcherItem.viewer.imageryLayers.remove(switcherItem.viewer.imageryLayers._layers[i], true);
+              switcherItem.viewer.imageryLayers.remove(switcherItem.viewer.imageryLayers._layers[i]);
             }
             switcherItem.viewer.imageryLayers.addImageryProvider(switcherItem.layer);
           }
@@ -101,8 +102,6 @@ define([], function () {
         var range = switcherItem.range;
         switcherItem.viewer.camera.lookAt(Cesium.Cartesian3.fromDegrees((switcherItem.boundingBox[0]+switcherItem.boundingBox[2])/2, (switcherItem.boundingBox[1]+switcherItem.boundingBox[3])/2), new Cesium.HeadingPitchRange(heading, pitch, range));
         switcherItem.viewer.camera.lookAtTransform(Cesium.Matrix4.IDENTITY);
-
-        _self.items.push(switcherItem);
       }
     });
   }
