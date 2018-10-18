@@ -56,9 +56,10 @@ define(["jquery"], function ($) {
     $("#"+this.viewerContainerId).on("click", "#"+switcherItem.id, function() {
       $("#"+_self.dropdownMenuButtonId).html(switcherItem.text);
 
-      $("#"+_self.viewerContainerId+" .legend").remove();
+      $("#"+_self.viewerContainerId+" #legend-"+switcherItem.id).remove();
       if (switcherItem.legendURL != undefined) {
         var legend = $("<div></div>");
+        legend.attr("id", "legend-"+switcherItem.id);
         legend.addClass("legend");
 
         var legendImage = $("<img>");
@@ -86,9 +87,9 @@ define(["jquery"], function ($) {
       else {
         if (switcherItem.layer != undefined) {
           if (switcherItem.type == "imagery") {
-            // Following may not always work, as it assumes base layer will always be in index 0.
-            for (var i=1; i<switcherItem.viewer.imageryLayers.length; i++) {
-              switcherItem.viewer.imageryLayers.remove(switcherItem.viewer.imageryLayers._layers[i]);
+            for (var i=0; i<switcherItem.viewer.imageryLayers.length; i++) {
+              if (switcherItem.viewer.imageryLayers._layers[i].isBaseLayer() == false)
+                switcherItem.viewer.imageryLayers.remove(switcherItem.viewer.imageryLayers._layers[i]);
             }
             switcherItem.viewer.imageryLayers.addImageryProvider(switcherItem.layer);
           }

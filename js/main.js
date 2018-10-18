@@ -63,13 +63,13 @@ define(["js/TopNavigationBar",
 
   /* Stamen maps are free of charge. (http://maps.stamen.com/#toner/12/37.7706/-122.3782) */
   var stamenTerrain = new Cesium.createOpenStreetMapImageryProvider({
-    url: "http://d.tile.stamen.com/terrain/",
+    url: "http://c.tile.stamen.com/terrain/",
     credit: "Map tiles by <a href='http://stamen.com'>Stamen Design</a>, under <a href='http://creativecommons.org/licenses/by/3.0'>CC BY 3.0</a>. Data by <a href='http://openstreetmap.org'>OpenStreetMap</a>, under <a href='http://www.openstreetmap.org/copyright'>ODbL</a>."
   });
 
   /* Stamen maps are free of charge. (http://maps.stamen.com/#toner/12/37.7706/-122.3782) */
   var stamenWatercolor = new Cesium.createOpenStreetMapImageryProvider({
-    url: "http://d.tile.stamen.com/watercolor/",
+    url: "http://c.tile.stamen.com/watercolor/",
     credit: "Map tiles by <a href='http://stamen.com'>Stamen Design</a>, under <a href='http://creativecommons.org/licenses/by/3.0'>CC BY 3.0</a>. Data by <a href='http://openstreetmap.org'>OpenStreetMap</a>, under <a href='http://creativecommons.org/licenses/by-sa/3.0'>CC BY SA</a>."
   });
 
@@ -218,8 +218,8 @@ define(["js/TopNavigationBar",
 
   var layerListCesium3dCity = new LayerList("cesium-3d-city", "layer-list-cesium-3d-city");
 
-  var layerListCesium3dCityBing = new LayerListItem(cesiumViewer3dCity, "cesium-3d-city-bing", "Bing Maps Aerial", true, "basemap", bingAerial, undefined);
-  layerListCesium3dCity.add(layerListCesium3dCityBing);
+  var layerListCesium3dCityBingAerial = new LayerListItem(cesiumViewer3dCity, "cesium-3d-city-bing-aerial", "Bing Maps Aerial", true, "basemap", bingAerial, undefined);
+  layerListCesium3dCity.add(layerListCesium3dCityBingAerial);
 
   var layerListCesium3dCityMapboxSatelliteStreets = new LayerListItem(cesiumViewer3dCity, "cesium-3d-city-mapbox-satellite-streets", "Mapbox Satellite Streets", false, "basemap", mapboxSatelliteStreets, undefined);
   layerListCesium3dCity.add(layerListCesium3dCityMapboxSatelliteStreets);
@@ -252,8 +252,8 @@ define(["js/TopNavigationBar",
 
   var layerListDeformation = new LayerList("cesium-deformation", "layer-list-deformation");
 
-  var layerListDeformationBing = new LayerListItem(cesiumViewerDeformation, "deformation-bing", "Bing Maps Aerial", true, "basemap", bingAerial, undefined);
-  layerListDeformation.add(layerListDeformationBing);
+  var layerListDeformationBingAerial = new LayerListItem(cesiumViewerDeformation, "deformation-bing-aerial", "Bing Maps Aerial", true, "basemap", bingAerial, undefined);
+  layerListDeformation.add(layerListDeformationBingAerial);
 
   var layerListDeformationMapboxSatelliteStreets = new LayerListItem(cesiumViewerDeformation, "deformation-mapbox-satellite-streets", "Mapbox Satellite Streets", false, "basemap", mapboxSatelliteStreets, undefined);
   layerListDeformation.add(layerListDeformationMapboxSatelliteStreets);
@@ -316,8 +316,8 @@ define(["js/TopNavigationBar",
   var layerListLulcIspraLandCover = new LayerListItem(cesiumViewerLulc, "lulc-ispra-land-cover", "ISPRA Land Cover", false, "overlay", lulcIspraLandCover2012, undefined);
   layerListLulc.add(layerListLulcIspraLandCover);
 
-  var layerListLulcBing = new LayerListItem(cesiumViewerLulc, "lulc-bing", "Bing Maps Aerial", true, "basemap", bingAerial, undefined);
-  layerListLulc.add(layerListLulcBing);
+  var layerListLulcBingAerial = new LayerListItem(cesiumViewerLulc, "lulc-bing-aerial", "Bing Maps Aerial", true, "basemap", bingAerial, undefined);
+  layerListLulc.add(layerListLulcBingAerial);
 
   var layerListLulcMapboxSatelliteStreets = new LayerListItem(cesiumViewerLulc, "lulc-mapbox-satellite-streets", "Mapbox Satellite Streets", false, "basemap", mapboxSatelliteStreets, undefined);
   layerListLulc.add(layerListLulcMapboxSatelliteStreets);

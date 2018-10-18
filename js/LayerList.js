@@ -113,12 +113,8 @@ define(["jquery"], function ($) {
     }
     if (layerListItem.inputChecked == true) {
       input.prop("checked", true);
-
-      if (layerListItem.type == "basemap")
-        layerListItem.imageryLayer = new Cesium.ImageryLayer(layerListItem.imageryProvider);
-      else if (layerListItem.type == "overlay") {
+      if (layerListItem.type == "overlay") {
         this.addLegend(layerListItem);
-
         var imageryLayer = layerListItem.viewer.imageryLayers.addImageryProvider(layerListItem.imageryProvider);
         layerListItem.imageryLayer = imageryLayer;
       }
@@ -141,22 +137,19 @@ define(["jquery"], function ($) {
     $("#"+this.viewerContainerId).on("click", "#"+layerListItem.id+"-input", function() {
       if ($("#"+layerListItem.id+"-input").attr("type") == "checkbox" && $("#"+layerListItem.id+"-input").is(":checked")) {
         _self.addLegend(layerListItem);
-
         var imageryLayer = layerListItem.viewer.imageryLayers.addImageryProvider(layerListItem.imageryProvider);
         layerListItem.imageryLayer = imageryLayer;
       }
       else if ($("#"+layerListItem.id+"-input").attr("type") == "checkbox" && $("#"+layerListItem.id+"-input").is(":checked") == false) {
         $("#"+_self.viewerContainerId+" #legend-"+layerListItem.id).remove();
-        layerListItem.viewer.imageryLayers.remove(layerListItem.imageryLayer, true);
+        layerListItem.viewer.imageryLayers.remove(layerListItem.imageryLayer);
       }
       else {
         for (var i=0; i<layerListItem.viewer.imageryLayers.length; i++) {
-          if (layerListItem.viewer.imageryLayers._layers[i].isBaseLayer() == true) {
-            layerListItem.viewer.imageryLayers.remove(layerListItem.viewer.imageryLayers._layers[i], true);
-          }
+          if (layerListItem.viewer.imageryLayers._layers[i].isBaseLayer() == true)
+            layerListItem.viewer.imageryLayers.remove(layerListItem.viewer.imageryLayers._layers[i]);
         }
-        var imageryLayer = layerListItem.viewer.imageryLayers.addImageryProvider(layerListItem.imageryProvider, 0);
-        layerListItem.imageryLayer = imageryLayer;
+        layerListItem.viewer.imageryLayers.addImageryProvider(layerListItem.imageryProvider, 0);
       }
     });
   }
