@@ -46,19 +46,19 @@ define(["js/TopNavigationBar",
   /* A Planet basic Web service subscription entitles the subscriber to 500000 map views per month. (https://support.planet.com/hc/en-us/articles/115005684567-What-is-a-map-view) */
   var planet = new Cesium.UrlTemplateImageryProvider({
     url: "https://tiles1.planet.com/basemaps/v1/planet-tiles/global_quarterly_2018q3_mosaic/gmap/{z}/{x}/{y}.png?api_key=8fa5cef043064eafa378ce313e69f8fc",
-    credit: "Planet Team (2017). Planet Application Program Interface: In Space for Life on Earth. San Francisco, CA. <a href='https://api.planet.com'>https://api.planet.com</a>"
+    credit: "Image courtesy of <a href='https://www.planet.com/'>Planet Labs, Inc.</a>"
   });
 
   /* OSM tile servers are not free of charge, however access to them is permitted as long as minimum requirements are met: https://operations.osmfoundation.org/policies/tiles/. */
   var osm = new Cesium.createOpenStreetMapImageryProvider({
     url: "https://a.tile.openstreetmap.org/",
-    credit: "© <a href='https://www.openstreetmap.org/copyright' target='_blank'>OpenStreetMap</a> contributors."
+    credit: "© <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
   });
 
   /* The free service allows maximum 75000 map views per month. (https://carto.com/location-data-services/basemaps/) */
   var cartoDark = new Cesium.createOpenStreetMapImageryProvider({
     url: "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png",
-    credit: "Map tiles by Carto, under CC BY 3.0. Data by OpenStreetMap, under ODbL."
+    credit: "© <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors, © <a href='https://carto.com/attribution/'>CARTO</a>"
   });
 
   /* Stamen maps are free of charge. (http://maps.stamen.com/#toner/12/37.7706/-122.3782) */
@@ -230,7 +230,7 @@ define(["js/TopNavigationBar",
   var layerListCesium3dCityOsm = new LayerListItem(cesiumViewer3dCity, "cesium-3d-city-osm", "OpenStreetMap", false, "basemap", osm, undefined);
   layerListCesium3dCity.add(layerListCesium3dCityOsm);
 
-  var layerListCesium3dCityCartoDark = new LayerListItem(cesiumViewer3dCity, "cesium-3d-city-carto-dark", "CARTO dark", false, "basemap", cartoDark, undefined);
+  var layerListCesium3dCityCartoDark = new LayerListItem(cesiumViewer3dCity, "cesium-3d-city-carto-dark", "CARTO Dark", false, "basemap", cartoDark, undefined);
   layerListCesium3dCity.add(layerListCesium3dCityCartoDark);
 
   var layerListCesium3dCityStamenTerrain = new LayerListItem(cesiumViewer3dCity, "cesium-3d-city-stamen-terrain", "Stamen Terrain", false, "basemap", stamenTerrain, undefined);
@@ -264,7 +264,7 @@ define(["js/TopNavigationBar",
   var layerListDeformationOsm = new LayerListItem(cesiumViewerDeformation, "deformation-osm", "OpenStreetMap", false, "basemap", osm, undefined);
   layerListDeformation.add(layerListDeformationOsm);
 
-  var layerListDeformationCartoDark = new LayerListItem(cesiumViewerDeformation, "deformation-carto-dark", "CARTO dark", false, "basemap", cartoDark, undefined);
+  var layerListDeformationCartoDark = new LayerListItem(cesiumViewerDeformation, "deformation-carto-dark", "CARTO Dark", false, "basemap", cartoDark, undefined);
   layerListDeformation.add(layerListDeformationCartoDark);
 
   var layerListDeformationStamenTerrain = new LayerListItem(cesiumViewerDeformation, "deformation-stamen-terrain", "Stamen Terrain", false, "basemap", stamenTerrain, undefined);
@@ -328,7 +328,7 @@ define(["js/TopNavigationBar",
   var layerListLulcOsm = new LayerListItem(cesiumViewerLulc, "lulc-osm", "OpenStreetMap", false, "basemap", osm, undefined);
   layerListLulc.add(layerListLulcOsm);
 
-  var layerListLulcCartoDark = new LayerListItem(cesiumViewerLulc, "lulc-carto-dark", "CARTO dark", false, "basemap", cartoDark, undefined);
+  var layerListLulcCartoDark = new LayerListItem(cesiumViewerLulc, "lulc-carto-dark", "CARTO Dark", false, "basemap", cartoDark, undefined);
   layerListLulc.add(layerListLulcCartoDark);
 
   var layerListLulcStamenTerrain = new LayerListItem(cesiumViewerLulc, "lulc-stamen-terrain", "Stamen Terrain", false, "basemap", stamenTerrain, undefined);
@@ -506,7 +506,7 @@ define(["js/TopNavigationBar",
   });
 
   $(".cesium-viewer-toolbar button").attr("data-toggle", "tooltip");
-  $(".cesium-viewer-fullscreenContainer button").attr("data-toggle", "tooltip");
+  $(".cesium-viewer-toolbar button.cesium-home-button").attr("title", "View home");
 
   $(document).ready(function(){
     $("[data-toggle='tooltip']").tooltip();
