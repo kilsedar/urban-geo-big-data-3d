@@ -92,7 +92,9 @@ define(["js/TopNavigationBar",
     timeline: false,
     animation: false,
     infoBox: true,
-    navigationHelpButton: false
+    navigationHelpButton: false,
+    shadows: true,
+    terrainShadows: Cesium.ShadowMode.ENABLED
   });
 
   var cesiumViewerDeformation = new Cesium.Viewer("cesium-deformation", {
@@ -103,7 +105,9 @@ define(["js/TopNavigationBar",
     timeline: false,
     animation: false,
     infoBox: false,
-    navigationHelpButton: false
+    navigationHelpButton: false,
+    shadows: true,
+    terrainShadows: Cesium.ShadowMode.ENABLED
   });
 
   var naplesWmsDeformationPlot = new WmsDeformationPlot(cesiumViewerDeformation);
@@ -117,7 +121,9 @@ define(["js/TopNavigationBar",
     timeline: false,
     animation: false,
     infoBox: true,
-    navigationHelpButton: false
+    navigationHelpButton: false,
+    shadows: true,
+    terrainShadows: Cesium.ShadowMode.ENABLED
   });
 
   var topNavigationBar = new TopNavigationBar("rgba(67, 173, 97, 1.0)", "rgba(51, 132, 74, 1.0)");
