@@ -4,9 +4,10 @@ define(["jquery"], function ($) {
   /* This class is written for Cesium and imagery only, as a result it works only for LULC use case. */
   var LayerList = function (viewerContainerId, id) {
     this.items = [];
+    this.width;
+    this.bottomMargin = 132;
     this.viewerContainerId = viewerContainerId;
     this.id = id;
-    this.width;
 
     var layerList = $("<div></div>");
     layerList.attr("id", this.id);
@@ -39,8 +40,8 @@ define(["jquery"], function ($) {
 
   LayerList.prototype.styleLayerList = function () {
     if ($("#"+this.viewerContainerId+" .layer-list").is(":visible")) {
-      if ($("#"+this.viewerContainerId+" .layer-list").prop("scrollHeight")+126 > $(window).height()) {
-        $("#"+this.viewerContainerId+" .layer-list").css("height", $(window).height()-126+"px");
+      if ($("#"+this.viewerContainerId+" .layer-list").prop("scrollHeight")+this.bottomMargin > $(window).height()) {
+        $("#"+this.viewerContainerId+" .layer-list").css("height", $(window).height()-this.bottomMargin+"px");
         $("#"+this.viewerContainerId+" .layer-list").css("width", this.width+15+"px");
       }
       else {

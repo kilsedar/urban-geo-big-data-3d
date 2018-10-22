@@ -89,13 +89,14 @@ define(["js/TopNavigationBar",
     skyBox: skyBox,
     baseLayerPicker: false,
     geocoder: false,
-    timeline: false,
-    animation: false,
+    timeline: true,
+    animation: true,
     infoBox: true,
-    navigationHelpButton: false,
+    navigationHelpButton: true,
     shadows: true,
     terrainShadows: Cesium.ShadowMode.ENABLED
   });
+  cesiumViewer3dCity.clock.multiplier = 3600;
 
   var cesiumViewerDeformation = new Cesium.Viewer("cesium-deformation", {
     imageryProvider: bingAerial,
@@ -105,7 +106,7 @@ define(["js/TopNavigationBar",
     timeline: false,
     animation: false,
     infoBox: false,
-    navigationHelpButton: false,
+    navigationHelpButton: true,
     shadows: true,
     terrainShadows: Cesium.ShadowMode.ENABLED
   });
@@ -121,7 +122,7 @@ define(["js/TopNavigationBar",
     timeline: false,
     animation: false,
     infoBox: true,
-    navigationHelpButton: false,
+    navigationHelpButton: true,
     shadows: true,
     terrainShadows: Cesium.ShadowMode.ENABLED
   });
@@ -223,6 +224,7 @@ define(["js/TopNavigationBar",
   switcherCesium3dCity.add(switcherCesium3dCityPadua);
 
   var layerListCesium3dCity = new LayerList("cesium-3d-city", "layer-list-cesium-3d-city");
+  layerListCesium3dCity.bottomMargin = 200;
 
   var layerListCesium3dCityBingAerial = new LayerListItem(cesiumViewer3dCity, "cesium-3d-city-bing-aerial", "Bing Maps Aerial", true, "basemap", bingAerial, undefined);
   layerListCesium3dCity.add(layerListCesium3dCityBingAerial);
@@ -506,13 +508,16 @@ define(["js/TopNavigationBar",
   $(window).resize(function() {
     styleLightbox(".project-attribution-lightbox-overlay");
     styleLightbox("#vgi-attribution-lightbox-overlay");
+    layerListCesium3dCity.styleLayerList();
     switcherDeformation.styleLegend();
-    layerListLulc.styleLegend();
+    layerListDeformation.styleLayerList();
+    layerListLulc.styleLegend();    
     layerListLulc.styleLayerList();
   });
 
   $(".cesium-viewer-toolbar button").attr("data-toggle", "tooltip");
   $(".cesium-viewer-toolbar button.cesium-home-button").attr("title", "View home");
+  $(".cesium-viewer-toolbar button.cesium-navigation-help-button").attr("title", "Navigation instructions");
 
   $(document).ready(function(){
     $("[data-toggle='tooltip']").tooltip();
