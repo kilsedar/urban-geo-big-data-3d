@@ -1,4 +1,4 @@
-.cesium-viewer {
+.cesium-viewer, .cesium-animation-svgText {
   font-family: "Do Hyeon", sans-serif;
 }
 
@@ -10,11 +10,10 @@
 }
 
 .cesium-infoBox {
-  bottom: 120px;
-  left: 10px;
+  bottom: 32px;
+  right: 10px;
   top: auto;
   width: 300px;
-  transform: translate(-50px, 0px);
 }
 
 .cesium-infoBox-visible {
@@ -106,8 +105,8 @@
 
 .js-plotly-plot {
   position: absolute;
-  bottom: 30px;
-  left: 10px;
+  bottom: 32px;
+  right: 10px;
   margin-left: 0% !important;
 }
 

@@ -8,6 +8,7 @@ define([], function () {
     this.text = text;
     this.tooltip = tooltip;
     this.active = active;
+    this.animationContainer = $("#"+this.viewerContainerId+ " .cesium-viewer-animationContainer");
   };
 
   return TopSection;

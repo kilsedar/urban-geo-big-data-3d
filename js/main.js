@@ -84,48 +84,57 @@ define(["js/TopNavigationBar",
     }
   });
 
+  var terrainProvider = new Cesium.VRTheWorldTerrainProvider({
+    url: "http://www.vr-theworld.com/vr-theworld/tiles1.0.0/73/",
+    credit: "Terrain data courtesy of <a href='https://www.mak.com/products/terrain/vr-theworld-server/vr-theworld-online'>VT MAK</a>"
+  });
+
   var cesiumViewer3dCity = new Cesium.Viewer("cesium-3d-city", {
     imageryProvider: bingAerial,
     skyBox: skyBox,
     baseLayerPicker: false,
     geocoder: false,
-    timeline: true,
-    animation: true,
     infoBox: true,
     navigationHelpButton: true,
     shadows: true,
     terrainShadows: Cesium.ShadowMode.ENABLED
   });
   cesiumViewer3dCity.clock.multiplier = 3600;
+  cesiumViewer3dCity.shadowMap.normalOffset = false;
+  cesiumViewer3dCity.shadowMap.maximumDistance = 3000;
 
   var cesiumViewerDeformation = new Cesium.Viewer("cesium-deformation", {
     imageryProvider: bingAerial,
+    terrainProvider: terrainProvider,
     skyBox: skyBox,
     baseLayerPicker: false,
     geocoder: false,
-    timeline: false,
-    animation: false,
     infoBox: false,
     navigationHelpButton: true,
     shadows: true,
     terrainShadows: Cesium.ShadowMode.ENABLED
   });
+  cesiumViewerDeformation.clock.multiplier = 3600;
+  cesiumViewerDeformation.shadowMap.normalOffset = false;
+  cesiumViewerDeformation.shadowMap.maximumDistance = 30000;
 
   var naplesWmsDeformationPlot = new WmsDeformationPlot(cesiumViewerDeformation);
   naplesWmsDeformationPlot.addListener("wfs_ts");
 
   var cesiumViewerLulc = new Cesium.Viewer("cesium-lulc", {
     imageryProvider: bingAerial,
+    terrainProvider: terrainProvider,
     skyBox: skyBox,
     baseLayerPicker: false,
     geocoder: false,
-    timeline: false,
-    animation: false,
     infoBox: true,
     navigationHelpButton: true,
     shadows: true,
     terrainShadows: Cesium.ShadowMode.ENABLED
   });
+  cesiumViewerLulc.clock.multiplier = 3600;
+  cesiumViewerLulc.shadowMap.normalOffset = false;
+  cesiumViewerLulc.shadowMap.maximumDistance = 30000;
 
   var topNavigationBar = new TopNavigationBar("rgba(67, 173, 97, 1.0)", "rgba(51, 132, 74, 1.0)");
 
@@ -213,18 +222,11 @@ define(["js/TopNavigationBar",
   webMap3DCityDB.activateMouseClickEvents(true);
   var webMap3DCityDBKml = new WebMap3DCityDBKml(webMap3DCityDB);
 
-  /* var cesium3dCityMilan = new WebMap3DCityDBKmlLayer(webMap3DCityDBKml, "data/kml/milan/", "milan", "https://fusiontables.google.com/data?docid=1qsPpWWImxP2v9KT0w6VdxPRjbREsvtZtbaRm233g#rows:id=1");
-  var switcherCesium3dCityMilan = new SwitcherItem("cesium", cesiumViewer3dCity, "cesium-3d-city-milan", "Milan", "kml", cesium3dCityMilan, [9.18669478811458, 45.46114471445389, 9.19452789799529, 45.46647583746108], 1000.0, undefined); */
-  var cesium3dCityMilan = new WebMap3DCityDBKmlLayer(webMap3DCityDBKml, "data/kml/milan-big/", "milan", "https://fusiontables.google.com/data?docid=10HLrEbV5xt2dPwcdc9Q613ect-y_k-0yOuTCQe-z#rows:id=1");
-  var switcherCesium3dCityMilan = new SwitcherItem("cesium", cesiumViewer3dCity, "cesium-3d-city-milan", "Milan", "kml", cesium3dCityMilan, [9.10295703422859, 45.3997645330947, 9.3158554307893, 45.54952166494336], 1000.0, undefined);
+  var cesium3dCityMilan = new WebMap3DCityDBKmlLayer(webMap3DCityDBKml, "data/kml/milan-4/", "milan", "https://www.google.com/fusiontables/DataSource?docid=1X_ZXM2Lz9b-107xE5pga_MOQOAnhyFQel8z5H1y1");
+  var switcherCesium3dCityMilan = new SwitcherItem("cesium", cesiumViewer3dCity, "cesium-3d-city-milan", "Milan", "kml", cesium3dCityMilan, [9.18669478811458, 45.46114471445389, 9.19452789799529, 45.46647583746108], 1000.0, undefined);
   switcherCesium3dCity.add(switcherCesium3dCityMilan);
 
-  var cesium3dCityPadua = new WebMap3DCityDBKmlLayer(webMap3DCityDBKml, "data/kml/padua/", "padua", "https://fusiontables.google.com/data?docid=1GM70wAFjKpNU45XXlCUTmDmpVIHKeM_3TAgOroPQ#rows:id=1");
-  var switcherCesium3dCityPadua = new SwitcherItem("cesium", cesiumViewer3dCity, "cesium-3d-city-padua", "Padua", "kml", cesium3dCityPadua, [11.80612772728434, 45.34376992018347, 11.978210343773, 45.45392090970208], 1000.0, undefined);
-  switcherCesium3dCity.add(switcherCesium3dCityPadua);
-
   var layerListCesium3dCity = new LayerList("cesium-3d-city", "layer-list-cesium-3d-city");
-  layerListCesium3dCity.bottomMargin = 200;
 
   var layerListCesium3dCityBingAerial = new LayerListItem(cesiumViewer3dCity, "cesium-3d-city-bing-aerial", "Bing Maps Aerial", true, "basemap", bingAerial, undefined);
   layerListCesium3dCity.add(layerListCesium3dCityBingAerial);
@@ -511,7 +513,7 @@ define(["js/TopNavigationBar",
     layerListCesium3dCity.styleLayerList();
     switcherDeformation.styleLegend();
     layerListDeformation.styleLayerList();
-    layerListLulc.styleLegend();    
+    layerListLulc.styleLegend();
     layerListLulc.styleLayerList();
   });
 

@@ -26,10 +26,14 @@ define(["jquery", "bootstrap"], function ($, bootstrap) {
         }
       }
       for (var i = 0; i < sections.length; i++) {
-        if (sections[i].viewerContainerId != activeViewerContainerId)
+        if (sections[i].viewerContainerId != activeViewerContainerId) {
           $("#"+sections[i].viewerContainerId).css("display", "none");
-        else
+          $("#"+sections[i].viewerContainerId+" .cesium-viewer-animationContainer").remove();
+        }
+        else {
           $("#"+sections[i].viewerContainerId).css("display", "block");
+          $("#"+sections[i].viewerContainerId+" .cesium-viewer").append(sections[i].animationContainer);
+        }
       }
     });
   };
