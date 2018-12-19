@@ -243,8 +243,20 @@ require(["jquery",
   var webMap3DCityDBKml = new WebMap3DCityDBKml(webMap3DCityDB);
 
   var cesium3dCityMilan = new WebMap3DCityDBKmlLayer(webMap3DCityDBKml, "data/kml/milan-7/", "milan", "https://www.google.com/fusiontables/DataSource?docid=1U0KZDo6d7lOvrZYI56SzlRu0ggdV9sqdWQYSwJEg");
-  var switcherCesium3dCityMilan = new SwitcherItem("cesium", cesiumViewer3dCity, "cesium-3d-city-milan", "Milan", "kml", cesium3dCityMilan, [9.18669478811458, 45.46114471445389, 9.19452789799529, 45.46647583746108], 1000.0, undefined);
+  var switcherCesium3dCityMilan = new SwitcherItem("cesium", cesiumViewer3dCity, "cesium-3d-city-milan", "Milan", "kml", cesium3dCityMilan, [9.189000, 45.462144, 9.194527, 45.466475], 1000.0, undefined);
   switcherCesium3dCity.add(switcherCesium3dCityMilan);
+
+  var cesium3dCityPadua = new WebMap3DCityDBKmlLayer(webMap3DCityDBKml, "data/kml/padua-3/", "padua", "https://www.google.com/fusiontables/DataSource?docid=13063dbi3UOY0Q5oErq5asDH8FOErp65-0X2Mfmx8");
+  var switcherCesium3dCityPadua = new SwitcherItem("cesium", cesiumViewer3dCity, "cesium-3d-city-padua", "Padua", "kml", cesium3dCityPadua, [11.875266, 45.405584, 11.878439, 45.407605], 1000.0, undefined);
+  switcherCesium3dCity.add(switcherCesium3dCityPadua);
+
+  var cesium3dCityNaples = new WebMap3DCityDBKmlLayer(webMap3DCityDBKml, "data/kml/naples-3/", "naples", "https://www.google.com/fusiontables/DataSource?docid=1Ip9wT8FDkXquverJV8TPrj1WvuGfei70iK9QmAED");
+  var switcherCesium3dCityNaples = new SwitcherItem("cesium", cesiumViewer3dCity, "cesium-3d-city-naples", "Naples", "kml", cesium3dCityNaples, [14.264500, 40.848800, 14.271250, 40.855650], 1000.0, undefined);
+  switcherCesium3dCity.add(switcherCesium3dCityNaples);
+
+  var cesium3dCityTurin = new WebMap3DCityDBKmlLayer(webMap3DCityDBKml, "data/kml/turin-2/", "turin", "https://www.google.com/fusiontables/DataSource?docid=1EkUJ9EEQZEySRryeM8z23KWXPuUzlkSPYL6SzzOW");
+  var switcherCesium3dCityTurin = new SwitcherItem("cesium", cesiumViewer3dCity, "cesium-3d-city-turin", "Turin", "kml", cesium3dCityTurin, [7.682760, 45.069900, 7.689320, 45.072350], 1000.0, undefined);
+  switcherCesium3dCity.add(switcherCesium3dCityTurin);
 
   var layerListCesium3dCity = new LayerList("cesium-3d-city", "layer-list-cesium-3d-city");
 
