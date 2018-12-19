@@ -89,7 +89,7 @@ define(["vendor/plotly-latest.min", "jquery"], function (Plotly, $) {
               var modebarButtonImage = $("<img>");
               modebarButtonImage.attr("height", "16px");
               modebarButtonImage.attr("width", "16px");
-              modebarButtonImage.attr("src", "images/close_small.png");
+              modebarButtonImage.attr("src", "images/close-small.png");
               modebarButtonImage.css("margin-bottom", "3px");
 
               modebarButton.append(modebarButtonImage);
@@ -101,11 +101,11 @@ define(["vendor/plotly-latest.min", "jquery"], function (Plotly, $) {
               });
 
               $("#" + viewerContainerId).on("mouseenter", ".modebar .modebar-group:nth-child(1)", function() {
-                modebarButtonImage.attr("src", "images/close_hover_small.png");
+                modebarButtonImage.attr("src", "images/close-hover-small.png");
               });
 
               $("#" + viewerContainerId).on("mouseleave", ".modebar .modebar-group:nth-child(1)", function() {
-                modebarButtonImage.attr("src", "images/close_small.png");
+                modebarButtonImage.attr("src", "images/close-small.png");
               });
 
               window.onresize = function() {

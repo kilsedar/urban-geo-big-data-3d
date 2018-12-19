@@ -26,11 +26,13 @@ define(["jquery"], function ($) {
     if ($("#"+this.viewerContainerId+" .legend").is(":visible")) {
       if ($("#"+this.viewerContainerId+" .legend").prop("scrollHeight")+126 > $(window).height()) {
         $("#"+this.viewerContainerId+" .legend").css("height", $(window).height()-126 + "px");
-        $("#"+this.viewerContainerId+" .legend").css("width", $("#"+this.viewerContainerId+" .legend img").width()+10 + "px");
+        $("#"+this.viewerContainerId+" .legend#legend-lulc-glc30").css("width", "auto");
+        $("#"+this.viewerContainerId+" .legend#legend-lulc-glc30").css("width", $("#"+this.id).width()+28+"px");
       }
       else {
         $("#"+this.viewerContainerId+" .legend").css("height", "auto");
         $("#"+this.viewerContainerId+" .legend").css("width", "auto");
+        $("#"+this.viewerContainerId+" .legend#legend-lulc-ispra-land-cover").css("width", "300px");
       }
     }
   }
@@ -52,15 +54,10 @@ define(["jquery"], function ($) {
   }
 
   LayerList.prototype.addLegend = function (layerListItem) {
-    if (layerListItem.legendURL != undefined) {
-      var legend = $("<div></div>");
+    if (layerListItem.legend != undefined) {
+      var legend = layerListItem.legend;
       legend.attr("id", "legend-"+layerListItem.id);
       legend.addClass("legend");
-
-      var legendImage = $("<img>");
-      legendImage.attr("src", layerListItem.legendURL);
-
-      legend.append(legendImage);
       $("#"+this.viewerContainerId).append(legend);
 
       var _self = this;
@@ -137,6 +134,8 @@ define(["jquery"], function ($) {
 
     $("#"+this.viewerContainerId).on("click", "#"+layerListItem.id+"-input", function() {
       if ($("#"+layerListItem.id+"-input").attr("type") == "checkbox" && $("#"+layerListItem.id+"-input").is(":checked")) {
+        if ($("#"+_self.viewerContainerId+" .legend").length > 0)
+          $("#"+_self.viewerContainerId+" .legend").remove();
         _self.addLegend(layerListItem);
         var imageryLayer = layerListItem.viewer.imageryLayers.addImageryProvider(layerListItem.imageryProvider);
         layerListItem.imageryLayer = imageryLayer;
@@ -144,6 +143,13 @@ define(["jquery"], function ($) {
       else if ($("#"+layerListItem.id+"-input").attr("type") == "checkbox" && $("#"+layerListItem.id+"-input").is(":checked") == false) {
         $("#"+_self.viewerContainerId+" #legend-"+layerListItem.id).remove();
         layerListItem.viewer.imageryLayers.remove(layerListItem.imageryLayer);
+        var layerOnTop = layerListItem.viewer.imageryLayers.get(layerListItem.viewer.imageryLayers.length-1);
+        if (layerOnTop.isBaseLayer() == false) {
+          for (var i=0; i<_self.items.length; i++) {
+            if (_self.items[i].imageryProvider == layerOnTop._imageryProvider)
+              _self.addLegend(_self.items[i]);
+          }
+        }
       }
       else {
         for (var i=0; i<layerListItem.viewer.imageryLayers.length; i++) {

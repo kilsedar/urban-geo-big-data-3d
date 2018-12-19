@@ -28,26 +28,32 @@ define(["jquery"], function ($) {
     $.getJSON(this.url, function (json) {
       for (var i=0; i<json.rows.length-1; i++) {
         var classArray = json.rows[i].doc.classification.split(/(?=[A-Z])/);
-        var classWord = "";
-        var classWords = "";
+        var classWordInfoBox = "";
+        var classWordsInfoBox = "";
         for (var j=0; j<classArray.length; j++) {
           if (j==0)
-            classWord = classArray[j].charAt(0).toUpperCase()+classArray[j].substr(1);
+            classWordInfoBox = classArray[j].charAt(0).toUpperCase()+classArray[j].substr(1);
           else
-            classWord = classArray[j].charAt(0).toLowerCase()+classArray[j].substr(1);
-          classWords += " " + classWord;
+            classWordInfoBox = classArray[j].charAt(0).toLowerCase()+classArray[j].substr(1);
+          classWordsInfoBox += " " + classWordInfoBox;
+        }
+        var classWordImage = "";
+        var classWordsImage = "";
+        for (var k=0; k<classArray.length; k++) {
+          classWordImage = classArray[k].charAt(0).toLowerCase()+classArray[k].substr(1);
+          classWordsImage += classWordImage + "-";
         }
         window["dataSource"+json.rows[i].doc.classification.charAt(0).toUpperCase()+json.rows[i].doc.classification.substr(1)].entities.add({
           position : Cesium.Cartesian3.fromDegrees(json.rows[i].doc.location[1], json.rows[i].doc.location[0]),
           billboard : {
-            image : "images/lc/"+json.rows[i].doc.classification+"WhiteBackgroundPin.png",
+            image : "images/lc/"+classWordsImage+"white-background-pin.png",
             width : 30,
             height : 45,
             heightReference: Cesium.HeightReference.RELATIVE_TO_GROUND,
             disableDepthTestDistance: Number.POSITIVE_INFINITY
           },
           name: "VGI Land Cover Point",
-          description: "<b>Class:</b> " + classWords + "<br><b>Date:</b> " + new Date(json.rows[i].doc.timestamp).toLocaleString() + "<br><b>Certainty of the classification:</b> " + json.rows[i].doc.certainty + _self.isCommentEmpty(json.rows[i].doc.comment)
+          description: "<b>Class:</b> " + classWordsInfoBox + "<br><b>Date:</b> " + new Date(json.rows[i].doc.timestamp).toLocaleString() + "<br><b>Certainty of the classification:</b> " + json.rows[i].doc.certainty + _self.isCommentEmpty(json.rows[i].doc.comment)
                        // + "<br><b>Photo of north:</b><br><img src='https://landcover.como.polimi.it/couchdb/lcc_points/" + json.rows[i].doc._id + "/photo-north-thumbnail.jpeg'>"
         });
       }
