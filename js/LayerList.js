@@ -32,7 +32,7 @@ define(["jquery"], function ($) {
       else {
         $("#"+this.viewerContainerId+" .legend").css("height", "auto");
         $("#"+this.viewerContainerId+" .legend").css("width", "auto");
-        $("#"+this.viewerContainerId+" .legend#legend-lulc-ispra-land-cover").css("width", "300px");
+        $("#"+this.viewerContainerId+" .legend#legend-lulc-ispra-land-cover").css("width", "330px");
       }
     }
   }

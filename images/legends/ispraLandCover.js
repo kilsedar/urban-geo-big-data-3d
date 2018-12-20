@@ -28,7 +28,7 @@ ispraLandCoverLegend.append(class1000);
 ***/
 
 /***
-2000 (Agricultural surfaces)
+2000 (Agricultural areas)
 ***/
 var class2000 = $("<div></div>");
 class2000.addClass("first-level");
@@ -38,7 +38,7 @@ title2000.addClass("first-level-title");
 
 var text2000 = $("<p></p>");
 text2000.addClass("legend-text");
-text2000.text("2. Agricultural surfaces");
+text2000.text("2. Agricultural areas");
 
 var caret2000 = $("<div></div>");
 caret2000.addClass("caret");
@@ -64,7 +64,7 @@ class2x00.addClass("second-level");
 class2000.append(class2x00);
 
 /***
-2100 (Arable lands)
+2100 (Arable land)
 ***/
 var class2100 = $("<div></div>");
 
@@ -73,7 +73,7 @@ title2100.addClass("second-level-title");
 
 var text2100 = $("<p></p>");
 text2100.addClass("legend-text");
-text2100.text("2.1 Arable lands");
+text2100.text("2.1 Arable land");
 
 var caret2100 = $("<div></div>");
 caret2100.addClass("caret");
@@ -186,7 +186,7 @@ class21x0.addClass("third-level");
 class2100.append(class21x0);
 
 /***
-2110 (Arable lands in non-irrigated areas)
+2110 (Non-irrigated arable land)
 ***/
 var class2110 = $("<div></div>");
 
@@ -195,7 +195,7 @@ title2110.addClass("third-level-title");
 
 var text2110 = $("<p></p>");
 text2110.addClass("legend-text");
-text2110.text("2.1.1 Arable lands in non-irrigated areas");
+text2110.text("2.1.1 Non-irrigated arable land");
 
 var caret2110 = $("<div></div>");
 caret2110.addClass("caret");
@@ -217,7 +217,7 @@ class21x0.append(class2110);
 ***/
 
 /***
-2120 (Arable lands in irrigated areas)
+2120 (Permanently irrigated land)
 ***/
 var class2120 = $("<div></div>");
 
@@ -226,7 +226,7 @@ title2120.addClass("third-level-title");
 
 var text2120 = $("<p></p>");
 text2120.addClass("legend-text");
-text2120.text("2.1.2 Arable lands in irrigated areas");
+text2120.text("2.1.2 Permanently irrigated land");
 
 var colorBox2120 = $("<div></div>");
 colorBox2120.addClass("color-box");
@@ -242,7 +242,7 @@ class21x0.append(class2120);
 ***/
 
 /***
-2130 (Paddy fields)
+2130 (Rice fields)
 ***/
 var class2130 = $("<div></div>");
 
@@ -251,7 +251,7 @@ title2130.addClass("third-level-title");
 
 var text2130 = $("<p></p>");
 text2130.addClass("legend-text");
-text2130.text("2.1.3 Paddy fields");
+text2130.text("2.1.3 Rice fields");
 
 var colorBox2130 = $("<div></div>");
 colorBox2130.addClass("color-box");
@@ -296,7 +296,7 @@ class22x0.append(class2210);
 ***/
 
 /***
-2220 (Orchards and smaller fruits)
+2220 (Fruit trees and berry plantations)
 ***/
 var class2220 = $("<div></div>");
 
@@ -305,7 +305,7 @@ title2220.addClass("third-level-title");
 
 var text2220 = $("<p></p>");
 text2220.addClass("legend-text");
-text2220.text("2.2.2 Orchards and smaller fruits");
+text2220.text("2.2.2 Fruit trees and berry plantations");
 
 var colorBox2220 = $("<div></div>");
 colorBox2220.addClass("color-box");
@@ -346,7 +346,7 @@ class22x0.append(class2230);
 ***/
 
 /***
-2240 (Arboriculture from wood)
+2240 (Forestry)
 ***/
 var class2240 = $("<div></div>");
 
@@ -355,7 +355,7 @@ title2240.addClass("third-level-title");
 
 var text2240 = $("<p></p>");
 text2240.addClass("legend-text");
-text2240.text("2.2.4 Arboriculture from wood");
+text2240.text("2.2.4 Forestry");
 
 var colorBox2240 = $("<div></div>");
 colorBox2240.addClass("color-box");
@@ -375,7 +375,7 @@ class24x0.addClass("third-level");
 class2400.append(class24x0);
 
 /***
-2410 (Temporary crops associated with permanent crops)
+2410 (Annual crops associated with permanent crops)
 ***/
 var class2410 = $("<div></div>");
 
@@ -384,7 +384,7 @@ title2410.addClass("third-level-title");
 
 var text2410 = $("<p></p>");
 text2410.addClass("legend-text");
-text2410.text("2.4.1 Temporary crops associated with permanent crops");
+text2410.text("2.4.1 Annual crops associated with permanent crops");
 
 var colorBox2410 = $("<div></div>");
 colorBox2410.addClass("color-box");
@@ -400,7 +400,7 @@ class24x0.append(class2410);
 ***/
 
 /***
-2420 (Cultivation systems and complex particles)
+2420 (Complex cultivation patterns)
 ***/
 var class2420 = $("<div></div>");
 
@@ -409,7 +409,7 @@ title2420.addClass("third-level-title");
 
 var text2420 = $("<p></p>");
 text2420.addClass("legend-text");
-text2420.text("2.4.2 Cultivation systems and complex particles");
+text2420.text("2.4.2 Complex cultivation patterns");
 
 var colorBox2420 = $("<div></div>");
 colorBox2420.addClass("color-box");
@@ -425,7 +425,7 @@ class24x0.append(class2420);
 ***/
 
 /***
-2430 (Areas occupied by agricultural crops with important natural areas)
+2430 (Land principally occupied by agriculture, with significant areas of natural vegetation)
 ***/
 var class2430 = $("<div></div>");
 
@@ -434,7 +434,7 @@ title2430.addClass("third-level-title");
 
 var text2430 = $("<p></p>");
 text2430.addClass("legend-text");
-text2430.text("2.4.3 Areas occupied by agricultural crops with important natural areas");
+text2430.text("2.4.3 Land principally occupied by agriculture, with significant areas of natural vegetation");
 
 var colorBox2430 = $("<div></div>");
 colorBox2430.addClass("color-box");
@@ -450,7 +450,7 @@ class24x0.append(class2430);
 ***/
 
 /***
-2440 (Agroforestry areas)
+2440 (Agro-forestry areas)
 ***/
 var class2440 = $("<div></div>");
 
@@ -459,7 +459,7 @@ title2440.addClass("third-level-title");
 
 var text2440 = $("<p></p>");
 text2440.addClass("legend-text");
-text2440.text("2.4.4 Agroforestry areas");
+text2440.text("2.4.4 Agro-forestry areas");
 
 var colorBox2440 = $("<div></div>");
 colorBox2440.addClass("color-box");
@@ -676,7 +676,7 @@ class4x00.addClass("second-level");
 class4000.append(class4x00);
 
 /***
-4100 (Natural grazing areas and grasslands)
+4100 (Natural grasslands)
 ***/
 var class4100 = $("<div></div>");
 
@@ -685,7 +685,7 @@ title4100.addClass("second-level-title");
 
 var text4100 = $("<p></p>");
 text4100.addClass("legend-text");
-text4100.text("4.1 Natural grazing areas and grasslands");
+text4100.text("4.1 Natural grasslands");
 
 var colorBox4100 = $("<div></div>");
 colorBox4100.addClass("color-box");
@@ -726,7 +726,7 @@ class4x00.append(class4200);
 ***/
 
 /***
-4300 (Moorlands and bushes)
+4300 (Moors and heathland)
 ***/
 var class4300 = $("<div></div>");
 
@@ -735,7 +735,7 @@ title4300.addClass("second-level-title");
 
 var text4300 = $("<p></p>");
 text4300.addClass("legend-text");
-text4300.text("4.3 Moorlands and bushes");
+text4300.text("4.3 Moors and heathland");
 
 var colorBox4300 = $("<div></div>");
 colorBox4300.addClass("color-box");
@@ -751,7 +751,7 @@ class4x00.append(class4300);
 ***/
 
 /***
-4400 (Sclerophyll vegetation areas)
+4400 (Sclerophyllous vegetation)
 ***/
 var class4400 = $("<div></div>");
 
@@ -760,7 +760,7 @@ title4400.addClass("second-level-title");
 
 var text4400 = $("<p></p>");
 text4400.addClass("legend-text");
-text4400.text("4.4 Sclerophyll vegetation areas");
+text4400.text("4.4 Sclerophyllous vegetation");
 
 var caret4400 = $("<div></div>");
 caret4400.addClass("caret");
@@ -782,7 +782,7 @@ class4x00.append(class4400);
 ***/
 
 /***
-4500 (Areas with evolving wooded and shrubby vegetation)
+4500 (Transitional woodland-shrub)
 ***/
 var class4500 = $("<div></div>");
 
@@ -791,7 +791,7 @@ title4500.addClass("second-level-title");
 
 var text4500 = $("<p></p>");
 text4500.addClass("legend-text");
-text4500.text("4.5 Areas with evolving wooded and shrubby vegetation");
+text4500.text("4.5 Transitional woodland-shrub");
 
 var colorBox4500 = $("<div></div>");
 colorBox4500.addClass("color-box");
@@ -807,7 +807,7 @@ class4x00.append(class4500);
 ***/
 
 /***
-4600 (Open areas with sparse or absent vegetation)
+4600 (Open spaces with little or no vegetation)
 ***/
 var class4600 = $("<div></div>");
 
@@ -816,13 +816,24 @@ title4600.addClass("second-level-title");
 
 var text4600 = $("<p></p>");
 text4600.addClass("legend-text");
-text4600.text("4.6 Open areas with sparse or absent vegetation");
+text4600.text("4.6 Open spaces with little or no vegetation");
+
+var caret4600 = $("<div></div>");
+caret4600.addClass("caret");
+var caretImageDown4600 = $("<img>");
+caretImageDown4600.attr("src", "images/caret-down.png");
+caret4600.append(caretImageDown4600);
+var caretImageUp4600 = $("<img>");
+caretImageUp4600.attr("src", "images/caret-up.png");
+caretImageUp4600.addClass("caret-image-up");
+caret4600.append(caretImageUp4600);
 
 var colorBox4600 = $("<div></div>");
 colorBox4600.addClass("color-box");
 colorBox4600.css("background-color", "#cccccc");
 
 title4600.append(text4600);
+title4600.append(caret4600);
 title4600.append(colorBox4600);
 
 class4600.append(title4600);
@@ -882,6 +893,35 @@ title4420.append(colorBox4420);
 class4420.append(title4420);
 
 class44x0.append(class4420);
+/***
+***/
+
+var class46x0 = $("<div></div>");
+class46x0.addClass("third-level");
+class4600.append(class46x0);
+
+/***
+4610 (Beaches, dunes, sands)
+***/
+var class4610 = $("<div></div>");
+
+var title4610 = $("<div></div>");
+title4610.addClass("third-level-title");
+
+var text4610 = $("<p></p>");
+text4610.addClass("legend-text");
+text4610.text("4.6.1 Beaches, dunes, sands");
+
+var colorBox4610 = $("<div></div>");
+colorBox4610.addClass("color-box");
+colorBox4610.css("background-color", "#e6e6e6");
+
+title4610.append(text4610);
+title4610.append(colorBox4610);
+
+class4610.append(title4610);
+
+class46x0.append(class4610);
 /***
 ***/
 
