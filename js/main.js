@@ -246,7 +246,7 @@ require(["jquery",
   var switcherCesium3dCityMilan = new SwitcherItem("cesium", cesiumViewer3dCity, "cesium-3d-city-milan", "Milan", "kml", cesium3dCityMilan, [9.189000, 45.462144, 9.194527, 45.466475], 1000.0, undefined);
   switcherCesium3dCity.add(switcherCesium3dCityMilan);
 
-  var cesium3dCityPadua = new WebMap3DCityDBKmlLayer(webMap3DCityDBKml, "data/kml/padua-3/", "padua", "https://www.google.com/fusiontables/DataSource?docid=13063dbi3UOY0Q5oErq5asDH8FOErp65-0X2Mfmx8");
+  var cesium3dCityPadua = new WebMap3DCityDBKmlLayer(webMap3DCityDBKml, "data/kml/padua-5/", "padua", "https://www.google.com/fusiontables/DataSource?docid=1UX5QFdWPOOztk5eS2WZY-6GBcJgf7farK80rit3h");
   var switcherCesium3dCityPadua = new SwitcherItem("cesium", cesiumViewer3dCity, "cesium-3d-city-padua", "Padua", "kml", cesium3dCityPadua, [11.875266, 45.405584, 11.878439, 45.407605], 1000.0, undefined);
   switcherCesium3dCity.add(switcherCesium3dCityPadua);
 
