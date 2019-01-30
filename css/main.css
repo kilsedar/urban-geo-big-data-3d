@@ -151,24 +151,39 @@ hr {
   vertical-align: middle;
 }
 
-#lulc-vgi {
+#lulc-vgi, #deformation-mean, #deformation-cumulative {
   position: absolute;
   top: 50px;
-  left: 104px;
   z-index: 100;
   border-radius: 0rem;
   border-bottom: 3px double;
 }
 
-#lulc-vgi:hover, #lulc-vgi:active, #lulc-vgi:focus {
+#lulc-vgi {
+  left: 104px;
+}
+
+#deformation-mean {
+  left: 112px;
+}
+
+#deformation-cumulative {
+  left: 180px;
+}
+
+#deformation-mean, #deformation-cumulative {
+  opacity: 0.6;
+}
+
+#lulc-vgi:hover, #lulc-vgi:active, #lulc-vgi:focus, #deformation-mean:hover, #deformation-mean:active, #deformation-mean:focus, #deformation-cumulative:hover, #deformation-cumulative:active, #deformation-cumulative:focus {
   box-shadow: none;
 }
 
-#lulc-vgi:hover {
+#lulc-vgi:hover, #deformation-mean:hover, #deformation-cumulative:hover {
   background-color: #48b !important;
 }
 
-/* #lulc-vgi:active {
+/* #lulc-vgi:active, #deformation-mean:active, #deformation-cumulative:active {
   background-color: #aef;
   color: #000000;
 } */

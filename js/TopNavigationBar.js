@@ -59,7 +59,7 @@ define(["jquery", "bootstrap"], function ($, bootstrap) {
     for (var i = 0; i < this.sections.length; i++) {
       $(".section").eq(i).css("left", 100-sectionWidth*(this.sections.length-i) + "vw");
     }
-  }
+  };
 
   return TopNavigationBar;
 });

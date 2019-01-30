@@ -1,7 +1,7 @@
 define([], function () {
   "use strict";
 
-  var SwitcherItem = function (viewerType, viewer, id, text, type, layer, boundingBox, range, legendURL) {
+  var SwitcherItem = function (viewerType, viewer, id, text, type, layer, boundingBox, range, legendUrl) {
     this.viewerType = viewerType;
     this.viewer = viewer;
     this.id = id;
@@ -10,7 +10,7 @@ define([], function () {
     this.layer = layer;
     this.boundingBox = boundingBox;
     this.range = range;
-    this.legendURL = legendURL;
+    this.legendUrl = legendUrl;
   };
 
   return SwitcherItem;

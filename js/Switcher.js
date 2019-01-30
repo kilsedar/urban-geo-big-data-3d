@@ -39,7 +39,7 @@ define(["jquery"], function ($) {
         $("#"+this.viewerContainerId+" .legend").css("width", "auto");
       }
     }
-  }
+  };
 
   Switcher.prototype.add = function (switcherItem) {
     this.items.push(switcherItem);
@@ -57,13 +57,13 @@ define(["jquery"], function ($) {
       $("#"+_self.dropdownMenuButtonId).html(switcherItem.text);
 
       $("#"+_self.viewerContainerId+" #legend-"+switcherItem.id).remove();
-      if (switcherItem.legendURL != undefined) {
+      if (switcherItem.legendUrl != undefined) {
         var legend = $("<div></div>");
         legend.attr("id", "legend-"+switcherItem.id);
         legend.addClass("legend");
 
         var legendImage = $("<img>");
-        legendImage.attr("src", switcherItem.legendURL);
+        legendImage.attr("src", switcherItem.legendUrl);
 
         legend.append(legendImage);
         $("#"+_self.viewerContainerId).append(legend);
@@ -105,7 +105,7 @@ define(["jquery"], function ($) {
         switcherItem.viewer.camera.lookAtTransform(Cesium.Matrix4.IDENTITY);
       }
     });
-  }
+  };
 
   return Switcher;
 });

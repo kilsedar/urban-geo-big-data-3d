@@ -125,11 +125,11 @@ define(["vendor/plotly-latest.min", "jquery"], function (Plotly, $) {
     }
     this.viewer.canvas.addEventListener("click", listener);
     this.listener = listener;
-  }
+  };
 
   WmsDeformationPlot.prototype.removeListener = function () {
     this.viewer.canvas.removeEventListener("click", this.listener);
-  }
+  };
 
   return WmsDeformationPlot;
 });

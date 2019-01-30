@@ -35,7 +35,7 @@ define(["jquery"], function ($) {
         $("#"+this.viewerContainerId+" .legend#legend-lulc-ispra-land-cover").css("width", "330px");
       }
     }
-  }
+  };
 
   LayerList.prototype.styleLayerList = function () {
     if ($("#"+this.viewerContainerId+" .layer-list").is(":visible")) {
@@ -51,7 +51,7 @@ define(["jquery"], function ($) {
         $("#"+this.viewerContainerId+" .layer-list").css("width", "auto");
       }
     }
-  }
+  };
 
   LayerList.prototype.addLegend = function (layerListItem) {
     if (layerListItem.legend != undefined) {
@@ -74,7 +74,7 @@ define(["jquery"], function ($) {
         }, 100);
       });
     }
-  }
+  };
 
   LayerList.prototype.add = function (layerListItem) {
     this.items.push(layerListItem);
@@ -159,7 +159,7 @@ define(["jquery"], function ($) {
         layerListItem.viewer.imageryLayers.addImageryProvider(layerListItem.imageryProvider, 0);
       }
     });
-  }
+  };
 
   return LayerList;
 });
