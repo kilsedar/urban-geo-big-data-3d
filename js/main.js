@@ -35,7 +35,8 @@ require(["jquery",
   "use strict";
 
   var worldWindViewer3dCity = new WorldWind.WorldWindow("world-wind-3d-city-canvas");
-
+  worldWindViewer3dCity.navigator.lookAtLocation = new WorldWind.Location(41, 12);
+  worldWindViewer3dCity.navigator.range = 22e6;
   worldWindViewer3dCity.addLayer(new WorldWind.BMNGOneImageLayer());
   worldWindViewer3dCity.addLayer(new WorldWind.BingAerialLayer());
   worldWindViewer3dCity.addLayer(new WorldWind.ViewControlsLayer(worldWindViewer3dCity));
@@ -45,11 +46,9 @@ require(["jquery",
   var atmosphereLayer = new WorldWind.AtmosphereLayer();
   atmosphereLayer.lightLocation = WorldWind.SunPosition.getAsGeographicLocation(starFieldLayer.time);
   worldWindViewer3dCity.addLayer(atmosphereLayer);
-  worldWindViewer3dCity.navigator.lookAtLocation = new WorldWind.Location(41, 12);
-  worldWindViewer3dCity.navigator.range = 22e6;
 
-  Cesium.Camera.DEFAULT_VIEW_FACTOR = 2;
   Cesium.Camera.DEFAULT_VIEW_RECTANGLE = Cesium.Rectangle.fromDegrees(7.0, 35.0, 19.0, 47.0);
+  Cesium.Camera.DEFAULT_VIEW_FACTOR = 2;
 
   /* Public website for education or non-profit organization use anticipates less than 50000 cumulative transitions within any 24-hour period. (https://www.microsoft.com/en-us/maps/licensing/options) */
   var bingAerialProvider = new Cesium.BingMapsImageryProvider({
@@ -94,7 +93,29 @@ require(["jquery",
     credit: "Map tiles by <a href='http://stamen.com'>Stamen Design</a>, under <a href='http://creativecommons.org/licenses/by/3.0'>CC BY 3.0</a>. Data by <a href='http://openstreetmap.org'>OpenStreetMap</a>, under <a href='http://creativecommons.org/licenses/by-sa/3.0'>CC BY SA</a>."
   });
 
-  var skyBox = new Cesium.SkyBox({
+  var skyBox3dCity = new Cesium.SkyBox({
+    sources: {
+      positiveX: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_px.jpg",
+      negativeX: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_mx.jpg",
+      positiveY: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_py.jpg",
+      negativeY: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_my.jpg",
+      positiveZ: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_pz.jpg",
+      negativeZ: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_mz.jpg"
+    }
+  });
+
+  var skyBoxDeformation = new Cesium.SkyBox({
+    sources: {
+      positiveX: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_px.jpg",
+      negativeX: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_mx.jpg",
+      positiveY: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_py.jpg",
+      negativeY: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_my.jpg",
+      positiveZ: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_pz.jpg",
+      negativeZ: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_mz.jpg"
+    }
+  });
+
+  var skyBoxLulc = new Cesium.SkyBox({
     sources: {
       positiveX: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_px.jpg",
       negativeX: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_mx.jpg",
@@ -112,7 +133,7 @@ require(["jquery",
 
   var cesiumViewer3dCity = new Cesium.Viewer("cesium-3d-city", {
     imageryProvider: bingAerialProvider,
-    skyBox: skyBox,
+    skyBox: skyBox3dCity,
     baseLayerPicker: false,
     geocoder: false,
     infoBox: true,
@@ -127,7 +148,7 @@ require(["jquery",
   var cesiumViewerDeformation = new Cesium.Viewer("cesium-deformation", {
     imageryProvider: cartoDarkProvider,
     terrainProvider: terrainProvider,
-    skyBox: skyBox,
+    skyBox: skyBoxDeformation,
     baseLayerPicker: false,
     geocoder: false,
     infoBox: false,
@@ -137,7 +158,7 @@ require(["jquery",
   var cesiumViewerLulc = new Cesium.Viewer("cesium-lulc", {
     imageryProvider: bingAerialProvider,
     terrainProvider: terrainProvider,
-    skyBox: skyBox,
+    skyBox: skyBoxLulc,
     baseLayerPicker: false,
     geocoder: false,
     infoBox: true,
@@ -526,6 +547,28 @@ require(["jquery",
     }
   });
 
+  function styleLightbox(selector) {
+    var mobileWidth = 576;
+
+    var width = $(window).width();
+    var height = $(window).height();
+
+    var activeSectionViewerContainerId;
+    topNavigationBar.sections.forEach(function(section) {
+      if (section.active)
+        activeSectionViewerContainerId = section.viewerContainerId;
+    });
+
+    if (width < mobileWidth) {
+      $(selector + " > .cesium-credit-lightbox").attr("class", "cesium-credit-lightbox cesium-credit-lightbox-mobile");
+      $(selector + " > .cesium-credit-lightbox.cesium-credit-lightbox-mobile").css("margin-top", "0px");
+    }
+    else {
+      $(selector + " > .cesium-credit-lightbox").attr("class", "cesium-credit-lightbox cesium-credit-lightbox-expanded");
+      $(selector + " > .cesium-credit-lightbox.cesium-credit-lightbox-expanded").css("margin-top", Math.floor((height - $("#" + activeSectionViewerContainerId + " " + selector + " > .cesium-credit-lightbox.cesium-credit-lightbox-expanded").height()) * 0.5) + "px");
+    }
+  }
+
   var projectAttributionLink = $("<a></a>");
   projectAttributionLink.addClass("cesium-credit-expand-link project-attribution-link");
   projectAttributionLink.text("Project attribution");
@@ -623,28 +666,6 @@ require(["jquery",
         $(".project-attribution-lightbox-overlay").css("visibility", "hidden");
     }
   });
-
-  function styleLightbox(selector) {
-    var mobileWidth = 576;
-
-    var width = $(window).width();
-    var height = $(window).height();
-
-    var activeSectionViewerContainerId;
-    topNavigationBar.sections.forEach(function(section) {
-      if (section.active)
-        activeSectionViewerContainerId = section.viewerContainerId;
-    });
-
-    if (width < mobileWidth) {
-      $(selector + " > .cesium-credit-lightbox").attr("class", "cesium-credit-lightbox cesium-credit-lightbox-mobile");
-      $(selector + " > .cesium-credit-lightbox.cesium-credit-lightbox-mobile").css("margin-top", "0px");
-    }
-    else {
-      $(selector + " > .cesium-credit-lightbox").attr("class", "cesium-credit-lightbox cesium-credit-lightbox-expanded");
-      $(selector + " > .cesium-credit-lightbox.cesium-credit-lightbox-expanded").css("margin-top", Math.floor((height - $("#" + activeSectionViewerContainerId + " " + selector + " > .cesium-credit-lightbox.cesium-credit-lightbox-expanded").height()) * 0.5) + "px");
-    }
-  }
 
   $(window).resize(function() {
     styleLightbox(".project-attribution-lightbox-overlay");
