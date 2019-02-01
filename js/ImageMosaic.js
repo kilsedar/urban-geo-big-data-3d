@@ -1,13 +1,12 @@
 define([], function () {
   "use strict";
 
-  var ImageMosaic = function (viewer, url, layerName, dates, boundingBox, legendUrl) {
+  var ImageMosaic = function (viewer, url, layerName, dates, boundingBox) {
     this.viewer = viewer;
     this.url = url;
     this.layerName = layerName;
     this.dates = dates;
     this.boundingBox = boundingBox;
-    this.legendUrl = legendUrl;
     this.imageryProvider;
 
     var rectangle = Cesium.Rectangle.fromDegrees(this.boundingBox[0], this.boundingBox[1], this.boundingBox[2], this.boundingBox[3]);

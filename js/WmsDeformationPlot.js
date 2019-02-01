@@ -18,8 +18,6 @@ define(["vendor/plotly-latest.min", "jquery"], function (Plotly, $) {
 
       if (Cesium.defined(featuresPromise)) {
         Cesium.when(featuresPromise, function(features) {
-          // console.log("Number of features: " + features.length);
-          // console.log(features[0].properties[property]);
           $.ajax({
             url: "https://ugbd.get-it.it/proxy/?proxyTo=" + features[0].properties[property] + "&outputFormat=application/json",
             success: function(json) {
@@ -35,6 +33,13 @@ define(["vendor/plotly-latest.min", "jquery"], function (Plotly, $) {
                 }
               ];
               var layout = {
+                title: {
+                  text: "Mean deformation velocity is " + features[0].properties["vel"] + " cm/year.",
+                  font: {
+                    size: 16
+                  },
+                  x: 0.034
+                },
                 xaxis: {
                   title: "time"
                 },

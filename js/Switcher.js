@@ -28,19 +28,6 @@ define(["jquery"], function ($) {
     $("#"+this.viewerContainerId).append(switcher);
   };
 
-  Switcher.prototype.styleLegend = function () {
-    if ($("#"+this.viewerContainerId+" .legend").is(":visible")) {
-      if ($("#"+this.viewerContainerId+" .legend").prop("scrollHeight")+126 > $(window).height()) {
-        $("#"+this.viewerContainerId+" .legend").css("height", $(window).height()-126 + "px");
-        $("#"+this.viewerContainerId+" .legend").css("width", $("#"+this.viewerContainerId+" .legend img").width()+10 + "px");
-      }
-      else {
-        $("#"+this.viewerContainerId+" .legend").css("height", "auto");
-        $("#"+this.viewerContainerId+" .legend").css("width", "auto");
-      }
-    }
-  };
-
   Switcher.prototype.add = function (switcherItem) {
     this.items.push(switcherItem);
 
@@ -55,23 +42,6 @@ define(["jquery"], function ($) {
 
     $("#"+this.viewerContainerId).on("click", "#"+switcherItem.id, function() {
       $("#"+_self.dropdownMenuButtonId).html(switcherItem.text);
-
-      $("#"+_self.viewerContainerId+" #legend-"+switcherItem.id).remove();
-      if (switcherItem.legendUrl != undefined) {
-        var legend = $("<div></div>");
-        legend.attr("id", "legend-"+switcherItem.id);
-        legend.addClass("legend");
-
-        var legendImage = $("<img>");
-        legendImage.attr("src", switcherItem.legendUrl);
-
-        legend.append(legendImage);
-        $("#"+_self.viewerContainerId).append(legend);
-
-        setTimeout(function() {
-          _self.styleLegend();
-        }, 100);
-      }
 
       if (switcherItem.viewerType == "world-wind") {
         if (switcherItem.layer != undefined) {

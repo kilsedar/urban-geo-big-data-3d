@@ -207,6 +207,14 @@ hr {
   width: 330px;
 }
 
+#legend-deformation-mean {
+  padding: 0px;
+}
+
+#legend-deformation-mean img {
+  width: 340px;
+}
+
 .project-attribution-link {
   left: 212px;
 }
@@ -256,6 +264,7 @@ hr {
   overflow-y: auto;
   overflow-x: hidden;
   padding: 6px;
+  z-index: 100;
 }
 
 .legend-JS {

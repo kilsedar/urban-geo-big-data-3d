@@ -168,7 +168,7 @@ require(["jquery",
   };
   var worldWind3dCitySourceMilan = {type: "GeoJSONFile", path: "data/geojson/milan.geojson"};
   var worldWind3dCityMilan = new OSMBuildingLayer(worldWind3dCityConfigurationMilan, worldWind3dCitySourceMilan);
-  var switcherWorldWind3dCityMilan = new SwitcherItem("world-wind", worldWindViewer3dCity, "world-wind-3d-city-milan", "Milan", "renderable", worldWind3dCityMilan, [9.17356, 45.4561, 9.21089, 45.4907], undefined, undefined);
+  var switcherWorldWind3dCityMilan = new SwitcherItem("world-wind", worldWindViewer3dCity, "world-wind-3d-city-milan", "Milan", "renderable", worldWind3dCityMilan, [9.17356, 45.4561, 9.21089, 45.4907], undefined);
   switcherWorldWind3dCity.add(switcherWorldWind3dCityMilan);
 
   var worldWind3dCityConfigurationPadua = {
@@ -181,7 +181,7 @@ require(["jquery",
   };
   var worldWind3dCitySourcePadua = {type: "GeoJSONFile", path: "data/geojson/padua.geojson"};
   var worldWind3dCityPadua = new OSMBuildingLayer(worldWind3dCityConfigurationPadua, worldWind3dCitySourcePadua);
-  var switcherWorldWind3dCityPadua = new SwitcherItem("world-wind", worldWindViewer3dCity, "world-wind-3d-city-padua", "Padua", "renderable", worldWind3dCityPadua, [11.8641, 45.3994, 11.8935, 45.414], undefined, undefined);
+  var switcherWorldWind3dCityPadua = new SwitcherItem("world-wind", worldWindViewer3dCity, "world-wind-3d-city-padua", "Padua", "renderable", worldWind3dCityPadua, [11.8641, 45.3994, 11.8935, 45.414], undefined);
   switcherWorldWind3dCity.add(switcherWorldWind3dCityPadua);
 
   var worldWind3dCityConfigurationRome = {
@@ -194,7 +194,7 @@ require(["jquery",
   };
   var worldWind3dCitySourceRome = {type: "GeoJSONFile", path: "data/geojson/rome.geojson"};
   var worldWind3dCityRome = new OSMBuildingLayer(worldWind3dCityConfigurationRome, worldWind3dCitySourceRome);
-  var switcherWorldWind3dCityRome = new SwitcherItem("world-wind", worldWindViewer3dCity, "world-wind-3d-city-rome", "Rome", "renderable", worldWind3dCityRome, [12.4431, 41.8855, 12.4934, 41.9086], undefined, undefined);
+  var switcherWorldWind3dCityRome = new SwitcherItem("world-wind", worldWindViewer3dCity, "world-wind-3d-city-rome", "Rome", "renderable", worldWind3dCityRome, [12.4431, 41.8855, 12.4934, 41.9086], undefined);
   switcherWorldWind3dCity.add(switcherWorldWind3dCityRome);
 
   var worldWind3dCityConfigurationNaples = {
@@ -207,7 +207,7 @@ require(["jquery",
   };
   var worldWind3dCitySourceNaples = {type: "GeoJSONFile", path: "data/geojson/naples.geojson"};
   var worldWind3dCityNaples = new OSMBuildingLayer(worldWind3dCityConfigurationNaples, worldWind3dCitySourceNaples);
-  var switcherWorldWind3dCityNaples = new SwitcherItem("world-wind", worldWindViewer3dCity, "world-wind-3d-city-naples", "Naples", "renderable", worldWind3dCityNaples, [14.2296, 40.8263, 14.2645, 40.85], undefined, undefined);
+  var switcherWorldWind3dCityNaples = new SwitcherItem("world-wind", worldWindViewer3dCity, "world-wind-3d-city-naples", "Naples", "renderable", worldWind3dCityNaples, [14.2296, 40.8263, 14.2645, 40.85], undefined);
   switcherWorldWind3dCity.add(switcherWorldWind3dCityNaples);
 
   var worldWind3dCityConfigurationTurin = {
@@ -220,7 +220,7 @@ require(["jquery",
   };
   var worldWind3dCitySourceTurin = {type: "GeoJSONFile", path: "data/geojson/turin.geojson"};
   var worldWind3dCityTurin = new OSMBuildingLayer(worldWind3dCityConfigurationTurin, worldWind3dCitySourceTurin);
-  var switcherWorldWind3dCityTurin = new SwitcherItem("world-wind", worldWindViewer3dCity, "world-wind-3d-city-turin", "Turin", "renderable", worldWind3dCityTurin, [7.66429, 45.0589, 7.70738, 45.0898], undefined, undefined);
+  var switcherWorldWind3dCityTurin = new SwitcherItem("world-wind", worldWindViewer3dCity, "world-wind-3d-city-turin", "Turin", "renderable", worldWind3dCityTurin, [7.66429, 45.0589, 7.70738, 45.0898], undefined);
   switcherWorldWind3dCity.add(switcherWorldWind3dCityTurin);
 
   var switcherCesium3dCity = new Switcher("cesium-3d-city", "switcher-cesium-3d-city", "location");
@@ -231,19 +231,19 @@ require(["jquery",
   var webMap3DCityDBKml = new WebMap3DCityDBKml(webMap3DCityDB);
 
   var cesium3dCityMilan = new WebMap3DCityDBKmlLayer(webMap3DCityDBKml, "data/kml/milan-7/", "milan", "https://www.google.com/fusiontables/DataSource?docid=1U0KZDo6d7lOvrZYI56SzlRu0ggdV9sqdWQYSwJEg");
-  var switcherCesium3dCityMilan = new SwitcherItem("cesium", cesiumViewer3dCity, "cesium-3d-city-milan", "Milan", "kml", cesium3dCityMilan, [9.189000, 45.462144, 9.194527, 45.466475], 1000.0, undefined);
+  var switcherCesium3dCityMilan = new SwitcherItem("cesium", cesiumViewer3dCity, "cesium-3d-city-milan", "Milan", "kml", cesium3dCityMilan, [9.189000, 45.462144, 9.194527, 45.466475], 1000.0);
   switcherCesium3dCity.add(switcherCesium3dCityMilan);
 
   var cesium3dCityPadua = new WebMap3DCityDBKmlLayer(webMap3DCityDBKml, "data/kml/padua-5/", "padua", "https://www.google.com/fusiontables/DataSource?docid=1UX5QFdWPOOztk5eS2WZY-6GBcJgf7farK80rit3h");
-  var switcherCesium3dCityPadua = new SwitcherItem("cesium", cesiumViewer3dCity, "cesium-3d-city-padua", "Padua", "kml", cesium3dCityPadua, [11.875266, 45.405584, 11.878439, 45.407605], 1000.0, undefined);
+  var switcherCesium3dCityPadua = new SwitcherItem("cesium", cesiumViewer3dCity, "cesium-3d-city-padua", "Padua", "kml", cesium3dCityPadua, [11.875266, 45.405584, 11.878439, 45.407605], 1000.0);
   switcherCesium3dCity.add(switcherCesium3dCityPadua);
 
   var cesium3dCityNaples = new WebMap3DCityDBKmlLayer(webMap3DCityDBKml, "data/kml/naples-3/", "naples", "https://www.google.com/fusiontables/DataSource?docid=1Ip9wT8FDkXquverJV8TPrj1WvuGfei70iK9QmAED");
-  var switcherCesium3dCityNaples = new SwitcherItem("cesium", cesiumViewer3dCity, "cesium-3d-city-naples", "Naples", "kml", cesium3dCityNaples, [14.264500, 40.848800, 14.271250, 40.855650], 1000.0, undefined);
+  var switcherCesium3dCityNaples = new SwitcherItem("cesium", cesiumViewer3dCity, "cesium-3d-city-naples", "Naples", "kml", cesium3dCityNaples, [14.264500, 40.848800, 14.271250, 40.855650], 1000.0);
   switcherCesium3dCity.add(switcherCesium3dCityNaples);
 
   var cesium3dCityTurin = new WebMap3DCityDBKmlLayer(webMap3DCityDBKml, "data/kml/turin-2/", "turin", "https://www.google.com/fusiontables/DataSource?docid=1EkUJ9EEQZEySRryeM8z23KWXPuUzlkSPYL6SzzOW");
-  var switcherCesium3dCityTurin = new SwitcherItem("cesium", cesiumViewer3dCity, "cesium-3d-city-turin", "Turin", "kml", cesium3dCityTurin, [7.682760, 45.069900, 7.689320, 45.072350], 1000.0, undefined);
+  var switcherCesium3dCityTurin = new SwitcherItem("cesium", cesiumViewer3dCity, "cesium-3d-city-turin", "Turin", "kml", cesium3dCityTurin, [7.682760, 45.069900, 7.689320, 45.072350], 1000.0);
   switcherCesium3dCity.add(switcherCesium3dCityTurin);
 
   var layerListCesium3dCity = new LayerList("cesium-3d-city", "layer-list-cesium-3d-city");
@@ -273,14 +273,14 @@ require(["jquery",
     url: "https://ugbd.get-it.it/proxy/image2/https://ugbd.get-it.it/geoserver/wms?transparent=TRUE&format=image/png",
     layers: "geonode:NAPOLI_DEFORMAZIONE_MAP"
   });
-  var deformationNaplesImageMosaic = new ImageMosaic(cesiumViewerDeformation, "https://ugbd.get-it.it/proxy/wmts/http://ugbd-geoserver.get-it.it/geoserver/gwc/service/wmts", "DeformationTS:imagenapolirealcolors", ["1992-06-08", "1992-11-30", "1993-12-20", "1995-12-14", "1996-11-28", "1997-12-18", "1998-12-03", "1999-12-23", "2000-12-07", "2001-09-13", "2002-12-12", "2003-11-27", "2004-11-11", "2005-12-01", "2006-12-21", "2007-12-06", "2008-12-25", "2009-12-10", "2010-09-16"], [14.05072, 40.82471, 14.30817, 40.91915], undefined);
+  var deformationNaplesImageMosaic = new ImageMosaic(cesiumViewerDeformation, "https://ugbd.get-it.it/proxy/wmts/http://ugbd-geoserver.get-it.it/geoserver/gwc/service/wmts", "DeformationTS:imagenapolirealcolors", ["1992-06-08", "1992-11-30", "1993-12-20", "1995-12-14", "1996-11-28", "1997-12-18", "1998-12-03", "1999-12-23", "2000-12-07", "2001-09-13", "2002-12-12", "2003-11-27", "2004-11-11", "2005-12-01", "2006-12-21", "2007-12-06", "2008-12-25", "2009-12-10", "2010-09-16"], [14.05072, 40.82471, 14.30817, 40.91915]);
   var deformationNaples = {switcherText: "Naples", meanProvider: deformationNaplesMeanProvider, meanLayer: undefined, imageMosaic: deformationNaplesImageMosaic, cumulativeLayer: undefined};
 
   var deformationMilanMeanProvider = new Cesium.WebMapServiceImageryProvider({
     url: "https://ugbd.get-it.it/proxy/image2/https://ugbd.get-it.it/geoserver/wms?transparent=TRUE&format=image/png",
     layers: "geonode:MILANO_DEFORMAZIONE_MAP"
   });
-  var deformationMilanImageMosaic = new ImageMosaic(cesiumViewerDeformation, "https://ugbd.get-it.it/proxy/wmts/http://ugbd-geoserver.get-it.it/geoserver/gwc/service/wmts", "DeformationTS:milanowmts", ["1993-05-01", "1995-04-24", "1995-12-26", "1996-08-27", "1997-12-30", "1998-12-15", "1999-11-30", "2000-12-19", "2001-09-25", "2002-12-24", "2003-12-09", "2004-11-23", "2005-11-08", "2006-11-28", "2007-12-18", "2008-12-02", "2009-11-17", "2010-09-28"], [9.09069, 45.30822, 9.6169, 45.58249], undefined);
+  var deformationMilanImageMosaic = new ImageMosaic(cesiumViewerDeformation, "https://ugbd.get-it.it/proxy/wmts/http://ugbd-geoserver.get-it.it/geoserver/gwc/service/wmts", "DeformationTS:milanowmts", ["1993-05-01", "1995-04-24", "1995-12-26", "1996-08-27", "1997-12-30", "1998-12-15", "1999-11-30", "2000-12-19", "2001-09-25", "2002-12-24", "2003-12-09", "2004-11-23", "2005-11-08", "2006-11-28", "2007-12-18", "2008-12-02", "2009-11-17", "2010-09-28"], [9.09069, 45.30822, 9.6169, 45.58249]);
   var deformationMilan = {switcherText: "Milan", meanProvider: deformationMilanMeanProvider, meanLayer: undefined, imageMosaic: deformationMilanImageMosaic, cumulativeLayer: undefined};
 
   var deformationCities = [deformationNaples, deformationMilan];
@@ -290,10 +290,10 @@ require(["jquery",
 
   var switcherDeformation = new Switcher("cesium-deformation", "switcher-deformation", "location");
 
-  var switcherDeformationMilan = new SwitcherItem("cesium", cesiumViewerDeformation, "deformation-milan", "Milan", undefined, undefined, [9.04284, 45.3871, 9.27791, 45.536], 40000.0, undefined);
+  var switcherDeformationMilan = new SwitcherItem("cesium", cesiumViewerDeformation, "deformation-milan", "Milan", undefined, undefined, [9.09069, 45.30822, 9.6169, 45.58249], 60000.0);
   switcherDeformation.add(switcherDeformationMilan);
 
-  var switcherDeformationNaples = new SwitcherItem("cesium", cesiumViewerDeformation, "deformation-naples", "Naples", undefined, undefined, [14.05072, 40.82471, 14.30817, 40.91915], 40000.0, undefined);
+  var switcherDeformationNaples = new SwitcherItem("cesium", cesiumViewerDeformation, "deformation-naples", "Naples", undefined, undefined, [14.05072, 40.82471, 14.30817, 40.91915], 30000.0);
   switcherDeformation.add(switcherDeformationNaples);
 
   var layerListDeformation = new LayerList("cesium-deformation", "layer-list-deformation");
@@ -321,19 +321,19 @@ require(["jquery",
 
   var switcherLulc = new Switcher("cesium-lulc", "switcher-lulc");
 
-  var switcherLulcMilan = new SwitcherItem("cesium", cesiumViewerLulc, "lulc-milan", "Milan", undefined, undefined, [9.04284, 45.3871, 9.27791, 45.536], 40000.0, undefined);
+  var switcherLulcMilan = new SwitcherItem("cesium", cesiumViewerLulc, "lulc-milan", "Milan", undefined, undefined, [9.04284, 45.3871, 9.27791, 45.536], 40000.0);
   switcherLulc.add(switcherLulcMilan);
 
-  var switcherLulcPadua = new SwitcherItem("cesium", cesiumViewerLulc, "lulc-padua", "Padua", undefined, undefined, [11.8054, 45.34, 11.976, 45.4575], 40000.0, undefined);
+  var switcherLulcPadua = new SwitcherItem("cesium", cesiumViewerLulc, "lulc-padua", "Padua", undefined, undefined, [11.8054, 45.34, 11.976, 45.4575], 40000.0);
   switcherLulc.add(switcherLulcPadua);
 
-  var switcherLulcRome = new SwitcherItem("cesium", cesiumViewerLulc, "lulc-rome", "Rome", undefined, undefined, [12.2342, 41.6555, 12.8558, 42.141], 40000.0, undefined);
+  var switcherLulcRome = new SwitcherItem("cesium", cesiumViewerLulc, "lulc-rome", "Rome", undefined, undefined, [12.2342, 41.6555, 12.8558, 42.141], 40000.0);
   switcherLulc.add(switcherLulcRome);
 
-  var switcherLulcNaples = new SwitcherItem("cesium", cesiumViewerLulc, "lulc-naples", "Naples", undefined, undefined, [14.1367, 40.7912, 14.3537, 40.915], 40000.0, undefined);
+  var switcherLulcNaples = new SwitcherItem("cesium", cesiumViewerLulc, "lulc-naples", "Naples", undefined, undefined, [14.1367, 40.7912, 14.3537, 40.915], 40000.0);
   switcherLulc.add(switcherLulcNaples);
 
-  var switcherLulcTurin = new SwitcherItem("cesium", cesiumViewerLulc, "lulc-turin", "Turin", undefined, undefined, [7.57783, 45.008, 7.77271, 45.1402], 40000.0, undefined);
+  var switcherLulcTurin = new SwitcherItem("cesium", cesiumViewerLulc, "lulc-turin", "Turin", undefined, undefined, [7.57783, 45.008, 7.77271, 45.1402], 40000.0);
   switcherLulc.add(switcherLulcTurin);
 
   var layerListLulc = new LayerList("cesium-lulc", "layer-list-lulc");
@@ -421,6 +421,19 @@ require(["jquery",
     }
   });
 
+  function styleLegend() {
+    if ($("#cesium-deformation .legend").is(":visible")) {
+      if ($("#cesium-deformation .legend").prop("scrollHeight")+126 > $(window).height()) {
+        $("#cesium-deformation .legend").css("height", $(window).height()-126 + "px");
+        $("#cesium-deformation .legend").css("width", $("#cesium-deformation .legend img").width()+10 + "px");
+      }
+      else {
+        $("#cesium-deformation .legend").css("height", "auto");
+        $("#cesium-deformation .legend").css("width", "auto");
+      }
+    }
+  }
+
   function getByValue(array, value) {
     for (var i=0; i<array.length; i++) {
       if (array[i].switcherText == value)
@@ -451,13 +464,21 @@ require(["jquery",
     cesiumViewerDeformation.timeline.zoomTo(now, stop);
   }
 
+  var legendDeformationMean = $("<div></div>");
+  legendDeformationMean.attr("id", "legend-deformation-mean");
+  legendDeformationMean.addClass("legend");
+  var legendDeformationMeanImage = $("<img>");
+  legendDeformationMeanImage.attr("src", "images/legends/deformation.png");
+  legendDeformationMean.append(legendDeformationMeanImage);
+
   $("#switcher-deformation-menu .dropdown-item").click(function() {
-    $("#deformation-mean").css("opacity", "0.6");
-    $("#deformation-cumulative").css("opacity", "0.6");
     setTimeout(function() {
       $("#deformation-mean").css("left", $("#switcher-deformation-menu-button").width()+48 + "px");
       $("#deformation-cumulative").css("left", $("#switcher-deformation-menu-button").width()+116 + "px");
     }, 100);
+    $("#deformation-mean").css("opacity", "0.6");
+    $("#deformation-cumulative").css("opacity", "0.6");
+    $("#cesium-deformation #legend-deformation-mean").remove();
     removeOverlayLayers();
     resetClockAndTimeline();
   });
@@ -467,11 +488,16 @@ require(["jquery",
     if (deformationCity != undefined) {
       if ($("#deformation-mean").css("opacity") == 1.0) {
         $("#deformation-mean").css("opacity", "0.6");
+        $("#cesium-deformation #legend-deformation-mean").remove();
         cesiumViewerDeformation.imageryLayers.remove(deformationCity.meanLayer);
       }
       else {
-        $("#deformation-cumulative").css("opacity", "0.6");
         $("#deformation-mean").css("opacity", "1.0");
+        $("#deformation-cumulative").css("opacity", "0.6");
+        $("#cesium-deformation").append(legendDeformationMean);
+        setTimeout(function() {
+          styleLegend();
+        }, 100);
         if (deformationCity.cumulativeLayer != undefined)
           cesiumViewerDeformation.imageryLayers.remove(deformationCity.cumulativeLayer);
         deformationCity.meanLayer = cesiumViewerDeformation.imageryLayers.addImageryProvider(deformationCity.meanProvider);
@@ -491,6 +517,7 @@ require(["jquery",
       else {
         $("#deformation-mean").css("opacity", "0.6");
         $("#deformation-cumulative").css("opacity", "1.0");
+        $("#cesium-deformation #legend-deformation-mean").remove();
         if (deformationCity.meanLayer != undefined)
           cesiumViewerDeformation.imageryLayers.remove(deformationCity.meanLayer);
         deformationCity.cumulativeLayer = cesiumViewerDeformation.imageryLayers.addImageryProvider(deformationCity.imageMosaic.imageryProvider);
@@ -623,10 +650,10 @@ require(["jquery",
     styleLightbox(".project-attribution-lightbox-overlay");
     styleLightbox("#vgi-attribution-lightbox-overlay");
     layerListCesium3dCity.styleLayerList();
-    switcherDeformation.styleLegend();
     layerListDeformation.styleLayerList();
     layerListLulc.styleLegend();
     layerListLulc.styleLayerList();
+    styleLegend();
   });
 
   $("#window").on("click", ".first-level-title", function(event) {
