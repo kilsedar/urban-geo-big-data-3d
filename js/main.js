@@ -489,7 +489,7 @@ require(["jquery",
   legendDeformationMean.attr("id", "legend-deformation-mean");
   legendDeformationMean.addClass("legend");
   var legendDeformationMeanImage = $("<img>");
-  legendDeformationMeanImage.attr("src", "images/legends/deformation.png");
+  legendDeformationMeanImage.attr("src", "images/legends/deformation-mean.png");
   legendDeformationMean.append(legendDeformationMeanImage);
 
   $("#switcher-deformation-menu .dropdown-item").click(function() {
