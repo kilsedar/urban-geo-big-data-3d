@@ -1,12 +1,13 @@
 define([], function () {
   "use strict";
 
-  var ImageMosaic = function (viewer, url, layerName, dates, boundingBox) {
+  var ImageMosaic = function (viewer, url, layerName, dates, boundingBox, timelineMultiplier) {
     this.viewer = viewer;
     this.url = url;
     this.layerName = layerName;
     this.dates = dates;
     this.boundingBox = boundingBox;
+    this.timelineMultiplier = timelineMultiplier;
     this.imageryProvider;
 
     var rectangle = Cesium.Rectangle.fromDegrees(this.boundingBox[0], this.boundingBox[1], this.boundingBox[2], this.boundingBox[3]);
@@ -52,8 +53,8 @@ define([], function () {
     clock.currentTime = start;
     clock.startTime = start;
     clock.stopTime = stop;
-    clock.multiplier = 86400*8;
-    clock.clockRange = Cesium.ClockRange.CLAMPED;
+    clock.multiplier = this.timelineMultiplier;
+    clock.clockRange = Cesium.ClockRange.UNBOUNDED;
     clock.clockStep = Cesium.ClockStep.TICK_DEPENDENT;
 
     this.viewer.timeline.zoomTo(start, stop);

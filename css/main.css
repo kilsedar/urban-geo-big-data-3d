@@ -139,13 +139,13 @@ hr {
   display: none;
 }
 
-#top-section-nasa-image {
+#header-nasa-image {
   height: 24px;
   width: auto;
   vertical-align: middle;
 }
 
-#top-section-cesium-image {
+#header-cesium-image {
   height: 24px;
   width: auto;
   vertical-align: middle;
@@ -244,7 +244,7 @@ hr {
   left: 7px;
 }
 
-.section {
+.use-case-button {
   position: absolute;
   z-index: 100;
   top: 0px;

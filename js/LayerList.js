@@ -1,11 +1,13 @@
 define(["jquery"], function ($) {
   "use strict";
 
-  /* This class is written for Cesium only. */
-  var LayerList = function (viewerContainerId, id) {
-    this.items = [];
-    this.viewerContainerId = viewerContainerId;
+  /* This class is written for CesiumJS only. */
+  var LayerList = function (useCase, id) {
+    this.useCase = useCase;
     this.id = id;
+    this.viewer = useCase.viewer;
+    this.viewerContainerId = this.useCase.viewerContainerId;
+    this.items = [];
 
     var layerList = $("<div></div>");
     layerList.attr("id", this.id);
@@ -15,7 +17,7 @@ define(["jquery"], function ($) {
 
     var _self = this;
 
-    $("#"+this.viewerContainerId+"-section").click(function() {
+    $("#"+this.useCase.id).click(function() {
       setTimeout(function() {
         _self.styleLayerList();
       }, 100);
@@ -68,7 +70,7 @@ define(["jquery"], function ($) {
       }, 100);
 
       /* For the times the layer is added by default. */
-      $("#"+this.viewerContainerId+"-section").click(function() {
+      $("#"+this.useCase.id).click(function() {
         setTimeout(function() {
           _self.styleLegend();
         }, 100);
@@ -113,8 +115,7 @@ define(["jquery"], function ($) {
       input.prop("checked", true);
       if (layerListItem.type == "overlay") {
         this.addLegend(layerListItem);
-        var imageryLayer = layerListItem.viewer.imageryLayers.addImageryProvider(layerListItem.imageryProvider);
-        layerListItem.imageryLayer = imageryLayer;
+        this.viewer.imageryLayers.add(layerListItem.layer);
       }
     }
 
@@ -137,26 +138,45 @@ define(["jquery"], function ($) {
         if ($("#"+_self.viewerContainerId+" .legend").length > 0)
           $("#"+_self.viewerContainerId+" .legend").remove();
         _self.addLegend(layerListItem);
-        var imageryLayer = layerListItem.viewer.imageryLayers.addImageryProvider(layerListItem.imageryProvider);
-        layerListItem.imageryLayer = imageryLayer;
+        if (layerListItem.layer.constructor.name == "ImageMosaic") {
+          layerListItem.imageMosaicImageryLayer = new Cesium.ImageryLayer(layerListItem.layer.imageryProvider)
+          _self.viewer.imageryLayers.add(layerListItem.imageMosaicImageryLayer);
+          layerListItem.layer.setClockAndTimeline();
+        }
+        else {
+          _self.viewer.imageryLayers.add(layerListItem.layer);
+          _self.useCase.resetClockAndTimeline();
+        }
       }
       else if ($("#"+layerListItem.id+"-input").attr("type") == "checkbox" && $("#"+layerListItem.id+"-input").is(":checked") == false) {
         $("#"+_self.viewerContainerId+" #legend-"+layerListItem.id).remove();
-        layerListItem.viewer.imageryLayers.remove(layerListItem.imageryLayer);
-        var layerOnTop = layerListItem.viewer.imageryLayers.get(layerListItem.viewer.imageryLayers.length-1);
+        if (layerListItem.layer.constructor.name == "ImageMosaic") {
+          _self.viewer.imageryLayers.remove(layerListItem.imageMosaicImageryLayer);
+        }
+        else {
+          _self.viewer.imageryLayers.remove(layerListItem.layer, false);
+        }
+        var layerOnTop = _self.viewer.imageryLayers.get(_self.viewer.imageryLayers.length-1);
         if (layerOnTop.isBaseLayer() == false) {
           for (var i=0; i<_self.items.length; i++) {
-            if (_self.items[i].imageryProvider == layerOnTop._imageryProvider)
+            if (_self.items[i].layer.imageryProvider == layerOnTop._imageryProvider) {
               _self.addLegend(_self.items[i]);
+              if (_self.items[i].layer.constructor.name == "ImageMosaic")
+                _self.items[i].layer.setClockAndTimeline();
+              else
+                _self.useCase.resetClockAndTimeline();
+            }
           }
         }
+        else
+          _self.useCase.resetClockAndTimeline();
       }
       else {
-        for (var i=0; i<layerListItem.viewer.imageryLayers.length; i++) {
-          if (layerListItem.viewer.imageryLayers._layers[i].isBaseLayer() == true)
-            layerListItem.viewer.imageryLayers.remove(layerListItem.viewer.imageryLayers._layers[i]);
+        for (var i=0; i<_self.viewer.imageryLayers.length; i++) {
+          if (_self.viewer.imageryLayers._layers[i].isBaseLayer() == true)
+            _self.viewer.imageryLayers.remove(_self.viewer.imageryLayers._layers[i], false);
         }
-        layerListItem.viewer.imageryLayers.addImageryProvider(layerListItem.imageryProvider, 0);
+        _self.viewer.imageryLayers.add(layerListItem.layer, 0);
       }
     });
   };

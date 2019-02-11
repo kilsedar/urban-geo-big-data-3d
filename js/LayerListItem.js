@@ -1,15 +1,15 @@
 define([], function () {
   "use strict";
 
-  var LayerListItem = function (viewer, id, text, inputChecked, type, imageryProvider, legend) {
-    this.viewer = viewer;
+  /* "layer" can be an ImageryLayer of CesiumJS or ImageMosaic. */
+  var LayerListItem = function (id, text, inputChecked, type, layer, legend) {
     this.id = id;
     this.text = text;
     this.inputChecked = inputChecked;
     this.type = type;
-    this.imageryProvider = imageryProvider;
+    this.layer = layer;
     this.legend = legend;
-    this.imageryLayer;
+    this.imageMosaicImageryLayer;
   };
 
   return LayerListItem;
