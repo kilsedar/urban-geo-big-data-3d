@@ -4,13 +4,17 @@ require.config({
     "jquery": "vendor/jquery-3.3.1.min",
     "bootstrap": "vendor/bootstrap-4.1.0-dist/js/bootstrap.bundle.min",
     "ispraLandCoverLegend": "images/legends/ispraLandCover",
-    "glc30Legend": "images/legends/glc30"
+    "glc30Legend": "images/legends/glc30",
+    "milanFloodRiskLegend": "images/legends/milanFloodRisk"
   },
   shim: {
     "ispraLandCoverLegend": {
         "deps": ["jquery"]
     },
     "glc30Legend": {
+        "deps": ["jquery"]
+    },
+    "milanFloodRiskLegend": {
         "deps": ["jquery"]
     }
   }
@@ -30,14 +34,14 @@ require(["jquery",
         "js/LandCoverJson",
         "js/WmsDeformationPlot",
         "ispraLandCoverLegend",
-        "glc30Legend"],
+        "glc30Legend",
+        "milanFloodRiskLegend"],
        function ($, OSMBuildingLayer, Header, UseCase, Switcher, SwitcherItem, LayerList, LayerListItem, ImageMosaic, WebMap3DCityDBKml, WebMap3DCityDBKmlLayer, LandCoverJson, WmsDeformationPlot) {
   "use strict";
 
   var worldWindViewer3dCity = new WorldWind.WorldWindow("world-wind-3d-city-canvas");
   worldWindViewer3dCity.navigator.lookAtLocation = new WorldWind.Location(41, 12);
   worldWindViewer3dCity.navigator.range = 22e6;
-  worldWindViewer3dCity.addLayer(new WorldWind.BMNGOneImageLayer());
   worldWindViewer3dCity.addLayer(new WorldWind.BingAerialLayer());
   worldWindViewer3dCity.addLayer(new WorldWind.ViewControlsLayer(worldWindViewer3dCity));
   var starFieldLayer = new WorldWind.StarFieldLayer();
@@ -61,12 +65,6 @@ require(["jquery",
   var mapboxSatelliteStreetsProvider = new Cesium.MapboxImageryProvider({
     mapId: "mapbox.streets-satellite",
     accessToken: "pk.eyJ1IjoidWdiZCIsImEiOiJjam5lZW5xbmMwNzF6M3dwZDFzZ2ZmMTM5In0.vDfccM2WaIyP4vnBN3iB9g"
-  });
-
-  /* A Planet basic Web service subscription entitles the subscriber to 500000 map views per month. (https://support.planet.com/hc/en-us/articles/115005684567-What-is-a-map-view) */
-  var planetProvider = new Cesium.UrlTemplateImageryProvider({
-    url: "https://tiles1.planet.com/basemaps/v1/planet-tiles/global_quarterly_2018q3_mosaic/gmap/{z}/{x}/{y}.png?api_key=8fa5cef043064eafa378ce313e69f8fc",
-    credit: "Image courtesy of <a href='https://www.planet.com/'>Planet Labs, Inc.</a>"
   });
 
   /* OSM tile servers are not free of charge, however access to them is permitted as long as minimum requirements are met: https://operations.osmfoundation.org/policies/tiles/. */
@@ -133,6 +131,10 @@ require(["jquery",
 
   var cesiumViewer3dCity = new Cesium.Viewer("cesium-3d-city", {
     imageryProvider: bingAerialProvider,
+    // terrainProvider: terrainProvider,
+    terrainProvider: new Cesium.CesiumTerrainProvider({
+      url: "http://localhost:8081/tilesets/dtm"
+    }),
     skyBox: skyBox3dCity,
     baseLayerPicker: false,
     geocoder: false,
@@ -144,6 +146,8 @@ require(["jquery",
   cesiumViewer3dCity.clock.multiplier = 3600;
   cesiumViewer3dCity.shadowMap.normalOffset = false;
   cesiumViewer3dCity.shadowMap.maximumDistance = 3000;
+  cesiumViewer3dCity.scene.logarithmicDepthBuffer = false;
+  cesiumViewer3dCity.scene.globe.depthTestAgainstTerrain = true;
 
   var cesiumViewerDeformation = new Cesium.Viewer("cesium-deformation", {
     imageryProvider: cartoDarkProvider,
@@ -251,9 +255,44 @@ require(["jquery",
   webMap3DCityDB.activateMouseClickEvents(true);
   var webMap3DCityDBKml = new WebMap3DCityDBKml(webMap3DCityDB);
 
-  var cesium3dCityMilan = new WebMap3DCityDBKmlLayer(webMap3DCityDBKml, "data/kml/milan-7/", "milan", "https://www.google.com/fusiontables/DataSource?docid=1U0KZDo6d7lOvrZYI56SzlRu0ggdV9sqdWQYSwJEg");
+  var cesium3dCityMilan = new WebMap3DCityDBKmlLayer(webMap3DCityDBKml, "data/kml/milan-8/", "milan", "https://www.google.com/fusiontables/DataSource?docid=1U0KZDo6d7lOvrZYI56SzlRu0ggdV9sqdWQYSwJEg");
   var switcherCesium3dCityMilan = new SwitcherItem("cesium", cesiumViewer3dCity, "cesium-3d-city-milan", "Milan", "kml", cesium3dCityMilan, [9.189000, 45.462144, 9.194527, 45.466475], 1000.0);
   switcherCesium3dCity.add(switcherCesium3dCityMilan);
+
+  var milanBoundingBox = [8.71242903075098, 45.16242044888892, 0,
+                          9.55105313254215, 45.16242044888892, 0,
+                          9.55105313254215, 45.6376701796332, 0,
+                          8.71242903075098, 45.6376701796332, 0];
+
+  var water = new Cesium.Entity({
+    polygon: {
+      hierarchy: Cesium.Cartesian3.fromDegreesArrayHeights(milanBoundingBox),
+      extrudedHeight: 30,
+      material: Cesium.Color.LIGHTSKYBLUE.withAlpha(0.8),
+      vertexFormat: Cesium.EllipsoidSurfaceAppearance.VERTEX_FORMAT,
+    }
+  });
+
+  var viewModel = {height: 30};
+  var tableWaterHeight = document.getElementById("table-water-height");
+  Cesium.knockout.track(viewModel);
+  Cesium.knockout.applyBindings(viewModel, tableWaterHeight);
+  Cesium.knockout.getObservable(viewModel, "height").subscribe(
+    function (newHeight) {
+      water.polygon.extrudedHeight = newHeight;
+    }
+  );
+
+  var floodRiskMilanProvider = new Cesium.WebMapTileServiceImageryProvider({
+    url: "http://localhost:8080/geoserver/gwc/service/wmts",
+    layer: "ugbd:flood_risk_milan",
+    style: "ugbd:flood_risk_milan",
+    format: "image/png",
+    tileMatrixSetID: "EPSG:900913",
+    tileMatrixLabels: ["EPSG:900913:0", "EPSG:900913:1", "EPSG:900913:2", "EPSG:900913:3", "EPSG:900913:4", "EPSG:900913:5", "EPSG:900913:6", "EPSG:900913:7", "EPSG:900913:8", "EPSG:900913:9", "EPSG:900913:10", "EPSG:900913:11", "EPSG:900913:12", "EPSG:900913:13", "EPSG:900913:14", "EPSG:900913:15", "EPSG:900913:16", "EPSG:900913:17", "EPSG:900913:18", "EPSG:900913:19", "EPSG:900913:20", "EPSG:900913:21", "EPSG:900913:22", "EPSG:900913:23", "EPSG:900913:24", "EPSG:900913:25", "EPSG:900913:26", "EPSG:900913:27", "EPSG:900913:28", "EPSG:900913:29", "EPSG:900913:30"],
+    rectangle: Cesium.Rectangle.fromDegrees(8.71242903075098, 45.16242044888892, 9.55105313254215, 45.6376701796332)
+  });
+  var floodRiskMilan = new Cesium.ImageryLayer(floodRiskMilanProvider);
 
   var cesium3dCityPadua = new WebMap3DCityDBKmlLayer(webMap3DCityDBKml, "data/kml/padua-5/", "padua", "https://www.google.com/fusiontables/DataSource?docid=1UX5QFdWPOOztk5eS2WZY-6GBcJgf7farK80rit3h");
   var switcherCesium3dCityPadua = new SwitcherItem("cesium", cesiumViewer3dCity, "cesium-3d-city-padua", "Padua", "kml", cesium3dCityPadua, [11.875266, 45.405584, 11.878439, 45.407605], 1000.0);
@@ -274,9 +313,6 @@ require(["jquery",
 
   var layerListCesium3dCityMapboxSatelliteStreets = new LayerListItem("cesium-3d-city-mapbox-satellite-streets", "Mapbox Satellite Streets", false, "basemap", new Cesium.ImageryLayer(mapboxSatelliteStreetsProvider), undefined);
   layerListCesium3dCity.add(layerListCesium3dCityMapboxSatelliteStreets);
-
-  var layerListCesium3dCityPlanet = new LayerListItem("cesium-3d-city-planet", "Planet", false, "basemap", new Cesium.ImageryLayer(planetProvider), undefined);
-  layerListCesium3dCity.add(layerListCesium3dCityPlanet);
 
   var layerListCesium3dCityOsm = new LayerListItem("cesium-3d-city-osm", "OpenStreetMap", false, "basemap", new Cesium.ImageryLayer(osmProvider), undefined);
   layerListCesium3dCity.add(layerListCesium3dCityOsm);
@@ -325,9 +361,6 @@ require(["jquery",
   var layerListDeformationMapboxSatelliteStreets = new LayerListItem("deformation-mapbox-satellite-streets", "Mapbox Satellite Streets", false, "basemap", new Cesium.ImageryLayer(mapboxSatelliteStreetsProvider), undefined);
   layerListDeformation.add(layerListDeformationMapboxSatelliteStreets);
 
-  var layerListDeformationPlanet = new LayerListItem("deformation-planet", "Planet", false, "basemap", new Cesium.ImageryLayer(planetProvider), undefined);
-  layerListDeformation.add(layerListDeformationPlanet);
-
   var layerListDeformationOsm = new LayerListItem("deformation-osm", "OpenStreetMap", false, "basemap", new Cesium.ImageryLayer(osmProvider), undefined);
   layerListDeformation.add(layerListDeformationOsm);
 
@@ -364,9 +397,6 @@ require(["jquery",
 
   var layerListLulcMapboxSatelliteStreets = new LayerListItem("lulc-mapbox-satellite-streets", "Mapbox Satellite Streets", false, "basemap", new Cesium.ImageryLayer(mapboxSatelliteStreetsProvider), undefined);
   layerListLulc.add(layerListLulcMapboxSatelliteStreets);
-
-  var layerListLulcPlanet = new LayerListItem("lulc-planet", "Planet", false, "basemap", new Cesium.ImageryLayer(planetProvider), undefined);
-  layerListLulc.add(layerListLulcPlanet);
 
   var layerListLulcOsm = new LayerListItem("lulc-osm", "OpenStreetMap", false, "basemap", new Cesium.ImageryLayer(osmProvider), undefined);
   layerListLulc.add(layerListLulcOsm);
@@ -441,13 +471,24 @@ require(["jquery",
 
   function styleLegend() {
     if ($("#cesium-deformation .legend").is(":visible")) {
-      if ($("#cesium-deformation .legend").prop("scrollHeight")+126 > $(window).height()) {
-        $("#cesium-deformation .legend").css("height", $(window).height()-126 + "px");
+      if ($("#cesium-deformation .legend").prop("scrollHeight")+130 > $(window).height()) {
+        $("#cesium-deformation .legend").css("height", $(window).height()-130 + "px");
         $("#cesium-deformation .legend").css("width", $("#cesium-deformation .legend img").width()+10 + "px");
       }
       else {
         $("#cesium-deformation .legend").css("height", "auto");
         $("#cesium-deformation .legend").css("width", "auto");
+      }
+    }
+    else if ($("#cesium-3d-city .legend").is(":visible")) {
+      if ($("#cesium-3d-city .legend").prop("scrollHeight")+176 > $(window).height()) {
+        $("#cesium-3d-city .legend").css("height", $(window).height()-176 + "px");
+        $("#cesium-3d-city .legend").css("width", "auto");
+        $("#cesium-3d-city .legend").css("width", $("#cesium-3d-city .legend").width()+22+"px");
+      }
+      else {
+        $("#cesium-3d-city .legend").css("height", "auto");
+        $("#cesium-3d-city .legend").css("width", "auto");
       }
     }
   }
@@ -527,6 +568,25 @@ require(["jquery",
         deformationCity.imageMosaic.setClockAndTimeline();
       }
     }
+  });
+
+  $("#cesium-3d-city-milan").click(function() {
+    $("#table-water-height").css("visibility", "visible");
+    if (!cesiumViewer3dCity.imageryLayers.contains(floodRiskMilan))
+      cesiumViewer3dCity.imageryLayers.add(floodRiskMilan);
+    if (!cesiumViewer3dCity.entities.contains(water))
+      cesiumViewer3dCity.entities.add(water);
+    $("#cesium-3d-city").append(milanFloodRiskLegend);
+    setTimeout(function() {
+      styleLegend();
+    }, 100);
+  });
+
+  $("#cesium-3d-city-padua, #cesium-3d-city-naples, #cesium-3d-city-turin").click(function() {
+    $("#table-water-height").css("visibility", "hidden");
+    cesiumViewer3dCity.imageryLayers.remove(floodRiskMilan, false);
+    cesiumViewer3dCity.entities.remove(water);
+    milanFloodRiskLegend.remove();
   });
 
   function styleLightbox(selector) {

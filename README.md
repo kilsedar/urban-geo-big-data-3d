@@ -45,4 +45,4 @@ The VGI land cover data is collected using <a href="https://github.com/kilsedar/
 <p align="center"><img src="images/screenshots/vgi-lulc.png" width="600"></p>
 
 ## Acknowledgments
-URBAN GEO BIG DATA is a <a href="http://prin.miur.it/">Project of National Interest (PRIN)</a>, funded by the <a href="http://www.miur.gov.it/web/guest/home">Italian Ministry of Education, University and Research (MIUR)</a>―id 20159CNLW8.
+URBAN GEO BIG DATA is a <a href="http://prin.miur.it/">project of national interest (PRIN)</a>, funded by the <a href="http://www.miur.gov.it/web/guest/home">Italian Ministry of Education, University and Research (MIUR)</a>―id 20159CNLW8.

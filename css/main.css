@@ -215,6 +215,39 @@ hr {
   width: 330px;
 }
 
+#legend-milan-flood-risk {
+  top: 140px;
+}
+
+#legend-milan-flood-risk-title {
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+#table-water-height {
+  visibility: hidden;
+  z-index: 100;
+  position: absolute;
+  right: 8px;
+  top: 94px;
+  background-color: #303336;
+  color: #ffffff;
+}
+
+#table-water-height td {
+  padding: 4px;
+}
+
+#table-water-height input[type="range"] {
+  vertical-align: middle;
+}
+
+#table-water-height input[type="text"] {
+  background-color: #303336;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+}
+
 .project-attribution-link {
   left: 212px;
 }
@@ -240,8 +273,8 @@ hr {
 
 .switcher {
   position: absolute;
-  top: 50px;
-  left: 7px;
+  top: 52px;
+  left: 8px;
 }
 
 .use-case-button {
@@ -259,8 +292,8 @@ hr {
 
 .legend {
   position: absolute;
-  top: 90px;
-  right: 7px;
+  top: 94px;
+  right: 8px;
   overflow-y: auto;
   overflow-x: hidden;
   padding: 6px;
@@ -319,7 +352,7 @@ hr {
 .layer-list {
   position: absolute;
   top: 100px;
-  left: 7px;
+  left: 8px;
   overflow-y: auto;
   overflow-x: hidden;
   padding: 6px 12px;

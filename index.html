@@ -28,7 +28,17 @@
     <div id="world-wind-3d-city">
       <canvas id="world-wind-3d-city-canvas">Your browser does not support HTML5 Canvas.</canvas>
     </div>
-    <div id="cesium-3d-city"></div>
+    <div id="cesium-3d-city">
+      <table id="table-water-height">
+        <tr>
+          <td>Height [m]</td>
+          <td>
+            <input type="range" min="0" max="400" step="1" data-bind="value: height, valueUpdate: 'input'">
+            <input type="text" size="3" data-bind="value: height">
+          </td>
+        </tr>
+      </table>
+    </div>
     <div id="cesium-deformation">
       <button id="deformation-mean" class="btn btn-secondary" data-toggle="tooltip" title="Mean Deformation Velocity [cm/year]">Mean</button>
       <button id="deformation-cumulative" class="btn btn-secondary" data-toggle="tooltip" title="Animated Cumulative Deformation [cm/year]">Cumulative</button>

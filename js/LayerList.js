@@ -26,15 +26,15 @@ define(["jquery"], function ($) {
 
   LayerList.prototype.styleLegend = function () {
     if ($("#"+this.viewerContainerId+" .legend").is(":visible")) {
-      if ($("#"+this.viewerContainerId+" .legend").prop("scrollHeight")+126 > $(window).height()) {
-        $("#"+this.viewerContainerId+" .legend").css("height", $(window).height()-126 + "px");
-        $("#"+this.viewerContainerId+" .legend#legend-lulc-glc30").css("width", "auto");
-        $("#"+this.viewerContainerId+" .legend#legend-lulc-glc30").css("width", $("#"+this.id).width()+28+"px");
+      if ($("#"+this.viewerContainerId+" .legend").prop("scrollHeight")+130 > $(window).height()) {
+        $("#"+this.viewerContainerId+" .legend").css("height", $(window).height()-130 + "px");
+        $("#"+this.viewerContainerId+" .legend").css("width", "auto");
+        $("#"+this.viewerContainerId+" .legend#legend-lulc-glc30").css("width", $("#"+this.id).width()+22+"px");
+        $("#"+this.viewerContainerId+" .legend#legend-lulc-ispra-land-cover").css("width", "330px");
       }
       else {
         $("#"+this.viewerContainerId+" .legend").css("height", "auto");
         $("#"+this.viewerContainerId+" .legend").css("width", "auto");
-        $("#"+this.viewerContainerId+" .legend#legend-lulc-ispra-land-cover").css("width", "330px");
       }
     }
   };
@@ -139,7 +139,7 @@ define(["jquery"], function ($) {
           $("#"+_self.viewerContainerId+" .legend").remove();
         _self.addLegend(layerListItem);
         if (layerListItem.layer.constructor.name == "ImageMosaic") {
-          layerListItem.imageMosaicImageryLayer = new Cesium.ImageryLayer(layerListItem.layer.imageryProvider)
+          layerListItem.imageMosaicImageryLayer = new Cesium.ImageryLayer(layerListItem.layer.imageryProvider);
           _self.viewer.imageryLayers.add(layerListItem.imageMosaicImageryLayer);
           layerListItem.layer.setClockAndTimeline();
         }
