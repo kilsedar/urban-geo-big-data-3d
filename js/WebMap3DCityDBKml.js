@@ -6,7 +6,7 @@ define([], function () {
   };
 
   WebMap3DCityDBKml.prototype.subscribeUnhighlight = function (_self, viewer) {
-    var observable = Cesium.knockout.getObservable(viewer, '_selectedEntity');
+    var observable = Cesium.knockout.getObservable(viewer, "_selectedEntity");
     observable.subscribe(function(entity) {
       if (!Cesium.defined(entity)) {
         var layers = _self.webMap3DCityDB._layers;
@@ -81,15 +81,14 @@ define([], function () {
     cesiumEntity.description = "Loading feature information...";
 
     this.fetchDataFromGoogleFusionTable(gmlId, thematicDataUrl).then(function (kvp) {
-      var html = '<table class="cesium-infoBox-defaultTable" style="font-size:10.5pt"><tbody>';
+      var html = ""
       for (var key in kvp) {
-        html += '<tr><td>' + key + '</td><td>' + kvp[key] + '</td></tr>';
+        html += "<b>" + key + "</b>: " + kvp[key] + "<br>";
       }
-      html += '</tbody></table>';
 
       cesiumEntity.description = html;
     }).otherwise(function (error) {
-      cesiumEntity.description = 'No feature information found.';
+      cesiumEntity.description = "No feature information found."";
     });
   };
 
@@ -97,7 +96,7 @@ define([], function () {
     var kvp = {};
     var deferred = Cesium.when.defer();
 
-    var tableID = CitydbUtil.parse_query_string('docid', thematicDataUrl);
+    var tableID = CitydbUtil.parse_query_string("docid", thematicDataUrl);
     var sql = "SELECT * FROM " + tableID + " WHERE GMLID = '" + gmlId + "'";
     var apiKey = "AIzaSyAm9yWCV7JPCTHCJut8whOjARd7pwROFDQ";
 
