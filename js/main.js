@@ -414,6 +414,10 @@ require(["jquery",
   var layerListLulcGhs = new LayerListItem("lulc-ghs", "Global Human Settlement (1975, 1990, 2000, 2014)", false, "overlay", lulcGhsImageMosaic, undefined);
   layerListLulc.add(layerListLulcGhs);
 
+  var lulcIspraBuImageMosaic = new ImageMosaic(cesiumViewerLulc, "http://localhost:8080/geoserver/gwc/service/wmts", "ugbd:ispra_bu_mosaic", ["2012-01-01", "2015-01-01", "2016-01-01", "2017-01-01"], [6.538753580867903, 35.1492230912518, 20.043680683325675, 47.13620267234754], 2592000);
+  var layerListLulcIspraBu = new LayerListItem("lulc-ispra-bu", "ISPRA Built-up Area (2012, 2015, 2016, 2017)", false, "overlay", lulcIspraBuImageMosaic, undefined);
+  layerListLulc.add(layerListLulcIspraBu);
+
   var lulcGlc30ImageMosaic = new ImageMosaic(cesiumViewerLulc, "http://localhost:8080/geoserver/gwc/service/wmts", "ugbd:glc30_mosaic", ["2000-01-01", "2010-01-01"], [6.62743, 35.4930964524792, 18.5192301504127, 47.09175], 2592000);
   var layerListLulcGlc30 = new LayerListItem("lulc-glc30", "GlobeLand30 (2000, 2012)", false, "overlay", lulcGlc30ImageMosaic, glc30Legend);
   layerListLulc.add(layerListLulcGlc30);

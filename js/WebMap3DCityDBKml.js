@@ -88,7 +88,7 @@ define([], function () {
 
       cesiumEntity.description = html;
     }).otherwise(function (error) {
-      cesiumEntity.description = "No feature information found."";
+      cesiumEntity.description = "No feature information found.";
     });
   };
 
