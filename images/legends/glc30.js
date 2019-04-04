@@ -1,5 +1,5 @@
 var glc30Legend = $("<div></div>");
-glc30Legend.addClass("legend legend-JS");
+glc30Legend.addClass("legend");
 
 /***
 Artificial surface

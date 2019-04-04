@@ -1,5 +1,5 @@
 var ispraLandCoverLegend = $("<div></div>");
-ispraLandCoverLegend.addClass("legend legend-JS");
+ispraLandCoverLegend.addClass("legend");
 
 /***
 1000 (Artificial surfaces)

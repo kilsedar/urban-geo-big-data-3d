@@ -1,9 +1,9 @@
 var milanFloodRiskLegend = $("<div></div>");
 milanFloodRiskLegend.attr("id", "legend-milan-flood-risk");
-milanFloodRiskLegend.addClass("legend legend-JS");
+milanFloodRiskLegend.addClass("legend");
 
 var milanFloodRiskLegendTitle = $("<h6>Flood Risk</h6>");
-milanFloodRiskLegendTitle.attr("id", "legend-milan-flood-risk-title");
+milanFloodRiskLegendTitle.addClass("legend-title");
 milanFloodRiskLegend.append(milanFloodRiskLegendTitle);
 
 /***

@@ -34,11 +34,6 @@
   color: #ffffff !important;
 }
 
-/* .cesium-infoBox-close:active {
-  background-color: #aef !important;
-  color: #000000 !important;
-} */
-
 .cesium-credit-lightbox-close {
   padding: 2px 5px 0px 5px;
   font-size: 18px;
@@ -87,11 +82,6 @@
 .dropdown-toggle:hover {
   background-color: #48b;
 }
-
-/* .dropdown-toggle:active {
-  background-color: #aef !important;
-  color: #000000 !important;
-} */
 
 .dropdown-menu {
   min-width: inherit;
@@ -183,11 +173,6 @@ hr {
   background-color: #48b !important;
 }
 
-/* #lulc-vgi:active, #deformation-mean:active, #deformation-cumulative:active {
-  background-color: #aef;
-  color: #000000;
-} */
-
 #vgi-attribution-link {
   left: 296px;
 }
@@ -207,21 +192,41 @@ hr {
   width: 330px;
 }
 
-#legend-deformation-mean {
-  padding: 0px;
-}
-
-#legend-deformation-mean img {
-  width: 330px;
-}
-
 #legend-milan-flood-risk {
   top: 140px;
 }
 
-#legend-milan-flood-risk-title {
-  text-align: center;
-  margin-bottom: 6px;
+#legend-deformation-mean {
+  padding: 6px 2px 0px 12px;
+}
+
+#legend-deformation-mean .color-box {
+  width: 33px;
+  float: left;
+}
+
+#legend-text-minus-fifteen {
+  margin-left: -9px;
+}
+
+#legend-text-minus-eleven {
+  margin-left: 9px;
+}
+
+#legend-text-minus-seven, #legend-text-minus-three, #legend-text-plus-three {
+  margin-left: 16px;
+}
+
+#legend-text-minus-five {
+  margin-left: 14px;
+}
+
+#legend-text-minus-one {
+  margin-left: 15px;
+}
+
+#legend-text-plus-one, #legend-text-plus-two {
+  margin-left: 18px;
 }
 
 #table-water-height {
@@ -298,13 +303,15 @@ hr {
   overflow-x: hidden;
   padding: 6px;
   z-index: 100;
-}
-
-.legend-JS {
   background-color: rgba(255, 255, 255, 0.8);
   font-size: 14px;
   color: #303336;
   line-height: 1.8;
+}
+
+.legend-title {
+  text-align: center;
+  margin-bottom: 6px;
 }
 
 .legend .second-level {

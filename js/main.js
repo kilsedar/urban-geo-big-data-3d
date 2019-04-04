@@ -5,7 +5,8 @@ require.config({
     "bootstrap": "vendor/bootstrap-4.1.0-dist/js/bootstrap.bundle.min",
     "ispraLandCoverLegend": "images/legends/ispraLandCover",
     "glc30Legend": "images/legends/glc30",
-    "milanFloodRiskLegend": "images/legends/milanFloodRisk"
+    "milanFloodRiskLegend": "images/legends/milanFloodRisk",
+    "deformationMeanLegend": "images/legends/deformationMean",
   },
   shim: {
     "ispraLandCoverLegend": {
@@ -15,6 +16,9 @@ require.config({
         "deps": ["jquery"]
     },
     "milanFloodRiskLegend": {
+        "deps": ["jquery"]
+    },
+    "deformationMeanLegend": {
         "deps": ["jquery"]
     }
   }
@@ -35,7 +39,8 @@ require(["jquery",
         "js/WmsDeformationPlot",
         "ispraLandCoverLegend",
         "glc30Legend",
-        "milanFloodRiskLegend"],
+        "milanFloodRiskLegend",
+        "deformationMeanLegend"],
        function ($, OSMBuildingLayer, Header, UseCase, Switcher, SwitcherItem, LayerList, LayerListItem, ImageMosaic, WebMap3DCityDBKml, WebMap3DCityDBKmlLayer, LandCoverJson, WmsDeformationPlot) {
   "use strict";
 
@@ -476,8 +481,9 @@ require(["jquery",
   function styleLegend() {
     if ($("#cesium-deformation .legend").is(":visible")) {
       if ($("#cesium-deformation .legend").prop("scrollHeight")+130 > $(window).height()) {
-        $("#cesium-deformation .legend").css("height", $(window).height()-130 + "px");
-        $("#cesium-deformation .legend").css("width", $("#cesium-deformation .legend img").width()+10 + "px");
+        $("#cesium-deformation .legend").css("height", $(window).height()-130+"px");
+        $("#cesium-deformation .legend").css("width", "auto");
+        $("#cesium-deformation .legend").css("width", $("#cesium-deformation .legend").width()+24+"px");
       }
       else {
         $("#cesium-deformation .legend").css("height", "auto");
@@ -488,7 +494,7 @@ require(["jquery",
       if ($("#cesium-3d-city .legend").prop("scrollHeight")+176 > $(window).height()) {
         $("#cesium-3d-city .legend").css("height", $(window).height()-176 + "px");
         $("#cesium-3d-city .legend").css("width", "auto");
-        $("#cesium-3d-city .legend").css("width", $("#cesium-3d-city .legend").width()+22+"px");
+        $("#cesium-3d-city .legend").css("width", $("#cesium-3d-city .legend").width()+24+"px");
       }
       else {
         $("#cesium-3d-city .legend").css("height", "auto");
@@ -512,13 +518,6 @@ require(["jquery",
     }
   }
 
-  var legendDeformationMean = $("<div></div>");
-  legendDeformationMean.attr("id", "legend-deformation-mean");
-  legendDeformationMean.addClass("legend");
-  var legendDeformationMeanImage = $("<img>");
-  legendDeformationMeanImage.attr("src", "images/legends/deformation-mean.png");
-  legendDeformationMean.append(legendDeformationMeanImage);
-
   $("#switcher-deformation-menu .dropdown-item").click(function() {
     setTimeout(function() {
       $("#deformation-mean").css("left", $("#switcher-deformation-menu-button").width()+48 + "px");
@@ -526,7 +525,7 @@ require(["jquery",
     }, 100);
     $("#deformation-mean").css("opacity", "0.6");
     $("#deformation-cumulative").css("opacity", "0.6");
-    $("#cesium-deformation #legend-deformation-mean").remove();
+    deformationMeanLegend.remove();
     removeOverlayLayers();
     useCaseDeformation.resetClockAndTimeline();
   });
@@ -536,13 +535,13 @@ require(["jquery",
     if (deformationCity != undefined) {
       if ($("#deformation-mean").css("opacity") == 1.0) {
         $("#deformation-mean").css("opacity", "0.6");
-        $("#cesium-deformation #legend-deformation-mean").remove();
+        deformationMeanLegend.remove();
         cesiumViewerDeformation.imageryLayers.remove(deformationCity.meanLayer);
       }
       else {
         $("#deformation-mean").css("opacity", "1.0");
         $("#deformation-cumulative").css("opacity", "0.6");
-        $("#cesium-deformation").append(legendDeformationMean);
+        $("#cesium-deformation").append(deformationMeanLegend);
         setTimeout(function() {
           styleLegend();
         }, 100);
@@ -565,7 +564,7 @@ require(["jquery",
       else {
         $("#deformation-mean").css("opacity", "0.6");
         $("#deformation-cumulative").css("opacity", "1.0");
-        $("#cesium-deformation #legend-deformation-mean").remove();
+        deformationMeanLegend.remove();
         if (deformationCity.meanLayer != undefined)
           cesiumViewerDeformation.imageryLayers.remove(deformationCity.meanLayer);
         deformationCity.cumulativeLayer = cesiumViewerDeformation.imageryLayers.addImageryProvider(deformationCity.imageMosaic.imageryProvider);

@@ -27,9 +27,9 @@ define(["jquery"], function ($) {
   LayerList.prototype.styleLegend = function () {
     if ($("#"+this.viewerContainerId+" .legend").is(":visible")) {
       if ($("#"+this.viewerContainerId+" .legend").prop("scrollHeight")+130 > $(window).height()) {
-        $("#"+this.viewerContainerId+" .legend").css("height", $(window).height()-130 + "px");
+        $("#"+this.viewerContainerId+" .legend").css("height", $(window).height()-130+"px");
         $("#"+this.viewerContainerId+" .legend").css("width", "auto");
-        $("#"+this.viewerContainerId+" .legend#legend-lulc-glc30").css("width", $("#"+this.id).width()+22+"px");
+        $("#"+this.viewerContainerId+" .legend#legend-lulc-glc30").css("width", $("#legend-lulc-glc30").width()+24+"px");
         $("#"+this.viewerContainerId+" .legend#legend-lulc-ispra-land-cover").css("width", "330px");
       }
       else {
@@ -46,7 +46,7 @@ define(["jquery"], function ($) {
       if ($("#"+this.viewerContainerId+" .layer-list").prop("scrollHeight")+bottomMargin+110 > $(window).height()) {
         $("#"+this.viewerContainerId+" .layer-list").css("height", $(window).height()-bottomMargin-110+"px");
         $("#"+this.viewerContainerId+" .layer-list").css("width", "auto");
-        $("#"+this.viewerContainerId+" .layer-list").css("width", $("#"+this.id).width()+34+"px");
+        $("#"+this.viewerContainerId+" .layer-list").css("width", $("#"+this.id).width()+36+"px");
       }
       else {
         $("#"+this.viewerContainerId+" .layer-list").css("height", "auto");
