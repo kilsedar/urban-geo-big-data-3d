@@ -197,36 +197,68 @@ hr {
 }
 
 #legend-deformation-mean {
-  padding: 6px 2px 0px 12px;
+  padding: 6px 2px 0px 12px !important;
 }
 
-#legend-deformation-mean .color-box {
+#legend-deformation-cumulative {
+  padding: 6px 0px 0px 19px !important;
+}
+
+.legend-deformation .color-box {
   width: 33px;
   float: left;
 }
 
-#legend-text-minus-fifteen {
+#legend-deformation-mean-text-minus-fifteen {
   margin-left: -9px;
 }
 
-#legend-text-minus-eleven {
+#legend-deformation-mean-text-minus-eleven, #legend-deformation-cumulative-text-minus-twenty, #legend-deformation-cumulative-text-minus-fifteen {
   margin-left: 9px;
 }
 
-#legend-text-minus-seven, #legend-text-minus-three, #legend-text-plus-three {
+#legend-deformation-mean-text-minus-seven, #legend-deformation-mean-text-minus-three, #legend-deformation-mean-text-plus-three {
   margin-left: 16px;
 }
 
-#legend-text-minus-five {
+#legend-deformation-mean-text-minus-five, #legend-deformation-cumulative-text-plus-ten {
   margin-left: 14px;
 }
 
-#legend-text-minus-one {
+#legend-deformation-mean-text-minus-one, #legend-deformation-cumulative-text-plus-five {
   margin-left: 15px;
 }
 
-#legend-text-plus-one, #legend-text-plus-two {
+#legend-deformation-mean-text-plus-one, #legend-deformation-mean-text-plus-two {
   margin-left: 18px;
+}
+
+#legend-deformation-cumulative-text-minus-three-hundred {
+  margin-left: -14px;
+}
+
+#legend-deformation-cumulative-text-minus-twenty-five {
+  margin-left: 3px;
+}
+
+#legend-deformation-cumulative-text-minus-ten, #legend-deformation-cumulative-text-plus-fifteen {
+  margin-left: 10px;
+}
+
+#legend-deformation-cumulative-text-minus-five {
+  margin-left: 12px;
+}
+
+#legend-deformation-cumulative-text-plus-twenty {
+  margin-left: 11px;
+}
+
+#legend-deformation-cumulative-text-plus-twenty-five {
+  margin-left: 7px;
+}
+
+#legend-deformation-cumulative-text-plus-twenty-three-hundred {
+  margin-left: 5px;
 }
 
 #table-water-height {

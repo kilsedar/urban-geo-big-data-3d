@@ -8,6 +8,7 @@ define(["jquery"], function ($) {
     this.viewer = useCase.viewer;
     this.viewerContainerId = this.useCase.viewerContainerId;
     this.items = [];
+    this.layerOnTop = undefined;
 
     var layerList = $("<div></div>");
     layerList.attr("id", this.id);
@@ -147,6 +148,7 @@ define(["jquery"], function ($) {
           _self.viewer.imageryLayers.add(layerListItem.layer);
           _self.useCase.resetClockAndTimeline();
         }
+        _self.layerOnTop = _self.viewer.imageryLayers.get(_self.viewer.imageryLayers.length-1);
       }
       else if ($("#"+layerListItem.id+"-input").attr("type") == "checkbox" && $("#"+layerListItem.id+"-input").is(":checked") == false) {
         $("#"+_self.viewerContainerId+" #legend-"+layerListItem.id).remove();
@@ -158,6 +160,7 @@ define(["jquery"], function ($) {
         }
         var layerOnTop = _self.viewer.imageryLayers.get(_self.viewer.imageryLayers.length-1);
         if (layerOnTop.isBaseLayer() == false) {
+          _self.layerOnTop = layerOnTop;
           for (var i=0; i<_self.items.length; i++) {
             if (_self.items[i].layer.imageryProvider == layerOnTop._imageryProvider) {
               _self.addLegend(_self.items[i]);
@@ -168,8 +171,10 @@ define(["jquery"], function ($) {
             }
           }
         }
-        else
+        else {
+          _self.layerOnTop = undefined;
           _self.useCase.resetClockAndTimeline();
+        }
       }
       else {
         for (var i=0; i<_self.viewer.imageryLayers.length; i++) {

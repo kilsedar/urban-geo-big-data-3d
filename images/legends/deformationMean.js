@@ -1,6 +1,6 @@
 var deformationMeanLegend = $("<div></div>");
 deformationMeanLegend.attr("id", "legend-deformation-mean");
-deformationMeanLegend.addClass("legend");
+deformationMeanLegend.addClass("legend legend-deformation");
 
 var deformationMeanLegendTitle = $("<h6>Mean Deformation Velocity [mm/year]</h6>");
 deformationMeanLegendTitle.addClass("legend-title");
@@ -53,55 +53,55 @@ deformationMeanLegend.append(colorBoxes);
 var texts = $("<div></div>");
 
 var textMinusFifteen = $("<p></p>");
-textMinusFifteen.attr("id", "legend-text-minus-fifteen");
+textMinusFifteen.attr("id", "legend-deformation-mean-text-minus-fifteen");
 textMinusFifteen.addClass("legend-text");
 textMinusFifteen.text("-15");
 texts.append(textMinusFifteen);
 
 var textMinusEleven = $("<p></p>");
-textMinusEleven.attr("id", "legend-text-minus-eleven");
+textMinusEleven.attr("id", "legend-deformation-mean-text-minus-eleven");
 textMinusEleven.addClass("legend-text");
 textMinusEleven.text("-11");
 texts.append(textMinusEleven);
 
 var textMinusSeven = $("<p></p>");
-textMinusSeven.attr("id", "legend-text-minus-seven");
+textMinusSeven.attr("id", "legend-deformation-mean-text-minus-seven");
 textMinusSeven.addClass("legend-text");
 textMinusSeven.text("-7");
 texts.append(textMinusSeven);
 
 var textMinusFive = $("<p></p>");
-textMinusFive.attr("id", "legend-text-minus-five");
+textMinusFive.attr("id", "legend-deformation-mean-text-minus-five");
 textMinusFive.addClass("legend-text");
 textMinusFive.text("-5");
 texts.append(textMinusFive);
 
 var textMinusThree = $("<p></p>");
-textMinusThree.attr("id", "legend-text-minus-three");
+textMinusThree.attr("id", "legend-deformation-mean-text-minus-three");
 textMinusThree.addClass("legend-text");
 textMinusThree.text("-3");
 texts.append(textMinusThree);
 
 var textMinusOne = $("<p></p>");
-textMinusOne.attr("id", "legend-text-minus-one");
+textMinusOne.attr("id", "legend-deformation-mean-text-minus-one");
 textMinusOne.addClass("legend-text");
 textMinusOne.text("-1");
 texts.append(textMinusOne);
 
 var textPlusOne = $("<p></p>");
-textPlusOne.attr("id", "legend-text-plus-one");
+textPlusOne.attr("id", "legend-deformation-mean-text-plus-one");
 textPlusOne.addClass("legend-text");
 textPlusOne.text("+1");
 texts.append(textPlusOne);
 
 var textPlusTwo = $("<p></p>");
-textPlusTwo.attr("id", "legend-text-plus-two");
+textPlusTwo.attr("id", "legend-deformation-mean-text-plus-two");
 textPlusTwo.addClass("legend-text");
 textPlusTwo.text("+2");
 texts.append(textPlusTwo);
 
 var textPlusThree = $("<p></p>");
-textPlusThree.attr("id", "legend-text-plus-three");
+textPlusThree.attr("id", "legend-deformation-mean-text-plus-three");
 textPlusThree.addClass("legend-text");
 textPlusThree.text("+3");
 texts.append(textPlusThree);

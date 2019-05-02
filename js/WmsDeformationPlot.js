@@ -7,11 +7,11 @@ define(["vendor/plotly-latest.min", "jquery"], function (Plotly, $) {
   };
 
   WmsDeformationPlot.prototype.addListener = function (property) {
+    var viewerContainerId = $(this.viewer.container).attr("id");
     var _self = this;
-    var viewerContainerId = $(_self.viewer.container).attr("id");
 
-    function listener (e) {
-      var mousePosition = new Cesium.Cartesian2(e.clientX, e.clientY);
+    function listener (event) {
+      var mousePosition = new Cesium.Cartesian2(event.clientX, event.clientY);
 
       var pickRay = _self.viewer.camera.getPickRay(mousePosition);
       var featuresPromise = _self.viewer.imageryLayers.pickImageryLayerFeatures(pickRay, _self.viewer.scene);
@@ -48,7 +48,7 @@ define(["vendor/plotly-latest.min", "jquery"], function (Plotly, $) {
                 },
                 margin: {
                   l: 40,
-                  r: 30,
+                  r: 4,
                   b: 40,
                   t: 30,
                   pad: 4
@@ -119,14 +119,13 @@ define(["vendor/plotly-latest.min", "jquery"], function (Plotly, $) {
               };
             },
             error: function() {
-              console.log("there is an error...");
+              console.log("There is an error.");
             }
           });
         });
       }
-      /* else {
-        console.log("No features are picked.");
-      } */
+      /* else
+        alert("You didn't click on a feature."); */
     }
     this.viewer.canvas.addEventListener("click", listener);
     this.listener = listener;

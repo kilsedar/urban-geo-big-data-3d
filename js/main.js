@@ -7,6 +7,7 @@ require.config({
     "glc30Legend": "images/legends/glc30",
     "milanFloodRiskLegend": "images/legends/milanFloodRisk",
     "deformationMeanLegend": "images/legends/deformationMean",
+    "deformationCumulativeLegend": "images/legends/deformationCumulative"
   },
   shim: {
     "ispraLandCoverLegend": {
@@ -19,6 +20,9 @@ require.config({
         "deps": ["jquery"]
     },
     "deformationMeanLegend": {
+        "deps": ["jquery"]
+    },
+    "deformationCumulativeLegend": {
         "deps": ["jquery"]
     }
   }
@@ -37,11 +41,13 @@ require(["jquery",
         "js/WebMap3DCityDBKmlLayer",
         "js/LandCoverJson",
         "js/WmsDeformationPlot",
+        "js/WcpsQuery.js",
         "ispraLandCoverLegend",
         "glc30Legend",
         "milanFloodRiskLegend",
-        "deformationMeanLegend"],
-       function ($, OSMBuildingLayer, Header, UseCase, Switcher, SwitcherItem, LayerList, LayerListItem, ImageMosaic, WebMap3DCityDBKml, WebMap3DCityDBKmlLayer, LandCoverJson, WmsDeformationPlot) {
+        "deformationMeanLegend",
+        "deformationCumulativeLegend"],
+       function ($, OSMBuildingLayer, Header, UseCase, Switcher, SwitcherItem, LayerList, LayerListItem, ImageMosaic, WebMap3DCityDBKml, WebMap3DCityDBKmlLayer, LandCoverJson, WmsDeformationPlot, WcpsQuery) {
   "use strict";
 
   var worldWindViewer3dCity = new WorldWind.WorldWindow("world-wind-3d-city-canvas");
@@ -138,7 +144,7 @@ require(["jquery",
     imageryProvider: bingAerialProvider,
     // terrainProvider: terrainProvider,
     terrainProvider: new Cesium.CesiumTerrainProvider({
-      url: "http://localhost:8081/tilesets/dtm"
+      url: "http://localhost:8082/tilesets/dtm"
     }),
     skyBox: skyBox3dCity,
     baseLayerPicker: false,
@@ -331,6 +337,14 @@ require(["jquery",
   var layerListCesium3dCityStamenWatercolor = new LayerListItem("cesium-3d-city-stamen-watercolor", "Stamen Watercolor", false, "basemap", new Cesium.ImageryLayer(stamenWatercolorProvider), undefined);
   layerListCesium3dCity.add(layerListCesium3dCityStamenWatercolor);
 
+  var switcherDeformation = new Switcher("cesium-deformation", "switcher-deformation", "location");
+
+  var switcherDeformationMilan = new SwitcherItem("cesium", cesiumViewerDeformation, "deformation-milan", "Milan", undefined, undefined, [9.09069, 45.30822, 9.6169, 45.58249], 60000.0);
+  switcherDeformation.add(switcherDeformationMilan);
+
+  var switcherDeformationNaples = new SwitcherItem("cesium", cesiumViewerDeformation, "deformation-naples", "Naples", undefined, undefined, [14.05072, 40.82471, 14.30817, 40.91915], 30000.0);
+  switcherDeformation.add(switcherDeformationNaples);
+
   var deformationNaplesMeanProvider = new Cesium.WebMapServiceImageryProvider({
     url: "https://ugbd.get-it.it/proxy/image2/https://ugbd.get-it.it/geoserver/wms?transparent=TRUE&format=image/png",
     layers: "geonode:NAPOLI_DEFORMAZIONE_MAP"
@@ -342,21 +356,13 @@ require(["jquery",
     url: "https://ugbd.get-it.it/proxy/image2/https://ugbd.get-it.it/geoserver/wms?transparent=TRUE&format=image/png",
     layers: "geonode:MILANO_DEFORMAZIONE_MAP"
   });
-  var deformationMilanImageMosaic = new ImageMosaic(cesiumViewerDeformation, "https://ugbd.get-it.it/proxy/wmts/http://ugbd-geoserver.get-it.it/geoserver/gwc/service/wmts", "DeformationTS:milanowmts", ["1993-05-01", "1995-04-24", "1995-12-26", "1996-08-27", "1997-12-30", "1998-12-15", "1999-11-30", "2000-12-19", "2001-09-25", "2002-12-24", "2003-12-09", "2004-11-23", "2005-11-08", "2006-11-28", "2007-12-18", "2008-12-02", "2009-11-17", "2010-09-28"], [9.09069, 45.30822, 9.6169, 45.58249], 691200);
+  var deformationMilanImageMosaic = new ImageMosaic(cesiumViewerDeformation, "https://ugbd.get-it.it/proxy/wmts/http://ugbd-geoserver.get-it.it/geoserver/gwc/service/wmts", "DeformationTS:milanorightcolors", ["1993-05-01", "1995-04-24", "1995-12-26", "1996-08-27", "1997-12-30", "1998-12-15", "1999-11-30", "2000-12-19", "2001-09-25", "2002-12-24", "2003-12-09", "2004-11-23", "2005-11-08", "2006-11-28", "2007-12-18", "2008-12-02", "2009-11-17", "2010-09-28"], [9.09069, 45.30822, 9.6169, 45.58249], 691200);
   var deformationMilan = {switcherText: "Milan", meanProvider: deformationMilanMeanProvider, meanLayer: undefined, imageMosaic: deformationMilanImageMosaic, cumulativeLayer: undefined};
 
   var deformationCities = [deformationNaples, deformationMilan];
 
   var naplesWmsDeformationPlot = new WmsDeformationPlot(cesiumViewerDeformation);
   naplesWmsDeformationPlot.addListener("wfs_ts");
-
-  var switcherDeformation = new Switcher("cesium-deformation", "switcher-deformation", "location");
-
-  var switcherDeformationMilan = new SwitcherItem("cesium", cesiumViewerDeformation, "deformation-milan", "Milan", undefined, undefined, [9.09069, 45.30822, 9.6169, 45.58249], 60000.0);
-  switcherDeformation.add(switcherDeformationMilan);
-
-  var switcherDeformationNaples = new SwitcherItem("cesium", cesiumViewerDeformation, "deformation-naples", "Naples", undefined, undefined, [14.05072, 40.82471, 14.30817, 40.91915], 30000.0);
-  switcherDeformation.add(switcherDeformationNaples);
 
   var layerListDeformation = new LayerList(useCaseDeformation, "layer-list-deformation");
 
@@ -424,7 +430,7 @@ require(["jquery",
   layerListLulc.add(layerListLulcIspraBu);
 
   var lulcGlc30ImageMosaic = new ImageMosaic(cesiumViewerLulc, "http://localhost:8080/geoserver/gwc/service/wmts", "ugbd:glc30_mosaic", ["2000-01-01", "2010-01-01"], [6.62743, 35.4930964524792, 18.5192301504127, 47.09175], 2592000);
-  var layerListLulcGlc30 = new LayerListItem("lulc-glc30", "GlobeLand30 (2000, 2012)", false, "overlay", lulcGlc30ImageMosaic, glc30Legend);
+  var layerListLulcGlc30 = new LayerListItem("lulc-glc30", "GlobeLand30 (2000, 2010)", false, "overlay", lulcGlc30ImageMosaic, glc30Legend);
   layerListLulc.add(layerListLulcGlc30);
 
   var lulcIspraLandCover2012Provider = new Cesium.WebMapTileServiceImageryProvider({
@@ -439,6 +445,9 @@ require(["jquery",
   var lulcIspraLandCover2012 = new Cesium.ImageryLayer(lulcIspraLandCover2012Provider);
   var layerListLulcIspraLandCover = new LayerListItem("lulc-ispra-land-cover", "ISPRA Land Cover (2012)", false, "overlay", lulcIspraLandCover2012, ispraLandCoverLegend);
   layerListLulc.add(layerListLulcIspraLandCover);
+
+  var lulcWcpsQuery = new WcpsQuery(cesiumViewerLulc, layerListLulc);
+  lulcWcpsQuery.addListener();
 
   /*
   artificial surface: rgba(147, 47, 20, 1.0) or #932f14 -> Cesium.Color(0.576470588, 0.184313725, 0.078431373, 1.0)
@@ -526,6 +535,7 @@ require(["jquery",
     $("#deformation-mean").css("opacity", "0.6");
     $("#deformation-cumulative").css("opacity", "0.6");
     deformationMeanLegend.remove();
+    deformationCumulativeLegend.remove();
     removeOverlayLayers();
     useCaseDeformation.resetClockAndTimeline();
   });
@@ -542,6 +552,7 @@ require(["jquery",
         $("#deformation-mean").css("opacity", "1.0");
         $("#deformation-cumulative").css("opacity", "0.6");
         $("#cesium-deformation").append(deformationMeanLegend);
+        deformationCumulativeLegend.remove();
         setTimeout(function() {
           styleLegend();
         }, 100);
@@ -558,12 +569,14 @@ require(["jquery",
     if (deformationCity != undefined) {
       if ($("#deformation-cumulative").css("opacity") == 1.0) {
         $("#deformation-cumulative").css("opacity", "0.6");
+        deformationCumulativeLegend.remove();
         cesiumViewerDeformation.imageryLayers.remove(deformationCity.cumulativeLayer);
         useCaseDeformation.resetClockAndTimeline();
       }
       else {
         $("#deformation-mean").css("opacity", "0.6");
         $("#deformation-cumulative").css("opacity", "1.0");
+        $("#cesium-deformation").append(deformationCumulativeLegend);
         deformationMeanLegend.remove();
         if (deformationCity.meanLayer != undefined)
           cesiumViewerDeformation.imageryLayers.remove(deformationCity.meanLayer);
