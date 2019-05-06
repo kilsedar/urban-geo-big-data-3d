@@ -113,7 +113,7 @@ define(["vendor/plotly-latest.min", "jquery"], function (Plotly, $) {
             url: 'http://localhost:8081/rasdaman/ows?query=for $c in (glc30_2000_2010) return encode($c[X(' + x + '), Y(' + y + '), ansi("2000-01-01T00:00:00.000Z":"2010-01-01T00:00:00.000Z")], "text/csv")',
             success: function(result){
               result = result.split(",");
-              if (result[0] != "0" || result[1] != "0") {
+              if ((result[0] != "0" || result[1] != "0") && $(".cesium-infoBox-visible").length == 0) {
                 _self.viewer.selectedEntity = new Cesium.Entity({
                   name: "GlobeLand30 Classes",
                   description: "<b>2000</b>: " + _self.setGlc30Classification(result[0]) + "<br><b>2010</b>: " + _self.setGlc30Classification(result[1])
