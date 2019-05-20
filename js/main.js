@@ -345,12 +345,8 @@ require(["jquery",
   var switcherDeformationNaples = new SwitcherItem("cesium", cesiumViewerDeformation, "deformation-naples", "Naples", undefined, undefined, [14.05072, 40.82471, 14.30817, 40.91915], 30000.0);
   switcherDeformation.add(switcherDeformationNaples);
 
-  var deformationNaplesMeanProvider = new Cesium.WebMapServiceImageryProvider({
-    url: "https://ugbd.get-it.it/proxy/image2/https://ugbd.get-it.it/geoserver/wms?transparent=TRUE&format=image/png",
-    layers: "geonode:NAPOLI_DEFORMAZIONE_MAP"
-  });
-  var deformationNaplesImageMosaic = new ImageMosaic(cesiumViewerDeformation, "https://ugbd.get-it.it/proxy/wmts/http://ugbd-geoserver.get-it.it/geoserver/gwc/service/wmts", "DeformationTS:imagenapolirealcolors", ["1992-06-08", "1992-11-30", "1993-12-20", "1995-12-14", "1996-11-28", "1997-12-18", "1998-12-03", "1999-12-23", "2000-12-07", "2001-09-13", "2002-12-12", "2003-11-27", "2004-11-11", "2005-12-01", "2006-12-21", "2007-12-06", "2008-12-25", "2009-12-10", "2010-09-16"], [14.05072, 40.82471, 14.30817, 40.91915], 691200);
-  var deformationNaples = {switcherText: "Naples", meanProvider: deformationNaplesMeanProvider, meanLayer: undefined, imageMosaic: deformationNaplesImageMosaic, cumulativeLayer: undefined};
+  var switcherDeformationTurin = new SwitcherItem("cesium", cesiumViewerDeformation, "deformation-turin", "Turin", undefined, undefined, [6.87014, 44.54736, 8.04625, 45.23375], 120000.0);
+  switcherDeformation.add(switcherDeformationTurin);
 
   var deformationMilanMeanProvider = new Cesium.WebMapServiceImageryProvider({
     url: "https://ugbd.get-it.it/proxy/image2/https://ugbd.get-it.it/geoserver/wms?transparent=TRUE&format=image/png",
@@ -359,10 +355,24 @@ require(["jquery",
   var deformationMilanImageMosaic = new ImageMosaic(cesiumViewerDeformation, "https://ugbd.get-it.it/proxy/wmts/http://ugbd-geoserver.get-it.it/geoserver/gwc/service/wmts", "DeformationTS:milanorightcolors", ["1993-05-01", "1995-04-24", "1995-12-26", "1996-08-27", "1997-12-30", "1998-12-15", "1999-11-30", "2000-12-19", "2001-09-25", "2002-12-24", "2003-12-09", "2004-11-23", "2005-11-08", "2006-11-28", "2007-12-18", "2008-12-02", "2009-11-17", "2010-09-28"], [9.09069, 45.30822, 9.6169, 45.58249], 691200);
   var deformationMilan = {switcherText: "Milan", meanProvider: deformationMilanMeanProvider, meanLayer: undefined, imageMosaic: deformationMilanImageMosaic, cumulativeLayer: undefined};
 
-  var deformationCities = [deformationNaples, deformationMilan];
+  var deformationNaplesMeanProvider = new Cesium.WebMapServiceImageryProvider({
+    url: "https://ugbd.get-it.it/proxy/image2/https://ugbd.get-it.it/geoserver/wms?transparent=TRUE&format=image/png",
+    layers: "geonode:NAPOLI_DEFORMAZIONE_MAP"
+  });
+  var deformationNaplesImageMosaic = new ImageMosaic(cesiumViewerDeformation, "https://ugbd.get-it.it/proxy/wmts/http://ugbd-geoserver.get-it.it/geoserver/gwc/service/wmts", "DeformationTS:imagenapolirealcolors", ["1992-06-08", "1992-11-30", "1993-12-20", "1995-12-14", "1996-11-28", "1997-12-18", "1998-12-03", "1999-12-23", "2000-12-07", "2001-09-13", "2002-12-12", "2003-11-27", "2004-11-11", "2005-12-01", "2006-12-21", "2007-12-06", "2008-12-25", "2009-12-10", "2010-09-16"], [14.05072, 40.82471, 14.30817, 40.91915], 691200);
+  var deformationNaples = {switcherText: "Naples", meanProvider: deformationNaplesMeanProvider, meanLayer: undefined, imageMosaic: deformationNaplesImageMosaic, cumulativeLayer: undefined};
 
-  var naplesWmsDeformationPlot = new WmsDeformationPlot(cesiumViewerDeformation);
-  naplesWmsDeformationPlot.addListener("wfs_ts");
+  var deformationTurinMeanProvider = new Cesium.WebMapServiceImageryProvider({
+    url: "https://ugbd.get-it.it/proxy/image2/https://ugbd.get-it.it/geoserver/wms?transparent=TRUE&format=image/png",
+    layers: "geonode:TORINO_DEFORMAZIONE_MAP"
+  });
+  var deformationTurinImageMosaic = new ImageMosaic(cesiumViewerDeformation, "https://ugbd.get-it.it/proxy/wmts/http://ugbd-geoserver.get-it.it/geoserver/gwc/service/wmts", "DeformationTS:torinowmts", ["1992-10-25", "1993-12-19", "1995-07-25", "1995-12-13", "1996-11-27", "1997-12-17", "1998-10-28", "1999-10-13", "2000-12-06", "2001-10-17", "2002-12-11", "2003-11-26", "2004-06-23", "2005-09-21", "2006-12-20", "2007-10-31", "2008-11-19", "2009-11-04"], [6.87014, 44.54736, 8.04625, 45.23375], 691200);
+  var deformationTurin = {switcherText: "Turin", meanProvider: deformationTurinMeanProvider, meanLayer: undefined, imageMosaic: deformationTurinImageMosaic, cumulativeLayer: undefined};
+
+  var deformationCities = [deformationNaples, deformationMilan, deformationTurin];
+
+  var wmsDeformationPlot = new WmsDeformationPlot(cesiumViewerDeformation);
+  wmsDeformationPlot.addListener("wfs_ts");
 
   var layerListDeformation = new LayerList(useCaseDeformation, "layer-list-deformation");
 
