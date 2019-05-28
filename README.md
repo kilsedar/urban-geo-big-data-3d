@@ -47,10 +47,10 @@ The deformation maps are produced by <a href="https://www.cnr.it/en">National Re
 
 Data is stored on <a href="https://github.com/geoserver/geoserver">GeoServer</a> and used through Web Map Service (WMS) on a virtual globe built with CesiumJS. Each target on the ground can be queried to display the deformation time series plot. Time series are plotted using Plotly.js. Deformation is also visualized for 16 years as animation using Web Map Tile Service (WMTS) and ImageMosaic through GeoServer and timeline and animation widgets of CesiumJS to demonstrate the movement of the land for Naples, Milan, and Turin. The same will be implemented also for Rome and Padua.
 
-<p align="center"><img src="images/screenshots/mean-deformation-velocity.png" width="600"></i></p>
+<p align="center"><img src="images/screenshots/mean-deformation-velocity.png" width="600"></p>
 <p align="center"><i>Mean deformation velocity visualization and query</i></p>
 
-<p align="center"><img src="images/screenshots/cumulative-deformation.png" width="600"></i></p>
+<p align="center"><img src="images/screenshots/cumulative-deformation.png" width="600"></p>
 <p align="center"><i>A raster layer of cumulative deformation animation</i></p>
 
 ## Big multidimensional raster data visualization and processing
