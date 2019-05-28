@@ -2,7 +2,7 @@ var deformationCumulativeLegend = $("<div></div>");
 deformationCumulativeLegend.attr("id", "legend-deformation-cumulative");
 deformationCumulativeLegend.addClass("legend legend-deformation");
 
-var deformationCumulativeLegendTitle = $("<h6>Cumulative Deformation [mm/year]</h6>");
+var deformationCumulativeLegendTitle = $("<h6>Cumulative Deformation [mm]</h6>");
 deformationCumulativeLegendTitle.addClass("legend-title");
 deformationCumulativeLegend.append(deformationCumulativeLegendTitle);
 

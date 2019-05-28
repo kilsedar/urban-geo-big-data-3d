@@ -183,9 +183,9 @@ require(["jquery",
   var header = new Header("rgba(67, 173, 97, 1.0)", "rgba(51, 132, 74, 1.0)");
 
   var useCaseWorldWind3dCity = new UseCase(worldWindViewer3dCity, "world-wind-3d-city-use-case", "3D City <img id='header-nasa-image' src='images/nasa.png'>", "3D OpenStreetMap Buildings on NASA Web WorldWind", true);
-  var useCaseCesium3dCity = new UseCase(cesiumViewer3dCity, "cesium-3d-city-use-case", "3D City <img id='header-cesium-image' src='images/cesium-white.png'>", "CityGML on Cesium", false);
-  var useCaseDeformation = new UseCase(cesiumViewerDeformation, "cesium-deformation-use-case", "Deformation", "Deformation Maps on Cesium", false);
-  var useCaseLulc = new UseCase(cesiumViewerLulc, "cesium-lulc-use-case", "LULC", "Land Cover Land Use (LULC) on Cesium", false);
+  var useCaseCesium3dCity = new UseCase(cesiumViewer3dCity, "cesium-3d-city-use-case", "3D City <img id='header-cesium-image' src='images/cesium-white.png'>", "CityGML on CesiumJS", false);
+  var useCaseDeformation = new UseCase(cesiumViewerDeformation, "cesium-deformation-use-case", "Deformation", "Deformation Maps on CesiumJS", false);
+  var useCaseLulc = new UseCase(cesiumViewerLulc, "cesium-lulc-use-case", "LC and Soil Consumption", "Land Cover and Soil Consumption on CesiumJS", false);
 
   header.addUseCase(useCaseWorldWind3dCity);
   header.addUseCase(useCaseCesium3dCity);
