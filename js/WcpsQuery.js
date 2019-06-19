@@ -132,7 +132,7 @@ define(["vendor/plotly-latest.min", "jquery"], function (Plotly, $) {
             url: 'http://localhost:8081/rasdaman/ows?query=for $c in (ghs_1975_1990_2000_2014) return encode($c[X(' + x + '), Y(' + y + '), ansi("1975-01-01T00:00:00.000Z":"2014-01-01T00:00:00.000Z")], "text/csv")',
             success: function(result){
               result = result.split(",");
-              if (result[0] != "0" || result[1] != "0" || result[2] != "0" || result[3] != "0") {
+              if ((result[0] != "0" || result[1] != "0" || result[2] != "0" || result[3] != "0") && $(".cesium-infoBox-visible").length == 0) {
                 for (var i=0; i<result.length; i++) {
                   if (result[i] == "1")
                     result[i] = "unsettled";
@@ -238,7 +238,7 @@ define(["vendor/plotly-latest.min", "jquery"], function (Plotly, $) {
             url: 'http://localhost:8081/rasdaman/ows?query=for $c in (ispra_bu_2012_2015_2016_2017) return encode($c[X(' + x + '), Y(' + y + '), ansi("2012-01-01T00:00:00.000Z":"2017-01-01T00:00:00.000Z")], "text/csv")',
             success: function(result){
               result = result.split(",");
-              if (result[0] != "-nan" || result[1] != "-nan" || result[2] != "-nan" || result[3] != "-nan") {
+              if ((result[0] != "-nan" || result[1] != "-nan" || result[2] != "-nan" || result[3] != "-nan") && $(".cesium-infoBox-visible").length == 0) {
                 for (var i=0; i<result.length; i++) {
                   if (result[i] == "2")
                     result[i] = "not built-up";
@@ -343,7 +343,7 @@ define(["vendor/plotly-latest.min", "jquery"], function (Plotly, $) {
           $.ajax({
             url: 'http://localhost:8081/rasdaman/ows?query=for $c in (ispra_land_cover_2012) return encode($c[X(' + x + '), Y(' + y + ')], "text/csv")',
             success: function(result){
-              if (result != "65535") {
+              if (result != "65535" && $(".cesium-infoBox-visible").length == 0) {
                 _self.viewer.selectedEntity = new Cesium.Entity({
                   name: "ISPRA Land Cover Class",
                   description: _self.setIspraLandCoverClassification(result)
