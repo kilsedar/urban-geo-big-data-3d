@@ -355,28 +355,28 @@ require(["jquery",
     url: "https://ugbd.get-it.it/proxy/image2/https://ugbd.get-it.it/geoserver/wms?transparent=TRUE&format=image/png",
     layers: "geonode:MILANO_DEFORMAZIONE_MAP"
   });
-  var deformationMilanImageMosaic = new ImageMosaic(cesiumViewerDeformation, "https://ugbd.get-it.it/proxy/wmts/http://ugbd-geoserver.get-it.it/geoserver/gwc/service/wmts", "DeformationTS:milanorightcolors", ["1993-05-01", "1995-04-24", "1995-12-26", "1996-08-27", "1997-12-30", "1998-12-15", "1999-11-30", "2000-12-19", "2001-09-25", "2002-12-24", "2003-12-09", "2004-11-23", "2005-11-08", "2006-11-28", "2007-12-18", "2008-12-02", "2009-11-17", "2010-09-28"], [9.09069, 45.30822, 9.6169, 45.58249], 1382400);
+  var deformationMilanImageMosaic = new ImageMosaic(cesiumViewerDeformation, "https://ugbd.get-it.it/proxy/wmts/http://ugbd-geoserver.get-it.it/geoserver/gwc/service/wmts", "DeformationTS:milanorightcolors", ["1993-05-01", "1995-04-24", "1995-12-26", "1996-08-27", "1997-12-30", "1998-12-15", "1999-11-30", "2000-12-19", "2001-09-25", "2002-12-24", "2003-12-09", "2004-11-23", "2005-11-08", "2006-11-28", "2007-12-18", "2008-12-02", "2009-11-17", "2010-09-28"], [9.09069, 45.30822, 9.6169, 45.58249], 2628000);
   var deformationMilan = {switcherText: "Milan", meanProvider: deformationMilanMeanProvider, meanLayer: undefined, imageMosaic: deformationMilanImageMosaic, cumulativeLayer: undefined};
 
   var deformationRomeMeanProvider = new Cesium.WebMapServiceImageryProvider({
     url: "https://ugbd.get-it.it/proxy/image2/https://ugbd.get-it.it/geoserver/wms?transparent=TRUE&format=image/png",
     layers: "geonode:ROMA_DEFORMAZIONE_MAP"
   });
-  var deformationRomeImageMosaic = new ImageMosaic(cesiumViewerDeformation, "https://ugbd.get-it.it/proxy/wmts/http://ugbd-geoserver.get-it.it/geoserver/gwc/service/wmts", "DeformationTS:imageroma", ["1992-06-11", "1993-03-18", "1993-11-18", "1995-06-25", "1996-05-04", "1997-01-05", "1998-03-01", "1999-02-13", "2000-01-29", "2001-01-14", "2002-11-10", "2003-11-30", "2004-12-19", "2005-10-30", "2006-12-24", "2007-11-04", "2008-11-23", "2009-11-08", "2010-10-24"], [12.24653, 41.30458, 13.33569, 42.326539], 1382400);
+  var deformationRomeImageMosaic = new ImageMosaic(cesiumViewerDeformation, "https://ugbd.get-it.it/proxy/wmts/http://ugbd-geoserver.get-it.it/geoserver/gwc/service/wmts", "DeformationTS:imageroma", ["1992-06-11", "1993-03-18", "1993-11-18", "1995-06-25", "1996-05-04", "1997-01-05", "1998-03-01", "1999-02-13", "2000-01-29", "2001-01-14", "2002-11-10", "2003-11-30", "2004-12-19", "2005-10-30", "2006-12-24", "2007-11-04", "2008-11-23", "2009-11-08", "2010-10-24"], [12.24653, 41.30458, 13.33569, 42.326539], 2628000);
   var deformationRome = {switcherText: "Rome", meanProvider: deformationRomeMeanProvider, meanLayer: undefined, imageMosaic: deformationRomeImageMosaic, cumulativeLayer: undefined};
 
   var deformationNaplesMeanProvider = new Cesium.WebMapServiceImageryProvider({
     url: "https://ugbd.get-it.it/proxy/image2/https://ugbd.get-it.it/geoserver/wms?transparent=TRUE&format=image/png",
     layers: "geonode:NAPOLI_DEFORMAZIONE_MAP"
   });
-  var deformationNaplesImageMosaic = new ImageMosaic(cesiumViewerDeformation, "https://ugbd.get-it.it/proxy/wmts/http://ugbd-geoserver.get-it.it/geoserver/gwc/service/wmts", "DeformationTS:imagenapolirealcolors", ["1992-06-08", "1992-11-30", "1993-12-20", "1995-12-14", "1996-11-28", "1997-12-18", "1998-12-03", "1999-12-23", "2000-12-07", "2001-09-13", "2002-12-12", "2003-11-27", "2004-11-11", "2005-12-01", "2006-12-21", "2007-12-06", "2008-12-25", "2009-12-10", "2010-09-16"], [14.05072, 40.82471, 14.30817, 40.91915], 1382400);
+  var deformationNaplesImageMosaic = new ImageMosaic(cesiumViewerDeformation, "https://ugbd.get-it.it/proxy/wmts/http://ugbd-geoserver.get-it.it/geoserver/gwc/service/wmts", "DeformationTS:imagenapolirealcolors", ["1992-06-08", "1992-11-30", "1993-12-20", "1995-12-14", "1996-11-28", "1997-12-18", "1998-12-03", "1999-12-23", "2000-12-07", "2001-09-13", "2002-12-12", "2003-11-27", "2004-11-11", "2005-12-01", "2006-12-21", "2007-12-06", "2008-12-25", "2009-12-10", "2010-09-16"], [14.05072, 40.82471, 14.30817, 40.91915], 2628000);
   var deformationNaples = {switcherText: "Naples", meanProvider: deformationNaplesMeanProvider, meanLayer: undefined, imageMosaic: deformationNaplesImageMosaic, cumulativeLayer: undefined};
 
   var deformationTurinMeanProvider = new Cesium.WebMapServiceImageryProvider({
     url: "https://ugbd.get-it.it/proxy/image2/https://ugbd.get-it.it/geoserver/wms?transparent=TRUE&format=image/png",
     layers: "geonode:TORINO_DEFORMAZIONE_MAP"
   });
-  var deformationTurinImageMosaic = new ImageMosaic(cesiumViewerDeformation, "https://ugbd.get-it.it/proxy/wmts/http://ugbd-geoserver.get-it.it/geoserver/gwc/service/wmts", "DeformationTS:torinowmts", ["1992-10-25", "1993-12-19", "1995-07-25", "1995-12-13", "1996-11-27", "1997-12-17", "1998-10-28", "1999-10-13", "2000-12-06", "2001-10-17", "2002-12-11", "2003-11-26", "2004-06-23", "2005-09-21", "2006-12-20", "2007-10-31", "2008-11-19", "2009-11-04"], [6.87014, 44.54736, 8.04625, 45.23375], 1382400);
+  var deformationTurinImageMosaic = new ImageMosaic(cesiumViewerDeformation, "https://ugbd.get-it.it/proxy/wmts/http://ugbd-geoserver.get-it.it/geoserver/gwc/service/wmts", "DeformationTS:torinowmts", ["1992-10-25", "1993-12-19", "1995-07-25", "1995-12-13", "1996-11-27", "1997-12-17", "1998-10-28", "1999-10-13", "2000-12-06", "2001-10-17", "2002-12-11", "2003-11-26", "2004-06-23", "2005-09-21", "2006-12-20", "2007-10-31", "2008-11-19", "2009-11-04"], [6.87014, 44.54736, 8.04625, 45.23375], 2628000);
   var deformationTurin = {switcherText: "Turin", meanProvider: deformationTurinMeanProvider, meanLayer: undefined, imageMosaic: deformationTurinImageMosaic, cumulativeLayer: undefined};
 
   var deformationCities = [deformationMilan, deformationRome, deformationNaples, deformationTurin];
@@ -441,15 +441,15 @@ require(["jquery",
   var layerListLulcStamenWatercolor = new LayerListItem("lulc-stamen-watercolor", "Stamen Watercolor", false, "basemap", new Cesium.ImageryLayer(stamenWatercolorProvider), undefined);
   layerListLulc.add(layerListLulcStamenWatercolor);
 
-  var lulcGhsImageMosaic = new ImageMosaic(cesiumViewerLulc, "http://localhost:8080/geoserver/gwc/service/wmts", "ugbd:ghs_mosaic", ["1975-01-01", "1990-01-01", "2000-01-01", "2014-01-01"], [6.62742880642586, 35.4929658861417, 18.5194423562342, 47.0917506888397], 2592000);
+  var lulcGhsImageMosaic = new ImageMosaic(cesiumViewerLulc, "http://localhost:8080/geoserver/gwc/service/wmts", "ugbd:ghs_mosaic", ["1975-01-01", "1990-01-01", "2000-01-01", "2014-01-01"], [6.62742880642586, 35.4929658861417, 18.5194423562342, 47.0917506888397], 15768000);
   var layerListLulcGhs = new LayerListItem("lulc-ghs", "Global Human Settlement (1975, 1990, 2000, 2014)", false, "overlay", lulcGhsImageMosaic, undefined);
   layerListLulc.add(layerListLulcGhs);
 
-  var lulcIspraBuImageMosaic = new ImageMosaic(cesiumViewerLulc, "http://localhost:8080/geoserver/gwc/service/wmts", "ugbd:ispra_bu_mosaic", ["2012-01-01", "2015-01-01", "2016-01-01", "2017-01-01"], [6.538753580867903, 35.1492230912518, 20.043680683325675, 47.13620267234754], 2592000);
+  var lulcIspraBuImageMosaic = new ImageMosaic(cesiumViewerLulc, "http://localhost:8080/geoserver/gwc/service/wmts", "ugbd:ispra_bu_mosaic", ["2012-01-01", "2015-01-01", "2016-01-01", "2017-01-01"], [6.538753580867903, 35.1492230912518, 20.043680683325675, 47.13620267234754], 2628000);
   var layerListLulcIspraBu = new LayerListItem("lulc-ispra-bu", "ISPRA Built-up Area (2012, 2015, 2016, 2017)", false, "overlay", lulcIspraBuImageMosaic, undefined);
   layerListLulc.add(layerListLulcIspraBu);
 
-  var lulcGlc30ImageMosaic = new ImageMosaic(cesiumViewerLulc, "http://localhost:8080/geoserver/gwc/service/wmts", "ugbd:glc30_mosaic", ["2000-01-01", "2010-01-01"], [6.62743, 35.4930964524792, 18.5192301504127, 47.09175], 2592000);
+  var lulcGlc30ImageMosaic = new ImageMosaic(cesiumViewerLulc, "http://localhost:8080/geoserver/gwc/service/wmts", "ugbd:glc30_mosaic", ["2000-01-01", "2010-01-01"], [6.62743, 35.4930964524792, 18.5192301504127, 47.09175], 15768000);
   var layerListLulcGlc30 = new LayerListItem("lulc-glc30", "GlobeLand30 (2000, 2010)", false, "overlay", lulcGlc30ImageMosaic, glc30Legend);
   layerListLulc.add(layerListLulcGlc30);
 
