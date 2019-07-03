@@ -36,7 +36,7 @@ Naples, Turin and Padua building heights come from OSM database.
 
 ## CityGML data visualization and query
 
-CityGML data visualization on CesiumJS virtual globe has been performed using <a href="https://github.com/3dcitydb/3dcitydb">3DCityDB</a> and <a href="https://github.com/3dcitydb/3dcitydb-web-map">3DCityDB-Web-Map-Client</a>. Each building can be queried. Moreover, flooding is simulated to aid in the informed decision-making process regarding adaptation measures and mitigation of flooding effects.
+CityGML data visualization on CesiumJS virtual globe has been performed using <a href="https://github.com/3dcitydb/3dcitydb">3DCityDB</a>, <a href="https://github.com/3dcitydb/importer-exporter">3DCityDB Importer/Exporter</a>, and <a href="https://github.com/3dcitydb/3dcitydb-web-map">3DCityDB-Web-Map-Client</a>. Each building can be queried. Moreover, flooding is simulated to aid in the informed decision-making process regarding adaptation measures and mitigation of flooding effects.
 
 <p align="center"><img src="images/screenshots/citygml.png" width="600"></p>
 <p align="center"><i>Flood simulation in Milan with CityGML visualization and query</i></p>
