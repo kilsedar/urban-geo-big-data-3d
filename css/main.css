@@ -74,12 +74,14 @@
   border-bottom: 3px double;
 }
 
-.dropdown-toggle:hover, .dropdown-toggle:active, .dropdown-toggle:focus {
+.dropdown-toggle:active, .dropdown-toggle:focus {
   box-shadow: none !important;
   border-bottom: 3px double;
 }
 
 .dropdown-toggle:hover {
+  box-shadow: none !important;
+  border-bottom: 3px double;
   background-color: #48b;
 }
 
@@ -141,7 +143,7 @@ hr {
   vertical-align: middle;
 }
 
-#lulc-vgi, #deformation-mean, #deformation-cumulative {
+#deformation-mean, #deformation-cumulative, #lulc-vgi {
   position: absolute;
   top: 50px;
   z-index: 100;
@@ -149,8 +151,17 @@ hr {
   border-bottom: 3px double;
 }
 
-#lulc-vgi {
-  left: 104px;
+#deformation-mean, #deformation-cumulative, #lulc-first-year, #lulc-second-year, #lulc-class, #lulc-draw-rectangle, #lulc-cogwheel {
+  opacity: 0.6;
+}
+
+#deformation-mean:active, #deformation-mean:focus, #deformation-cumulative:active, #deformation-cumulative:focus, #lulc-vgi:active, #lulc-vgi:focus {
+  box-shadow: none;
+}
+
+#deformation-mean:hover, #deformation-cumulative:hover, #lulc-vgi:hover, #lulc-draw-rectangle:hover, #lulc-cogwheel:hover {
+  box-shadow: none;
+  background-color: #48b !important;
 }
 
 #deformation-mean {
@@ -158,19 +169,54 @@ hr {
 }
 
 #deformation-cumulative {
-  left: 180px;
+  left: 178px;
 }
 
-#deformation-mean, #deformation-cumulative {
-  opacity: 0.6;
+#lulc-vgi {
+  left: 104px;
 }
 
-#lulc-vgi:hover, #lulc-vgi:active, #lulc-vgi:focus, #deformation-mean:hover, #deformation-mean:active, #deformation-mean:focus, #deformation-cumulative:hover, #deformation-cumulative:active, #deformation-cumulative:focus {
-  box-shadow: none;
+#lulc-first-year {
+  left: 386px;
 }
 
-#lulc-vgi:hover, #deformation-mean:hover, #deformation-cumulative:hover {
-  background-color: #48b !important;
+#lulc-first-year-menu-button {
+  width: 90px;
+}
+
+#lulc-second-year {
+  left: 484px;
+}
+
+#lulc-second-year-menu-button {
+  width: 94px;
+}
+
+#lulc-class {
+  left: 585px;
+}
+
+#lulc-class-menu-button {
+  width: 200px;
+}
+
+#lulc-draw-rectangle, #lulc-cogwheel {
+  width: 39px;
+  height: 39px;
+  background-color: #303336;
+  padding: 6px;
+}
+
+#lulc-draw-rectangle {
+  left: 793px;
+}
+
+#lulc-cogwheel {
+  left: 839px;
+}
+
+#lulc-draw-rectangle:focus, #lulc-cogwheel:focus {
+  outline:0 !important;
 }
 
 #vgi-attribution-link {
@@ -202,11 +248,6 @@ hr {
 
 #legend-deformation-cumulative {
   padding: 6px 0px 0px 19px !important;
-}
-
-.legend-deformation .color-box {
-  width: 33px;
-  float: left;
 }
 
 #legend-deformation-mean-text-minus-fifteen {
@@ -310,8 +351,12 @@ hr {
 
 .switcher {
   position: absolute;
-  top: 52px;
+  top: 50px;
   left: 8px;
+}
+
+.switcher button {
+  width: 88px;
 }
 
 .use-case-button {
@@ -376,6 +421,11 @@ hr {
   margin-right: 4px;
 }
 
+.legend-deformation .color-box {
+  width: 33px;
+  float: left;
+}
+
 .caret {
   display: inline;
 }
@@ -407,4 +457,10 @@ hr {
   margin: 0px;
   padding: 3px 0px 3px 3px;
   cursor: pointer;
+}
+
+.lulc-wcps {
+  position: absolute;
+  top: 50px;
+  z-index: 100;
 }

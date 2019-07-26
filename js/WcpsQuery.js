@@ -7,7 +7,7 @@ define(["vendor/plotly-latest.min", "jquery"], function (Plotly, $) {
     this.listener;
   };
 
-  WcpsQuery.prototype.setGlc30Classification = function (code) {
+  WcpsQuery.prototype.getGlc30ClassificationName = function (code) {
     var classification = "";
     if (code == "10")
       classification = "Cultivated land";
@@ -33,7 +33,7 @@ define(["vendor/plotly-latest.min", "jquery"], function (Plotly, $) {
     return classification;
   }
 
-  WcpsQuery.prototype.setIspraLandCoverClassification = function (code) {
+  WcpsQuery.prototype.getIspraLandCoverClassificationName = function (code) {
     var classification = "";
     if (code == "1000")
       classification = "Artificial surfaces";
@@ -116,7 +116,7 @@ define(["vendor/plotly-latest.min", "jquery"], function (Plotly, $) {
               if ((result[0] != "0" || result[1] != "0") && $(".cesium-infoBox-visible").length == 0) {
                 _self.viewer.selectedEntity = new Cesium.Entity({
                   name: "GlobeLand30 Classes",
-                  description: "<b>2000</b>: " + _self.setGlc30Classification(result[0]) + "<br><b>2010</b>: " + _self.setGlc30Classification(result[1])
+                  description: "<b>2000</b>: " + _self.getGlc30ClassificationName(result[0]) + "<br><b>2010</b>: " + _self.getGlc30ClassificationName(result[1])
                 });
               }
               /* else
@@ -134,10 +134,10 @@ define(["vendor/plotly-latest.min", "jquery"], function (Plotly, $) {
               result = result.split(",");
               if ((result[0] != "0" || result[1] != "0" || result[2] != "0" || result[3] != "0") && $(".cesium-infoBox-visible").length == 0) {
                 for (var i=0; i<result.length; i++) {
-                  if (result[i] == "1")
-                    result[i] = "unsettled";
-                  else if (result[i] == "101")
+                  if (result[i] == "101")
                     result[i] = "settled";
+                  else if (result[i] == "1")
+                    result[i] = "unsettled";
                 }
 
                 var data = [
@@ -240,10 +240,10 @@ define(["vendor/plotly-latest.min", "jquery"], function (Plotly, $) {
               result = result.split(",");
               if ((result[0] != "-nan" || result[1] != "-nan" || result[2] != "-nan" || result[3] != "-nan") && $(".cesium-infoBox-visible").length == 0) {
                 for (var i=0; i<result.length; i++) {
-                  if (result[i] == "2")
-                    result[i] = "not built-up";
-                  else if (result[i] == "1")
+                  if (result[i] == "1")
                     result[i] = "built-up";
+                  else if (result[i] == "2")
+                    result[i] = "not built-up";
                 }
 
                 var data = [
@@ -346,7 +346,7 @@ define(["vendor/plotly-latest.min", "jquery"], function (Plotly, $) {
               if (result != "65535" && $(".cesium-infoBox-visible").length == 0) {
                 _self.viewer.selectedEntity = new Cesium.Entity({
                   name: "ISPRA Land Cover Class",
-                  description: _self.setIspraLandCoverClassification(result)
+                  description: _self.getIspraLandCoverClassificationName(result)
                 });
               }
               /* else

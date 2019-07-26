@@ -79,6 +79,60 @@ define(["jquery"], function ($) {
     }
   };
 
+  LayerList.prototype.fillWcpsMenu = function () {
+    var lulcYears, lulcFirstYear, lulcSecondYear, lulcClasses, lulcClass;
+    $("#lulc-first-year-menu-button").html("1st year");
+    $("#lulc-second-year-menu-button").html("2nd year");
+    $("#lulc-class-menu-button").html("class");
+    $("#lulc-first-year, #lulc-second-year, #lulc-class, #lulc-draw-rectangle, #lulc-cogwheel").css("opacity", "1");
+    $("#lulc-draw-rectangle, #lulc-cogwheel").attr("disabled", false);
+    if (this.layerOnTop.imageryProvider._layer == "ugbd:ghs_mosaic") {
+      lulcYears = ["1975", "1990", "2000", "2014"];
+      lulcClasses = ["settled", "unsettled"];
+    }
+    else if (this.layerOnTop.imageryProvider._layer == "ugbd:ispra_bu_mosaic") {
+      lulcYears = ["2012", "2015", "2016", "2017"];
+      lulcClasses = ["built-up", "not built-up"];
+    }
+    else {
+      lulcYears = ["2000", "2010"];
+      lulcClasses = ["artificial surface", "cultivated land", "bare land", "permanent snow and ice", "forest", "grassland", "tundra", "shrubland", "wetland", "water body"];
+    }
+    $("#lulc-first-year-menu, #lulc-second-year-menu, #lulc-class-menu").empty();
+    for (var i=0; i<lulcYears.length; i++) {
+      lulcFirstYear = $("<a></a>");
+      lulcFirstYear.attr("id", this.layerOnTop.imageryProvider._layer.split(":")[1].split("_mosaic")[0].replace("_", "-")+"-"+lulcYears[i]+"-1");
+      lulcFirstYear.addClass("dropdown-item");
+      lulcFirstYear.attr("href", "#");
+      lulcFirstYear.html(lulcYears[i]);
+      $("#lulc-first-year-menu").append(lulcFirstYear);
+      lulcSecondYear = $("<a></a>");
+      lulcSecondYear.attr("id", this.layerOnTop.imageryProvider._layer.split(":")[1].split("_mosaic")[0].replace("_", "-")+"-"+lulcYears[i]+"-2");
+      lulcSecondYear.addClass("dropdown-item");
+      lulcSecondYear.attr("href", "#");
+      lulcSecondYear.html(lulcYears[i]);
+      $("#lulc-second-year-menu").append(lulcSecondYear);
+    }
+    for (var i=0; i<lulcClasses.length; i++) {
+      lulcClass = $("<a></a>");
+      lulcClass.attr("id", this.layerOnTop.imageryProvider._layer.split(":")[1].split("_mosaic")[0].replace("_", "-")+"-"+lulcClasses[i].replace(" ", "-"));
+      lulcClass.addClass("dropdown-item");
+      lulcClass.attr("href", "#");
+      lulcClass.html(lulcClasses[i]);
+      $("#lulc-class-menu").append(lulcClass);
+    }
+  };
+
+  LayerList.prototype.disableWcpsMenu = function () {
+    $("#lulc-first-year-menu-button").html("1st year");
+    $("#lulc-second-year-menu-button").html("2nd year");
+    $("#lulc-class-menu-button").html("class");
+    $("#lulc-draw-rectangle").css("background-color", "#303336");
+    $("#lulc-first-year, #lulc-second-year, #lulc-class, #lulc-draw-rectangle, #lulc-cogwheel").css("opacity", "0.6");
+    $("lulc-draw-rectangle, #lulc-cogwheel").attr("disabled", true);
+    $("#lulc-first-year-menu, #lulc-second-year-menu, #lulc-class-menu").empty();
+  };
+
   LayerList.prototype.add = function (layerListItem) {
     this.items.push(layerListItem);
 
@@ -149,6 +203,10 @@ define(["jquery"], function ($) {
           _self.useCase.resetClockAndTimeline();
         }
         _self.layerOnTop = _self.viewer.imageryLayers.get(_self.viewer.imageryLayers.length-1);
+        if(_self.layerOnTop.imageryProvider._layer == "ugbd:ghs_mosaic" || _self.layerOnTop.imageryProvider._layer == "ugbd:ispra_bu_mosaic" || _self.layerOnTop.imageryProvider._layer == "ugbd:glc30_mosaic")
+          _self.fillWcpsMenu();
+        else
+          _self.disableWcpsMenu();
       }
       else if ($("#"+layerListItem.id+"-input").attr("type") == "checkbox" && $("#"+layerListItem.id+"-input").is(":checked") == false) {
         $("#"+_self.viewerContainerId+" #legend-"+layerListItem.id).remove();
@@ -170,10 +228,15 @@ define(["jquery"], function ($) {
                 _self.useCase.resetClockAndTimeline();
             }
           }
+          if(_self.layerOnTop.imageryProvider._layer == "ugbd:ghs_mosaic" || _self.layerOnTop.imageryProvider._layer == "ugbd:ispra_bu_mosaic" || _self.layerOnTop.imageryProvider._layer == "ugbd:glc30_mosaic")
+            _self.fillWcpsMenu();
+          else
+            _self.disableWcpsMenu();
         }
         else {
           _self.layerOnTop = undefined;
           _self.useCase.resetClockAndTimeline();
+          _self.disableWcpsMenu();
         }
       }
       else {

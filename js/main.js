@@ -42,12 +42,13 @@ require(["jquery",
         "js/LandCoverJson",
         "js/WmsDeformationPlot",
         "js/WcpsQuery.js",
+        "js/WcpsProcessing.js",
         "ispraLandCoverLegend",
         "glc30Legend",
         "milanFloodRiskLegend",
         "deformationMeanLegend",
         "deformationCumulativeLegend"],
-       function ($, OSMBuildingLayer, Header, UseCase, Switcher, SwitcherItem, LayerList, LayerListItem, ImageMosaic, WebMap3DCityDBKml, WebMap3DCityDBKmlLayer, LandCoverJson, WmsDeformationPlot, WcpsQuery) {
+       function ($, OSMBuildingLayer, Header, UseCase, Switcher, SwitcherItem, LayerList, LayerListItem, ImageMosaic, WebMap3DCityDBKml, WebMap3DCityDBKmlLayer, LandCoverJson, WmsDeformationPlot, WcpsQuery, WcpsProcessing) {
   "use strict";
 
   var worldWindViewer3dCity = new WorldWind.WorldWindow("world-wind-3d-city-canvas");
@@ -486,40 +487,8 @@ require(["jquery",
   var urlCouchdb = "https://landcover.como.polimi.it/couchdb/lcc_points/_all_docs?include_docs=true";
   var glc30Couchdb = new LandCoverJson(glc30Classes, glc30Colors, urlCouchdb);
 
-  $("#cesium-lulc-use-case").click(function() {
-    glc30Couchdb.add(cesiumViewerLulc);
-  });
-
-  $("#switcher-lulc-menu .dropdown-item").click(function() {
-    setTimeout(function() {
-      $("#lulc-vgi").css("left", $("#switcher-lulc-menu-button").width()+40 + "px");
-    }, 100);
-  });
-
-  $("#lulc-vgi").click(function() {
-    if (cesiumViewerLulc.dataSources.length > 0) {
-      cesiumViewerLulc.dataSources.removeAll();
-      $("#lulc-vgi").css("opacity", "0.6");
-    }
-    else {
-      glc30Couchdb.add(cesiumViewerLulc);
-      $("#lulc-vgi").css("opacity", "1.0");
-    }
-  });
-
   function styleLegend() {
-    if ($("#cesium-deformation .legend").is(":visible")) {
-      if ($("#cesium-deformation .legend").prop("scrollHeight")+130 > $(window).height()) {
-        $("#cesium-deformation .legend").css("height", $(window).height()-130+"px");
-        $("#cesium-deformation .legend").css("width", "auto");
-        $("#cesium-deformation .legend").css("width", $("#cesium-deformation .legend").width()+24+"px");
-      }
-      else {
-        $("#cesium-deformation .legend").css("height", "auto");
-        $("#cesium-deformation .legend").css("width", "auto");
-      }
-    }
-    else if ($("#cesium-3d-city .legend").is(":visible")) {
+    if ($("#cesium-3d-city .legend").is(":visible")) {
       if ($("#cesium-3d-city .legend").prop("scrollHeight")+176 > $(window).height()) {
         $("#cesium-3d-city .legend").css("height", $(window).height()-176 + "px");
         $("#cesium-3d-city .legend").css("width", "auto");
@@ -530,7 +499,37 @@ require(["jquery",
         $("#cesium-3d-city .legend").css("width", "auto");
       }
     }
+    else if ($("#cesium-deformation .legend").is(":visible")) {
+      if ($("#cesium-deformation .legend").prop("scrollHeight")+130 > $(window).height()) {
+        $("#cesium-deformation .legend").css("height", $(window).height()-130+"px");
+        $("#cesium-deformation .legend").css("width", "auto");
+        $("#cesium-deformation .legend").css("width", $("#cesium-deformation .legend").width()+24+"px");
+      }
+      else {
+        $("#cesium-deformation .legend").css("height", "auto");
+        $("#cesium-deformation .legend").css("width", "auto");
+      }
+    }
   }
+
+  $("#cesium-3d-city-milan").click(function() {
+    $("#table-water-height").css("visibility", "visible");
+    if (!cesiumViewer3dCity.imageryLayers.contains(floodRiskMilan))
+      cesiumViewer3dCity.imageryLayers.add(floodRiskMilan);
+    if (!cesiumViewer3dCity.entities.contains(water))
+      cesiumViewer3dCity.entities.add(water);
+    $("#cesium-3d-city").append(milanFloodRiskLegend);
+    setTimeout(function() {
+      styleLegend();
+    }, 100);
+  });
+
+  $("#cesium-3d-city-padua, #cesium-3d-city-naples, #cesium-3d-city-turin").click(function() {
+    $("#table-water-height").css("visibility", "hidden");
+    cesiumViewer3dCity.imageryLayers.remove(floodRiskMilan, false);
+    cesiumViewer3dCity.entities.remove(water);
+    milanFloodRiskLegend.remove();
+  });
 
   function getByValue(array, value) {
     for (var i=0; i<array.length; i++) {
@@ -548,10 +547,6 @@ require(["jquery",
   }
 
   $("#switcher-deformation-menu .dropdown-item").click(function() {
-    setTimeout(function() {
-      $("#deformation-mean").css("left", $("#switcher-deformation-menu-button").width()+48 + "px");
-      $("#deformation-cumulative").css("left", $("#switcher-deformation-menu-button").width()+116 + "px");
-    }, 100);
     $("#deformation-mean").css("opacity", "0.6");
     $("#deformation-cumulative").css("opacity", "0.6");
     deformationMeanLegend.remove();
@@ -606,23 +601,172 @@ require(["jquery",
     }
   });
 
-  $("#cesium-3d-city-milan").click(function() {
-    $("#table-water-height").css("visibility", "visible");
-    if (!cesiumViewer3dCity.imageryLayers.contains(floodRiskMilan))
-      cesiumViewer3dCity.imageryLayers.add(floodRiskMilan);
-    if (!cesiumViewer3dCity.entities.contains(water))
-      cesiumViewer3dCity.entities.add(water);
-    $("#cesium-3d-city").append(milanFloodRiskLegend);
-    setTimeout(function() {
-      styleLegend();
-    }, 100);
+  $("#cesium-lulc-use-case").click(function() {
+    glc30Couchdb.add(cesiumViewerLulc);
   });
 
-  $("#cesium-3d-city-padua, #cesium-3d-city-naples, #cesium-3d-city-turin").click(function() {
-    $("#table-water-height").css("visibility", "hidden");
-    cesiumViewer3dCity.imageryLayers.remove(floodRiskMilan, false);
-    cesiumViewer3dCity.entities.remove(water);
-    milanFloodRiskLegend.remove();
+  $("#lulc-vgi").click(function() {
+    if (cesiumViewerLulc.dataSources.length > 0) {
+      cesiumViewerLulc.dataSources.removeAll();
+      $("#lulc-vgi").css("opacity", "0.6");
+    }
+    else {
+      glc30Couchdb.add(cesiumViewerLulc);
+      $("#lulc-vgi").css("opacity", "1.0");
+    }
+  });
+
+  $("#cesium-lulc").on("click", "#lulc-first-year .dropdown-item", function() {
+    var lulcFirstYearIdSplitted = this.id.split("-");
+    var lulcFirstYear = lulcFirstYearIdSplitted[lulcFirstYearIdSplitted.length-2];
+    $("#lulc-first-year-menu-button").html(lulcFirstYear);
+  });
+
+  $("#cesium-lulc").on("click", "#lulc-second-year .dropdown-item", function() {
+    var lulcSecondYearIdSplitted = this.id.split("-");
+    var lulcSecondYear = lulcSecondYearIdSplitted[lulcSecondYearIdSplitted.length-2];
+    $("#lulc-second-year-menu-button").html(lulcSecondYear);
+  });
+
+  $("#cesium-lulc").on("click", "#lulc-class .dropdown-item", function() {
+    var lulcClassIdSplitted = this.id.split("-");
+    var lulcClass = "";
+    if (lulcClassIdSplitted[0] == "glc30" || lulcClassIdSplitted[0] == "ghs") {
+      for (var i=1; i<lulcClassIdSplitted.length-1; i++) {
+        lulcClass += lulcClassIdSplitted[i] + " ";
+      }
+      lulcClass += lulcClassIdSplitted[lulcClassIdSplitted.length-1];
+    }
+    else {
+      for (var i=2; i<lulcClassIdSplitted.length-2; i++) {
+        lulcClass += lulcClassIdSplitted[i] + " ";
+      }
+      lulcClass += lulcClassIdSplitted[lulcClassIdSplitted.length-2] + "-" + lulcClassIdSplitted[lulcClassIdSplitted.length-1];
+    }
+    $("#lulc-class-menu-button").html(lulcClass);
+  });
+
+  cesiumViewerLulc.scene.screenSpaceCameraController.enableLook = false;
+  var camera = cesiumViewerLulc.camera;
+  var ellipsoid = cesiumViewerLulc.scene.globe.ellipsoid;
+  var screenSpaceEventHandler = new Cesium.ScreenSpaceEventHandler(cesiumViewerLulc.canvas);
+
+  var selection;
+  var cartesian;
+  var firstPointCartographic = new Cesium.Cartographic(), lastPointCartographic = new Cesium.Cartographic();
+  var firstPointCartesian3857, lastPointCartesian3857;
+  var x1, x2, y1, y2;
+
+  var firstPointCartographicSet = false;
+  var mouseDown = false;
+  var drawRectangleEnabled = false;
+
+  function hideRectangle() {
+    if (selection != undefined)
+      selection.show = false;
+    x1 = undefined, x2 = undefined, y1 = undefined, y2 = undefined;
+  }
+
+  function disableDrawRectangle() {
+    drawRectangleEnabled = false;
+    $("#lulc-draw-rectangle").css("background-color", "#303336");
+
+    screenSpaceEventHandler.setInputAction(function () {
+      return;
+    }, Cesium.ScreenSpaceEventType.LEFT_DOWN, Cesium.KeyboardEventModifier.SHIFT);
+
+    screenSpaceEventHandler.setInputAction(function (movement) {
+      return;
+    }, Cesium.ScreenSpaceEventType.MOUSE_MOVE, Cesium.KeyboardEventModifier.SHIFT);
+
+    screenSpaceEventHandler.setInputAction(function () {
+      return;
+    }, Cesium.ScreenSpaceEventType.LEFT_UP, Cesium.KeyboardEventModifier.SHIFT);
+
+    screenSpaceEventHandler.setInputAction(function () {
+      return;
+    }, Cesium.ScreenSpaceEventType.LEFT_CLICK);
+  }
+
+  function enableDrawRectangle() {
+    drawRectangleEnabled = true;
+    $("#lulc-draw-rectangle").css("background-color", "#48b");
+
+    var rectangle = new Cesium.Rectangle();
+
+    screenSpaceEventHandler.setInputAction(function () {
+      mouseDown = true;
+    }, Cesium.ScreenSpaceEventType.LEFT_DOWN, Cesium.KeyboardEventModifier.SHIFT);
+
+    screenSpaceEventHandler.setInputAction(function (movement) {
+      if (!mouseDown)
+        return;
+
+      cartesian = camera.pickEllipsoid(movement.endPosition, ellipsoid, cartesian);
+      lastPointCartographic = Cesium.Cartographic.fromCartesian(cartesian, Cesium.Ellipsoid.WGS84, lastPointCartographic);
+
+      if (!firstPointCartographicSet) {
+        Cesium.Cartographic.clone(lastPointCartographic, firstPointCartographic);
+        firstPointCartographicSet = true;
+      }
+      else {
+        rectangle.east = Math.max(lastPointCartographic.longitude, firstPointCartographic.longitude);
+        rectangle.west = Math.min(lastPointCartographic.longitude, firstPointCartographic.longitude);
+        rectangle.north = Math.max(lastPointCartographic.latitude, firstPointCartographic.latitude);
+        rectangle.south = Math.min(lastPointCartographic.latitude, firstPointCartographic.latitude);
+        selection.show = true;
+      }
+    }, Cesium.ScreenSpaceEventType.MOUSE_MOVE, Cesium.KeyboardEventModifier.SHIFT);
+
+    screenSpaceEventHandler.setInputAction(function () {
+      mouseDown = false;
+      firstPointCartographicSet = false;
+      firstPointCartesian3857 = new Cesium.WebMercatorProjection(ellipsoid).project(firstPointCartographic);
+      lastPointCartesian3857 = new Cesium.WebMercatorProjection(ellipsoid).project(lastPointCartographic);
+      x1 = Math.min(firstPointCartesian3857.x, lastPointCartesian3857.x);
+      x2 = Math.max(firstPointCartesian3857.x, lastPointCartesian3857.x);
+      y1 = Math.min(firstPointCartesian3857.y, lastPointCartesian3857.y);
+      y2 = Math.max(firstPointCartesian3857.y, lastPointCartesian3857.y);
+    }, Cesium.ScreenSpaceEventType.LEFT_UP, Cesium.KeyboardEventModifier.SHIFT);
+
+    screenSpaceEventHandler.setInputAction(function () {
+      hideRectangle();
+    }, Cesium.ScreenSpaceEventType.LEFT_CLICK);
+
+    var getSelectionCoordinates = new Cesium.CallbackProperty(function () {
+      return rectangle;
+    }, false);
+
+    selection = cesiumViewerLulc.entities.add({
+      show: false,
+      rectangle: {
+        coordinates: getSelectionCoordinates,
+        material: Cesium.Color.WHITE.withAlpha(0.4)
+      }
+    });
+  }
+
+  $("#lulc-draw-rectangle").click(function() {
+    if (drawRectangleEnabled == true) {
+      hideRectangle();
+      disableDrawRectangle();
+      return;
+    }
+
+    hideRectangle();
+    enableDrawRectangle();
+  });
+
+  $("#lulc-cogwheel").click(function() {
+    disableDrawRectangle();
+
+    if ($("#lulc-first-year-menu-button").html() != "1st year" && $("#lulc-second-year-menu-button").html() != "2nd year" && $("#lulc-first-year-menu-button").html() != $("#lulc-second-year-menu-button").html() && $("#lulc-class-menu-button").html() != "class" && x1 != undefined && x2 != undefined && y1 != undefined && y2 != undefined) {
+      var lulcWcpsProcessing = new WcpsProcessing(cesiumViewerLulc, layerListLulc);
+      lulcWcpsProcessing.detectChange($("#lulc-first-year-menu-button").html(), $("#lulc-second-year-menu-button").html(), $("#lulc-class-menu-button").html(), x1, x2, y1, y2);
+      hideRectangle();
+    }
+    else
+      alert("Please select two different years and a class and draw a rectangle to start processing.");
   });
 
   function styleLightbox(selector) {
