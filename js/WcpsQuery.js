@@ -110,7 +110,7 @@ define(["vendor/plotly-latest.min", "jquery"], function (Plotly, $) {
       if (_self.layerList.layerOnTop != undefined) {
         if (_self.layerList.layerOnTop._imageryProvider._layer == "ugbd:glc30_mosaic") {
           $.ajax({
-            url: 'http://localhost:8081/rasdaman/ows?query=for $c in (glc30_2000_2010) return encode($c[X(' + x + '), Y(' + y + '), ansi("2000-01-01T00:00:00.000Z":"2010-01-01T00:00:00.000Z")], "text/csv")',
+            url: 'http://urbangeobigdata.como.polimi.it:8081/rasdaman/ows?query=for $c in (glc30_2000_2010) return encode($c[X(' + x + '), Y(' + y + '), ansi("2000-01-01T00:00:00.000Z":"2010-01-01T00:00:00.000Z")], "text/csv")',
             success: function(result){
               result = result.split(",");
               if ((result[0] != "0" || result[1] != "0") && $(".cesium-infoBox-visible").length == 0) {
@@ -129,7 +129,7 @@ define(["vendor/plotly-latest.min", "jquery"], function (Plotly, $) {
         }
         else if (_self.layerList.layerOnTop._imageryProvider._layer == "ugbd:ghs_mosaic") {
           $.ajax({
-            url: 'http://localhost:8081/rasdaman/ows?query=for $c in (ghs_1975_1990_2000_2014) return encode($c[X(' + x + '), Y(' + y + '), ansi("1975-01-01T00:00:00.000Z":"2014-01-01T00:00:00.000Z")], "text/csv")',
+            url: 'http://urbangeobigdata.como.polimi.it:8081/rasdaman/ows?query=for $c in (ghs_1975_1990_2000_2014) return encode($c[X(' + x + '), Y(' + y + '), ansi("1975-01-01T00:00:00.000Z":"2014-01-01T00:00:00.000Z")], "text/csv")',
             success: function(result){
               result = result.split(",");
               if ((result[0] != "0" || result[1] != "0" || result[2] != "0" || result[3] != "0") && $(".cesium-infoBox-visible").length == 0) {
@@ -235,7 +235,7 @@ define(["vendor/plotly-latest.min", "jquery"], function (Plotly, $) {
         }
         else if (_self.layerList.layerOnTop._imageryProvider._layer == "ugbd:ispra_bu_mosaic") {
           $.ajax({
-            url: 'http://localhost:8081/rasdaman/ows?query=for $c in (ispra_bu_2012_2015_2016_2017) return encode($c[X(' + x + '), Y(' + y + '), ansi("2012-01-01T00:00:00.000Z":"2017-01-01T00:00:00.000Z")], "text/csv")',
+            url: 'http://urbangeobigdata.como.polimi.it:8081/rasdaman/ows?query=for $c in (ispra_bu_2012_2015_2016_2017) return encode($c[X(' + x + '), Y(' + y + '), ansi("2012-01-01T00:00:00.000Z":"2017-01-01T00:00:00.000Z")], "text/csv")',
             success: function(result){
               result = result.split(",");
               if ((result[0] != "-nan" || result[1] != "-nan" || result[2] != "-nan" || result[3] != "-nan") && $(".cesium-infoBox-visible").length == 0) {
@@ -341,7 +341,7 @@ define(["vendor/plotly-latest.min", "jquery"], function (Plotly, $) {
         }
         else if (_self.layerList.layerOnTop._imageryProvider._layer == "ugbd:ispra_land_cover_2012") {
           $.ajax({
-            url: 'http://localhost:8081/rasdaman/ows?query=for $c in (ispra_land_cover_2012) return encode($c[X(' + x + '), Y(' + y + ')], "text/csv")',
+            url: 'http://urbangeobigdata.como.polimi.it:8081/rasdaman/ows?query=for $c in (ispra_land_cover_2012) return encode($c[X(' + x + '), Y(' + y + ')], "text/csv")',
             success: function(result){
               if (result != "65535" && $(".cesium-infoBox-visible").length == 0) {
                 _self.viewer.selectedEntity = new Cesium.Entity({

@@ -145,7 +145,7 @@ require(["jquery",
     imageryProvider: bingAerialProvider,
     // terrainProvider: terrainProvider,
     terrainProvider: new Cesium.CesiumTerrainProvider({
-      url: "http://localhost:8082/tilesets/dtm"
+      url: "http://urbangeobigdata.como.polimi.it:8082/tilesets/dtm"
     }),
     skyBox: skyBox3dCity,
     baseLayerPicker: false,
@@ -296,7 +296,7 @@ require(["jquery",
   );
 
   var floodRiskMilanProvider = new Cesium.WebMapTileServiceImageryProvider({
-    url: "http://localhost:8080/geoserver/gwc/service/wmts",
+    url: "http://urbangeobigdata.como.polimi.it:8080/geoserver/gwc/service/wmts",
     layer: "ugbd:flood_risk_milan",
     style: "ugbd:flood_risk_milan",
     format: "image/png",
@@ -442,20 +442,20 @@ require(["jquery",
   var layerListLulcStamenWatercolor = new LayerListItem("lulc-stamen-watercolor", "Stamen Watercolor", false, "basemap", new Cesium.ImageryLayer(stamenWatercolorProvider), undefined);
   layerListLulc.add(layerListLulcStamenWatercolor);
 
-  var lulcGhsImageMosaic = new ImageMosaic(cesiumViewerLulc, "http://"+location.hostname+":8080/geoserver/gwc/service/wmts", "ugbd:ghs_mosaic", ["1975-01-01", "1990-01-01", "2000-01-01", "2014-01-01"], [6.62742880642586, 35.4929658861417, 18.5194423562342, 47.0917506888397], 15768000);
+  var lulcGhsImageMosaic = new ImageMosaic(cesiumViewerLulc, "http://urbangeobigdata.como.polimi.it:8080/geoserver/gwc/service/wmts", "ugbd:ghs_mosaic", ["1975-01-01", "1990-01-01", "2000-01-01", "2014-01-01"], [6.62742880642586, 35.4929658861417, 18.5194423562342, 47.0917506888397], 15768000);
   var layerListLulcGhs = new LayerListItem("lulc-ghs", "Global Human Settlement (1975, 1990, 2000, 2014)", false, "overlay", lulcGhsImageMosaic, undefined);
   layerListLulc.add(layerListLulcGhs);
 
-  var lulcIspraBuImageMosaic = new ImageMosaic(cesiumViewerLulc, "http://localhost:8080/geoserver/gwc/service/wmts", "ugbd:ispra_bu_mosaic", ["2012-01-01", "2015-01-01", "2016-01-01", "2017-01-01"], [6.538753580867903, 35.1492230912518, 20.043680683325675, 47.13620267234754], 2628000);
+  var lulcIspraBuImageMosaic = new ImageMosaic(cesiumViewerLulc, "http://urbangeobigdata.como.polimi.it:8080/geoserver/gwc/service/wmts", "ugbd:ispra_bu_mosaic", ["2012-01-01", "2015-01-01", "2016-01-01", "2017-01-01"], [6.538753580867903, 35.1492230912518, 20.043680683325675, 47.13620267234754], 2628000);
   var layerListLulcIspraBu = new LayerListItem("lulc-ispra-bu", "ISPRA Built-up Area (2012, 2015, 2016, 2017)", false, "overlay", lulcIspraBuImageMosaic, undefined);
   layerListLulc.add(layerListLulcIspraBu);
 
-  var lulcGlc30ImageMosaic = new ImageMosaic(cesiumViewerLulc, "http://localhost:8080/geoserver/gwc/service/wmts", "ugbd:glc30_mosaic", ["2000-01-01", "2010-01-01"], [6.62743, 35.4930964524792, 18.5192301504127, 47.09175], 15768000);
+  var lulcGlc30ImageMosaic = new ImageMosaic(cesiumViewerLulc, "http://urbangeobigdata.como.polimi.it:8080/geoserver/gwc/service/wmts", "ugbd:glc30_mosaic", ["2000-01-01", "2010-01-01"], [6.62743, 35.4930964524792, 18.5192301504127, 47.09175], 15768000);
   var layerListLulcGlc30 = new LayerListItem("lulc-glc30", "GlobeLand30 (2000, 2010)", false, "overlay", lulcGlc30ImageMosaic, glc30Legend);
   layerListLulc.add(layerListLulcGlc30);
 
   var lulcIspraLandCover2012Provider = new Cesium.WebMapTileServiceImageryProvider({
-    url: "http://localhost:8080/geoserver/gwc/service/wmts",
+    url: "http://urbangeobigdata.como.polimi.it:8080/geoserver/gwc/service/wmts",
     layer: "ugbd:ispra_land_cover_2012",
     style: "ugbd:ispra_land_cover_2012",
     format: "image/png",

@@ -87,10 +87,10 @@ define(["jquery"], function ($) {
         yMax = 5957062.8874;
         bounds = _self.calculateBounds(x1, x2, y1, y2, xMin, xMax, yMin, yMax);
         $.when(
-          $.get('http://localhost:8081/rasdaman/ows?query=for $c in (glc30_2000_2010) return encode(count($c[X(' + bounds[0] + ':' + bounds[1] + '), Y(' + bounds[2] + ':' + bounds[3] + '), ansi("' + lulcFirstYear + '-01-01T00:00:00.000Z")]=' + _self.getGlc30ClassificationCode(lulcClass) + '), "text/csv")', function(result) {
+          $.get('http://urbangeobigdata.como.polimi.it:8081/rasdaman/ows?query=for $c in (glc30_2000_2010) return encode(count($c[X(' + bounds[0] + ':' + bounds[1] + '), Y(' + bounds[2] + ':' + bounds[3] + '), ansi("' + lulcFirstYear + '-01-01T00:00:00.000Z")]=' + _self.getGlc30ClassificationCode(lulcClass) + '), "text/csv")', function(result) {
             result1 = result;
           }),
-          $.get('http://localhost:8081/rasdaman/ows?query=for $c in (glc30_2000_2010) return encode(count($c[X(' + bounds[0] + ':' + bounds[1] + '), Y(' + bounds[2] + ':' + bounds[3] + '), ansi("' + lulcSecondYear + '-01-01T00:00:00.000Z")]=' + _self.getGlc30ClassificationCode(lulcClass) + '), "text/csv")', function(result) {
+          $.get('http://urbangeobigdata.como.polimi.it:8081/rasdaman/ows?query=for $c in (glc30_2000_2010) return encode(count($c[X(' + bounds[0] + ':' + bounds[1] + '), Y(' + bounds[2] + ':' + bounds[3] + '), ansi("' + lulcSecondYear + '-01-01T00:00:00.000Z")]=' + _self.getGlc30ClassificationCode(lulcClass) + '), "text/csv")', function(result) {
             result2 = result;
           })
         ).then(function() {
@@ -104,10 +104,10 @@ define(["jquery"], function ($) {
         yMax = 5957063;
         bounds = _self.calculateBounds(x1, x2, y1, y2, xMin, xMax, yMin, yMax);
         $.when(
-          $.get('http://localhost:8081/rasdaman/ows?query=for $c in (ghs_1975_1990_2000_2014) return encode(count($c[X(' + bounds[0] + ':' + bounds[1] + '), Y(' + bounds[2] + ':' + bounds[3] + '), ansi("' + lulcFirstYear + '-01-01T00:00:00.000Z")]=' + _self.getGhsClassificationCode(lulcClass) + '), "text/csv")', function(result) {
+          $.get('http://urbangeobigdata.como.polimi.it:8081/rasdaman/ows?query=for $c in (ghs_1975_1990_2000_2014) return encode(count($c[X(' + bounds[0] + ':' + bounds[1] + '), Y(' + bounds[2] + ':' + bounds[3] + '), ansi("' + lulcFirstYear + '-01-01T00:00:00.000Z")]=' + _self.getGhsClassificationCode(lulcClass) + '), "text/csv")', function(result) {
             result1 = result;
           }),
-          $.get('http://localhost:8081/rasdaman/ows?query=for $c in (ghs_1975_1990_2000_2014) return encode(count($c[X(' + bounds[0] + ':' + bounds[1] + '), Y(' + bounds[2] + ':' + bounds[3] + '), ansi("' + lulcSecondYear + '-01-01T00:00:00.000Z")]=' + _self.getGhsClassificationCode(lulcClass) + '), "text/csv")', function(result) {
+          $.get('http://urbangeobigdata.como.polimi.it:8081/rasdaman/ows?query=for $c in (ghs_1975_1990_2000_2014) return encode(count($c[X(' + bounds[0] + ':' + bounds[1] + '), Y(' + bounds[2] + ':' + bounds[3] + '), ansi("' + lulcSecondYear + '-01-01T00:00:00.000Z")]=' + _self.getGhsClassificationCode(lulcClass) + '), "text/csv")', function(result) {
             result2 = result;
           })
         ).then(function() {
@@ -121,10 +121,10 @@ define(["jquery"], function ($) {
         yMax = 5964333.5071;
         bounds = _self.calculateBounds(x1, x2, y1, y2, xMin, xMax, yMin, yMax);
         $.when(
-          $.get('http://localhost:8081/rasdaman/ows?query=for $c in (ispra_bu_2012_2015_2016_2017) return encode(count($c[X(' + bounds[0] + ':' + bounds[1] + '), Y(' + bounds[2] + ':' + bounds[3] + '), ansi("' + lulcFirstYear + '-01-01T00:00:00.000Z")]=' + _self.getIspraBuClassificationCode(lulcClass) + '), "text/csv")', function(result) {
+          $.get('http://urbangeobigdata.como.polimi.it:8081/rasdaman/ows?query=for $c in (ispra_bu_2012_2015_2016_2017) return encode(count($c[X(' + bounds[0] + ':' + bounds[1] + '), Y(' + bounds[2] + ':' + bounds[3] + '), ansi("' + lulcFirstYear + '-01-01T00:00:00.000Z")]=' + _self.getIspraBuClassificationCode(lulcClass) + '), "text/csv")', function(result) {
             result1 = result;
           }),
-          $.get('http://localhost:8081/rasdaman/ows?query=for $c in (ispra_bu_2012_2015_2016_2017) return encode(count($c[X(' + bounds[0] + ':' + bounds[1] + '), Y(' + bounds[2] + ':' + bounds[3] + '), ansi("' + lulcSecondYear + '-01-01T00:00:00.000Z")]=' + _self.getIspraBuClassificationCode(lulcClass) + '), "text/csv")', function(result) {
+          $.get('http://urbangeobigdata.como.polimi.it:8081/rasdaman/ows?query=for $c in (ispra_bu_2012_2015_2016_2017) return encode(count($c[X(' + bounds[0] + ':' + bounds[1] + '), Y(' + bounds[2] + ':' + bounds[3] + '), ansi("' + lulcSecondYear + '-01-01T00:00:00.000Z")]=' + _self.getIspraBuClassificationCode(lulcClass) + '), "text/csv")', function(result) {
             result2 = result;
           })
         ).then(function() {
