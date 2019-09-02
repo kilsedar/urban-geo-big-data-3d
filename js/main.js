@@ -343,6 +343,9 @@ require(["jquery",
   var switcherDeformationMilan = new SwitcherItem("cesium", cesiumViewerDeformation, "deformation-milan", "Milan", undefined, undefined, [9.09069, 45.30822, 9.6169, 45.58249], 60000.0);
   switcherDeformation.add(switcherDeformationMilan);
 
+  var switcherDeformationPadua = new SwitcherItem("cesium", cesiumViewerDeformation, "deformation-padua", "Padua", undefined, undefined, [11.45958, 45.04319, 12.42597, 45.65069], 120000.0);
+  switcherDeformation.add(switcherDeformationPadua);
+
   var switcherDeformationRome = new SwitcherItem("cesium", cesiumViewerDeformation, "deformation-rome", "Rome", undefined, undefined, [12.24653, 41.30458, 13.33569, 42.32653], 180000.0);
   switcherDeformation.add(switcherDeformationRome);
 
@@ -358,6 +361,13 @@ require(["jquery",
   });
   var deformationMilanImageMosaic = new ImageMosaic(cesiumViewerDeformation, "https://ugbd.get-it.it/proxy/wmts/http://ugbd-geoserver.get-it.it/geoserver/gwc/service/wmts", "DeformationTS:milanorightcolors", ["1993-05-01", "1995-04-24", "1995-12-26", "1996-08-27", "1997-12-30", "1998-12-15", "1999-11-30", "2000-12-19", "2001-09-25", "2002-12-24", "2003-12-09", "2004-11-23", "2005-11-08", "2006-11-28", "2007-12-18", "2008-12-02", "2009-11-17", "2010-09-28"], [9.09069, 45.30822, 9.6169, 45.58249], 2628000);
   var deformationMilan = {switcherText: "Milan", meanProvider: deformationMilanMeanProvider, meanLayer: undefined, imageMosaic: deformationMilanImageMosaic, cumulativeLayer: undefined};
+
+  var deformationPaduaMeanProvider = new Cesium.WebMapServiceImageryProvider({
+    url: "https://ugbd.get-it.it/proxy/image2/https://ugbd.get-it.it/geoserver/wms?transparent=TRUE&format=image/png",
+    layers: "geonode:PADOVA_DEFORMAZIONE_MAP"
+  });
+  var deformationPaduaImageMosaic = new ImageMosaic(cesiumViewerDeformation, "https://ugbd.get-it.it/proxy/wmts/http://ugbd-geoserver.get-it.it/geoserver/gwc/service/wmts", "DeformationTS:padovawmts", ["1992-04-24", "1993-11-05", "1995-10-30", "1996-12-23", "1997-12-08", "1998-12-28", "1999-12-13", "2000-11-27", "2001-12-17", "2002-10-28", "2003-12-22", "2004-12-06", "2005-12-26", "2006-01-30", "2006-12-11", "2007-12-31", "2008-11-10", "2009-11-30", "2010-06-28"], [11.45958, 45.04319, 12.42597, 45.65069], 2628000);
+  var deformationPadua = {switcherText: "Padua", meanProvider: deformationPaduaMeanProvider, meanLayer: undefined, imageMosaic: deformationPaduaImageMosaic, cumulativeLayer: undefined};
 
   var deformationRomeMeanProvider = new Cesium.WebMapServiceImageryProvider({
     url: "https://ugbd.get-it.it/proxy/image2/https://ugbd.get-it.it/geoserver/wms?transparent=TRUE&format=image/png",
@@ -380,7 +390,7 @@ require(["jquery",
   var deformationTurinImageMosaic = new ImageMosaic(cesiumViewerDeformation, "https://ugbd.get-it.it/proxy/wmts/http://ugbd-geoserver.get-it.it/geoserver/gwc/service/wmts", "DeformationTS:torinowmts", ["1992-10-25", "1993-12-19", "1995-07-25", "1995-12-13", "1996-11-27", "1997-12-17", "1998-10-28", "1999-10-13", "2000-12-06", "2001-10-17", "2002-12-11", "2003-11-26", "2004-06-23", "2005-09-21", "2006-12-20", "2007-10-31", "2008-11-19", "2009-11-04"], [6.87014, 44.54736, 8.04625, 45.23375], 2628000);
   var deformationTurin = {switcherText: "Turin", meanProvider: deformationTurinMeanProvider, meanLayer: undefined, imageMosaic: deformationTurinImageMosaic, cumulativeLayer: undefined};
 
-  var deformationCities = [deformationMilan, deformationRome, deformationNaples, deformationTurin];
+  var deformationCities = [deformationMilan, deformationPadua, deformationRome, deformationNaples, deformationTurin];
 
   var wmsDeformationPlot = new WmsDeformationPlot(cesiumViewerDeformation);
   wmsDeformationPlot.addListener("wfs_ts");
