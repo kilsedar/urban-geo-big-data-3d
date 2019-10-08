@@ -55,13 +55,13 @@ Data is stored on <a href="https://github.com/geoserver/geoserver">GeoServer</a>
 
 ## Big multidimensional raster data visualization and processing
 
-EO-derived datasets GlobeLand30 of 2000 and 2010; Global Human Settlement Layer of 1975, 1990, 2000 and 2014; built-up area map from ISPRA (Italian Institute for Environmental Protection and Research) of 2012, 2015, 2016 and 2017; land cover map from ISPRA of 2012 are visualized and processed on the Web. The spatial extent of all the datasets is restricted to Italy because of the limited hardware. The spatial resolutions of the datasets in order are 30 m, 40 m, 10 m, and 10 m.
+EO-derived datasets built-up area maps from ISPRA (Italian Institute for Environmental Protection and Research) of 2012, 2015, 2016 and 2017; land cover map from ISPRA of 2012; GlobeLand30 of 2000 and 2010; and GHS-BUILT of 1975, 1990, 2000 and 2014 are visualized and processed on the Web. The spatial extent of all the datasets is restricted to Italy because of the limited hardware. The spatial resolutions of the datasets in order are 10 m, 10 m, 30 m and 38 m.
 
-The datasets of multiple years are visualized using animation to enable detecting changes in land cover or soil consumption visually using the same method for deformation animation. The datasets are processed using Web Coverage Processing Service (WCPS) through rasdaman. At the moment, the processing involves returning the change of land cover classes or soil consumption through years for the clicked coordinates. In the future, the amount of change of a land cover class or soil consumption will be calculated for an area drawn by the user for two selected years.
+The datasets of multiple years are visualized using temporal animation to enable detecting changes in land use and land cover visually using the same method for deformation animation. The datasets are processed using Web Coverage Processing Service (WCPS) through rasdaman. The processing involves returning the change of land use or land cover classes for the clicked coordinates. Moreover, the amount of change of a land use or land cover class is calculated for an area drawn by the user for two selected years.
 
 ## VGI visualization and query
 
-Volunteered geographic information (VGI) on land cover classification, collected with the application <a href="https://github.com/kilsedar/land-cover-collector">Land Cover Collector</a>, using the nomenclature of GlobeLand30 is overlaid on top of the raster maps of land cover and soil consumption. The VGI data can be queried.
+Volunteered geographic information (VGI) on land cover classification, collected with the application <a href="https://github.com/kilsedar/land-cover-collector">Land Cover Collector</a>, using the nomenclature of GlobeLand30 is overlaid on top of the raster maps of land use and land cover. The VGI data can be queried.
 
 <p align="center"><img src="images/screenshots/globeland30-vgi.png" width="600"></p>
 <p align="center"><i>VGI and GlobeLand30 visualization and processing</i></p>
