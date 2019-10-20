@@ -34,9 +34,9 @@ define(["jquery"], function ($) {
 
   WcpsProcessing.prototype.getGhsClassificationCode = function (classification) {
     var code = "";
-    if (classification == "settled")
+    if (classification == "built-up")
       code = "101";
-    else if (classification == "unsettled")
+    else if (classification == "not built-up")
       code = "1";
 
     return code;
@@ -44,9 +44,9 @@ define(["jquery"], function ($) {
 
   WcpsProcessing.prototype.getIspraLandConsumptionClassificationCode = function (classification) {
     var code = "";
-    if (classification == "built-up")
+    if (classification == "consumed")
       code = "1";
-    else if (classification == "not built-up")
+    else if (classification == "not consumed")
       code = "2";
 
     return code;

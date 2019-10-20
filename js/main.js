@@ -641,17 +641,23 @@ require(["jquery",
   $("#cesium-lulc").on("click", "#lulc-class .dropdown-item", function() {
     var lulcClassIdSplitted = this.id.split("-");
     var lulcClass = "";
-    if (lulcClassIdSplitted[0] == "glc30" || lulcClassIdSplitted[0] == "ghs") {
+    if (lulcClassIdSplitted[0] == "glc30") {
       for (var i=1; i<lulcClassIdSplitted.length-1; i++) {
         lulcClass += lulcClassIdSplitted[i] + " ";
       }
       lulcClass += lulcClassIdSplitted[lulcClassIdSplitted.length-1];
     }
-    else {
-      for (var i=2; i<lulcClassIdSplitted.length-2; i++) {
+    else if (lulcClassIdSplitted[0] == "ghs") {
+      for (var i=1; i<lulcClassIdSplitted.length-2; i++) {
         lulcClass += lulcClassIdSplitted[i] + " ";
       }
       lulcClass += lulcClassIdSplitted[lulcClassIdSplitted.length-2] + "-" + lulcClassIdSplitted[lulcClassIdSplitted.length-1];
+    }
+    else {
+      for (var i=2; i<lulcClassIdSplitted.length-1; i++) {
+        lulcClass += lulcClassIdSplitted[i] + " ";
+      }
+      lulcClass += lulcClassIdSplitted[lulcClassIdSplitted.length-1];
     }
     $("#lulc-class-menu-button").html(lulcClass);
   });

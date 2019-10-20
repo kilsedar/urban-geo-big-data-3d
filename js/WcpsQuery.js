@@ -135,9 +135,9 @@ define(["vendor/plotly-latest.min", "jquery"], function (Plotly, $) {
               if ((result[0] != "0" || result[1] != "0" || result[2] != "0" || result[3] != "0") && $(".cesium-infoBox-visible").length == 0) {
                 for (var i=0; i<result.length; i++) {
                   if (result[i] == "101")
-                    result[i] = "settled";
+                    result[i] = "built-up";
                   else if (result[i] == "1")
-                    result[i] = "unsettled";
+                    result[i] = "not built-up";
                 }
 
                 var data = [
@@ -154,7 +154,7 @@ define(["vendor/plotly-latest.min", "jquery"], function (Plotly, $) {
                     title: "time"
                   },
                   margin: {
-                    l: 54,
+                    l: 66,
                     r: 4,
                     b: 40,
                     t: 30,
@@ -241,9 +241,9 @@ define(["vendor/plotly-latest.min", "jquery"], function (Plotly, $) {
               if ((result[0] != "-nan" || result[1] != "-nan" || result[2] != "-nan" || result[3] != "-nan") && $(".cesium-infoBox-visible").length == 0) {
                 for (var i=0; i<result.length; i++) {
                   if (result[i] == "1")
-                    result[i] = "built-up";
+                    result[i] = "consumed";
                   else if (result[i] == "2")
-                    result[i] = "not built-up";
+                    result[i] = "not consumed";
                 }
 
                 var data = [
@@ -260,7 +260,7 @@ define(["vendor/plotly-latest.min", "jquery"], function (Plotly, $) {
                     title: "time"
                   },
                   margin: {
-                    l: 65,
+                    l: 78,
                     r: 4,
                     b: 40,
                     t: 30,

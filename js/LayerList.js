@@ -88,11 +88,11 @@ define(["jquery"], function ($) {
     $("#lulc-draw-rectangle, #lulc-cogwheel").attr("disabled", false);
     if (this.layerOnTop.imageryProvider._layer == "ugbd:ghs_mosaic") {
       lulcYears = ["1975", "1990", "2000", "2014"];
-      lulcClasses = ["settled", "unsettled"];
+      lulcClasses = ["built-up", "not built-up"];
     }
     else if (this.layerOnTop.imageryProvider._layer == "ugbd:ispra_bu_mosaic") {
       lulcYears = ["2012", "2015", "2016", "2017"];
-      lulcClasses = ["built-up", "not built-up"];
+      lulcClasses = ["consumed", "not consumed"];
     }
     else {
       lulcYears = ["2000", "2010"];
