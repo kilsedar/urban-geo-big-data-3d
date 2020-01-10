@@ -110,7 +110,7 @@
   font-family: "Do Hyeon", sans-serif;
 }
 
-html, body, #world-wind-3d-city, #world-wind-3d-city-canvas, #cesium-3d-city, #cesium-deformation, #cesium-lulc {
+html, body, #world-wind-3d-city, #world-wind-3d-city-canvas, #cesium-3d-city, #cesium-deformation, #cesium-lulc, #cesium-mobility {
   width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden;
   font-family: "Do Hyeon", sans-serif;
 }
@@ -127,7 +127,7 @@ hr {
   background-color: rgba(17, 17, 17, 1.0);
 }
 
-#cesium-3d-city, #cesium-deformation, #cesium-lulc {
+#cesium-3d-city, #cesium-deformation, #cesium-lulc, #cesium-mobility {
   display: none;
 }
 
@@ -143,7 +143,7 @@ hr {
   vertical-align: middle;
 }
 
-#deformation-mean, #deformation-cumulative, #lulc-vgi {
+#deformation-mean, #deformation-cumulative, #lulc-vgi, #mobility-public-transportation, #mobility-traffic {
   position: absolute;
   top: 50px;
   z-index: 100;
@@ -151,20 +151,20 @@ hr {
   border-bottom: 3px double;
 }
 
-#deformation-mean, #deformation-cumulative, #lulc-first-year, #lulc-second-year, #lulc-class, #lulc-draw-rectangle, #lulc-cogwheel {
+#deformation-mean, #deformation-cumulative, #lulc-first-year, #lulc-second-year, #lulc-class, #lulc-draw-rectangle, #lulc-cogwheel, #mobility-public-transportation, #mobility-traffic {
   opacity: 0.6;
 }
 
-#deformation-mean:active, #deformation-mean:focus, #deformation-cumulative:active, #deformation-cumulative:focus, #lulc-vgi:active, #lulc-vgi:focus {
+#deformation-mean:active, #deformation-mean:focus, #deformation-cumulative:active, #deformation-cumulative:focus, #lulc-vgi:active, #lulc-vgi:focus, #mobility-public-transportation:active, #mobility-public-transportation:focus, #mobility-traffic:active, #mobility-traffic:focus {
   box-shadow: none;
 }
 
-#deformation-mean:hover, #deformation-cumulative:hover, #lulc-vgi:hover, #lulc-draw-rectangle:hover, #lulc-cogwheel:hover {
+#deformation-mean:hover, #deformation-cumulative:hover, #lulc-vgi:hover, #lulc-draw-rectangle:hover, #lulc-cogwheel:hover, #mobility-public-transportation:hover, #mobility-traffic:hover {
   box-shadow: none;
   background-color: #48b !important;
 }
 
-#deformation-mean {
+#deformation-mean, #mobility-public-transportation {
   left: 112px;
 }
 
@@ -219,6 +219,10 @@ hr {
   outline:0 !important;
 }
 
+#mobility-traffic {
+  left: 242px;
+}
+
 #vgi-attribution-link {
   left: 296px;
 }
@@ -232,10 +236,6 @@ hr {
   text-align: justify;
   font-size: 13px;
   padding: 20px;
-}
-
-#legend-lulc-ispra-land-cover {
-  width: 330px;
 }
 
 #legend-milan-flood-risk {
@@ -300,6 +300,15 @@ hr {
 
 #legend-deformation-cumulative-text-plus-twenty-three-hundred {
   margin-left: 5px;
+}
+
+#legend-traffic .legend-text {
+  margin-left: 35px;
+  margin-right: 0px;
+}
+
+#legend-traffic .color-box {
+  margin-right: 35px;
 }
 
 #table-water-height {

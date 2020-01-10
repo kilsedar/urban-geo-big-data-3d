@@ -54,7 +54,7 @@ define([], function () {
     clock.startTime = start;
     clock.stopTime = stop;
     clock.multiplier = this.timelineMultiplier;
-    clock.clockRange = Cesium.ClockRange.UNBOUNDED;
+    clock.clockRange = Cesium.ClockRange.CLAMPED;
     clock.clockStep = Cesium.ClockStep.TICK_DEPENDENT;
 
     this.viewer.timeline.zoomTo(start, stop);

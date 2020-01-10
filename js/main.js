@@ -7,7 +7,9 @@ require.config({
     "glc30Legend": "images/legends/glc30",
     "milanFloodRiskLegend": "images/legends/milanFloodRisk",
     "deformationMeanLegend": "images/legends/deformationMean",
-    "deformationCumulativeLegend": "images/legends/deformationCumulative"
+    "deformationCumulativeLegend": "images/legends/deformationCumulative",
+    "publicTransportationLegend": "images/legends/publicTransportation",
+    "trafficLegend": "images/legends/traffic"
   },
   shim: {
     "ispraLandCoverLegend": {
@@ -23,6 +25,12 @@ require.config({
         "deps": ["jquery"]
     },
     "deformationCumulativeLegend": {
+        "deps": ["jquery"]
+    },
+    "publicTransportationLegend": {
+        "deps": ["jquery"]
+    },
+    "trafficLegend": {
         "deps": ["jquery"]
     }
   }
@@ -47,7 +55,9 @@ require(["jquery",
         "glc30Legend",
         "milanFloodRiskLegend",
         "deformationMeanLegend",
-        "deformationCumulativeLegend"],
+        "deformationCumulativeLegend",
+        "publicTransportationLegend",
+        "trafficLegend"],
        function ($, OSMBuildingLayer, Header, UseCase, Switcher, SwitcherItem, LayerList, LayerListItem, ImageMosaic, WebMap3DCityDBKml, WebMap3DCityDBKmlLayer, LandCoverJson, WmsDeformationPlot, WcpsQuery, WcpsProcessing) {
   "use strict";
 
@@ -136,6 +146,17 @@ require(["jquery",
     }
   });
 
+  var skyBoxMobility = new Cesium.SkyBox({
+    sources: {
+      positiveX: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_px.jpg",
+      negativeX: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_mx.jpg",
+      positiveY: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_py.jpg",
+      negativeY: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_my.jpg",
+      positiveZ: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_pz.jpg",
+      negativeZ: "vendor/Cesium-1.50/Source/Assets/Textures/SkyBox/tycho2t3_80_mz.jpg"
+    }
+  });
+
   var terrainProvider = new Cesium.VRTheWorldTerrainProvider({
     url: "http://www.vr-theworld.com/vr-theworld/tiles1.0.0/73/",
     credit: "Terrain data courtesy of <a href='https://www.mak.com/products/terrain/vr-theworld-server/vr-theworld-online'>VT MAK</a>"
@@ -150,7 +171,7 @@ require(["jquery",
     skyBox: skyBox3dCity,
     baseLayerPicker: false,
     geocoder: false,
-    infoBox: true,
+    infoBox: false,
     navigationHelpButton: true,
     shadows: true,
     terrainShadows: Cesium.ShadowMode.ENABLED
@@ -181,19 +202,31 @@ require(["jquery",
     navigationHelpButton: true
   });
 
+  var cesiumViewerMobility = new Cesium.Viewer("cesium-mobility", {
+    imageryProvider: cartoDarkProvider,
+    terrainProvider: terrainProvider,
+    skyBox: skyBoxMobility,
+    baseLayerPicker: false,
+    geocoder: false,
+    infoBox: false,
+    navigationHelpButton: true
+  });
+
   var header = new Header("rgba(67, 173, 97, 1.0)", "rgba(51, 132, 74, 1.0)");
 
-  var useCaseWorldWind3dCity = new UseCase(worldWindViewer3dCity, "world-wind-3d-city-use-case", "3D City <img id='header-nasa-image' src='images/nasa.png'>", "3D OpenStreetMap Buildings on NASA Web WorldWind", true);
-  var useCaseCesium3dCity = new UseCase(cesiumViewer3dCity, "cesium-3d-city-use-case", "3D City <img id='header-cesium-image' src='images/cesium-white.png'>", "CityGML on CesiumJS", false);
-  var useCaseDeformation = new UseCase(cesiumViewerDeformation, "cesium-deformation-use-case", "Deformation", "Deformation Maps on CesiumJS", false);
-  var useCaseLulc = new UseCase(cesiumViewerLulc, "cesium-lulc-use-case", "LULC", "Land Use and Land Cover Maps on CesiumJS", false);
+  var useCaseWorldWind3dCity = new UseCase(worldWindViewer3dCity, "world-wind-3d-city-use-case", "3D City <img id='header-nasa-image' src='images/nasa.png'>", "3D OpenStreetMap Buildings with NASA Web WorldWind", true);
+  var useCaseCesium3dCity = new UseCase(cesiumViewer3dCity, "cesium-3d-city-use-case", "3D City <img id='header-cesium-image' src='images/cesium-white.png'>", "CityGML with CesiumJS", false);
+  var useCaseDeformation = new UseCase(cesiumViewerDeformation, "cesium-deformation-use-case", "Deformation", "Deformation Maps with CesiumJS", false);
+  var useCaseLulc = new UseCase(cesiumViewerLulc, "cesium-lulc-use-case", "LULC", "Land Use and Land Cover Maps with CesiumJS", false);
+  var useCaseMobility = new UseCase(cesiumViewerMobility, "cesium-mobility-use-case", "Mobility", "Pulic Transportation and Traffic Maps with CesiumJS", false);
 
   header.addUseCase(useCaseWorldWind3dCity);
   header.addUseCase(useCaseCesium3dCity);
   header.addUseCase(useCaseDeformation);
   header.addUseCase(useCaseLulc);
+  header.addUseCase(useCaseMobility);
 
-  var switcherWorldWind3dCity = new Switcher("world-wind-3d-city", "switcher-world-wind-3d-city", "location");
+  var switcherWorldWind3dCity = new Switcher("world-wind-3d-city", "switcher-world-wind-3d-city");
 
   var worldWind3dCityConfigurationMilan = {
     interiorColor: new WorldWind.Color(0.0, 0.0, 0.0, 1.0),
@@ -260,7 +293,7 @@ require(["jquery",
   var switcherWorldWind3dCityTurin = new SwitcherItem("world-wind", worldWindViewer3dCity, "world-wind-3d-city-turin", "Turin", "renderable", worldWind3dCityTurin, [7.66429, 45.0589, 7.70738, 45.0898], undefined);
   switcherWorldWind3dCity.add(switcherWorldWind3dCityTurin);
 
-  var switcherCesium3dCity = new Switcher("cesium-3d-city", "switcher-cesium-3d-city", "location");
+  var switcherCesium3dCity = new Switcher("cesium-3d-city", "switcher-cesium-3d-city");
 
   var webMap3DCityDB = new WebMap3DCityDB(cesiumViewer3dCity);
   webMap3DCityDB.activateMouseMoveEvents(true);
@@ -338,7 +371,7 @@ require(["jquery",
   var layerListCesium3dCityStamenWatercolor = new LayerListItem("cesium-3d-city-stamen-watercolor", "Stamen Watercolor", false, "basemap", new Cesium.ImageryLayer(stamenWatercolorProvider), undefined);
   layerListCesium3dCity.add(layerListCesium3dCityStamenWatercolor);
 
-  var switcherDeformation = new Switcher("cesium-deformation", "switcher-deformation", "location");
+  var switcherDeformation = new Switcher("cesium-deformation", "switcher-deformation");
 
   var switcherDeformationMilan = new SwitcherItem("cesium", cesiumViewerDeformation, "deformation-milan", "Milan", undefined, undefined, [9.09069, 45.30822, 9.6169, 45.58249], 60000.0);
   switcherDeformation.add(switcherDeformationMilan);
@@ -497,30 +530,70 @@ require(["jquery",
   var urlCouchdb = "https://landcover.como.polimi.it/couchdb/lcc_points/_all_docs?include_docs=true";
   var glc30Couchdb = new LandCoverJson(glc30Classes, glc30Colors, urlCouchdb);
 
-  function styleLegend() {
-    if ($("#cesium-3d-city .legend").is(":visible")) {
-      if ($("#cesium-3d-city .legend").prop("scrollHeight")+176 > $(window).height()) {
-        $("#cesium-3d-city .legend").css("height", $(window).height()-176 + "px");
-        $("#cesium-3d-city .legend").css("width", "auto");
-        $("#cesium-3d-city .legend").css("width", $("#cesium-3d-city .legend").width()+24+"px");
-      }
-      else {
-        $("#cesium-3d-city .legend").css("height", "auto");
-        $("#cesium-3d-city .legend").css("width", "auto");
-      }
-    }
-    else if ($("#cesium-deformation .legend").is(":visible")) {
-      if ($("#cesium-deformation .legend").prop("scrollHeight")+130 > $(window).height()) {
-        $("#cesium-deformation .legend").css("height", $(window).height()-130+"px");
-        $("#cesium-deformation .legend").css("width", "auto");
-        $("#cesium-deformation .legend").css("width", $("#cesium-deformation .legend").width()+24+"px");
-      }
-      else {
-        $("#cesium-deformation .legend").css("height", "auto");
-        $("#cesium-deformation .legend").css("width", "auto");
-      }
-    }
-  }
+  var switcherMobility = new Switcher("cesium-mobility", "switcher-mobility");
+
+  var switcherMobilityMilan = new SwitcherItem("cesium", cesiumViewerMobility, "mobility-milan", "Milan", undefined, undefined, [9.04284, 45.3871, 9.27791, 45.536], 40000.0);
+  switcherMobility.add(switcherMobilityMilan);
+
+  var switcherMobilityPadua = new SwitcherItem("cesium", cesiumViewerMobility, "mobility-padua", "Padua", undefined, undefined, [11.8054, 45.34, 11.976, 45.4575], 40000.0);
+  switcherMobility.add(switcherMobilityPadua);
+
+  var switcherMobilityRome = new SwitcherItem("cesium", cesiumViewerMobility, "mobility-rome", "Rome", undefined, undefined, [12.2342, 41.6555, 12.8558, 42.141], 40000.0);
+  switcherMobility.add(switcherMobilityRome);
+
+  var switcherMobilityNaples = new SwitcherItem("cesium", cesiumViewerMobility, "mobility-naples", "Naples", undefined, undefined, [14.1367, 40.7912, 14.3537, 40.915], 40000.0);
+  switcherMobility.add(switcherMobilityNaples);
+
+  var switcherMobilityTurin = new SwitcherItem("cesium", cesiumViewerMobility, "mobility-turin", "Turin", undefined, undefined, [7.57783, 45.008, 7.77271, 45.1402], 40000.0);
+  switcherMobility.add(switcherMobilityTurin);
+
+  var mobilityMilanPublicTransportationProvider = new Cesium.WebMapServiceImageryProvider({
+    url: "http://urban.ithacaweb.org/geoserver/ithaca/wms?transparent=TRUE&format=image/png",
+    layers: "ithaca:linee_milano"
+  });
+  var mobilityMilan = {switcherText: "Milan", publicTransportationProvider: mobilityMilanPublicTransportationProvider, publicTransportationLayer: undefined};
+
+  var mobilityPadua = {switcherText: "Padua", publicTransportationProvider: undefined, publicTransportationLayer: undefined};
+
+  var mobilityRomePublicTransportationProvider = new Cesium.WebMapServiceImageryProvider({
+    url: "http://urban.ithacaweb.org/geoserver/ithaca/wms?transparent=TRUE&format=image/png",
+    layers: "ithaca:linee_roma"
+  });
+  var mobilityRome = {switcherText: "Rome", publicTransportationProvider: mobilityRomePublicTransportationProvider, publicTransportationLayer: undefined};
+
+  var mobilityNaplesPublicTransportationProvider = new Cesium.WebMapServiceImageryProvider({
+    url: "http://urban.ithacaweb.org/geoserver/ithaca/wms?transparent=TRUE&format=image/png",
+    layers: "ithaca:linee_napoli"
+  });
+  var mobilityNaples = {switcherText: "Naples", publicTransportationProvider: mobilityNaplesPublicTransportationProvider, publicTransportationLayer: undefined};
+
+  var mobilityTurinPublicTransportationProvider = new Cesium.WebMapServiceImageryProvider({
+    url: "http://urban.ithacaweb.org/geoserver/ithaca/wms?transparent=TRUE&format=image/png",
+    layers: "ithaca:linee_torino"
+  });
+  var mobilityTurin = {switcherText: "Turin", publicTransportationProvider: mobilityTurinPublicTransportationProvider, publicTransportationLayer: undefined};
+
+  var mobilityCities = [mobilityMilan, mobilityPadua, mobilityRome, mobilityNaples, mobilityTurin];
+
+  var layerListMobility = new LayerList(useCaseMobility, "layer-list-mobility");
+
+  var layerListMobilityBingAerial = new LayerListItem("mobility-bing-aerial", "Bing Maps Aerial", false, "basemap", new Cesium.ImageryLayer(bingAerialProvider), undefined);
+  layerListMobility.add(layerListMobilityBingAerial);
+
+  var layerListMobilityMapboxSatelliteStreets = new LayerListItem("mobility-mapbox-satellite-streets", "Mapbox Satellite Streets", false, "basemap", new Cesium.ImageryLayer(mapboxSatelliteStreetsProvider), undefined);
+  layerListMobility.add(layerListMobilityMapboxSatelliteStreets);
+
+  var layerListMobilityOsm = new LayerListItem("mobility-osm", "OpenStreetMap", false, "basemap", new Cesium.ImageryLayer(osmProvider), undefined);
+  layerListMobility.add(layerListMobilityOsm);
+
+  var layerListMobilityCartoDark = new LayerListItem("mobility-carto-dark", "CARTO Dark", true, "basemap", new Cesium.ImageryLayer(cartoDarkProvider), undefined);
+  layerListMobility.add(layerListMobilityCartoDark);
+
+  var layerListMobilityStamenTerrain = new LayerListItem("mobility-stamen-terrain", "Stamen Terrain", false, "basemap", new Cesium.ImageryLayer(stamenTerrainProvider), undefined);
+  layerListMobility.add(layerListMobilityStamenTerrain);
+
+  var layerListMobilityStamenWatercolor = new LayerListItem("mobility-stamen-watercolor", "Stamen Watercolor", false, "basemap", new Cesium.ImageryLayer(stamenWatercolorProvider), undefined);
+  layerListMobility.add(layerListMobilityStamenWatercolor);
 
   $("#cesium-3d-city-milan").click(function() {
     $("#table-water-height").css("visibility", "visible");
@@ -530,7 +603,7 @@ require(["jquery",
       cesiumViewer3dCity.entities.add(water);
     $("#cesium-3d-city").append(milanFloodRiskLegend);
     setTimeout(function() {
-      styleLegend();
+      layerListCesium3dCity.styleLegend();
     }, 100);
   });
 
@@ -548,8 +621,8 @@ require(["jquery",
     }
   }
 
-  function removeOverlayLayers() {
-    var imageryLayers = cesiumViewerDeformation.imageryLayers;
+  function removeOverlayLayers(cesiumViewer) {
+    var imageryLayers = cesiumViewer.imageryLayers;
     for (var i=0; i<imageryLayers.length; i++) {
       if (imageryLayers._layers[i].isBaseLayer() == false)
         imageryLayers.remove(imageryLayers._layers[i]);
@@ -561,7 +634,7 @@ require(["jquery",
     $("#deformation-cumulative").css("opacity", "0.6");
     deformationMeanLegend.remove();
     deformationCumulativeLegend.remove();
-    removeOverlayLayers();
+    removeOverlayLayers(cesiumViewerDeformation);
     useCaseDeformation.resetClockAndTimeline();
   });
 
@@ -579,7 +652,7 @@ require(["jquery",
         $("#cesium-deformation").append(deformationMeanLegend);
         deformationCumulativeLegend.remove();
         setTimeout(function() {
-          styleLegend();
+          layerListDeformation.styleLegend();
         }, 100);
         if (deformationCity.cumulativeLayer != undefined)
           cesiumViewerDeformation.imageryLayers.remove(deformationCity.cumulativeLayer);
@@ -603,6 +676,9 @@ require(["jquery",
         $("#deformation-cumulative").css("opacity", "1.0");
         $("#cesium-deformation").append(deformationCumulativeLegend);
         deformationMeanLegend.remove();
+        setTimeout(function() {
+          layerListDeformation.styleLegend();
+        }, 100);
         if (deformationCity.meanLayer != undefined)
           cesiumViewerDeformation.imageryLayers.remove(deformationCity.meanLayer);
         deformationCity.cumulativeLayer = cesiumViewerDeformation.imageryLayers.addImageryProvider(deformationCity.imageMosaic.imageryProvider);
@@ -785,6 +861,122 @@ require(["jquery",
       alert("Please select two different years and a class and draw a rectangle to start processing.");
   });
 
+  var checkHourChange;
+  var firstMobilityTrafficLayer;
+  $("#switcher-mobility-menu .dropdown-item").click(function() {
+    $("#mobility-public-transportation").css("opacity", "0.6");
+    $("#mobility-traffic").css("opacity", "0.6");
+    publicTransportationLegend.remove();
+    trafficLegend.remove();
+    clearInterval(checkHourChange);
+    removeOverlayLayers(cesiumViewerMobility);
+    useCaseMobility.resetClockAndTimeline();
+  });
+
+  $("#mobility-public-transportation").click(function() {
+    var mobilityCity = getByValue(mobilityCities, $("#switcher-mobility-menu-button").text());
+    if (mobilityCity != undefined) {
+      if ($("#mobility-public-transportation").css("opacity") == 1.0) {
+        $("#mobility-public-transportation").css("opacity", "0.6");
+        publicTransportationLegend.remove();
+        cesiumViewerMobility.imageryLayers.remove(mobilityCity.publicTransportationLayer);
+      }
+      else {
+        if (mobilityCity.switcherText == "Padua")
+          alert("Public transportation data are not available for Padua.");
+        else {
+          $("#mobility-public-transportation").css("opacity", "1.0");
+          $("#mobility-traffic").css("opacity", "0.6");
+          $("#cesium-mobility").append(publicTransportationLegend);
+          trafficLegend.remove();
+          setTimeout(function() {
+            layerListMobility.styleLegend();
+          }, 100);
+          if (firstMobilityTrafficLayer != undefined) {
+            clearInterval(checkHourChange);
+            cesiumViewerMobility.imageryLayers.remove(firstMobilityTrafficLayer);
+          }
+          mobilityCity.publicTransportationLayer = cesiumViewerMobility.imageryLayers.addImageryProvider(mobilityCity.publicTransportationProvider);
+          useCaseMobility.resetClockAndTimeline();
+        }
+      }
+    }
+  });
+
+  $("#mobility-traffic").click(function() {
+    var mobilityCity = getByValue(mobilityCities, $("#switcher-mobility-menu-button").text());
+    if (mobilityCity != undefined) {
+      if ($("#mobility-traffic").css("opacity") == 1.0) {
+        $("#mobility-traffic").css("opacity", "0.6");
+        trafficLegend.remove();
+        clearInterval(checkHourChange);
+        cesiumViewerMobility.imageryLayers.remove(firstMobilityTrafficLayer);
+        useCaseMobility.resetClockAndTimeline();
+      }
+      else {
+        $("#mobility-public-transportation").css("opacity", "0.6");
+        $("#mobility-traffic").css("opacity", "1.0");
+        $("#cesium-mobility").append(trafficLegend);
+        publicTransportationLegend.remove();
+        setTimeout(function() {
+          layerListMobility.styleLegend();
+        }, 100);
+        if (mobilityCity.publicTransportationLayer != undefined)
+          cesiumViewerMobility.imageryLayers.remove(mobilityCity.publicTransportationLayer);
+
+        var mobilityTrafficLayer;
+
+        if (mobilityCity.switcherText == "Milan")
+          mobilityTrafficLayer = "ithaca:milano_";
+        else if (mobilityCity.switcherText == "Padua")
+          mobilityTrafficLayer = "ithaca:padova_";
+        else if (mobilityCity.switcherText == "Rome")
+          mobilityTrafficLayer = "ithaca:roma_";
+        else if (mobilityCity.switcherText == "Naples")
+          mobilityTrafficLayer = "ithaca:napoli_";
+        else
+          mobilityTrafficLayer = "ithaca:torino_";
+
+        var firstHour = 0;
+        var firstMobilityTrafficProvider = new Cesium.WebMapServiceImageryProvider({
+          url: "http://urban.ithacaweb.org/geoserver/ithaca/wms?transparent=TRUE&format=image/png",
+          layers: mobilityTrafficLayer + firstHour
+        });
+        firstMobilityTrafficLayer = cesiumViewerMobility.imageryLayers.addImageryProvider(firstMobilityTrafficProvider);
+
+        checkHourChange = setInterval(function(){
+          var secondHour = (Cesium.JulianDate.toDate(cesiumViewerMobility.clock.currentTime).getHours()+23)%24;
+
+          if (firstHour != secondHour) {
+            cesiumViewerMobility.imageryLayers.remove(firstMobilityTrafficLayer);
+            var secondMobilityTrafficProvider = new Cesium.WebMapServiceImageryProvider({
+              url: "http://urban.ithacaweb.org/geoserver/ithaca/wms?transparent=TRUE&format=image/png",
+              layers: mobilityTrafficLayer + secondHour
+            });
+            var secondMobilityTrafficLayer = cesiumViewerMobility.imageryLayers.addImageryProvider(secondMobilityTrafficProvider);
+            firstHour = secondHour;
+            firstMobilityTrafficLayer = secondMobilityTrafficLayer;
+          }
+        }, 500);
+
+        var start = new Cesium.JulianDate.fromIso8601("2018-10-09T23:00:00Z");
+        var stop = new Cesium.JulianDate.addHours(start, 23, new Cesium.JulianDate());
+        stop = new Cesium.JulianDate.addMinutes(stop, 59, new Cesium.JulianDate());
+        stop = new Cesium.JulianDate.addSeconds(stop, 59, new Cesium.JulianDate());
+
+        var clock = cesiumViewerMobility.clock;
+        clock.currentTime = start;
+        clock.startTime = start;
+        clock.stopTime = stop;
+        clock.multiplier = 300.0;
+        clock.clockRange = Cesium.ClockRange.CLAMPED;
+        clock.clockStep = Cesium.ClockStep.TICK_DEPENDENT;
+
+        cesiumViewerMobility.timeline.zoomTo(start, stop);
+      }
+    }
+  });
+
   function styleLightbox(selector) {
     var mobileWidth = 576;
 
@@ -910,9 +1102,12 @@ require(["jquery",
     styleLightbox("#vgi-attribution-lightbox-overlay");
     layerListCesium3dCity.styleLayerList();
     layerListDeformation.styleLayerList();
-    layerListLulc.styleLegend();
     layerListLulc.styleLayerList();
-    styleLegend();
+    layerListMobility.styleLayerList();
+    layerListCesium3dCity.styleLegend();
+    layerListDeformation.styleLegend();
+    layerListLulc.styleLegend();
+    layerListMobility.styleLegend();
   });
 
   $("#window").on("click", ".first-level-title", function(event) {

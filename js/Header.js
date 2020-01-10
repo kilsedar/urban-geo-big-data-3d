@@ -39,7 +39,7 @@ define(["jquery", "bootstrap"], function ($, bootstrap) {
   };
 
   Header.prototype.addUseCase = function (useCase) {
-    this.useCases.push(useCase);    
+    this.useCases.push(useCase);
     var useCaseButtonWidth = 100/this.useCases.length;
 
     var useCaseButton = $("<div></div>");

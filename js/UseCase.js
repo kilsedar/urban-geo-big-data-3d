@@ -11,7 +11,7 @@ define([], function () {
       this.viewerContainerId = $(this.viewer.canvas).parent().attr('id');
     else
       this.viewerContainerId = $(this.viewer.container).attr("id");
-    this.animationContainer = $("#"+this.viewerContainerId+ " .cesium-viewer-animationContainer");
+    this.animationContainer = $("#"+this.viewerContainerId+" .cesium-viewer-animationContainer");
   };
 
   UseCase.prototype.resetClockAndTimeline = function () {

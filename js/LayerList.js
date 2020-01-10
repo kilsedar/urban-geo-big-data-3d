@@ -26,19 +26,24 @@ define(["jquery"], function ($) {
   };
 
   LayerList.prototype.styleLegend = function () {
-    if ($("#"+this.viewerContainerId+" .legend").is(":visible")) {
-      if ($("#"+this.viewerContainerId+" .legend").prop("scrollHeight")+130 > $(window).height()) {
-        $("#"+this.viewerContainerId+" .legend").css("height", $(window).height()-130+"px");
-        $("#"+this.viewerContainerId+" .legend").css("width", "auto");
-        $("#"+this.viewerContainerId+" .legend#legend-lulc-glc30").css("width", $("#legend-lulc-glc30").width()+24+"px");
-        $("#"+this.viewerContainerId+" .legend#legend-lulc-ispra-land-cover").css("width", "330px");
-      }
-      else {
-        $("#"+this.viewerContainerId+" .legend").css("height", "auto");
-        $("#"+this.viewerContainerId+" .legend").css("width", "auto");
-      }
-    }
-  };
+    var heightOutsideLegend;
+    if (this.viewerContainerId == "cesium-3d-city")
+      heightOutsideLegend = 176
+    else
+      heightOutsideLegend = 130;
+
+     if ($("#"+this.viewerContainerId+" .legend").is(":visible")) {
+       if ($("#"+this.viewerContainerId+" .legend:visible").prop("scrollHeight")+heightOutsideLegend > $(window).height()) {
+         $("#"+this.viewerContainerId+" .legend:visible").css("height", $(window).height()-heightOutsideLegend+"px");
+         $("#"+this.viewerContainerId+" .legend:visible").css("width", "auto");
+         $("#"+this.viewerContainerId+" .legend:visible").css("width", $(".legend:visible").width()+24+"px");
+       }
+       else {
+         $("#"+this.viewerContainerId+" .legend:visible").css("height", "auto");
+         $("#"+this.viewerContainerId+" .legend:visible").css("width", "auto");
+       }
+     }
+   };
 
   LayerList.prototype.styleLayerList = function () {
     if ($("#"+this.viewerContainerId+" .layer-list").is(":visible")) {
