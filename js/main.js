@@ -83,19 +83,19 @@ require(["jquery",
     mapStyle : Cesium.BingMapsStyle.AERIAL
   });
 
-  /* Allows up to 50000 views per month. (https://www.mapbox.com/pricing/) */
+  /* Allows up to 750000 views per month. (https://www.mapbox.com/pricing/) */
   var mapboxSatelliteStreetsProvider = new Cesium.MapboxImageryProvider({
     mapId: "mapbox.streets-satellite",
     accessToken: "pk.eyJ1IjoidWdiZCIsImEiOiJjam5lZW5xbmMwNzF6M3dwZDFzZ2ZmMTM5In0.vDfccM2WaIyP4vnBN3iB9g"
   });
 
-  /* OSM tile servers are not free of charge, however access to them is permitted as long as minimum requirements are met: https://operations.osmfoundation.org/policies/tiles/. */
+  /* OSM tile servers are not free of charge, however access to them is permitted as long as minimum requirements are met. (https://operations.osmfoundation.org/policies/tiles/) */
   var osmProvider = new Cesium.createOpenStreetMapImageryProvider({
     url: "https://a.tile.openstreetmap.org/",
     credit: "© <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
   });
 
-  /* The free service allows maximum 75000 map views per month. (https://carto.com/location-data-services/basemaps/) */
+  /* The free service allows maximum 75000 map views per month. (https://github.com/CartoDB/basemap-styles) */
   var cartoDarkProvider = new Cesium.createOpenStreetMapImageryProvider({
     url: "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png",
     credit: "© <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors, © <a href='https://carto.com/attribution/'>CARTO</a>"
