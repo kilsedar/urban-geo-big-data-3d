@@ -989,6 +989,17 @@ require(["jquery",
         activeUseCaseViewerContainerId = useCase.viewerContainerId;
     });
 
+    if (activeUseCaseViewerContainerId == "world-wind-3d-city")
+      $(".guidelines-text").html("<span class='blue-text'>Select</span> a city using the drop-down list on the left and <span class='blue-text'>wait</span> for the buildings to appear. The colours denote the height of the buildings.");
+    else if (activeUseCaseViewerContainerId == "cesium-3d-city")
+      $(".guidelines-text").html("<span class='blue-text'>Select</span> a city using the drop-down list on the left and <span class='blue-text'>wait</span> for the buildings to appear. <span class='blue-text'>Simulate</span> flooding for Milan using the slider on the right. <span class='blue-text'>Look</span> at the flood risk map of Milan. <span class='blue-text'>Simulate</span> the sun using the animation and timeline widgets at the bottom.");
+    else if (activeUseCaseViewerContainerId == "cesium-deformation")
+      $(".guidelines-text").html("<span class='blue-text'>Select</span> a city using the drop-down list on the left to zoom on a city. Then <span class='blue-text'>select</span> either mean deformation velocity map or cumulative deformation maps. After selecting the mean deformation velocity map, <span class='blue-text'>click</span> on a deformation point to plot the cumulative deformation time series. Moreover, after selecting the cumulative deformation maps, <span class='blue-text'>visualize</span> the cumulative deformation from 1992 to 2010 using the animation and timeline widgets at the bottom. As the deformation is cumulative, at the beginning all the pixels are white. It is suggested to use the timeline widget as it takes time to load the imagery.");
+    else if (activeUseCaseViewerContainerId == "cesium-lulc")
+      $(".guidelines-text").html("<span class='blue-text'>Select</span> a city using the drop-down list on the left to zoom on a city. Then <span class='blue-text'>add</span> one of the four raster datasets that are listed on the left. <span class='blue-text'>Visualize</span> the datasets of multiple years for each year using the animation and timeline widgets at the bottom. It is suggested to use the timeline widget as it takes time to load the imagery. <span class='blue-text'>Click</span> on pixels to get their values. Clicking returns the values of the pixels for all the years that the dataset is available. Furthermore, if a dataset of multiple years is placed on the virtual globe, <span class='blue-text'>calculate</span> the amount of change of a land use or land cover class for an area drawn by the user between two selected years. <span class='blue-text'>Turn on and off</span> Volunteered Geographic Information (VGI) using the button on the left. <span class='blue-text'>Query</span> a VGI point.");
+    else
+      $(".guidelines-text").html("<span class='blue-text'>Select</span> a city using the drop-down list on the left to zoom on a city. Then <span class='blue-text'>select</span> either transportation map or traffic maps. <span class='blue-text'>Visualize</span> traffic (i.e., number of vehicles) for each of 24 hours of a day (October 10, 2018) using the animation and timeline widgets at the bottom. It is suggested to use the timeline widget as it takes time to load the imagery.");
+
     if (width < mobileWidth) {
       $(selector + " > .cesium-credit-lightbox").attr("class", "cesium-credit-lightbox cesium-credit-lightbox-mobile");
       $(selector + " > .cesium-credit-lightbox.cesium-credit-lightbox-mobile").css("margin-top", "0px");
@@ -998,6 +1009,13 @@ require(["jquery",
       $(selector + " > .cesium-credit-lightbox.cesium-credit-lightbox-expanded").css("margin-top", Math.floor((height - $("#" + activeUseCaseViewerContainerId + " " + selector + " > .cesium-credit-lightbox.cesium-credit-lightbox-expanded").height()) * 0.5) + "px");
     }
   }
+
+  $(".use-case-button").click(function() {
+    setTimeout(function(){
+      styleLightbox(".guidelines-lightbox-overlay");
+      $(".guidelines-lightbox-overlay").css("visibility", "visible");
+    }, 1000);
+  });
 
   var projectAttributionLink = $("<a></a>");
   projectAttributionLink.addClass("cesium-credit-expand-link project-attribution-link");
@@ -1020,7 +1038,7 @@ require(["jquery",
 
   var projectAttributionText = $("<div></div>");
   projectAttributionText.addClass("project-attribution-text");
-  projectAttributionText.html("<a href='http://www.urbangeobigdata.it/' target='_blank'>URBAN GEOmatics for Bulk Information Generation, Data Assessment and Technology Awareness (URBAN GEO BIG DATA)</a> is a <a href='http://prin.miur.it/' target='_blank'>Project of National Interest (PRIN)</a> funded by the <a href='http://www.miur.gov.it/web/guest/home' target='_blank'>Italian Ministry of Education, University and Research (MIUR)</a>—id 20159CNLW8. The project contributes to improving the exploitation of new data from EO and mobile sensors, for a better understanding of a number of urban dynamics. It extracts information from data and represents it for better comprehension, aiming an improved public engagement.");
+  projectAttributionText.html("<a href='http://www.urbangeobigdata.it/' target='_blank'>URBAN GEOmatics for Bulk Information Generation, Data Assessment and Technology Awareness (URBAN GEO BIG DATA)</a> is a <a href='http://prin.miur.it/' target='_blank'>Project of National Interest (PRIN)</a> funded by the <a href='http://www.miur.gov.it/web/guest/home' target='_blank'>Italian Ministry of Education, University and Research (MIUR)</a>—id 20159CNLW8. The project contributes to improving the exploitation of new data from EO and mobile sensors for a better understanding of several urban dynamics. It extracts information from data and represents it for better comprehension, aiming an improved public engagement. This geoportal is a product of the URBAN GEO BIG DATA project. The source code of the geoportal can be found <a href='https://github.com/kilsedar/urban-geo-big-data-3d' target='_blank'>here</a>.<br>");
 
   var projectLogo = $("<img>");
   projectLogo.addClass("project-logo");
@@ -1041,10 +1059,6 @@ require(["jquery",
   $(".cesium-widget-credits").on("click", ".project-attribution-link", function() {
     styleLightbox(".project-attribution-lightbox-overlay");
     $(".project-attribution-lightbox-overlay").css("visibility", "visible");
-  });
-
-  $(".cesium-widget").on("click", ".cesium-credit-lightbox-close", function() {
-    $(".project-attribution-lightbox-overlay").css("visibility", "hidden");
   });
 
   var vgiAttributionLink = $("<a></a>");
@@ -1070,8 +1084,7 @@ require(["jquery",
 
   var vgiAttributionText = $("<div></div>");
   vgiAttributionText.attr("id", "vgi-attribution-text");
-  vgiAttributionText.html("Volunteered Geographic Information (VGI) is collected using Land Cover Collector application. It is published as <a href='https://play.google.com/store/apps/details?id=polimi.geolab.lcc' target='_blank'>Android</a> and <a href='https://itunes.apple.com/it/app/land-cover-collector/id1423068308#?platform=iphone' target='_blank'>iOS</a> mobile applications and also available on <a href='https://landcover.como.polimi.it/collector/' target='_blank'>Web</a>. The data collected can be downloaded within the Web application and the license of the data is <a href='https://opendatacommons.org/licenses/odbl/1.0/' target='_blank'>Open Database License (ODbL) v1.0</a>. The source code of the application can be found <a href='https://github.com/kilsedar/land-cover-collector' target='_blank'>here</a>.<br>" +
-                          "This work is supported by <a href='http://www.urbangeobigdata.it/' target='_blank'>URBAN GEOmatics for Bulk Information Generation, Data Assessment and Technology Awareness (URBAN GEO BIG DATA)</a>, a <a href='http://prin.miur.it/' target='_blank'>Project of National Interest (PRIN)</a>, funded by the <a href='http://www.miur.gov.it/web/guest/home' target='_blank'>Italian Ministry of Education, University and Research (MIUR)</a>—id 20159CNLW8.");
+  vgiAttributionText.html("Volunteered Geographic Information (VGI) is collected using Land Cover Collector application. It is published as <a href='https://play.google.com/store/apps/details?id=polimi.geolab.lcc' target='_blank'>Android</a> and <a href='https://itunes.apple.com/it/app/land-cover-collector/id1423068308#?platform=iphone' target='_blank'>iOS</a> mobile applications and available on the <a href='https://landcover.como.polimi.it/collector/' target='_blank'>Web</a>. The data collected can be downloaded using the web application and the license of the data is <a href='https://opendatacommons.org/licenses/odbl/1.0/' target='_blank'>Open Database License (ODbL) v1.0</a>. The source code of the application can be found <a href='https://github.com/kilsedar/land-cover-collector' target='_blank'>here</a>.<br>" + "The Land Cover Collector application was supported by <a href='http://www.urbangeobigdata.it/' target='_blank'>URBAN GEOmatics for Bulk Information Generation, Data Assessment and Technology Awareness (URBAN GEO BIG DATA)</a>, a <a href='http://prin.miur.it/' target='_blank'>Project of National Interest (PRIN)</a>, funded by the <a href='http://www.miur.gov.it/web/guest/home' target='_blank'>Italian Ministry of Education, University and Research (MIUR)</a>—id 20159CNLW8.");
 
   vgiAttributionLightbox.append(vgiTitle);
   vgiAttributionLightbox.append(vgiAttributionLightboxClose);
@@ -1084,22 +1097,58 @@ require(["jquery",
     $("#cesium-lulc #vgi-attribution-lightbox-overlay").css("visibility", "visible");
   });
 
+  var guidelinesLink = $("<a></a>");
+  guidelinesLink.addClass("cesium-credit-expand-link guidelines-link");
+  guidelinesLink.text("Guidelines");
+  $(".cesium-widget-credits").append(guidelinesLink);
+
+  var guidelinesLightboxOverlay = $("<div></div>");
+  guidelinesLightboxOverlay.addClass("cesium-credit-lightbox-overlay guidelines-lightbox-overlay");
+
+  var guidelinesLightbox = $("<div></div>");
+  guidelinesLightbox.addClass("cesium-credit-lightbox");
+
+  var guidelinesTitle = $("<div></div>");
+  guidelinesTitle.addClass("cesium-credit-lightbox-title");
+  guidelinesTitle.text("Guidelines");
+
+  var guidelinesLightboxClose = $("<a></a>");
+  guidelinesLightboxClose.addClass("cesium-credit-lightbox-close");
+  guidelinesLightboxClose.html("&times;");
+
+  var guidelinesText = $("<div></div>");
+  guidelinesText.addClass("guidelines-text");
+
+  guidelinesLightbox.append(guidelinesTitle);
+  guidelinesLightbox.append(guidelinesLightboxClose);
+  guidelinesLightbox.append(guidelinesText);
+  guidelinesLightboxOverlay.append(guidelinesLightbox);
+  $(".cesium-widget").append(guidelinesLightboxOverlay);
+
+  $(".cesium-widget-credits").on("click", ".guidelines-link", function() {
+    styleLightbox(".guidelines-lightbox-overlay");
+    $(".guidelines-lightbox-overlay").css("visibility", "visible");
+  });
+
   $(".cesium-widget").on("click", ".cesium-credit-lightbox-close", function() {
-    $("#cesium-lulc #vgi-attribution-lightbox-overlay").css("visibility", "hidden");
+    $(".project-attribution-lightbox-overlay, #cesium-lulc #vgi-attribution-lightbox-overlay, .guidelines-lightbox-overlay").css("visibility", "hidden");
   });
 
   $(document).click(function(event) {
-    if(!$(event.target).closest(".cesium-credit-expand-link, cesium-credit-lightbox-title, .project-attribution-text, #vgi-attribution-text").length) {
-      if($("#cesium-lulc #vgi-attribution-lightbox-overlay").css("visibility") == "visible")
-        $("#cesium-lulc #vgi-attribution-lightbox-overlay").css("visibility", "hidden");
+    if(!$(event.target).closest(".cesium-credit-expand-link, .cesium-credit-lightbox-title, .project-attribution-text, #vgi-attribution-text, .guidelines-text").length) {
       if($(".project-attribution-lightbox-overlay").css("visibility") == "visible")
         $(".project-attribution-lightbox-overlay").css("visibility", "hidden");
+      if($("#cesium-lulc #vgi-attribution-lightbox-overlay").css("visibility") == "visible")
+        $("#cesium-lulc #vgi-attribution-lightbox-overlay").css("visibility", "hidden");
+      if($(".guidelines-lightbox-overlay").css("visibility") == "visible")
+        $(".guidelines-lightbox-overlay").css("visibility", "hidden");
     }
   });
 
   $(window).resize(function() {
     styleLightbox(".project-attribution-lightbox-overlay");
     styleLightbox("#vgi-attribution-lightbox-overlay");
+    styleLightbox(".guidelines-lightbox-overlay");
     layerListCesium3dCity.styleLayerList();
     layerListDeformation.styleLayerList();
     layerListLulc.styleLayerList();
@@ -1138,5 +1187,6 @@ require(["jquery",
 
   $(document).ready(function(){
     $("[data-toggle='tooltip']").tooltip();
+    styleLightbox(".guidelines-lightbox-overlay");
   });
 });

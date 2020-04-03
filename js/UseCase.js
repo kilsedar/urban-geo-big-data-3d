@@ -7,10 +7,10 @@ define([], function () {
     this.text = text;
     this.tooltip = tooltip;
     this.active = active;
-    if ($(this.viewer.canvas).parent().attr('id') != undefined)
-      this.viewerContainerId = $(this.viewer.canvas).parent().attr('id');
-    else
+    if ($(this.viewer.container).attr("id") != undefined)
       this.viewerContainerId = $(this.viewer.container).attr("id");
+    else
+      this.viewerContainerId = "world-wind-3d-city";
     this.animationContainer = $("#"+this.viewerContainerId+" .cesium-viewer-animationContainer");
   };
 

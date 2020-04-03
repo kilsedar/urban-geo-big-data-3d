@@ -29,11 +29,6 @@
   z-index: 200;
 }
 
-.cesium-infoBox-close:hover, .cesium-credit-lightbox-close:hover {
-  background-color: #48b !important;
-  color: #ffffff !important;
-}
-
 .cesium-credit-lightbox-close {
   padding: 2px 5px 0px 5px;
   font-size: 18px;
@@ -43,8 +38,13 @@
   right: 5px;
 }
 
-.cesium-credit-lightbox div > a {
-  color: #cecece !important;
+.cesium-infoBox-close:hover, .cesium-credit-lightbox-close:hover {
+  background-color: #48b !important;
+  color: #ffffff !important;
+}
+
+.cesium-credit-lightbox div > a, .cesium-credit-lightbox .blue-text {
+  color: #6dabe4 !important;
 }
 
 .cesium-credit-lightbox div > a:hover {
@@ -223,21 +223,6 @@ hr {
   left: 242px;
 }
 
-#vgi-attribution-link {
-  left: 296px;
-}
-
-#vgi-attribution-lightbox-overlay {
-  display: block;
-  visibility: hidden;
-}
-
-#vgi-attribution-text {
-  text-align: justify;
-  font-size: 13px;
-  padding: 20px;
-}
-
 #legend-milan-flood-risk {
   top: 140px;
 }
@@ -335,6 +320,37 @@ hr {
   border: 1px solid #ffffff;
 }
 
+#world-wind-3d-city .project-attribution-link {
+  left: 190px;
+}
+
+#vgi-attribution-link {
+  left: 296px;
+}
+
+#vgi-attribution-lightbox-overlay {
+  display: block;
+  visibility: hidden;
+}
+
+#vgi-attribution-text {
+  text-align: justify;
+  font-size: 13px;
+  padding: 20px;
+}
+
+#world-wind-3d-city .guidelines-link {
+  left: 274px;
+}
+
+#cesium-3d-city .guidelines-link, #cesium-deformation .guidelines-link, #cesium-mobility .guidelines-link {
+  left: 296px;
+}
+
+#cesium-lulc .guidelines-link {
+  left: 384px;
+}
+
 .project-attribution-link {
   left: 212px;
 }
@@ -356,6 +372,17 @@ hr {
   margin-right: auto;
   width: 60%;
   padding-bottom: 20px;
+}
+
+.guidelines-lightbox-overlay {
+  display: block;
+  visibility: visible;
+}
+
+.guidelines-text {
+  text-align: justify;
+  font-size: 13px;
+  padding: 20px;
 }
 
 .switcher {
